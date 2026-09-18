@@ -2,7 +2,7 @@
   "description": "Live story state. The engine reads and writes this. Treat it as the novel's save file.",
   "current_chapter": 1,
   "current_arc": "A01",
-  "current_pov": "mc-kestrel-vane",
+  "current_pov": "mc-adam-rooke",
   "last_tension": 0,
   "beat_index": 0,
   "chapters_since_rest": 0,
@@ -10,13 +10,13 @@
   "consecutive_action_chapters": 0,
   "consecutive_low_tension_chapters": 0,
   "active_characters": [
-    "mc-kestrel-vane"
+    "mc-adam-rooke"
   ],
   "active_environments": [
-    "academy-thorn-ledger"
+    "origin-site-the-waking-field"
   ],
   "introductions_this_arc": {
-    "characters": 0,
+    "characters": 1,
     "environments": 1
   },
   "introductions_this_chapter": {
@@ -29,12 +29,12 @@
     {
       "date": "2026-09-18",
       "chapter": 1,
-      "event": "activated environment Thorn Ledger (academy) in ch.1 — need: the threshold test has to happen somewhere that can fail them publicly"
+      "event": "novel replaced: new premise (Adam Rooke / Vaurun), 317 chapters, state reset"
     },
     {
       "date": "2026-09-18",
       "chapter": 1,
-      "event": "plot skeleton rebuilt for 1337 chapters; arc id migrated A1 -> A01"
+      "event": "activated environment The Waking Field (origin-site) in ch.1 — need: chapter 1 has to happen where he wakes"
     }
   ]
 }

@@ -158,9 +158,9 @@ def track_value(prog: dict, name: str):
 def capability_ceiling(chapter: int, arcs: dict, arc_id: str, start: int = 0) -> int:
     """Growth is rationed against the page count. A track may sit at its starting
     value forever, but it may not climb faster than the story earns it."""
-    if act_for_arc(arcs, arc_id) in ("ACT3", "V6"):
+    if act_for_arc(arcs, arc_id) in ("ACT3", "V6", "M4"):
         return 10
-    return min(10, start + int(chapter / 40) + 1)
+    return min(10, start + int(chapter / 34) + 1)
 
 
 def gate_report(ctx: dict) -> dict:

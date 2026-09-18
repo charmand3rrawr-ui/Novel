@@ -1,9 +1,9 @@
 # Rhenli Halloway
 
-`rhenli-halloway` · role: **rival** · culture: ledger · status: **dormant** · seed: `547756574`
+`rhenli-halloway` · role: **dependent** · culture: ledger · status: **dormant** · seed: `547756574`
 
-> **Need that licenses them:** A01 (friction phase): a sealed record needs a rival for the arc to put his access to a stage at risk
-> **Story function:** mirrors the MC's method with a different wound; proves the method is not destiny
+> **Need that licenses them:** A01 (resource phase): not knowing the rules needs a dependent for the arc to put the only shelter he has at risk
+> **Story function:** makes the stakes concrete and unignorable
 
 ## Core
 

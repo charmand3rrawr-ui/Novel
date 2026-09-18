@@ -1,31 +1,65 @@
 {
   "description": "Live status of the protagonist's system. Where he IS. engine/system.json says how the system WORKS. Regenerate the readable sheet with `novel.py system sheet`.",
-  "owner": "mc-kestrel-vane",
-  "realm": {"n": 1, "name": "Tempering", "stage": "gate 3", "since_chapter": 1},
-  "attributes": {
-    "strength": 9, "agility": 7, "reflex": 8, "constitution": 8,
-    "perception": 12, "comprehension": 14, "will": 11, "spirit": 6,
-    "fortune": 1, "affinity": 0
+  "owner": "mc-adam-rooke",
+  "realm": {
+    "n": 0,
+    "name": "Unmarked",
+    "stage": "-",
+    "since_chapter": 1
   },
-  "points": {"unspent": 0, "lifetime_earned": 76, "spent": 76},
-  "residue": {"value": 0, "state": "clear"},
+  "attributes": {
+    "strength": 3,
+    "agility": 3,
+    "reflex": 4,
+    "constitution": 3,
+    "perception": 7,
+    "comprehension": 9,
+    "will": 8,
+    "spirit": 1,
+    "fortune": 0,
+    "affinity": 0
+  },
+  "points": {
+    "unspent": 0,
+    "lifetime_earned": 38,
+    "spent": 38
+  },
+  "residue": {
+    "value": 0,
+    "state": "clear"
+  },
   "talents": {
-    "blade": "common", "palm": "common", "spear": "dull", "sorcery": "common",
-    "formation": "keen", "alchemy": "common", "forging": "common", "cooking": "common",
-    "taming": "dull", "appraisal": "rare", "comprehension": "keen", "concealment": "keen"
+    "blade": "common",
+    "palm": "common",
+    "spear": "dull",
+    "sorcery": "common",
+    "formation": "common",
+    "alchemy": "keen",
+    "forging": "common",
+    "cooking": "common",
+    "taming": "dull",
+    "appraisal": "heaven-sent",
+    "comprehension": "rare",
+    "concealment": "keen"
   },
   "techniques": [],
-  "professions": {
-    "appraisal": {"proficiency": 22, "rank": 1, "build_credits_taken": 2}
-  },
-  "traits": [
-    {"id": "thousand-coin", "state": "dormant", "advanced_chapter": null, "notes": "suspected, never confirmed; the family called it luck"}
-  ],
+  "professions": {},
+  "traits": [],
   "familiarity": {},
-  "per_chapter": {"chapter": 1, "points": 0},
-  "per_arc": {"arc": "A1", "points": 0},
+  "per_chapter": {
+    "chapter": 1,
+    "points": 0
+  },
+  "per_arc": {
+    "arc": "A01",
+    "points": 0
+  },
   "absorption_log": [],
   "events": [
-    {"chapter": 0, "kind": "baseline", "text": "Starting state at the opening of the novel. Appraisal Rank 1 and a keen formation talent are on record; the Tally is not."}
+    {
+      "chapter": 0,
+      "kind": "baseline",
+      "text": "Thirty-eight years on Earth: an actuary's mind, a body that was never trained, and nothing else. Heaven-sent appraisal is the first life's habit wearing a new name."
+    }
   ]
 }

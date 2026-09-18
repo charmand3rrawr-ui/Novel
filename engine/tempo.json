@@ -2,10 +2,10 @@
   "$schema": "engine/schema/tempo.md",
   "description": "The metronome. Calibrated to measured serial architecture (serial-reference-A, 3,204 chapters) for a 1,337-chapter run. See engine/genre-priors.json and chapters/PLOT-ARCHITECTURE.md for what each number is answering.",
   "chapter_target_words": {
-    "min": 900,
-    "ideal": 1200,
-    "max": 1900,
-    "note": "Measured median 1032, p10 875, p90 1584."
+    "min": 5000,
+    "ideal": 5400,
+    "max": 7500,
+    "note": "Author's instruction: 5,000 words minimum. This is deliberately far above the measured serial median of 1,032 — 317 x 5,000 is a 1.6M-word novel with chapters five times the reference length. The measured architecture still applies to SHAPE (type transitions, payoff depth, self-contained openings); it no longer applies to LENGTH. Scene count per chapter should rise to 3-5 accordingly, or a 5,000-word chapter with one scene will sag."
   },
   "beat_cycle": [
     "hook",
@@ -33,11 +33,11 @@
     "note": "Tension is 1-10. The engine computes a target per chapter; the author may deviate by 1 with a logged reason."
   },
   "cadence_rules": {
-    "rest_chapter_every": 9,
+    "rest_chapter_every": 11,
     "max_consecutive_action_chapters": 8,
     "max_consecutive_low_tension_chapters": 3,
-    "revelation_every": 5,
-    "pov_switch_min_gap": 6,
+    "revelation_every": 4,
+    "pov_switch_min_gap": 8,
     "cliffhanger_ratio": 0.35,
     "declared_setpiece_exempt": true,
     "note": "Combat self-transitions at 50.2% and runs up to 23 chapters, so the action cap is a guard against drift, not a hard ceiling — a declared set-piece is exempt. Revelation is the connective tissue of the form (19.9% of chapters, most likely successor from nearly every mode), so its cadence is short."
@@ -55,11 +55,12 @@
   },
   "seed_policy": {
     "min_seeds_planted_per_chapter": 1,
-    "max_open_seeds": 60,
+    "max_open_seeds": 30,
     "payoff_window_chapters": {
-      "min": 3,
-      "soft_max": 40,
-      "hard_max": 120
+      "min": 2,
+      "soft_max": 30,
+      "hard_max": 80,
+      "note": "Scaled to 317 chapters from the measured 40/120 at serial length."
     },
     "note": "Measured: a third of entity absences run 20+ chapters and still return, median long return 65, p90 475. The old 30-chapter rot threshold would have force-retired the form's deep plants."
   },
@@ -80,9 +81,15 @@
     "note": "Measured chapter-type distribution."
   },
   "setback_policy": {
-    "target_ratio": 0.25,
+    "target_ratio": 0.3,
     "floor": 0.2,
     "window_chapters": 20,
-    "note": "Share of chapters where the protagonist ends materially worse off. The genre's most common failure is a protagonist who never loses; measured stakes vocabulary falls 3.05 -> 2.32 across a run while progression language doubles. The engine warns when this drops below the floor."
+    "note": "Raised to 0.30 for a tragedy. A protagonist on a fall must lose more often than a protagonist on a rise, or the fall reads as a power fantasy with a sad ending bolted on."
+  },
+  "chapter_scenes": {
+    "min": 3,
+    "ideal": 4,
+    "max": 6,
+    "note": "A chapter this long is a multi-scene unit. The measured 1-2 scene norm was for 1,000-word chapters."
   }
 }

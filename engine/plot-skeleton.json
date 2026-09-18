@@ -1,160 +1,130 @@
 {
-  "description": "Generated macro plot. Structure comes from measured serial architecture; content is this novel's own. Rebuild any time with `novel.py plot build`; the protagonist's state can bend it via `novel.py plot next`.",
+  "description": "Generated from engine/story-spine.json. Structure from measured serial architecture; movements, pressures and stakes from the story's own spine.",
   "generated": "2026-09-18",
-  "seed": 1337,
-  "total_chapters": 1337,
+  "seed": 317,
+  "total_chapters": 317,
+  "spine": "The four movements of this novel. plotgen builds arcs inside these rather than from generic pools, so the macro plot bends toward the intended tragedy instead of wandering.",
   "volumes": [
     {
-      "id": "V1",
+      "id": "M1",
+      "name": "The Debt of Waking",
       "chapters": [
         1,
-        250
+        62
       ],
+      "question": "What does a man do with a second life he did not ask for?",
       "arcs": [
         "A01",
         "A02",
-        "A03",
+        "A03"
+      ]
+    },
+    {
+      "id": "M2",
+      "name": "Ascension by Consumption",
+      "chapters": [
+        63,
+        164
+      ],
+      "question": "How much can he take before someone can name what he is?",
+      "arcs": [
         "A04",
         "A05",
-        "A06"
+        "A06",
+        "A07",
+        "A08"
       ]
     },
     {
-      "id": "V2",
+      "id": "M3",
+      "name": "The Reckoning of Vaurun",
       "chapters": [
-        251,
-        484
+        165,
+        268
       ],
+      "question": "Is there a number large enough to settle what he is owed?",
       "arcs": [
-        "A07",
-        "A08",
         "A09",
         "A10",
-        "A11"
+        "A11",
+        "A12"
       ]
     },
     {
-      "id": "V3",
+      "id": "M4",
+      "name": "What Is Left",
       "chapters": [
-        485,
-        734
+        269,
+        317
       ],
+      "question": "What is a man when the thing he was for is finished?",
       "arcs": [
-        "A12",
         "A13",
         "A14",
-        "A15",
-        "A16",
-        "A17"
-      ]
-    },
-    {
-      "id": "V4",
-      "chapters": [
-        735,
-        980
-      ],
-      "arcs": [
-        "A18",
-        "A19",
-        "A20",
-        "A21",
-        "A22",
-        "A23",
-        "A24"
-      ]
-    },
-    {
-      "id": "V5",
-      "chapters": [
-        981,
-        1221
-      ],
-      "arcs": [
-        "A25",
-        "A26",
-        "A27",
-        "A28",
-        "A29",
-        "A30",
-        "A31",
-        "A32"
-      ]
-    },
-    {
-      "id": "V6",
-      "chapters": [
-        1222,
-        1337
-      ],
-      "arcs": [
-        "A33",
-        "A34",
-        "A35",
-        "A36"
+        "A15"
       ]
     }
   ],
   "arcs": [
     {
       "id": "A01",
+      "movement": "M1",
       "chapters": [
         1,
-        37
+        23
       ],
-      "length": 37,
+      "length": 23,
       "scale_tier": 0,
-      "pressure_source": "a sealed record",
-      "central_question": "Can he keep his access to a stage while a sealed record holds?",
-      "promise": "He enters with his access to a stage intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a forged discharge.",
+      "pressure_source": "not knowing the rules",
+      "central_question": "Can he keep the only shelter he has while not knowing the rules holds?",
+      "promise": "He enters with the only shelter he has intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out the first attribute taken.",
       "licensed_environments": [
-        "academy",
         "city-district",
+        "origin-site",
+        "wilderness",
         "workplace"
       ],
       "licensed_character_roles": [
         "dependent",
         "institution-face",
-        "peer-ally",
-        "rival",
-        "successor"
+        "mentor"
       ],
       "phases": [
         {
           "phase": "arrival",
           "from": 1,
-          "to": 4
+          "to": 3
         },
         {
           "phase": "friction",
-          "from": 5,
-          "to": 10
+          "from": 4,
+          "to": 7
         },
         {
           "phase": "demonstration",
-          "from": 11,
-          "to": 15
+          "from": 8,
+          "to": 10
         },
         {
           "phase": "escalation",
-          "from": 16,
-          "to": 21
+          "from": 11,
+          "to": 14
         },
         {
           "phase": "resource",
-          "from": 22,
-          "to": 26
+          "from": 15,
+          "to": 17
         },
         {
           "phase": "confrontation",
-          "from": 27,
-          "to": 33
+          "from": 18,
+          "to": 21
         },
         {
           "phase": "departure",
-          "from": 34,
-          "to": 37
+          "from": 22,
+          "to": 23
         }
       ],
       "tension": {
@@ -162,1809 +132,951 @@
         "peak": 8,
         "close": 5
       },
-      "gain_on_close": "a forged discharge",
-      "stake": "his access to a stage"
+      "gain_on_close": "the first attribute taken",
+      "stake": "the only shelter he has"
     },
     {
       "id": "A02",
+      "movement": "M1",
       "chapters": [
-        38,
-        75
+        24,
+        39
       ],
-      "length": 38,
+      "length": 16,
       "scale_tier": 0,
-      "pressure_source": "a sealed record",
-      "central_question": "Can he keep a route out while a sealed record holds?",
-      "promise": "He enters with a route out intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a profession rank.",
+      "pressure_source": "being nobody on a world that ranks everyone",
+      "central_question": "Can he keep his anonymity while being nobody on a world that ranks everyone holds?",
+      "promise": "He enters with his anonymity intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out a technique nobody registered.",
       "licensed_environments": [
+        "city-district",
         "origin-site",
-        "workplace"
+        "wilderness"
       ],
       "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "handler",
         "institution-face",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated"
+        "mentor",
+        "peer-ally"
       ],
       "phases": [
         {
           "phase": "arrival",
+          "from": 24,
+          "to": 25
+        },
+        {
+          "phase": "friction",
+          "from": 26,
+          "to": 27
+        },
+        {
+          "phase": "demonstration",
+          "from": 28,
+          "to": 29
+        },
+        {
+          "phase": "escalation",
+          "from": 30,
+          "to": 32
+        },
+        {
+          "phase": "resource",
+          "from": 33,
+          "to": 34
+        },
+        {
+          "phase": "confrontation",
+          "from": 35,
+          "to": 37
+        },
+        {
+          "phase": "departure",
           "from": 38,
+          "to": 39
+        }
+      ],
+      "tension": {
+        "open": 3,
+        "peak": 8,
+        "close": 5
+      },
+      "gain_on_close": "a technique nobody registered",
+      "stake": "his anonymity"
+    },
+    {
+      "id": "A03",
+      "movement": "M1",
+      "chapters": [
+        40,
+        62
+      ],
+      "length": 23,
+      "scale_tier": 0,
+      "pressure_source": "a licence he does not have",
+      "central_question": "Can he keep a person who has been kind to him while a licence he does not have holds?",
+      "promise": "He enters with a person who has been kind to him intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out a name on Vaurun.",
+      "licensed_environments": [
+        "city-district",
+        "origin-site",
+        "workplace"
+      ],
+      "licensed_character_roles": [
+        "dependent",
+        "institution-face",
+        "peer-ally"
+      ],
+      "phases": [
+        {
+          "phase": "arrival",
+          "from": 40,
           "to": 42
         },
         {
           "phase": "friction",
           "from": 43,
-          "to": 48
+          "to": 46
         },
         {
           "phase": "demonstration",
-          "from": 49,
+          "from": 47,
+          "to": 49
+        },
+        {
+          "phase": "escalation",
+          "from": 50,
           "to": 53
         },
         {
-          "phase": "escalation",
+          "phase": "resource",
           "from": 54,
-          "to": 59
-        },
-        {
-          "phase": "resource",
-          "from": 60,
-          "to": 64
+          "to": 56
         },
         {
           "phase": "confrontation",
-          "from": 65,
-          "to": 71
+          "from": 57,
+          "to": 60
         },
         {
           "phase": "departure",
-          "from": 72,
-          "to": 75
+          "from": 61,
+          "to": 62
         }
       ],
       "tension": {
-        "open": 5,
-        "peak": 9,
-        "close": 4
+        "open": 3,
+        "peak": 8,
+        "close": 5
       },
-      "gain_on_close": "a profession rank",
-      "stake": "a route out"
-    },
-    {
-      "id": "A03",
-      "chapters": [
-        76,
-        100
-      ],
-      "length": 25,
-      "scale_tier": 0,
-      "pressure_source": "patronage and obligation",
-      "central_question": "Can he keep his place while patronage and obligation holds?",
-      "promise": "He enters with his place intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a forged discharge.",
-      "licensed_environments": [
-        "city-district",
-        "workplace"
-      ],
-      "licensed_character_roles": [
-        "dependent",
-        "institution-face",
-        "patron",
-        "peer-ally",
-        "successor",
-        "the-discarded"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 76,
-          "to": 78
-        },
-        {
-          "phase": "friction",
-          "from": 79,
-          "to": 82
-        },
-        {
-          "phase": "demonstration",
-          "from": 83,
-          "to": 86
-        },
-        {
-          "phase": "escalation",
-          "from": 87,
-          "to": 90
-        },
-        {
-          "phase": "resource",
-          "from": 91,
-          "to": 93
-        },
-        {
-          "phase": "confrontation",
-          "from": 94,
-          "to": 98
-        },
-        {
-          "phase": "departure",
-          "from": 99,
-          "to": 100
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 10,
-        "close": 2
-      },
-      "gain_on_close": "a forged discharge",
-      "stake": "his place"
+      "gain_on_close": "a name on Vaurun",
+      "stake": "a person who has been kind to him"
     },
     {
       "id": "A04",
+      "movement": "M2",
       "chapters": [
-        101,
-        130
+        63,
+        85
       ],
-      "length": 30,
-      "scale_tier": 0,
-      "pressure_source": "a market cornered",
-      "central_question": "Can he keep his anonymity while a market cornered holds?",
-      "promise": "He enters with his anonymity intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a name in a ledger.",
+      "length": 23,
+      "scale_tier": 2,
+      "pressure_source": "the Ninefold Accord's registry",
+      "central_question": "Can he keep the thin place he is making while the Ninefold Accord's registry holds?",
+      "promise": "He enters with the thin place he is making intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out a region's essence.",
       "licensed_environments": [
-        "city-district",
-        "origin-site"
+        "border-region",
+        "city",
+        "wilderness"
       ],
       "licensed_character_roles": [
         "handler",
-        "institution-face",
-        "mentor",
-        "rival-escalated",
-        "successor",
-        "the-discarded",
+        "patron",
         "the-one-who-stays"
       ],
       "phases": [
         {
           "phase": "arrival",
+          "from": 63,
+          "to": 65
+        },
+        {
+          "phase": "friction",
+          "from": 66,
+          "to": 69
+        },
+        {
+          "phase": "demonstration",
+          "from": 70,
+          "to": 72
+        },
+        {
+          "phase": "escalation",
+          "from": 73,
+          "to": 76
+        },
+        {
+          "phase": "resource",
+          "from": 77,
+          "to": 79
+        },
+        {
+          "phase": "confrontation",
+          "from": 80,
+          "to": 83
+        },
+        {
+          "phase": "departure",
+          "from": 84,
+          "to": 85
+        }
+      ],
+      "tension": {
+        "open": 4,
+        "peak": 10,
+        "close": 4
+      },
+      "gain_on_close": "a region's essence",
+      "stake": "the thin place he is making"
+    },
+    {
+      "id": "A05",
+      "movement": "M2",
+      "chapters": [
+        86,
+        102
+      ],
+      "length": 17,
+      "scale_tier": 2,
+      "pressure_source": "a Kiln house monopoly",
+      "central_question": "Can he keep a profession rank while a Kiln house monopoly holds?",
+      "promise": "He enters with a profession rank intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out a bloodline trigger.",
+      "licensed_environments": [
+        "border-region",
+        "city",
+        "wilderness"
+      ],
+      "licensed_character_roles": [
+        "foil-from-outside",
+        "handler",
+        "the-one-who-stays"
+      ],
+      "phases": [
+        {
+          "phase": "arrival",
+          "from": 86,
+          "to": 87
+        },
+        {
+          "phase": "friction",
+          "from": 88,
+          "to": 90
+        },
+        {
+          "phase": "demonstration",
+          "from": 91,
+          "to": 92
+        },
+        {
+          "phase": "escalation",
+          "from": 93,
+          "to": 95
+        },
+        {
+          "phase": "resource",
+          "from": 96,
+          "to": 97
+        },
+        {
+          "phase": "confrontation",
+          "from": 98,
+          "to": 100
+        },
+        {
+          "phase": "departure",
           "from": 101,
+          "to": 102
+        }
+      ],
+      "tension": {
+        "open": 4,
+        "peak": 10,
+        "close": 4
+      },
+      "gain_on_close": "a bloodline trigger",
+      "stake": "a profession rank"
+    },
+    {
+      "id": "A06",
+      "movement": "M2",
+      "chapters": [
+        103,
+        118
+      ],
+      "length": 16,
+      "scale_tier": 2,
+      "pressure_source": "a sect that wants him owned",
+      "central_question": "Can he keep a community that trusted him while a sect that wants him owned holds?",
+      "promise": "He enters with a community that trusted him intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out a technique at Origin.",
+      "licensed_environments": [
+        "city",
+        "country",
+        "wilderness"
+      ],
+      "licensed_character_roles": [
+        "foil-from-outside",
+        "rival",
+        "the-one-who-stays"
+      ],
+      "phases": [
+        {
+          "phase": "arrival",
+          "from": 103,
           "to": 104
         },
         {
           "phase": "friction",
           "from": 105,
-          "to": 109
+          "to": 106
         },
         {
           "phase": "demonstration",
-          "from": 110,
-          "to": 113
+          "from": 107,
+          "to": 108
         },
         {
           "phase": "escalation",
-          "from": 114,
-          "to": 118
+          "from": 109,
+          "to": 111
         },
         {
           "phase": "resource",
-          "from": 119,
-          "to": 122
+          "from": 112,
+          "to": 113
         },
         {
           "phase": "confrontation",
-          "from": 123,
-          "to": 127
+          "from": 114,
+          "to": 116
         },
         {
           "phase": "departure",
-          "from": 128,
-          "to": 130
+          "from": 117,
+          "to": 118
         }
       ],
       "tension": {
-        "open": 5,
+        "open": 4,
         "peak": 10,
-        "close": 3
+        "close": 4
       },
-      "gain_on_close": "a name in a ledger",
-      "stake": "his anonymity"
+      "gain_on_close": "a technique at Origin",
+      "stake": "a community that trusted him"
     },
     {
-      "id": "A05",
+      "id": "A07",
+      "movement": "M2",
       "chapters": [
-        131,
-        161
+        119,
+        136
       ],
-      "length": 31,
-      "scale_tier": 0,
-      "pressure_source": "an alliance that requires a hostage",
-      "central_question": "Can he keep a body he cannot explain while an alliance that requires a hostage holds?",
-      "promise": "He enters with a body he cannot explain intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a workshop's failures.",
+      "length": 18,
+      "scale_tier": 2,
+      "pressure_source": "the Verge Wardens measuring the drain",
+      "central_question": "Can he keep the last of his restraint while the Verge Wardens measuring the drain holds?",
+      "promise": "He enters with the last of his restraint intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out a realm.",
       "licensed_environments": [
-        "academy",
-        "city-district"
+        "border-region",
+        "wilderness",
+        "workplace"
       ],
       "licensed_character_roles": [
         "antagonist",
-        "dependent",
-        "patron",
-        "peer-ally",
-        "rival",
+        "foil-from-outside",
+        "patron"
+      ],
+      "phases": [
+        {
+          "phase": "arrival",
+          "from": 119,
+          "to": 120
+        },
+        {
+          "phase": "friction",
+          "from": 121,
+          "to": 123
+        },
+        {
+          "phase": "demonstration",
+          "from": 124,
+          "to": 126
+        },
+        {
+          "phase": "escalation",
+          "from": 127,
+          "to": 129
+        },
+        {
+          "phase": "resource",
+          "from": 130,
+          "to": 131
+        },
+        {
+          "phase": "confrontation",
+          "from": 132,
+          "to": 134
+        },
+        {
+          "phase": "departure",
+          "from": 135,
+          "to": 136
+        }
+      ],
+      "tension": {
+        "open": 4,
+        "peak": 10,
+        "close": 4
+      },
+      "gain_on_close": "a realm",
+      "stake": "the last of his restraint"
+    },
+    {
+      "id": "A08",
+      "movement": "M2",
+      "chapters": [
+        137,
+        164
+      ],
+      "length": 28,
+      "scale_tier": 2,
+      "pressure_source": "someone who stays",
+      "central_question": "Can he keep a person who gains nothing by him while someone who stays holds?",
+      "promise": "He enters with a person who gains nothing by him intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out a Kiln house's failures.",
+      "licensed_environments": [
+        "city",
+        "wilderness",
+        "workplace"
+      ],
+      "licensed_character_roles": [
+        "antagonist",
+        "foil-from-outside",
+        "patron"
+      ],
+      "phases": [
+        {
+          "phase": "arrival",
+          "from": 137,
+          "to": 139
+        },
+        {
+          "phase": "friction",
+          "from": 140,
+          "to": 143
+        },
+        {
+          "phase": "demonstration",
+          "from": 144,
+          "to": 147
+        },
+        {
+          "phase": "escalation",
+          "from": 148,
+          "to": 151
+        },
+        {
+          "phase": "resource",
+          "from": 152,
+          "to": 154
+        },
+        {
+          "phase": "confrontation",
+          "from": 155,
+          "to": 161
+        },
+        {
+          "phase": "departure",
+          "from": 162,
+          "to": 164
+        }
+      ],
+      "tension": {
+        "open": 4,
+        "peak": 10,
+        "close": 4
+      },
+      "gain_on_close": "a Kiln house's failures",
+      "stake": "a person who gains nothing by him"
+    },
+    {
+      "id": "A09",
+      "movement": "M3",
+      "chapters": [
+        165,
+        186
+      ],
+      "length": 22,
+      "scale_tier": 4,
+      "pressure_source": "the last people who could stop him",
+      "central_question": "Can he keep nine hundred million people while the last people who could stop him holds?",
+      "promise": "He enters with nine hundred million people intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out the ladder's top.",
+      "licensed_environments": [
+        "country",
+        "moon-settlement",
+        "wilderness"
+      ],
+      "licensed_character_roles": [
+        "antagonist",
         "successor",
+        "the-discarded"
+      ],
+      "phases": [
+        {
+          "phase": "arrival",
+          "from": 165,
+          "to": 167
+        },
+        {
+          "phase": "friction",
+          "from": 168,
+          "to": 170
+        },
+        {
+          "phase": "demonstration",
+          "from": 171,
+          "to": 173
+        },
+        {
+          "phase": "escalation",
+          "from": 174,
+          "to": 177
+        },
+        {
+          "phase": "resource",
+          "from": 178,
+          "to": 180
+        },
+        {
+          "phase": "confrontation",
+          "from": 181,
+          "to": 184
+        },
+        {
+          "phase": "departure",
+          "from": 185,
+          "to": 186
+        }
+      ],
+      "tension": {
+        "open": 6,
+        "peak": 10,
+        "close": 3
+      },
+      "gain_on_close": "the ladder's top",
+      "stake": "nine hundred million people"
+    },
+    {
+      "id": "A10",
+      "movement": "M3",
+      "chapters": [
+        187,
+        213
+      ],
+      "length": 27,
+      "scale_tier": 4,
+      "pressure_source": "a place he cannot bring himself to burn",
+      "central_question": "Can he keep the count while a place he cannot bring himself to burn holds?",
+      "promise": "He enters with the count intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out the thin places made deliberately.",
+      "licensed_environments": [
+        "country",
+        "moon-settlement",
+        "wilderness"
+      ],
+      "licensed_character_roles": [
+        "antagonist",
         "the-discarded",
         "the-one-who-stays"
       ],
       "phases": [
         {
           "phase": "arrival",
-          "from": 131,
-          "to": 134
-        },
-        {
-          "phase": "friction",
-          "from": 135,
-          "to": 139
-        },
-        {
-          "phase": "demonstration",
-          "from": 140,
-          "to": 143
-        },
-        {
-          "phase": "escalation",
-          "from": 144,
-          "to": 148
-        },
-        {
-          "phase": "resource",
-          "from": 149,
-          "to": 152
-        },
-        {
-          "phase": "confrontation",
-          "from": 153,
-          "to": 158
-        },
-        {
-          "phase": "departure",
-          "from": 159,
-          "to": 161
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 9,
-        "close": 5
-      },
-      "gain_on_close": "a workshop's failures",
-      "stake": "a body he cannot explain"
-    },
-    {
-      "id": "A06",
-      "chapters": [
-        162,
-        250
-      ],
-      "length": 89,
-      "scale_tier": 0,
-      "pressure_source": "law written for someone else",
-      "central_question": "Can he keep a body he cannot explain while law written for someone else holds?",
-      "promise": "He enters with a body he cannot explain intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a route nobody else knows.",
-      "licensed_environments": [
-        "academy",
-        "city-district"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "institution-face",
-        "mentor",
-        "rival",
-        "successor"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 162,
-          "to": 172
-        },
-        {
-          "phase": "friction",
-          "from": 173,
-          "to": 186
-        },
-        {
-          "phase": "demonstration",
           "from": 187,
+          "to": 190
+        },
+        {
+          "phase": "friction",
+          "from": 191,
+          "to": 194
+        },
+        {
+          "phase": "demonstration",
+          "from": 195,
           "to": 198
         },
         {
           "phase": "escalation",
           "from": 199,
-          "to": 212
+          "to": 202
         },
         {
           "phase": "resource",
-          "from": 213,
-          "to": 223
+          "from": 203,
+          "to": 205
         },
         {
           "phase": "confrontation",
-          "from": 224,
-          "to": 241
+          "from": 206,
+          "to": 210
         },
         {
           "phase": "departure",
-          "from": 242,
-          "to": 250
+          "from": 211,
+          "to": 213
         }
       ],
       "tension": {
-        "open": 3,
-        "peak": 9,
+        "open": 6,
+        "peak": 10,
         "close": 3
       },
-      "gain_on_close": "a route nobody else knows",
-      "stake": "a body he cannot explain"
+      "gain_on_close": "the thin places made deliberately",
+      "stake": "the count"
     },
     {
-      "id": "A07",
+      "id": "A11",
+      "movement": "M3",
       "chapters": [
-        251,
-        276
+        214,
+        243
       ],
-      "length": 26,
-      "scale_tier": 1,
-      "pressure_source": "a quarantine",
-      "central_question": "Can he keep a cache of materials while a quarantine holds?",
-      "promise": "He enters with a cache of materials intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a forged discharge.",
+      "length": 30,
+      "scale_tier": 4,
+      "pressure_source": "a continent organising against him",
+      "central_question": "Can he keep the last thing he said he would not do while a continent organising against him holds?",
+      "promise": "He enters with the last thing he said he would not do intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out nothing he wanted.",
       "licensed_environments": [
-        "ship",
-        "workplace"
+        "country",
+        "orbital-station",
+        "wilderness"
       ],
       "licensed_character_roles": [
-        "dependent",
-        "handler",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated"
+        "antagonist",
+        "successor",
+        "the-one-who-stays"
       ],
       "phases": [
         {
           "phase": "arrival",
-          "from": 251,
-          "to": 253
+          "from": 214,
+          "to": 217
         },
         {
           "phase": "friction",
-          "from": 254,
-          "to": 257
+          "from": 218,
+          "to": 222
         },
         {
           "phase": "demonstration",
-          "from": 258,
-          "to": 261
+          "from": 223,
+          "to": 226
         },
         {
           "phase": "escalation",
-          "from": 262,
-          "to": 265
+          "from": 227,
+          "to": 231
         },
         {
           "phase": "resource",
-          "from": 266,
-          "to": 268
+          "from": 232,
+          "to": 235
         },
         {
           "phase": "confrontation",
-          "from": 269,
-          "to": 273
+          "from": 236,
+          "to": 240
         },
         {
           "phase": "departure",
-          "from": 274,
-          "to": 276
+          "from": 241,
+          "to": 243
         }
       ],
       "tension": {
-        "open": 5,
+        "open": 6,
         "peak": 10,
-        "close": 4
+        "close": 3
       },
-      "gain_on_close": "a forged discharge",
-      "stake": "a cache of materials"
+      "gain_on_close": "nothing he wanted",
+      "stake": "the last thing he said he would not do"
     },
     {
-      "id": "A08",
+      "id": "A12",
+      "movement": "M3",
       "chapters": [
-        277,
-        307
+        244,
+        268
       ],
-      "length": 31,
-      "scale_tier": 1,
-      "pressure_source": "scarcity of a material everyone needs",
-      "central_question": "Can he keep his access to a stage while scarcity of a material everyone needs holds?",
-      "promise": "He enters with his access to a stage intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a technique at Fluent.",
+      "length": 25,
+      "scale_tier": 4,
+      "pressure_source": "the arithmetic itself",
+      "central_question": "Can he keep the only person left who knew him before while the arithmetic itself holds?",
+      "promise": "He enters with the only person left who knew him before intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out a continent.",
       "licensed_environments": [
-        "ship",
-        "workplace"
+        "country",
+        "moon-settlement",
+        "orbital-station"
       ],
       "licensed_character_roles": [
         "antagonist",
-        "dependent",
-        "foil-from-outside",
-        "institution-face",
-        "mentor",
-        "peer-ally",
+        "successor",
         "the-discarded"
       ],
       "phases": [
         {
           "phase": "arrival",
-          "from": 277,
-          "to": 280
+          "from": 244,
+          "to": 246
         },
         {
           "phase": "friction",
-          "from": 281,
-          "to": 285
+          "from": 247,
+          "to": 250
         },
         {
           "phase": "demonstration",
+          "from": 251,
+          "to": 254
+        },
+        {
+          "phase": "escalation",
+          "from": 255,
+          "to": 258
+        },
+        {
+          "phase": "resource",
+          "from": 259,
+          "to": 261
+        },
+        {
+          "phase": "confrontation",
+          "from": 262,
+          "to": 266
+        },
+        {
+          "phase": "departure",
+          "from": 267,
+          "to": 268
+        }
+      ],
+      "tension": {
+        "open": 6,
+        "peak": 10,
+        "close": 3
+      },
+      "gain_on_close": "a continent",
+      "stake": "the only person left who knew him before"
+    },
+    {
+      "id": "A13",
+      "movement": "M4",
+      "chapters": [
+        269,
+        283
+      ],
+      "length": 15,
+      "scale_tier": 5,
+      "pressure_source": "silence",
+      "central_question": "Can he keep whether he tells the truth once while silence holds?",
+      "promise": "He enters with whether he tells the truth once intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out one honest sentence.",
+      "licensed_environments": [
+        "moon-settlement",
+        "orbital-station",
+        "planet-frontier"
+      ],
+      "licensed_character_roles": [
+        "successor",
+        "the-forgiven",
+        "the-one-who-stays"
+      ],
+      "phases": [
+        {
+          "phase": "arrival",
+          "from": 269,
+          "to": 270
+        },
+        {
+          "phase": "friction",
+          "from": 271,
+          "to": 272
+        },
+        {
+          "phase": "demonstration",
+          "from": 273,
+          "to": 274
+        },
+        {
+          "phase": "escalation",
+          "from": 275,
+          "to": 276
+        },
+        {
+          "phase": "resource",
+          "from": 277,
+          "to": 278
+        },
+        {
+          "phase": "confrontation",
+          "from": 279,
+          "to": 281
+        },
+        {
+          "phase": "departure",
+          "from": 282,
+          "to": 283
+        }
+      ],
+      "tension": {
+        "open": 5,
+        "peak": 9,
+        "close": 2
+      },
+      "gain_on_close": "one honest sentence",
+      "stake": "whether he tells the truth once"
+    },
+    {
+      "id": "A14",
+      "movement": "M4",
+      "chapters": [
+        284,
+        299
+      ],
+      "length": 16,
+      "scale_tier": 5,
+      "pressure_source": "the distance to the next star",
+      "central_question": "Can he keep the last unearned kindness offered him while the distance to the next star holds?",
+      "promise": "He enters with the last unearned kindness offered him intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out nothing.",
+      "licensed_environments": [
+        "orbital-station",
+        "planet-frontier",
+        "ship"
+      ],
+      "licensed_character_roles": [
+        "successor",
+        "the-forgiven",
+        "the-one-who-stays"
+      ],
+      "phases": [
+        {
+          "phase": "arrival",
+          "from": 284,
+          "to": 285
+        },
+        {
+          "phase": "friction",
           "from": 286,
+          "to": 287
+        },
+        {
+          "phase": "demonstration",
+          "from": 288,
           "to": 289
         },
         {
           "phase": "escalation",
           "from": 290,
+          "to": 292
+        },
+        {
+          "phase": "resource",
+          "from": 293,
           "to": 294
         },
         {
-          "phase": "resource",
+          "phase": "confrontation",
           "from": 295,
-          "to": 298
-        },
-        {
-          "phase": "confrontation",
-          "from": 299,
-          "to": 304
+          "to": 297
         },
         {
           "phase": "departure",
-          "from": 305,
-          "to": 307
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 8,
-        "close": 2
-      },
-      "gain_on_close": "a technique at Fluent",
-      "stake": "his access to a stage"
-    },
-    {
-      "id": "A09",
-      "chapters": [
-        308,
-        339
-      ],
-      "length": 32,
-      "scale_tier": 1,
-      "pressure_source": "an alliance that requires a hostage",
-      "central_question": "Can he keep a body he cannot explain while an alliance that requires a hostage holds?",
-      "promise": "He enters with a body he cannot explain intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a rival's method.",
-      "licensed_environments": [
-        "ship",
-        "workplace"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "mentor",
-        "patron",
-        "peer-ally",
-        "rival",
-        "the-discarded"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 308,
-          "to": 311
-        },
-        {
-          "phase": "friction",
-          "from": 312,
-          "to": 316
-        },
-        {
-          "phase": "demonstration",
-          "from": 317,
-          "to": 320
-        },
-        {
-          "phase": "escalation",
-          "from": 321,
-          "to": 325
-        },
-        {
-          "phase": "resource",
-          "from": 326,
-          "to": 330
-        },
-        {
-          "phase": "confrontation",
-          "from": 331,
-          "to": 336
-        },
-        {
-          "phase": "departure",
-          "from": 337,
-          "to": 339
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 8,
-        "close": 4
-      },
-      "gain_on_close": "a rival's method",
-      "stake": "a body he cannot explain"
-    },
-    {
-      "id": "A10",
-      "chapters": [
-        340,
-        453
-      ],
-      "length": 114,
-      "scale_tier": 1,
-      "pressure_source": "a harvest that failed",
-      "central_question": "Can he keep the only copy of a document while a harvest that failed holds?",
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a route nobody else knows.",
-      "licensed_environments": [
-        "city",
-        "workplace"
-      ],
-      "licensed_character_roles": [
-        "foil-from-outside",
-        "institution-face",
-        "peer-ally",
-        "rival-escalated",
-        "the-discarded",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 340,
-          "to": 353
-        },
-        {
-          "phase": "friction",
-          "from": 354,
-          "to": 371
-        },
-        {
-          "phase": "demonstration",
-          "from": 372,
-          "to": 387
-        },
-        {
-          "phase": "escalation",
-          "from": 388,
-          "to": 405
-        },
-        {
-          "phase": "resource",
-          "from": 406,
-          "to": 419
-        },
-        {
-          "phase": "confrontation",
-          "from": 420,
-          "to": 442
-        },
-        {
-          "phase": "departure",
-          "from": 443,
-          "to": 453
-        }
-      ],
-      "tension": {
-        "open": 5,
-        "peak": 8,
-        "close": 2
-      },
-      "gain_on_close": "a route nobody else knows",
-      "stake": "the only copy of a document"
-    },
-    {
-      "id": "A11",
-      "chapters": [
-        454,
-        484
-      ],
-      "length": 31,
-      "scale_tier": 2,
-      "pressure_source": "an inheritance nobody wants",
-      "central_question": "Can he keep the only copy of a document while an inheritance nobody wants holds?",
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a map of an unmetered seam.",
-      "licensed_environments": [
-        "ship",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "mentor",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 454,
-          "to": 457
-        },
-        {
-          "phase": "friction",
-          "from": 458,
-          "to": 462
-        },
-        {
-          "phase": "demonstration",
-          "from": 463,
-          "to": 466
-        },
-        {
-          "phase": "escalation",
-          "from": 467,
-          "to": 471
-        },
-        {
-          "phase": "resource",
-          "from": 472,
-          "to": 475
-        },
-        {
-          "phase": "confrontation",
-          "from": 476,
-          "to": 481
-        },
-        {
-          "phase": "departure",
-          "from": 482,
-          "to": 484
+          "from": 298,
+          "to": 299
         }
       ],
       "tension": {
         "open": 5,
         "peak": 9,
-        "close": 5
+        "close": 2
       },
-      "gain_on_close": "a map of an unmetered seam",
-      "stake": "the only copy of a document"
-    },
-    {
-      "id": "A12",
-      "chapters": [
-        485,
-        585
-      ],
-      "length": 101,
-      "scale_tier": 2,
-      "pressure_source": "scarcity of a material everyone needs",
-      "central_question": "Can he keep his access to a stage while scarcity of a material everyone needs holds?",
-      "promise": "He enters with his access to a stage intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a profession rank.",
-      "licensed_environments": [
-        "border-region",
-        "country"
-      ],
-      "licensed_character_roles": [
-        "foil-from-outside",
-        "handler",
-        "institution-face",
-        "mentor",
-        "patron",
-        "peer-ally",
-        "rival",
-        "successor",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 485,
-          "to": 496
-        },
-        {
-          "phase": "friction",
-          "from": 497,
-          "to": 512
-        },
-        {
-          "phase": "demonstration",
-          "from": 513,
-          "to": 527
-        },
-        {
-          "phase": "escalation",
-          "from": 528,
-          "to": 543
-        },
-        {
-          "phase": "resource",
-          "from": 544,
-          "to": 555
-        },
-        {
-          "phase": "confrontation",
-          "from": 556,
-          "to": 575
-        },
-        {
-          "phase": "departure",
-          "from": 576,
-          "to": 585
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 10,
-        "close": 3
-      },
-      "gain_on_close": "a profession rank",
-      "stake": "his access to a stage"
-    },
-    {
-      "id": "A13",
-      "chapters": [
-        586,
-        614
-      ],
-      "length": 29,
-      "scale_tier": 2,
-      "pressure_source": "an alliance that requires a hostage",
-      "central_question": "Can he keep a debt he was repaying quietly while an alliance that requires a hostage holds?",
-      "promise": "He enters with a debt he was repaying quietly intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a technique at Fluent.",
-      "licensed_environments": [
-        "border-region",
-        "country"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "foil-from-outside",
-        "handler",
-        "institution-face",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated",
-        "successor"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 586,
-          "to": 588
-        },
-        {
-          "phase": "friction",
-          "from": 589,
-          "to": 593
-        },
-        {
-          "phase": "demonstration",
-          "from": 594,
-          "to": 597
-        },
-        {
-          "phase": "escalation",
-          "from": 598,
-          "to": 602
-        },
-        {
-          "phase": "resource",
-          "from": 603,
-          "to": 605
-        },
-        {
-          "phase": "confrontation",
-          "from": 606,
-          "to": 611
-        },
-        {
-          "phase": "departure",
-          "from": 612,
-          "to": 614
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 9,
-        "close": 4
-      },
-      "gain_on_close": "a technique at Fluent",
-      "stake": "a debt he was repaying quietly"
-    },
-    {
-      "id": "A14",
-      "chapters": [
-        615,
-        645
-      ],
-      "length": 31,
-      "scale_tier": 2,
-      "pressure_source": "a jurisdiction that does not recognise him",
-      "central_question": "Can he keep the only copy of a document while a jurisdiction that does not recognise him holds?",
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a witness who owes him.",
-      "licensed_environments": [
-        "border-region",
-        "country"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "foil-from-outside",
-        "institution-face",
-        "patron",
-        "peer-ally",
-        "successor",
-        "the-discarded",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 615,
-          "to": 618
-        },
-        {
-          "phase": "friction",
-          "from": 619,
-          "to": 623
-        },
-        {
-          "phase": "demonstration",
-          "from": 624,
-          "to": 627
-        },
-        {
-          "phase": "escalation",
-          "from": 628,
-          "to": 632
-        },
-        {
-          "phase": "resource",
-          "from": 633,
-          "to": 636
-        },
-        {
-          "phase": "confrontation",
-          "from": 637,
-          "to": 642
-        },
-        {
-          "phase": "departure",
-          "from": 643,
-          "to": 645
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 10,
-        "close": 4
-      },
-      "gain_on_close": "a witness who owes him",
-      "stake": "the only copy of a document"
+      "gain_on_close": "nothing",
+      "stake": "the last unearned kindness offered him"
     },
     {
       "id": "A15",
+      "movement": "M4",
       "chapters": [
-        646,
-        679
+        300,
+        317
       ],
-      "length": 34,
-      "scale_tier": 2,
-      "pressure_source": "an alliance that requires a hostage",
-      "central_question": "Can he keep a profession rank while an alliance that requires a hostage holds?",
-      "promise": "He enters with a profession rank intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a profession rank.",
+      "length": 18,
+      "scale_tier": 5,
+      "pressure_source": "being asked what he wanted",
+      "central_question": "Can he keep whether he goes on living while being asked what he wanted holds?",
+      "promise": "He enters with whether he goes on living intact and leaves having spent it, or kept it at a price.",
+      "closes_on": "The confrontation resolves and he carries out a course.",
       "licensed_environments": [
-        "border-region",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "peer-ally",
-        "rival",
-        "the-discarded",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 646,
-          "to": 649
-        },
-        {
-          "phase": "friction",
-          "from": 650,
-          "to": 654
-        },
-        {
-          "phase": "demonstration",
-          "from": 655,
-          "to": 659
-        },
-        {
-          "phase": "escalation",
-          "from": 660,
-          "to": 664
-        },
-        {
-          "phase": "resource",
-          "from": 665,
-          "to": 668
-        },
-        {
-          "phase": "confrontation",
-          "from": 669,
-          "to": 676
-        },
-        {
-          "phase": "departure",
-          "from": 677,
-          "to": 679
-        }
-      ],
-      "tension": {
-        "open": 3,
-        "peak": 8,
-        "close": 3
-      },
-      "gain_on_close": "a profession rank",
-      "stake": "a profession rank"
-    },
-    {
-      "id": "A16",
-      "chapters": [
-        680,
-        704
-      ],
-      "length": 25,
-      "scale_tier": 3,
-      "pressure_source": "scarcity of a material everyone needs",
-      "central_question": "Can he keep the pledge while scarcity of a material everyone needs holds?",
-      "promise": "He enters with the pledge intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a seat at a table.",
-      "licensed_environments": [
-        "border-region",
-        "orbital-station"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "patron",
-        "rival",
-        "the-discarded"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 680,
-          "to": 682
-        },
-        {
-          "phase": "friction",
-          "from": 683,
-          "to": 686
-        },
-        {
-          "phase": "demonstration",
-          "from": 687,
-          "to": 690
-        },
-        {
-          "phase": "escalation",
-          "from": 691,
-          "to": 694
-        },
-        {
-          "phase": "resource",
-          "from": 695,
-          "to": 697
-        },
-        {
-          "phase": "confrontation",
-          "from": 698,
-          "to": 702
-        },
-        {
-          "phase": "departure",
-          "from": 703,
-          "to": 704
-        }
-      ],
-      "tension": {
-        "open": 5,
-        "peak": 9,
-        "close": 4
-      },
-      "gain_on_close": "a seat at a table",
-      "stake": "the pledge"
-    },
-    {
-      "id": "A17",
-      "chapters": [
-        705,
-        734
-      ],
-      "length": 30,
-      "scale_tier": 3,
-      "pressure_source": "a jurisdiction that does not recognise him",
-      "central_question": "Can he keep his place while a jurisdiction that does not recognise him holds?",
-      "promise": "He enters with his place intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a forged discharge.",
-      "licensed_environments": [
-        "border-region",
-        "country"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "foil-from-outside",
-        "institution-face",
-        "peer-ally",
-        "rival",
-        "the-discarded",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 705,
-          "to": 708
-        },
-        {
-          "phase": "friction",
-          "from": 709,
-          "to": 713
-        },
-        {
-          "phase": "demonstration",
-          "from": 714,
-          "to": 717
-        },
-        {
-          "phase": "escalation",
-          "from": 718,
-          "to": 722
-        },
-        {
-          "phase": "resource",
-          "from": 723,
-          "to": 726
-        },
-        {
-          "phase": "confrontation",
-          "from": 727,
-          "to": 731
-        },
-        {
-          "phase": "departure",
-          "from": 732,
-          "to": 734
-        }
-      ],
-      "tension": {
-        "open": 3,
-        "peak": 10,
-        "close": 4
-      },
-      "gain_on_close": "a forged discharge",
-      "stake": "his place"
-    },
-    {
-      "id": "A18",
-      "chapters": [
-        735,
-        768
-      ],
-      "length": 34,
-      "scale_tier": 3,
-      "pressure_source": "a faction split",
-      "central_question": "Can he keep someone else's freedom while a faction split holds?",
-      "promise": "He enters with someone else's freedom intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a bloodline trigger.",
-      "licensed_environments": [
-        "country",
-        "orbital-station"
-      ],
-      "licensed_character_roles": [
-        "foil-from-outside",
-        "institution-face",
-        "patron",
-        "rival-escalated",
-        "successor",
-        "the-discarded"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 735,
-          "to": 738
-        },
-        {
-          "phase": "friction",
-          "from": 739,
-          "to": 743
-        },
-        {
-          "phase": "demonstration",
-          "from": 744,
-          "to": 748
-        },
-        {
-          "phase": "escalation",
-          "from": 749,
-          "to": 753
-        },
-        {
-          "phase": "resource",
-          "from": 754,
-          "to": 758
-        },
-        {
-          "phase": "confrontation",
-          "from": 759,
-          "to": 765
-        },
-        {
-          "phase": "departure",
-          "from": 766,
-          "to": 768
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 10,
-        "close": 3
-      },
-      "gain_on_close": "a bloodline trigger",
-      "stake": "someone else's freedom"
-    },
-    {
-      "id": "A19",
-      "chapters": [
-        769,
-        794
-      ],
-      "length": 26,
-      "scale_tier": 3,
-      "pressure_source": "a bounty",
-      "central_question": "Can he keep a promise made in public while a bounty holds?",
-      "promise": "He enters with a promise made in public intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a seat at a table.",
-      "licensed_environments": [
-        "border-region",
-        "country"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "mentor",
-        "patron",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 769,
-          "to": 771
-        },
-        {
-          "phase": "friction",
-          "from": 772,
-          "to": 775
-        },
-        {
-          "phase": "demonstration",
-          "from": 776,
-          "to": 779
-        },
-        {
-          "phase": "escalation",
-          "from": 780,
-          "to": 783
-        },
-        {
-          "phase": "resource",
-          "from": 784,
-          "to": 786
-        },
-        {
-          "phase": "confrontation",
-          "from": 787,
-          "to": 791
-        },
-        {
-          "phase": "departure",
-          "from": 792,
-          "to": 794
-        }
-      ],
-      "tension": {
-        "open": 3,
-        "peak": 8,
-        "close": 4
-      },
-      "gain_on_close": "a seat at a table",
-      "stake": "a promise made in public"
-    },
-    {
-      "id": "A20",
-      "chapters": [
-        795,
-        830
-      ],
-      "length": 36,
-      "scale_tier": 3,
-      "pressure_source": "a protector who wants something back",
-      "central_question": "Can he keep a person who trusts him while a protector who wants something back holds?",
-      "promise": "He enters with a person who trusts him intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a map of an unmetered seam.",
-      "licensed_environments": [
-        "country",
-        "orbital-station"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "peer-ally",
-        "rival"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 795,
-          "to": 798
-        },
-        {
-          "phase": "friction",
-          "from": 799,
-          "to": 804
-        },
-        {
-          "phase": "demonstration",
-          "from": 805,
-          "to": 809
-        },
-        {
-          "phase": "escalation",
-          "from": 810,
-          "to": 815
-        },
-        {
-          "phase": "resource",
-          "from": 816,
-          "to": 819
-        },
-        {
-          "phase": "confrontation",
-          "from": 820,
-          "to": 826
-        },
-        {
-          "phase": "departure",
-          "from": 827,
-          "to": 830
-        }
-      ],
-      "tension": {
-        "open": 3,
-        "peak": 8,
-        "close": 3
-      },
-      "gain_on_close": "a map of an unmetered seam",
-      "stake": "a person who trusts him"
-    },
-    {
-      "id": "A21",
-      "chapters": [
-        831,
-        885
-      ],
-      "length": 55,
-      "scale_tier": 3,
-      "pressure_source": "a faction split",
-      "central_question": "Can he keep the only copy of a document while a faction split holds?",
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a seat at a table.",
-      "licensed_environments": [
-        "country",
-        "orbital-station"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "foil-from-outside",
-        "institution-face",
-        "patron",
-        "rival-escalated",
-        "successor"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 831,
-          "to": 837
-        },
-        {
-          "phase": "friction",
-          "from": 838,
-          "to": 846
-        },
-        {
-          "phase": "demonstration",
-          "from": 847,
-          "to": 854
-        },
-        {
-          "phase": "escalation",
-          "from": 855,
-          "to": 863
-        },
-        {
-          "phase": "resource",
-          "from": 864,
-          "to": 870
-        },
-        {
-          "phase": "confrontation",
-          "from": 871,
-          "to": 879
-        },
-        {
-          "phase": "departure",
-          "from": 880,
-          "to": 885
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 8,
-        "close": 2
-      },
-      "gain_on_close": "a seat at a table",
-      "stake": "the only copy of a document"
-    },
-    {
-      "id": "A22",
-      "chapters": [
-        886,
-        898
-      ],
-      "length": 13,
-      "scale_tier": 3,
-      "pressure_source": "patronage and obligation",
-      "central_question": "Can he keep the pledge while patronage and obligation holds?",
-      "promise": "He enters with the pledge intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a rival's method.",
-      "licensed_environments": [
-        "border-region",
-        "country"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "institution-face",
-        "peer-ally",
-        "rival-escalated",
-        "successor",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 886,
-          "to": 887
-        },
-        {
-          "phase": "friction",
-          "from": 888,
-          "to": 889
-        },
-        {
-          "phase": "demonstration",
-          "from": 890,
-          "to": 891
-        },
-        {
-          "phase": "escalation",
-          "from": 892,
-          "to": 893
-        },
-        {
-          "phase": "resource",
-          "from": 894,
-          "to": 895
-        },
-        {
-          "phase": "confrontation",
-          "from": 896,
-          "to": 897
-        },
-        {
-          "phase": "departure",
-          "from": 898,
-          "to": 898
-        }
-      ],
-      "tension": {
-        "open": 3,
-        "peak": 9,
-        "close": 5
-      },
-      "gain_on_close": "a rival's method",
-      "stake": "the pledge"
-    },
-    {
-      "id": "A23",
-      "chapters": [
-        899,
-        954
-      ],
-      "length": 56,
-      "scale_tier": 4,
-      "pressure_source": "law written for someone else",
-      "central_question": "Can he keep his access to a stage while law written for someone else holds?",
-      "promise": "He enters with his access to a stage intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a name in a ledger.",
-      "licensed_environments": [
+        "moon-settlement",
         "orbital-station",
-        "wilderness"
+        "ship"
       ],
       "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "peer-ally",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 899,
-          "to": 905
-        },
-        {
-          "phase": "friction",
-          "from": 906,
-          "to": 914
-        },
-        {
-          "phase": "demonstration",
-          "from": 915,
-          "to": 922
-        },
-        {
-          "phase": "escalation",
-          "from": 923,
-          "to": 931
-        },
-        {
-          "phase": "resource",
-          "from": 932,
-          "to": 938
-        },
-        {
-          "phase": "confrontation",
-          "from": 939,
-          "to": 948
-        },
-        {
-          "phase": "departure",
-          "from": 949,
-          "to": 954
-        }
-      ],
-      "tension": {
-        "open": 5,
-        "peak": 9,
-        "close": 4
-      },
-      "gain_on_close": "a name in a ledger",
-      "stake": "his access to a stage"
-    },
-    {
-      "id": "A24",
-      "chapters": [
-        955,
-        980
-      ],
-      "length": 26,
-      "scale_tier": 4,
-      "pressure_source": "patronage and obligation",
-      "central_question": "Can he keep a debt he was repaying quietly while patronage and obligation holds?",
-      "promise": "He enters with a debt he was repaying quietly intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a workshop's failures.",
-      "licensed_environments": [
-        "orbital-station",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "mentor",
-        "patron",
-        "peer-ally",
-        "rival-escalated",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 955,
-          "to": 957
-        },
-        {
-          "phase": "friction",
-          "from": 958,
-          "to": 961
-        },
-        {
-          "phase": "demonstration",
-          "from": 962,
-          "to": 965
-        },
-        {
-          "phase": "escalation",
-          "from": 966,
-          "to": 969
-        },
-        {
-          "phase": "resource",
-          "from": 970,
-          "to": 972
-        },
-        {
-          "phase": "confrontation",
-          "from": 973,
-          "to": 977
-        },
-        {
-          "phase": "departure",
-          "from": 978,
-          "to": 980
-        }
-      ],
-      "tension": {
-        "open": 3,
-        "peak": 9,
-        "close": 5
-      },
-      "gain_on_close": "a workshop's failures",
-      "stake": "a debt he was repaying quietly"
-    },
-    {
-      "id": "A25",
-      "chapters": [
-        981,
-        1009
-      ],
-      "length": 29,
-      "scale_tier": 4,
-      "pressure_source": "a faction split",
-      "central_question": "Can he keep a promise made in public while a faction split holds?",
-      "promise": "He enters with a promise made in public intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a rival's method.",
-      "licensed_environments": [
-        "orbital-station",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "foil-from-outside",
-        "institution-face",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated",
         "successor",
+        "the-forgiven",
         "the-one-who-stays"
       ],
       "phases": [
         {
           "phase": "arrival",
-          "from": 981,
-          "to": 983
+          "from": 300,
+          "to": 301
         },
         {
           "phase": "friction",
-          "from": 984,
-          "to": 988
+          "from": 302,
+          "to": 304
         },
         {
           "phase": "demonstration",
-          "from": 989,
-          "to": 992
+          "from": 305,
+          "to": 307
         },
         {
           "phase": "escalation",
-          "from": 993,
-          "to": 997
+          "from": 308,
+          "to": 310
         },
         {
           "phase": "resource",
-          "from": 998,
-          "to": 1000
+          "from": 311,
+          "to": 312
         },
         {
           "phase": "confrontation",
-          "from": 1001,
-          "to": 1006
+          "from": 313,
+          "to": 315
         },
         {
           "phase": "departure",
-          "from": 1007,
-          "to": 1009
-        }
-      ],
-      "tension": {
-        "open": 3,
-        "peak": 10,
-        "close": 4
-      },
-      "gain_on_close": "a rival's method",
-      "stake": "a promise made in public"
-    },
-    {
-      "id": "A26",
-      "chapters": [
-        1010,
-        1047
-      ],
-      "length": 38,
-      "scale_tier": 4,
-      "pressure_source": "a rival with better standing",
-      "central_question": "Can he keep a cache of materials while a rival with better standing holds?",
-      "promise": "He enters with a cache of materials intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a seat at a table.",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "institution-face",
-        "mentor",
-        "successor"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 1010,
-          "to": 1014
-        },
-        {
-          "phase": "friction",
-          "from": 1015,
-          "to": 1020
-        },
-        {
-          "phase": "demonstration",
-          "from": 1021,
-          "to": 1025
-        },
-        {
-          "phase": "escalation",
-          "from": 1026,
-          "to": 1031
-        },
-        {
-          "phase": "resource",
-          "from": 1032,
-          "to": 1036
-        },
-        {
-          "phase": "confrontation",
-          "from": 1037,
-          "to": 1043
-        },
-        {
-          "phase": "departure",
-          "from": 1044,
-          "to": 1047
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 8,
-        "close": 4
-      },
-      "gain_on_close": "a seat at a table",
-      "stake": "a cache of materials"
-    },
-    {
-      "id": "A27",
-      "chapters": [
-        1048,
-        1077
-      ],
-      "length": 30,
-      "scale_tier": 4,
-      "pressure_source": "a rival with better standing",
-      "central_question": "Can he keep the only copy of a document while a rival with better standing holds?",
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a name in a ledger.",
-      "licensed_environments": [
-        "moon-settlement",
-        "orbital-station"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "handler",
-        "institution-face",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 1048,
-          "to": 1051
-        },
-        {
-          "phase": "friction",
-          "from": 1052,
-          "to": 1056
-        },
-        {
-          "phase": "demonstration",
-          "from": 1057,
-          "to": 1060
-        },
-        {
-          "phase": "escalation",
-          "from": 1061,
-          "to": 1065
-        },
-        {
-          "phase": "resource",
-          "from": 1066,
-          "to": 1069
-        },
-        {
-          "phase": "confrontation",
-          "from": 1070,
-          "to": 1074
-        },
-        {
-          "phase": "departure",
-          "from": 1075,
-          "to": 1077
+          "from": 316,
+          "to": 317
         }
       ],
       "tension": {
@@ -1972,1809 +1084,205 @@
         "peak": 9,
         "close": 2
       },
-      "gain_on_close": "a name in a ledger",
-      "stake": "the only copy of a document"
-    },
-    {
-      "id": "A28",
-      "chapters": [
-        1078,
-        1104
-      ],
-      "length": 27,
-      "scale_tier": 4,
-      "pressure_source": "a market cornered",
-      "central_question": "Can he keep someone else's freedom while a market cornered holds?",
-      "promise": "He enters with someone else's freedom intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a route nobody else knows.",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "foil-from-outside",
-        "patron",
-        "rival",
-        "successor",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 1078,
-          "to": 1080
-        },
-        {
-          "phase": "friction",
-          "from": 1081,
-          "to": 1084
-        },
-        {
-          "phase": "demonstration",
-          "from": 1085,
-          "to": 1088
-        },
-        {
-          "phase": "escalation",
-          "from": 1089,
-          "to": 1093
-        },
-        {
-          "phase": "resource",
-          "from": 1094,
-          "to": 1096
-        },
-        {
-          "phase": "confrontation",
-          "from": 1097,
-          "to": 1101
-        },
-        {
-          "phase": "departure",
-          "from": 1102,
-          "to": 1104
-        }
-      ],
-      "tension": {
-        "open": 5,
-        "peak": 8,
-        "close": 4
-      },
-      "gain_on_close": "a route nobody else knows",
-      "stake": "someone else's freedom"
-    },
-    {
-      "id": "A29",
-      "chapters": [
-        1105,
-        1141
-      ],
-      "length": 37,
-      "scale_tier": 4,
-      "pressure_source": "a faction split",
-      "central_question": "Can he keep the only copy of a document while a faction split holds?",
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a rival's method.",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "institution-face",
-        "mentor",
-        "patron",
-        "peer-ally",
-        "successor",
-        "the-discarded"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 1105,
-          "to": 1108
-        },
-        {
-          "phase": "friction",
-          "from": 1109,
-          "to": 1114
-        },
-        {
-          "phase": "demonstration",
-          "from": 1115,
-          "to": 1119
-        },
-        {
-          "phase": "escalation",
-          "from": 1120,
-          "to": 1126
-        },
-        {
-          "phase": "resource",
-          "from": 1127,
-          "to": 1130
-        },
-        {
-          "phase": "confrontation",
-          "from": 1131,
-          "to": 1137
-        },
-        {
-          "phase": "departure",
-          "from": 1138,
-          "to": 1141
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 9,
-        "close": 3
-      },
-      "gain_on_close": "a rival's method",
-      "stake": "the only copy of a document"
-    },
-    {
-      "id": "A30",
-      "chapters": [
-        1142,
-        1170
-      ],
-      "length": 29,
-      "scale_tier": 5,
-      "pressure_source": "a sealed record",
-      "central_question": "Can he keep someone else's freedom while a sealed record holds?",
-      "promise": "He enters with someone else's freedom intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a map of an unmetered seam.",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "foil-from-outside",
-        "institution-face",
-        "peer-ally",
-        "rival",
-        "successor",
-        "the-discarded"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 1142,
-          "to": 1144
-        },
-        {
-          "phase": "friction",
-          "from": 1145,
-          "to": 1149
-        },
-        {
-          "phase": "demonstration",
-          "from": 1150,
-          "to": 1153
-        },
-        {
-          "phase": "escalation",
-          "from": 1154,
-          "to": 1158
-        },
-        {
-          "phase": "resource",
-          "from": 1159,
-          "to": 1161
-        },
-        {
-          "phase": "confrontation",
-          "from": 1162,
-          "to": 1167
-        },
-        {
-          "phase": "departure",
-          "from": 1168,
-          "to": 1170
-        }
-      ],
-      "tension": {
-        "open": 3,
-        "peak": 10,
-        "close": 5
-      },
-      "gain_on_close": "a map of an unmetered seam",
-      "stake": "someone else's freedom"
-    },
-    {
-      "id": "A31",
-      "chapters": [
-        1171,
-        1196
-      ],
-      "length": 26,
-      "scale_tier": 5,
-      "pressure_source": "a rival with better standing",
-      "central_question": "Can he keep the pledge while a rival with better standing holds?",
-      "promise": "He enters with the pledge intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a forged discharge.",
-      "licensed_environments": [
-        "planet-frontier",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "handler",
-        "mentor",
-        "peer-ally",
-        "rival",
-        "rival-escalated",
-        "successor"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 1171,
-          "to": 1173
-        },
-        {
-          "phase": "friction",
-          "from": 1174,
-          "to": 1177
-        },
-        {
-          "phase": "demonstration",
-          "from": 1178,
-          "to": 1181
-        },
-        {
-          "phase": "escalation",
-          "from": 1182,
-          "to": 1185
-        },
-        {
-          "phase": "resource",
-          "from": 1186,
-          "to": 1188
-        },
-        {
-          "phase": "confrontation",
-          "from": 1189,
-          "to": 1193
-        },
-        {
-          "phase": "departure",
-          "from": 1194,
-          "to": 1196
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 10,
-        "close": 3
-      },
-      "gain_on_close": "a forged discharge",
-      "stake": "the pledge"
-    },
-    {
-      "id": "A32",
-      "chapters": [
-        1197,
-        1221
-      ],
-      "length": 25,
-      "scale_tier": 5,
-      "pressure_source": "an inheritance nobody wants",
-      "central_question": "Can he keep someone else's freedom while an inheritance nobody wants holds?",
-      "promise": "He enters with someone else's freedom intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a bloodline trigger.",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "foil-from-outside",
-        "institution-face",
-        "peer-ally",
-        "rival-escalated",
-        "successor"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 1197,
-          "to": 1199
-        },
-        {
-          "phase": "friction",
-          "from": 1200,
-          "to": 1203
-        },
-        {
-          "phase": "demonstration",
-          "from": 1204,
-          "to": 1207
-        },
-        {
-          "phase": "escalation",
-          "from": 1208,
-          "to": 1211
-        },
-        {
-          "phase": "resource",
-          "from": 1212,
-          "to": 1214
-        },
-        {
-          "phase": "confrontation",
-          "from": 1215,
-          "to": 1219
-        },
-        {
-          "phase": "departure",
-          "from": 1220,
-          "to": 1221
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 8,
-        "close": 2
-      },
-      "gain_on_close": "a bloodline trigger",
-      "stake": "someone else's freedom"
-    },
-    {
-      "id": "A33",
-      "chapters": [
-        1222,
-        1257
-      ],
-      "length": 36,
-      "scale_tier": 5,
-      "pressure_source": "scarcity of a material everyone needs",
-      "central_question": "Can he keep a body he cannot explain while scarcity of a material everyone needs holds?",
-      "promise": "He enters with a body he cannot explain intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a cache.",
-      "licensed_environments": [
-        "planet-frontier",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "peer-ally",
-        "rival",
-        "rival-escalated"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 1222,
-          "to": 1225
-        },
-        {
-          "phase": "friction",
-          "from": 1226,
-          "to": 1231
-        },
-        {
-          "phase": "demonstration",
-          "from": 1232,
-          "to": 1236
-        },
-        {
-          "phase": "escalation",
-          "from": 1237,
-          "to": 1242
-        },
-        {
-          "phase": "resource",
-          "from": 1243,
-          "to": 1246
-        },
-        {
-          "phase": "confrontation",
-          "from": 1247,
-          "to": 1253
-        },
-        {
-          "phase": "departure",
-          "from": 1254,
-          "to": 1257
-        }
-      ],
-      "tension": {
-        "open": 4,
-        "peak": 8,
-        "close": 5
-      },
-      "gain_on_close": "a cache",
-      "stake": "a body he cannot explain"
-    },
-    {
-      "id": "A34",
-      "chapters": [
-        1258,
-        1278
-      ],
-      "length": 21,
-      "scale_tier": 5,
-      "pressure_source": "an inheritance nobody wants",
-      "central_question": "Can he keep a body he cannot explain while an inheritance nobody wants holds?",
-      "promise": "He enters with a body he cannot explain intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a route nobody else knows.",
-      "licensed_environments": [
-        "planet-frontier",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "dependent",
-        "institution-face",
-        "mentor",
-        "successor",
-        "the-discarded"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 1258,
-          "to": 1260
-        },
-        {
-          "phase": "friction",
-          "from": 1261,
-          "to": 1263
-        },
-        {
-          "phase": "demonstration",
-          "from": 1264,
-          "to": 1266
-        },
-        {
-          "phase": "escalation",
-          "from": 1267,
-          "to": 1269
-        },
-        {
-          "phase": "resource",
-          "from": 1270,
-          "to": 1272
-        },
-        {
-          "phase": "confrontation",
-          "from": 1273,
-          "to": 1276
-        },
-        {
-          "phase": "departure",
-          "from": 1277,
-          "to": 1278
-        }
-      ],
-      "tension": {
-        "open": 3,
-        "peak": 10,
-        "close": 4
-      },
-      "gain_on_close": "a route nobody else knows",
-      "stake": "a body he cannot explain"
-    },
-    {
-      "id": "A35",
-      "chapters": [
-        1279,
-        1316
-      ],
-      "length": 38,
-      "scale_tier": 5,
-      "pressure_source": "a protector who wants something back",
-      "central_question": "Can he keep a profession rank while a protector who wants something back holds?",
-      "promise": "He enters with a profession rank intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a route nobody else knows.",
-      "licensed_environments": [
-        "planet-frontier",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "patron",
-        "peer-ally",
-        "successor",
-        "the-discarded",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 1279,
-          "to": 1283
-        },
-        {
-          "phase": "friction",
-          "from": 1284,
-          "to": 1289
-        },
-        {
-          "phase": "demonstration",
-          "from": 1290,
-          "to": 1294
-        },
-        {
-          "phase": "escalation",
-          "from": 1295,
-          "to": 1300
-        },
-        {
-          "phase": "resource",
-          "from": 1301,
-          "to": 1305
-        },
-        {
-          "phase": "confrontation",
-          "from": 1306,
-          "to": 1312
-        },
-        {
-          "phase": "departure",
-          "from": 1313,
-          "to": 1316
-        }
-      ],
-      "tension": {
-        "open": 5,
-        "peak": 9,
-        "close": 4
-      },
-      "gain_on_close": "a route nobody else knows",
-      "stake": "a profession rank"
-    },
-    {
-      "id": "A36",
-      "chapters": [
-        1317,
-        1337
-      ],
-      "length": 21,
-      "scale_tier": 5,
-      "pressure_source": "an alliance that requires a hostage",
-      "central_question": "Can he keep a profession rank while an alliance that requires a hostage holds?",
-      "promise": "He enters with a profession rank intact and leaves having traded it, or kept it at a price.",
-      "closes_on": "The confrontation resolves and he carries out a rival's method.",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "handler",
-        "institution-face",
-        "peer-ally",
-        "rival",
-        "rival-escalated",
-        "the-one-who-stays"
-      ],
-      "phases": [
-        {
-          "phase": "arrival",
-          "from": 1317,
-          "to": 1319
-        },
-        {
-          "phase": "friction",
-          "from": 1320,
-          "to": 1322
-        },
-        {
-          "phase": "demonstration",
-          "from": 1323,
-          "to": 1325
-        },
-        {
-          "phase": "escalation",
-          "from": 1326,
-          "to": 1328
-        },
-        {
-          "phase": "resource",
-          "from": 1329,
-          "to": 1331
-        },
-        {
-          "phase": "confrontation",
-          "from": 1332,
-          "to": 1335
-        },
-        {
-          "phase": "departure",
-          "from": 1336,
-          "to": 1337
-        }
-      ],
-      "tension": {
-        "open": 5,
-        "peak": 9,
-        "close": 2
-      },
-      "gain_on_close": "a rival's method",
-      "stake": "a profession rank"
+      "gain_on_close": "a course",
+      "stake": "whether he goes on living"
     }
   ],
   "chapter_types": [
-    "travel",
-    "travel",
-    "mixed",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "mixed",
-    "negotiation",
-    "mixed",
-    "travel",
-    "mixed",
-    "mixed",
-    "travel",
-    "mixed",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "revelation",
-    "negotiation",
-    "mixed",
-    "revelation",
-    "training",
-    "training",
-    "combat",
-    "combat",
-    "negotiation",
-    "combat",
-    "mixed",
-    "combat",
-    "training",
-    "travel",
-    "revelation",
-    "revelation",
-    "revelation",
-    "travel",
-    "negotiation",
-    "combat",
-    "combat",
-    "negotiation",
-    "negotiation",
-    "revelation",
-    "travel",
-    "mixed",
-    "training",
-    "revelation",
-    "travel",
-    "negotiation",
-    "revelation",
-    "travel",
-    "travel",
-    "travel",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "training",
-    "negotiation",
-    "revelation",
-    "training",
-    "mixed",
-    "combat",
-    "combat",
-    "mixed",
-    "travel",
-    "combat",
-    "combat",
-    "combat",
-    "revelation",
-    "training",
-    "training",
-    "training",
-    "travel",
-    "mixed",
-    "negotiation",
-    "revelation",
-    "negotiation",
-    "mixed",
-    "negotiation",
-    "revelation",
-    "mixed",
-    "mixed",
-    "revelation",
-    "mixed",
-    "revelation",
-    "combat",
-    "negotiation",
-    "training",
-    "training",
-    "training",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "revelation",
-    "travel",
-    "travel",
-    "training",
-    "mixed",
-    "training",
-    "combat",
-    "combat",
-    "negotiation",
-    "revelation",
-    "revelation",
-    "revelation",
-    "combat",
-    "revelation",
-    "revelation",
-    "training",
-    "combat",
-    "travel",
-    "negotiation",
-    "travel",
-    "training",
-    "training",
-    "combat",
-    "revelation",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "mixed",
-    "revelation",
-    "travel",
-    "revelation",
-    "revelation",
-    "travel",
-    "training",
-    "training",
-    "negotiation",
-    "revelation",
-    "revelation",
-    "travel",
-    "travel",
-    "travel",
-    "combat",
-    "mixed",
-    "training",
-    "travel",
-    "negotiation",
-    "training",
-    "training",
-    "negotiation",
-    "negotiation",
-    "travel",
-    "revelation",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "training",
-    "mixed",
-    "mixed",
-    "combat",
-    "travel",
-    "revelation",
-    "negotiation",
-    "negotiation",
-    "revelation",
-    "revelation",
-    "combat",
-    "travel",
-    "travel",
-    "travel",
-    "travel",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "combat",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "mixed",
-    "revelation",
-    "mixed",
-    "mixed",
-    "negotiation",
-    "combat",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "revelation",
-    "travel",
-    "revelation",
-    "revelation",
-    "mixed",
-    "revelation",
-    "revelation",
-    "mixed",
-    "mixed",
-    "travel",
-    "mixed",
-    "revelation",
-    "revelation",
-    "travel",
-    "negotiation",
-    "revelation",
-    "training",
-    "revelation",
-    "negotiation",
-    "travel",
-    "training",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "training",
-    "training",
-    "training",
-    "combat",
-    "combat",
-    "negotiation",
-    "mixed",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "revelation",
-    "revelation",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "travel",
-    "travel",
-    "revelation",
-    "combat",
-    "combat",
-    "negotiation",
-    "travel",
-    "combat",
-    "revelation",
-    "mixed",
-    "travel",
-    "revelation",
-    "negotiation",
-    "travel",
-    "combat",
-    "combat",
-    "mixed",
-    "mixed",
-    "travel",
-    "training",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "revelation",
-    "revelation",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "mixed",
-    "revelation",
-    "negotiation",
-    "training",
-    "training",
-    "travel",
-    "combat",
-    "combat",
-    "combat",
-    "travel",
-    "combat",
-    "combat",
-    "revelation",
-    "travel",
-    "travel",
-    "travel",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "negotiation",
-    "travel",
-    "negotiation",
-    "training",
-    "revelation",
-    "revelation",
-    "revelation",
-    "revelation",
-    "revelation",
-    "training",
-    "travel",
-    "negotiation",
-    "combat",
-    "mixed",
-    "negotiation",
-    "revelation",
-    "mixed",
-    "travel",
-    "mixed",
-    "combat",
-    "combat",
-    "combat",
-    "training",
-    "revelation",
-    "mixed",
-    "revelation",
-    "travel",
-    "travel",
-    "revelation",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "training",
-    "mixed",
-    "negotiation",
-    "revelation",
-    "combat",
-    "revelation",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "travel",
-    "revelation",
-    "negotiation",
-    "travel",
-    "training",
-    "revelation",
-    "mixed",
-    "revelation",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "mixed",
-    "mixed",
-    "mixed",
-    "travel",
-    "travel",
-    "combat",
-    "combat",
-    "training",
-    "negotiation",
-    "travel",
-    "travel",
-    "mixed",
-    "travel",
-    "mixed",
-    "mixed",
-    "combat",
-    "combat",
-    "revelation",
-    "negotiation",
-    "negotiation",
-    "combat",
-    "combat",
-    "training",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "travel",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "mixed",
-    "revelation",
-    "revelation",
-    "revelation",
-    "mixed",
-    "revelation",
-    "negotiation",
-    "revelation",
-    "revelation",
-    "revelation",
-    "revelation",
-    "mixed",
-    "revelation",
-    "travel",
-    "revelation",
-    "mixed",
-    "revelation",
-    "mixed",
-    "negotiation",
-    "training",
-    "travel",
-    "negotiation",
-    "revelation",
-    "negotiation",
-    "combat",
-    "training",
-    "mixed",
-    "mixed",
-    "mixed",
-    "training",
-    "negotiation",
-    "travel",
-    "combat",
-    "mixed",
-    "mixed",
-    "revelation",
-    "training",
-    "revelation",
-    "training",
-    "travel",
-    "training",
-    "negotiation",
-    "revelation",
-    "training",
-    "revelation",
-    "training",
-    "negotiation",
-    "mixed",
-    "negotiation",
-    "combat",
-    "negotiation",
-    "training",
-    "travel",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "training",
-    "mixed",
-    "combat",
-    "revelation",
-    "combat",
-    "revelation",
-    "mixed",
-    "revelation",
-    "negotiation",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "negotiation",
-    "combat",
-    "combat",
-    "combat",
-    "mixed",
-    "training",
-    "travel",
-    "travel",
-    "travel",
-    "revelation",
-    "training",
-    "training",
-    "negotiation",
-    "combat",
-    "combat",
-    "negotiation",
-    "travel",
-    "negotiation",
-    "mixed",
-    "revelation",
-    "revelation",
-    "mixed",
-    "mixed",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "mixed",
-    "training",
-    "revelation",
-    "revelation",
-    "combat",
-    "combat",
-    "combat",
-    "revelation",
-    "revelation",
-    "revelation",
-    "combat",
-    "negotiation",
-    "travel",
-    "travel",
-    "travel",
-    "travel",
-    "travel",
-    "travel",
-    "travel",
-    "training",
-    "combat",
-    "training",
-    "training",
-    "travel",
-    "negotiation",
-    "combat",
-    "negotiation",
-    "training",
-    "negotiation",
-    "training",
-    "training",
-    "training",
-    "revelation",
-    "mixed",
-    "negotiation",
-    "negotiation",
-    "combat",
-    "negotiation",
-    "revelation",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "revelation",
-    "combat",
-    "revelation",
-    "training",
-    "mixed",
-    "training",
-    "revelation",
-    "mixed",
-    "negotiation",
-    "revelation",
-    "negotiation",
-    "combat",
-    "negotiation",
-    "combat",
-    "negotiation",
-    "travel",
-    "revelation",
-    "negotiation",
-    "mixed",
-    "negotiation",
-    "combat",
-    "training",
-    "revelation",
-    "negotiation",
-    "mixed",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "revelation",
-    "training",
-    "training",
-    "training",
-    "training",
-    "training",
-    "revelation",
-    "training",
-    "training",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "combat",
-    "combat",
-    "training",
-    "travel",
-    "travel",
-    "combat",
-    "combat",
-    "mixed",
-    "negotiation",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "travel",
-    "combat",
-    "combat",
-    "combat",
-    "travel",
-    "revelation",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "training",
-    "combat",
-    "combat",
-    "negotiation",
-    "mixed",
-    "travel",
-    "training",
-    "mixed",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "combat",
-    "combat",
-    "negotiation",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "negotiation",
-    "mixed",
-    "training",
-    "mixed",
-    "training",
-    "training",
-    "travel",
-    "revelation",
-    "combat",
-    "combat",
-    "combat",
-    "training",
-    "revelation",
-    "mixed",
-    "revelation",
-    "travel",
-    "combat",
-    "combat",
-    "travel",
-    "travel",
-    "revelation",
-    "travel",
-    "negotiation",
-    "revelation",
-    "negotiation",
-    "training",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "combat",
-    "negotiation",
-    "revelation",
-    "travel",
-    "mixed",
-    "travel",
-    "revelation",
-    "revelation",
-    "travel",
-    "travel",
-    "combat",
-    "combat",
-    "combat",
-    "negotiation",
-    "travel",
-    "revelation",
-    "negotiation",
-    "negotiation",
-    "combat",
-    "mixed",
-    "combat",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "revelation",
-    "revelation",
-    "mixed",
-    "travel",
-    "combat",
-    "combat",
-    "combat",
-    "negotiation",
-    "mixed",
-    "training",
-    "training",
-    "combat",
-    "training",
-    "revelation",
-    "revelation",
-    "combat",
-    "training",
-    "training",
-    "revelation",
-    "combat",
-    "revelation",
-    "combat",
-    "revelation",
-    "revelation",
-    "mixed",
-    "negotiation",
-    "travel",
-    "training",
-    "training",
-    "training",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "revelation",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "revelation",
-    "negotiation",
-    "negotiation",
-    "training",
-    "training",
-    "training",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "revelation",
-    "revelation",
-    "training",
-    "combat",
-    "mixed",
-    "travel",
-    "travel",
-    "travel",
-    "mixed",
-    "negotiation",
-    "revelation",
-    "travel",
-    "mixed",
-    "revelation",
-    "training",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "training",
-    "training",
-    "mixed",
-    "training",
-    "negotiation",
-    "training",
-    "training",
-    "revelation",
-    "combat",
-    "mixed",
-    "travel",
     "negotiation",
-    "mixed",
-    "revelation",
-    "revelation",
-    "revelation",
-    "revelation",
-    "travel",
     "negotiation",
-    "combat",
-    "revelation",
     "travel",
     "travel",
-    "training",
     "travel",
-    "revelation",
-    "revelation",
-    "training",
-    "revelation",
-    "combat",
-    "combat",
-    "combat",
     "negotiation",
-    "combat",
-    "training",
-    "training",
-    "revelation",
-    "training",
-    "training",
-    "combat",
-    "combat",
-    "mixed",
     "revelation",
-    "combat",
-    "combat",
     "mixed",
-    "travel",
-    "combat",
-    "revelation",
-    "travel",
-    "travel",
-    "travel",
-    "negotiation",
-    "combat",
-    "combat",
-    "revelation",
-    "revelation",
-    "training",
-    "training",
     "revelation",
-    "training",
-    "training",
     "negotiation",
-    "training",
-    "combat",
-    "combat",
-    "travel",
-    "travel",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
     "revelation",
-    "travel",
     "revelation",
-    "travel",
-    "travel",
     "travel",
     "negotiation",
-    "revelation",
-    "training",
-    "revelation",
-    "combat",
-    "training",
-    "travel",
-    "revelation",
-    "revelation",
     "revelation",
     "mixed",
-    "combat",
-    "negotiation",
-    "negotiation",
-    "negotiation",
     "negotiation",
-    "travel",
-    "negotiation",
-    "mixed",
-    "revelation",
-    "revelation",
-    "training",
-    "revelation",
-    "combat",
-    "travel",
-    "combat",
-    "revelation",
-    "combat",
-    "combat",
     "revelation",
     "combat",
     "combat",
-    "revelation",
-    "revelation",
-    "training",
-    "travel",
-    "travel",
-    "revelation",
-    "travel",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "training",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "mixed",
-    "travel",
-    "negotiation",
-    "revelation",
     "mixed",
-    "revelation",
-    "training",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "combat",
-    "negotiation",
-    "negotiation",
-    "travel",
     "revelation",
-    "combat",
     "revelation",
     "training",
-    "revelation",
-    "revelation",
-    "negotiation",
-    "revelation",
-    "travel",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "revelation",
-    "revelation",
     "training",
-    "revelation",
     "combat",
-    "revelation",
-    "training",
     "combat",
-    "negotiation",
-    "revelation",
-    "travel",
-    "travel",
-    "negotiation",
-    "negotiation",
-    "training",
-    "training",
-    "training",
-    "training",
-    "revelation",
-    "travel",
-    "revelation",
-    "travel",
-    "travel",
-    "travel",
-    "travel",
-    "travel",
-    "mixed",
-    "mixed",
-    "negotiation",
-    "mixed",
-    "negotiation",
-    "travel",
-    "training",
-    "travel",
-    "travel",
-    "revelation",
-    "travel",
-    "travel",
-    "training",
-    "revelation",
-    "revelation",
-    "mixed",
-    "mixed",
-    "negotiation",
-    "negotiation",
-    "negotiation",
-    "revelation",
-    "negotiation",
-    "travel",
     "revelation",
-    "mixed",
-    "negotiation",
-    "mixed",
     "mixed",
     "negotiation",
-    "training",
-    "training",
-    "negotiation",
-    "travel",
     "travel",
-    "combat",
-    "combat",
-    "combat",
-    "training",
-    "training",
     "mixed",
-    "travel",
-    "revelation",
-    "travel",
     "revelation",
     "revelation",
-    "revelation",
-    "revelation",
-    "combat",
-    "revelation",
-    "negotiation",
-    "travel",
-    "combat",
-    "training",
-    "negotiation",
-    "travel",
-    "travel",
-    "travel",
-    "travel",
-    "revelation",
-    "revelation",
-    "mixed",
-    "mixed",
-    "combat",
-    "combat",
-    "training",
-    "training",
-    "training",
     "combat",
     "combat",
     "combat",
-    "mixed",
-    "mixed",
     "revelation",
-    "negotiation",
-    "revelation",
-    "revelation",
-    "mixed",
-    "travel",
-    "travel",
-    "training",
-    "training",
     "mixed",
-    "revelation",
-    "revelation",
     "mixed",
-    "travel",
-    "negotiation",
-    "combat",
-    "negotiation",
-    "negotiation",
-    "travel",
-    "negotiation",
-    "revelation",
-    "training",
-    "negotiation",
-    "negotiation",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
     "revelation",
-    "training",
-    "negotiation",
-    "travel",
-    "travel",
-    "combat",
-    "travel",
-    "travel",
-    "negotiation",
-    "mixed",
-    "mixed",
     "training",
     "negotiation",
-    "negotiation",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
     "negotiation",
     "negotiation",
+    "negotiation",
     "mixed",
-    "revelation",
     "mixed",
+    "revelation",
     "negotiation",
     "travel",
-    "training",
+    "mixed",
+    "travel",
     "revelation",
+    "mixed",
     "training",
+    "combat",
     "training",
-    "revelation",
-    "revelation",
     "combat",
     "combat",
     "combat",
     "combat",
     "combat",
     "combat",
-    "revelation",
+    "combat",
     "negotiation",
-    "mixed",
+    "negotiation",
     "revelation",
+    "negotiation",
     "travel",
+    "revelation",
     "revelation",
+    "negotiation",
+    "revelation",
     "revelation",
+    "negotiation",
+    "travel",
     "travel",
     "travel",
     "travel",
     "travel",
     "negotiation",
+    "revelation",
+    "negotiation",
+    "training",
+    "combat",
+    "training",
+    "training",
+    "revelation",
+    "revelation",
     "revelation",
+    "revelation",
+    "negotiation",
+    "negotiation",
     "travel",
+    "mixed",
     "revelation",
     "revelation",
     "revelation",
     "travel",
     "travel",
-    "training",
-    "training",
-    "revelation",
     "travel",
-    "training",
     "travel",
+    "negotiation",
+    "revelation",
+    "training",
+    "revelation",
+    "revelation",
+    "negotiation",
+    "negotiation",
+    "negotiation",
     "negotiation",
     "training",
     "combat",
+    "travel",
     "combat",
-    "revelation",
     "combat",
     "revelation",
-    "revelation",
-    "travel",
     "travel",
     "travel",
     "negotiation",
-    "negotiation",
     "revelation",
     "combat",
-    "negotiation",
+    "revelation",
+    "revelation",
     "revelation",
     "negotiation",
+    "negotiation",
+    "negotiation",
     "revelation",
-    "training",
-    "combat",
+    "travel",
+    "travel",
     "combat",
     "negotiation",
     "revelation",
-    "combat",
-    "mixed",
     "training",
-    "mixed",
-    "mixed",
-    "combat",
-    "combat",
-    "combat",
-    "mixed",
-    "negotiation",
+    "training",
+    "travel",
     "negotiation",
     "training",
-    "combat",
     "negotiation",
+    "negotiation",
+    "mixed",
     "revelation",
+    "travel",
+    "revelation",
     "training",
+    "travel",
+    "revelation",
     "negotiation",
-    "combat",
-    "combat",
-    "combat",
     "negotiation",
     "mixed",
-    "negotiation",
     "travel",
+    "travel",
     "combat",
     "combat",
     "combat",
-    "negotiation",
     "travel",
-    "negotiation",
-    "negotiation",
     "combat",
     "combat",
-    "combat",
-    "training",
-    "training",
+    "negotiation",
     "revelation",
-    "training",
-    "combat",
-    "combat",
-    "combat",
     "combat",
     "combat",
     "combat",
-    "mixed",
-    "revelation",
-    "revelation",
-    "travel",
-    "revelation",
-    "travel",
     "travel",
     "travel",
-    "mixed",
-    "revelation",
-    "negotiation",
     "travel",
-    "mixed",
     "negotiation",
     "revelation",
-    "revelation",
+    "combat",
+    "combat",
     "revelation",
-    "travel",
     "negotiation",
+    "combat",
     "travel",
-    "negotiation",
+    "travel",
     "negotiation",
-    "revelation",
-    "mixed",
     "training",
-    "negotiation",
-    "combat",
+    "revelation",
     "combat",
     "combat",
     "combat",
     "combat",
     "combat",
     "combat",
+    "travel",
+    "travel",
+    "revelation",
+    "revelation",
     "mixed",
-    "combat",
+    "negotiation",
+    "negotiation",
+    "revelation",
     "revelation",
     "negotiation",
     "combat",
@@ -3782,165 +1290,122 @@
     "revelation",
     "revelation",
     "negotiation",
+    "negotiation",
+    "combat",
     "mixed",
-    "travel",
-    "revelation",
-    "revelation",
-    "revelation",
-    "revelation",
-    "training",
+    "negotiation",
+    "combat",
+    "combat",
     "training",
-    "mixed",
-    "mixed",
-    "travel",
     "combat",
-    "mixed",
+    "combat",
     "training",
-    "revelation",
-    "revelation",
-    "revelation",
-    "revelation",
+    "training",
     "revelation",
-    "travel",
     "travel",
-    "travel",
-    "negotiation",
-    "mixed",
-    "negotiation",
     "revelation",
-    "revelation",
-    "mixed",
+    "travel",
     "mixed",
     "negotiation",
     "negotiation",
     "revelation",
-    "training",
-    "mixed",
+    "revelation",
+    "combat",
+    "combat",
     "training",
+    "revelation",
+    "revelation",
+    "revelation",
     "negotiation",
-    "mixed",
+    "travel",
+    "travel",
     "combat",
     "training",
-    "training",
+    "negotiation",
     "training",
     "training",
-    "revelation",
-    "travel",
-    "mixed",
     "travel",
+    "combat",
+    "combat",
     "negotiation",
-    "travel",
+    "combat",
+    "revelation",
     "training",
+    "training",
     "revelation",
+    "travel",
     "revelation",
     "negotiation",
-    "training",
-    "revelation",
     "negotiation",
+    "mixed",
+    "training",
+    "training",
+    "travel",
     "revelation",
     "training",
     "revelation",
     "mixed",
     "travel",
-    "revelation",
-    "mixed",
-    "negotiation",
-    "negotiation",
     "negotiation",
     "negotiation",
     "training",
     "training",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "combat",
-    "negotiation",
-    "negotiation",
+    "training",
     "revelation",
     "revelation",
+    "negotiation",
+    "training",
     "training",
+    "revelation",
+    "travel",
     "travel",
+    "negotiation",
     "revelation",
+    "mixed",
     "revelation",
-    "negotiation",
-    "travel",
     "revelation",
-    "negotiation",
     "revelation",
-    "combat",
+    "mixed",
     "training",
     "combat",
-    "negotiation",
-    "training",
-    "revelation",
-    "mixed",
-    "mixed",
-    "revelation",
     "combat",
     "combat",
-    "revelation",
     "combat",
     "combat",
-    "travel",
+    "mixed",
     "travel",
     "travel",
-    "mixed",
-    "combat",
-    "negotiation",
-    "negotiation",
-    "training",
     "mixed",
-    "negotiation",
     "mixed",
-    "revelation",
-    "negotiation",
-    "negotiation",
-    "revelation",
     "revelation",
     "negotiation",
     "negotiation",
-    "training",
     "combat",
-    "negotiation",
-    "travel",
+    "combat",
     "travel",
-    "training",
-    "training",
-    "revelation",
-    "mixed",
-    "training",
-    "revelation",
-    "revelation",
-    "mixed",
-    "training",
     "travel",
-    "revelation",
     "revelation",
-    "revelation",
     "combat",
     "combat",
     "revelation",
     "travel",
-    "negotiation",
-    "combat",
+    "travel",
+    "travel",
+    "travel",
     "combat",
-    "revelation",
+    "training",
     "travel",
-    "revelation",
-    "revelation",
+    "travel",
     "revelation",
     "revelation",
-    "training",
+    "negotiation",
     "training",
+    "negotiation",
     "combat",
-    "revelation",
     "combat",
-    "negotiation",
-    "training",
-    "travel"
+    "combat",
+    "combat",
+    "revelation"
   ],
   "realm_plan": [
     {
@@ -3948,713 +1413,467 @@
       "realm": "Tempering",
       "stage": "gate 1",
       "is_breakthrough": true,
-      "target_chapter": 39
+      "target_chapter": 9
     },
     {
       "realm_n": 1,
       "realm": "Tempering",
       "stage": "gate 2",
       "is_breakthrough": false,
-      "target_chapter": 79
+      "target_chapter": 19
     },
     {
       "realm_n": 1,
       "realm": "Tempering",
       "stage": "gate 3",
       "is_breakthrough": false,
-      "target_chapter": 118
+      "target_chapter": 28
     },
     {
       "realm_n": 1,
       "realm": "Tempering",
       "stage": "gate 4",
       "is_breakthrough": false,
-      "target_chapter": 157
+      "target_chapter": 37
     },
     {
       "realm_n": 1,
       "realm": "Tempering",
       "stage": "gate 5",
       "is_breakthrough": false,
-      "target_chapter": 197
+      "target_chapter": 47
     },
     {
       "realm_n": 1,
       "realm": "Tempering",
       "stage": "gate 6",
       "is_breakthrough": false,
-      "target_chapter": 236
+      "target_chapter": 56
     },
     {
       "realm_n": 1,
       "realm": "Tempering",
       "stage": "gate 7",
       "is_breakthrough": false,
-      "target_chapter": 275
+      "target_chapter": 65
     },
     {
       "realm_n": 1,
       "realm": "Tempering",
       "stage": "gate 8",
       "is_breakthrough": false,
-      "target_chapter": 315
+      "target_chapter": 75
     },
     {
       "realm_n": 1,
       "realm": "Tempering",
       "stage": "gate 9",
       "is_breakthrough": false,
-      "target_chapter": 354
+      "target_chapter": 84
     },
     {
       "realm_n": 2,
       "realm": "Kindling",
       "stage": "early",
       "is_breakthrough": true,
-      "target_chapter": 393
+      "target_chapter": 93
     },
     {
       "realm_n": 2,
       "realm": "Kindling",
       "stage": "mid",
       "is_breakthrough": false,
-      "target_chapter": 433
+      "target_chapter": 103
     },
     {
       "realm_n": 2,
       "realm": "Kindling",
       "stage": "late",
       "is_breakthrough": false,
-      "target_chapter": 472
+      "target_chapter": 112
     },
     {
       "realm_n": 2,
       "realm": "Kindling",
       "stage": "peak",
       "is_breakthrough": false,
-      "target_chapter": 511
+      "target_chapter": 121
     },
     {
       "realm_n": 3,
       "realm": "Nexus",
       "stage": "early",
       "is_breakthrough": true,
-      "target_chapter": 551
+      "target_chapter": 131
     },
     {
       "realm_n": 3,
       "realm": "Nexus",
       "stage": "mid",
       "is_breakthrough": false,
-      "target_chapter": 590
+      "target_chapter": 140
     },
     {
       "realm_n": 3,
       "realm": "Nexus",
       "stage": "late",
       "is_breakthrough": false,
-      "target_chapter": 629
+      "target_chapter": 149
     },
     {
       "realm_n": 3,
       "realm": "Nexus",
       "stage": "peak",
       "is_breakthrough": false,
-      "target_chapter": 668
+      "target_chapter": 158
     },
     {
       "realm_n": 4,
       "realm": "Aperture",
       "stage": "early",
       "is_breakthrough": true,
-      "target_chapter": 708
+      "target_chapter": 168
     },
     {
       "realm_n": 4,
       "realm": "Aperture",
       "stage": "mid",
       "is_breakthrough": false,
-      "target_chapter": 747
+      "target_chapter": 177
     },
     {
       "realm_n": 4,
       "realm": "Aperture",
       "stage": "late",
       "is_breakthrough": false,
-      "target_chapter": 786
+      "target_chapter": 186
     },
     {
       "realm_n": 4,
       "realm": "Aperture",
       "stage": "peak",
       "is_breakthrough": false,
-      "target_chapter": 826
+      "target_chapter": 196
     },
     {
       "realm_n": 5,
       "realm": "Ascendant",
       "stage": "early",
       "is_breakthrough": true,
-      "target_chapter": 865
+      "target_chapter": 205
     },
     {
       "realm_n": 5,
       "realm": "Ascendant",
       "stage": "mid",
       "is_breakthrough": false,
-      "target_chapter": 904
+      "target_chapter": 214
     },
     {
       "realm_n": 5,
       "realm": "Ascendant",
       "stage": "late",
       "is_breakthrough": false,
-      "target_chapter": 944
+      "target_chapter": 224
     },
     {
       "realm_n": 5,
       "realm": "Ascendant",
       "stage": "peak",
       "is_breakthrough": false,
-      "target_chapter": 983
+      "target_chapter": 233
     },
     {
       "realm_n": 6,
       "realm": "Sovereign",
       "stage": "early",
       "is_breakthrough": true,
-      "target_chapter": 1022
+      "target_chapter": 242
     },
     {
       "realm_n": 6,
       "realm": "Sovereign",
       "stage": "mid",
       "is_breakthrough": false,
-      "target_chapter": 1062
+      "target_chapter": 252
     },
     {
       "realm_n": 6,
       "realm": "Sovereign",
       "stage": "late",
       "is_breakthrough": false,
-      "target_chapter": 1101
+      "target_chapter": 261
     },
     {
       "realm_n": 6,
       "realm": "Sovereign",
       "stage": "peak",
       "is_breakthrough": false,
-      "target_chapter": 1140
+      "target_chapter": 270
     },
     {
       "realm_n": 7,
       "realm": "Void-Walker",
       "stage": "early",
       "is_breakthrough": true,
-      "target_chapter": 1180
+      "target_chapter": 280
     },
     {
       "realm_n": 7,
       "realm": "Void-Walker",
       "stage": "mid",
       "is_breakthrough": false,
-      "target_chapter": 1219
+      "target_chapter": 289
     },
     {
       "realm_n": 7,
       "realm": "Void-Walker",
       "stage": "late",
       "is_breakthrough": false,
-      "target_chapter": 1258
+      "target_chapter": 298
     },
     {
       "realm_n": 8,
       "realm": "Unwritten",
       "stage": "-",
       "is_breakthrough": true,
-      "target_chapter": 1298
+      "target_chapter": 308
     }
   ],
   "seeds": [
     {
-      "planted_chapter": 7,
-      "target_payoff": 106,
-      "gap": 99,
-      "arc": "A01",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 20,
-      "target_payoff": 40,
-      "gap": 20,
-      "arc": "A01",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 27,
-      "target_payoff": 67,
-      "gap": 40,
-      "arc": "A01",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 38,
-      "target_payoff": 133,
-      "gap": 95,
-      "arc": "A02",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 58,
-      "target_payoff": 86,
-      "gap": 28,
-      "arc": "A02",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 75,
-      "target_payoff": 110,
-      "gap": 35,
-      "arc": "A02",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 85,
-      "target_payoff": 113,
-      "gap": 28,
-      "arc": "A03",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 90,
-      "target_payoff": 184,
-      "gap": 94,
-      "arc": "A03",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 106,
-      "target_payoff": 111,
+      "planted_chapter": 9,
+      "target_payoff": 14,
       "gap": 5,
+      "arc": "A01",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 37,
+      "target_payoff": 62,
+      "gap": 25,
+      "arc": "A02",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 48,
+      "target_payoff": 90,
+      "gap": 42,
+      "arc": "A03",
+      "band": "deep"
+    },
+    {
+      "planted_chapter": 51,
+      "target_payoff": 96,
+      "gap": 45,
+      "arc": "A03",
+      "band": "deep"
+    },
+    {
+      "planted_chapter": 72,
+      "target_payoff": 134,
+      "gap": 62,
+      "arc": "A04",
+      "band": "deep"
+    },
+    {
+      "planted_chapter": 78,
+      "target_payoff": 139,
+      "gap": 61,
+      "arc": "A04",
+      "band": "deep"
+    },
+    {
+      "planted_chapter": 81,
+      "target_payoff": 91,
+      "gap": 10,
       "arc": "A04",
       "band": "near"
     },
     {
-      "planted_chapter": 135,
-      "target_payoff": 163,
-      "gap": 28,
+      "planted_chapter": 90,
+      "target_payoff": 126,
+      "gap": 36,
+      "arc": "A05",
+      "band": "deep"
+    },
+    {
+      "planted_chapter": 91,
+      "target_payoff": 104,
+      "gap": 13,
       "arc": "A05",
       "band": "near"
     },
     {
-      "planted_chapter": 156,
-      "target_payoff": 168,
-      "gap": 12,
-      "arc": "A05",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 165,
-      "target_payoff": 189,
-      "gap": 24,
+      "planted_chapter": 104,
+      "target_payoff": 134,
+      "gap": 30,
       "arc": "A06",
       "band": "near"
     },
     {
-      "planted_chapter": 229,
-      "target_payoff": 302,
-      "gap": 73,
+      "planted_chapter": 114,
+      "target_payoff": 126,
+      "gap": 12,
+      "arc": "A06",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 118,
+      "target_payoff": 161,
+      "gap": 43,
       "arc": "A06",
       "band": "deep"
     },
     {
-      "planted_chapter": 242,
-      "target_payoff": 248,
-      "gap": 6,
-      "arc": "A06",
-      "band": "near"
+      "planted_chapter": 121,
+      "target_payoff": 154,
+      "gap": 33,
+      "arc": "A07",
+      "band": "deep"
     },
     {
-      "planted_chapter": 262,
-      "target_payoff": 281,
-      "gap": 19,
+      "planted_chapter": 123,
+      "target_payoff": 131,
+      "gap": 8,
       "arc": "A07",
       "band": "near"
     },
     {
-      "planted_chapter": 281,
+      "planted_chapter": 124,
+      "target_payoff": 126,
+      "gap": 2,
+      "arc": "A07",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 143,
+      "target_payoff": 153,
+      "gap": 10,
+      "arc": "A08",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 183,
+      "target_payoff": 235,
+      "gap": 52,
+      "arc": "A09",
+      "band": "deep"
+    },
+    {
+      "planted_chapter": 184,
+      "target_payoff": 203,
+      "gap": 19,
+      "arc": "A09",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 184,
+      "target_payoff": 201,
+      "gap": 17,
+      "arc": "A09",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 213,
+      "target_payoff": 220,
+      "gap": 7,
+      "arc": "A10",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 227,
+      "target_payoff": 253,
+      "gap": 26,
+      "arc": "A11",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 237,
       "target_payoff": 302,
-      "gap": 21,
-      "arc": "A08",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 298,
-      "target_payoff": 326,
-      "gap": 28,
-      "arc": "A08",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 320,
-      "target_payoff": 323,
-      "gap": 3,
-      "arc": "A09",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 326,
-      "target_payoff": 359,
-      "gap": 33,
-      "arc": "A09",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 359,
-      "target_payoff": 380,
-      "gap": 21,
-      "arc": "A10",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 430,
-      "target_payoff": 442,
-      "gap": 12,
-      "arc": "A10",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 480,
-      "target_payoff": 570,
-      "gap": 90,
+      "gap": 65,
       "arc": "A11",
       "band": "deep"
     },
     {
-      "planted_chapter": 483,
-      "target_payoff": 487,
-      "gap": 4,
+      "planted_chapter": 242,
+      "target_payoff": 267,
+      "gap": 25,
       "arc": "A11",
       "band": "near"
     },
     {
-      "planted_chapter": 531,
-      "target_payoff": 542,
-      "gap": 11,
+      "planted_chapter": 247,
+      "target_payoff": 262,
+      "gap": 15,
       "arc": "A12",
       "band": "near"
     },
     {
-      "planted_chapter": 537,
-      "target_payoff": 544,
-      "gap": 7,
+      "planted_chapter": 254,
+      "target_payoff": 276,
+      "gap": 22,
       "arc": "A12",
       "band": "near"
     },
     {
-      "planted_chapter": 595,
-      "target_payoff": 639,
-      "gap": 44,
+      "planted_chapter": 258,
+      "target_payoff": 285,
+      "gap": 27,
+      "arc": "A12",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 271,
+      "target_payoff": 300,
+      "gap": 29,
+      "arc": "A13",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 275,
+      "target_payoff": 317,
+      "gap": 71,
       "arc": "A13",
       "band": "deep"
     },
     {
-      "planted_chapter": 629,
-      "target_payoff": 660,
-      "gap": 31,
+      "planted_chapter": 282,
+      "target_payoff": 308,
+      "gap": 26,
+      "arc": "A13",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 284,
+      "target_payoff": 296,
+      "gap": 12,
       "arc": "A14",
       "band": "near"
     },
     {
-      "planted_chapter": 653,
-      "target_payoff": 690,
-      "gap": 37,
-      "arc": "A15",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 670,
-      "target_payoff": 689,
-      "gap": 19,
-      "arc": "A15",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 683,
-      "target_payoff": 787,
-      "gap": 104,
-      "arc": "A16",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 696,
-      "target_payoff": 703,
-      "gap": 7,
-      "arc": "A16",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 700,
-      "target_payoff": 735,
-      "gap": 35,
-      "arc": "A16",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 718,
-      "target_payoff": 1101,
-      "gap": 383,
-      "arc": "A17",
-      "band": "very deep"
-    },
-    {
-      "planted_chapter": 730,
-      "target_payoff": 742,
-      "gap": 12,
-      "arc": "A17",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 740,
-      "target_payoff": 765,
-      "gap": 25,
-      "arc": "A18",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 773,
-      "target_payoff": 836,
-      "gap": 63,
-      "arc": "A19",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 775,
-      "target_payoff": 789,
-      "gap": 14,
-      "arc": "A19",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 807,
-      "target_payoff": 835,
-      "gap": 28,
-      "arc": "A20",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 817,
-      "target_payoff": 890,
-      "gap": 73,
-      "arc": "A20",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 823,
-      "target_payoff": 830,
-      "gap": 7,
-      "arc": "A20",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 841,
-      "target_payoff": 879,
-      "gap": 38,
-      "arc": "A21",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 887,
-      "target_payoff": 935,
-      "gap": 48,
-      "arc": "A22",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 949,
-      "target_payoff": 1027,
-      "gap": 78,
-      "arc": "A23",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 976,
-      "target_payoff": 999,
-      "gap": 23,
-      "arc": "A24",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 982,
-      "target_payoff": 1008,
-      "gap": 26,
-      "arc": "A25",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 998,
-      "target_payoff": 1012,
-      "gap": 14,
-      "arc": "A25",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1009,
-      "target_payoff": 1018,
-      "gap": 9,
-      "arc": "A25",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1033,
-      "target_payoff": 1066,
-      "gap": 33,
-      "arc": "A26",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1062,
-      "target_payoff": 1074,
-      "gap": 12,
-      "arc": "A27",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1063,
-      "target_payoff": 1337,
-      "gap": 464,
-      "arc": "A27",
-      "band": "very deep"
-    },
-    {
-      "planted_chapter": 1083,
-      "target_payoff": 1096,
-      "gap": 13,
-      "arc": "A28",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1089,
-      "target_payoff": 1110,
-      "gap": 21,
-      "arc": "A28",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1101,
-      "target_payoff": 1159,
-      "gap": 58,
-      "arc": "A28",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 1124,
-      "target_payoff": 1337,
-      "gap": 411,
-      "arc": "A29",
-      "band": "very deep"
-    },
-    {
-      "planted_chapter": 1132,
-      "target_payoff": 1136,
-      "gap": 4,
-      "arc": "A29",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1149,
-      "target_payoff": 1337,
-      "gap": 347,
-      "arc": "A30",
-      "band": "very deep"
-    },
-    {
-      "planted_chapter": 1184,
-      "target_payoff": 1240,
-      "gap": 56,
-      "arc": "A31",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 1199,
-      "target_payoff": 1220,
-      "gap": 21,
-      "arc": "A32",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1214,
-      "target_payoff": 1230,
-      "gap": 16,
-      "arc": "A32",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1240,
-      "target_payoff": 1244,
-      "gap": 4,
-      "arc": "A33",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1252,
-      "target_payoff": 1280,
-      "gap": 28,
-      "arc": "A33",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1263,
-      "target_payoff": 1299,
-      "gap": 36,
-      "arc": "A34",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1267,
-      "target_payoff": 1289,
-      "gap": 22,
-      "arc": "A34",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1299,
-      "target_payoff": 1337,
-      "gap": 68,
-      "arc": "A35",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 1304,
-      "target_payoff": 1337,
-      "gap": 74,
-      "arc": "A35",
-      "band": "deep"
-    },
-    {
-      "planted_chapter": 1304,
-      "target_payoff": 1337,
-      "gap": 39,
-      "arc": "A35",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1318,
-      "target_payoff": 1334,
-      "gap": 16,
-      "arc": "A36",
-      "band": "near"
-    },
-    {
-      "planted_chapter": 1320,
-      "target_payoff": 1337,
+      "planted_chapter": 290,
+      "target_payoff": 317,
       "gap": 34,
-      "arc": "A36",
+      "arc": "A14",
+      "band": "deep"
+    },
+    {
+      "planted_chapter": 306,
+      "target_payoff": 311,
+      "gap": 5,
+      "arc": "A15",
+      "band": "near"
+    },
+    {
+      "planted_chapter": 309,
+      "target_payoff": 317,
+      "gap": 10,
+      "arc": "A15",
       "band": "near"
     }
   ],
   "calibration": {
-    "arc_length_median_target": 29,
     "source": "serial-reference-A via engine/genre-priors.json"
   }
 }

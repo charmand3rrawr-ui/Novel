@@ -1,220 +1,209 @@
 {
   "description": "Main-character progression model. Capability never rises for free; the engine debits a cost track for every credit on a capability track.",
-  "protagonist": "mc-kestrel-vane",
+  "protagonist": "mc-adam-rooke",
   "tracks": {
     "capability": {
       "craft": {
         "value": 1,
+        "start": 1,
         "ceiling": 10,
-        "label": "Technical mastery of the world's core discipline",
-        "start": 1
+        "label": "Mastery of Vaurun's disciplines"
       },
       "authority": {
         "value": 0,
+        "start": 0,
         "ceiling": 10,
-        "label": "Institutional and social power to make others act",
-        "start": 0
+        "label": "Power to make others act"
       },
       "insight": {
-        "value": 2,
+        "value": 4,
+        "start": 4,
         "ceiling": 10,
-        "label": "Reading people, systems, and hidden structure",
-        "start": 2
+        "label": "Actuarial reading of systems and people"
       },
       "endurance": {
-        "value": 2,
+        "value": 1,
+        "start": 1,
         "ceiling": 10,
-        "label": "What the body and nerve can absorb",
-        "start": 2
+        "label": "What the body and nerve absorb"
       },
       "reach": {
         "value": 0,
+        "start": 0,
         "ceiling": 10,
-        "label": "Geographic and political scope of action",
-        "start": 0
+        "label": "Geographic and political scope"
       }
     },
     "cost": {
-      "intimacy": {
-        "value": 6,
+      "connection": {
+        "value": 4,
         "floor": 0,
-        "label": "Depth of honest connection remaining"
+        "label": "Capacity to be reached by another person"
       },
-      "integrity": {
-        "value": 7,
+      "restraint": {
+        "value": 8,
         "floor": 0,
-        "label": "Alignment between stated and actual values"
+        "label": "What he still refuses to do"
       },
       "anonymity": {
-        "value": 9,
+        "value": 10,
         "floor": 0,
-        "label": "How invisible the MC still is to powers that matter"
+        "label": "How unknown he remains to powers that matter"
       },
       "body": {
-        "value": 8,
+        "value": 7,
         "floor": 0,
         "label": "Unbroken physical and mental reserve"
       }
     },
     "internal": {
       "lie_grip": {
-        "value": 9,
+        "value": 10,
         "floor": 0,
-        "label": "How firmly the MC's controlling lie still holds. Falls as the arc lands."
+        "label": "How firmly 'attachment is a policy' still holds"
       },
       "self_knowledge": {
-        "value": 1,
+        "value": 0,
         "ceiling": 10,
-        "label": "Rises as lie_grip falls. Mirror track."
+        "label": "Mirror track: 10 - lie_grip"
       }
     }
   },
   "exchange_rules": [
-    "Any +1 on a capability track requires -1 on at least one cost track, chosen on the page, not in summary.",
-    "lie_grip may only fall after an on-page refusal, failure, or confrontation. Never from reflection alone.",
-    "self_knowledge = 10 - lie_grip, enforced by the engine.",
-    "A capability track may not exceed its start value plus (chapter_number / 40) before the final volume. Recalibrated for a 1337-chapter run: the old chapter/6 curve would have capped out by chapter 60.",
-    "No track moves in a rest chapter except intimacy and body, which may recover by 1."
+    "Any +1 on a capability track requires -1 on at least one cost track, chosen on the page.",
+    "restraint falls whenever he does something he would previously have refused. It never rises.",
+    "connection may rise, but only from an act of another person's choosing, never his own effort.",
+    "lie_grip may only fall after an on-page failure of the lie to protect him. Never from reflection.",
+    "self_knowledge = 10 - lie_grip, enforced by the validator.",
+    "A capability track may not exceed its start value plus (chapter_number / 34) before Movement IV."
   ],
   "gates": [
     {
       "id": "G1",
-      "name": "Admitted to the discipline",
+      "name": "The first taking",
       "requires": {
-        "craft": 2
+        "insight": 5
       },
-      "arc": "A02",
-      "target_chapter": 39,
-      "aligns_with_realm": "Tempering gate 1",
+      "movement": "I",
+      "target_chapter": 18,
       "cost": {
-        "body": 1
+        "restraint": 1
       },
-      "on_page": "Earned in a scene of tested competence, witnessed."
+      "on_page": "Something dies near him and he chooses to take it. The choice is the scene."
     },
     {
       "id": "G2",
-      "name": "First patronage",
+      "name": "Registered as a person",
       "requires": {
-        "authority": 2,
-        "insight": 3
+        "craft": 2,
+        "authority": 1
       },
-      "arc": "A10",
-      "target_chapter": 393,
-      "aligns_with_realm": "Kindling early",
+      "movement": "I",
+      "target_chapter": 44,
       "cost": {
-        "anonymity": 2
+        "anonymity": 1
       },
-      "on_page": "Someone buys him, and he signs."
+      "on_page": "Vaurun issues him an identity he did not want."
     },
     {
       "id": "G3",
-      "name": "Named by the opposition",
+      "name": "The first community",
       "requires": {
-        "reach": 2
+        "craft": 4,
+        "reach": 1
       },
-      "arc": "A12",
-      "target_chapter": 551,
-      "aligns_with_realm": "Nexus early",
+      "movement": "II",
+      "target_chapter": 96,
       "cost": {
-        "anonymity": 3,
-        "body": 1
+        "restraint": 2,
+        "connection": 1
       },
-      "on_page": "He stops being anonymous to people who matter."
+      "on_page": "He takes from a population rather than a person, and the count stops being countable by name."
     },
     {
       "id": "G4",
-      "name": "The first compromise",
+      "name": "Someone stays",
       "requires": {
-        "authority": 4
+        "connection_at_least": 4
       },
-      "arc": "A17",
-      "target_chapter": 708,
-      "aligns_with_realm": "Aperture early",
-      "cost": {
-        "integrity": 3
-      },
-      "on_page": "Chosen knowingly. No accident, no coercion."
+      "movement": "II",
+      "target_chapter": 130,
+      "cost": {},
+      "on_page": "A person is kind to him with nothing to gain, and he cannot process it. This is the novel's hinge and he fails it."
     },
     {
       "id": "G5",
-      "name": "Answerable at scale",
+      "name": "Named by the Wardens",
       "requires": {
-        "reach": 4,
-        "insight": 6
+        "reach": 4
       },
-      "arc": "A21",
-      "target_chapter": 865,
-      "aligns_with_realm": "Ascendant early",
+      "movement": "II",
+      "target_chapter": 158,
       "cost": {
-        "intimacy": 2
+        "anonymity": 3
       },
-      "on_page": "A decision that kills people he will never meet."
+      "on_page": "The Verge Wardens identify what he is. Correctly. Too late."
     },
     {
       "id": "G6",
-      "name": "The lie cracks",
-      "requires": {
-        "lie_grip_at_most": 6
-      },
-      "arc": "A26",
-      "target_chapter": 1022,
-      "aligns_with_realm": "Sovereign early",
-      "cost": {
-        "intimacy": 2
-      },
-      "on_page": "An on-page refusal he cannot take back."
-    },
-    {
-      "id": "G7",
-      "name": "Stripped in public",
+      "name": "The last refusal spent",
       "requires": {
         "authority": 6
       },
-      "arc": "A31",
-      "target_chapter": 1180,
-      "aligns_with_realm": "Void-Walker early",
+      "movement": "III",
+      "target_chapter": 206,
       "cost": {
-        "integrity": 2,
-        "anonymity": 2
+        "restraint": 4
       },
-      "on_page": "He loses the standing he built."
+      "on_page": "The last thing he said he would not do, done. No coercion, no accident."
+    },
+    {
+      "id": "G7",
+      "name": "Vaurun",
+      "requires": {
+        "craft": 9,
+        "reach": 8
+      },
+      "movement": "III",
+      "target_chapter": 262,
+      "cost": {
+        "connection": 3,
+        "body": 3
+      },
+      "on_page": "The act itself. It takes chapters, not a moment, and the count is given exactly (LK-COUNT-STANDS)."
     },
     {
       "id": "G8",
-      "name": "The lie breaks",
+      "name": "The feeling does not arrive",
       "requires": {
-        "lie_grip_at_most": 3
+        "lie_grip_at_most": 4
       },
-      "arc": "A35",
-      "target_chapter": 1298,
-      "aligns_with_realm": "Unwritten -",
-      "cost": {
-        "intimacy": 3
-      },
-      "on_page": "Confrontation with the person who benefits from the lie."
+      "movement": "IV",
+      "target_chapter": 276,
+      "cost": {},
+      "on_page": "He finishes and waits for relief. Nothing comes. This is the break point, and it is quiet."
     },
     {
       "id": "G9",
-      "name": "Unearned ground",
+      "name": "What is left",
       "requires": {
-        "craft": 8,
-        "self_knowledge": 7
+        "lie_grip_at_most": 1,
+        "self_knowledge": 9
       },
-      "arc": "A35",
-      "target_chapter": 1298,
-      "aligns_with_realm": "Unwritten -",
+      "movement": "IV",
+      "target_chapter": 314,
       "cost": {},
-      "on_page": "A public, unaccounted gift."
+      "on_page": "Not forgiveness and not peace-as-reward (LK-NO-ABSOLUTION). He goes on living, and goes."
     }
   ],
   "development_spine": {
-    "want": "To be indispensable enough that no one can discard them again.",
-    "need": "To be known by someone who has the power to leave and stays anyway.",
-    "lie": "Worth is a balance you must keep positive, and love is the interest paid on it.",
-    "truth": "A ledger cannot hold a person. Some things are given, not earned.",
-    "ghost": "Traded away at eleven to settle a family debt, and told it was an honor.",
-    "arc_shape": "corruption-then-recovery",
-    "break_point_arc": "A4",
-    "final_state": "Keeps the competence, drops the accounting. Chooses one unearned loyalty in public."
+    "want": "To make existence pay what it owes him.",
+    "need": "To be wanted by someone who gains nothing by it.",
+    "lie": "Every attachment is a policy someone has taken out on you.",
+    "truth": "Nothing owed him anything. That is the condition of being alive, not a cruelty.",
+    "ghost": "Abandoned at nine, robbed at thirty-three, killed at thirty-eight for GBP 1.4 million.",
+    "arc_shape": "tragic fall, then a survival he did not plan for",
+    "break_point_movement": "III",
+    "final_state": "Alive, leaving, carrying the exact count. Not absolved and not pretending to be."
   }
 }

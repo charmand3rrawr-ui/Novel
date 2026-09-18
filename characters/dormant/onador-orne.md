@@ -1,9 +1,9 @@
 # Onador Orne
 
-`onador-orne` · role: **peer-ally** · culture: ledger · status: **dormant** · seed: `135520872`
+`onador-orne` · role: **mentor** · culture: ledger · status: **dormant** · seed: `135520872`
 
-> **Need that licenses them:** A01 (arrival phase): a sealed record needs a peer-ally for the arc to put his access to a stage at risk
-> **Story function:** keeps the MC legible as a person; the cost track made visible
+> **Need that licenses them:** A01 (resource phase): not knowing the rules needs a mentor for the arc to put the only shelter he has at risk
+> **Story function:** hands over a tool and a blind spot in the same gesture
 
 ## Core
 

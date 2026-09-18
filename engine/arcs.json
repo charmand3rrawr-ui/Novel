@@ -2,75 +2,42 @@
   "description": "Projected from engine/plot-skeleton.json by `novel.py plot build --sync`. Edit the skeleton, not this file.",
   "acts": [
     {
-      "id": "V1",
+      "id": "M1",
       "name": "Volume 1",
       "arcs": [
         "A01",
         "A02",
-        "A03",
-        "A04",
-        "A05",
-        "A06"
+        "A03"
       ]
     },
     {
-      "id": "V2",
+      "id": "M2",
       "name": "Volume 2",
       "arcs": [
+        "A04",
+        "A05",
+        "A06",
         "A07",
-        "A08",
-        "A09",
-        "A10",
-        "A11"
+        "A08"
       ]
     },
     {
-      "id": "V3",
+      "id": "M3",
       "name": "Volume 3",
       "arcs": [
-        "A12",
-        "A13",
-        "A14",
-        "A15",
-        "A16",
-        "A17"
+        "A09",
+        "A10",
+        "A11",
+        "A12"
       ]
     },
     {
-      "id": "V4",
+      "id": "M4",
       "name": "Volume 4",
       "arcs": [
-        "A18",
-        "A19",
-        "A20",
-        "A21",
-        "A22",
-        "A23",
-        "A24"
-      ]
-    },
-    {
-      "id": "V5",
-      "name": "Volume 5",
-      "arcs": [
-        "A25",
-        "A26",
-        "A27",
-        "A28",
-        "A29",
-        "A30",
-        "A31",
-        "A32"
-      ]
-    },
-    {
-      "id": "V6",
-      "name": "Volume 6",
-      "arcs": [
-        "A33",
-        "A34",
-        "A35",
-        "A36"
+        "A13",
+        "A14",
+        "A15"
       ]
     }
   ],
@@ -80,24 +47,23 @@
       "name": "Arc 01",
       "chapters": [
         1,
-        37
+        23
       ],
-      "promise": "He enters with his access to a stage intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep his access to a stage while a sealed record holds?",
-      "pressure_source": "a sealed record",
+      "promise": "He enters with the only shelter he has intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep the only shelter he has while not knowing the rules holds?",
+      "pressure_source": "not knowing the rules",
       "licensed_environments": [
-        "academy",
         "city-district",
+        "origin-site",
+        "wilderness",
         "workplace"
       ],
       "licensed_character_roles": [
         "dependent",
         "institution-face",
-        "peer-ally",
-        "rival",
-        "successor"
+        "mentor"
       ],
-      "closes_on": "The confrontation resolves and he carries out a forged discharge.",
+      "closes_on": "The confrontation resolves and he carries out the first attribute taken.",
       "tension": {
         "open": 3,
         "peak": 8,
@@ -108,177 +74,160 @@
       "id": "A02",
       "name": "Arc 02",
       "chapters": [
-        38,
-        75
+        24,
+        39
       ],
-      "promise": "He enters with a route out intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a route out while a sealed record holds?",
-      "pressure_source": "a sealed record",
+      "promise": "He enters with his anonymity intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep his anonymity while being nobody on a world that ranks everyone holds?",
+      "pressure_source": "being nobody on a world that ranks everyone",
       "licensed_environments": [
+        "city-district",
         "origin-site",
-        "workplace"
+        "wilderness"
       ],
       "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "handler",
         "institution-face",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated"
+        "mentor",
+        "peer-ally"
       ],
-      "closes_on": "The confrontation resolves and he carries out a profession rank.",
+      "closes_on": "The confrontation resolves and he carries out a technique nobody registered.",
       "tension": {
-        "open": 5,
-        "peak": 9,
-        "close": 4
+        "open": 3,
+        "peak": 8,
+        "close": 5
       }
     },
     {
       "id": "A03",
       "name": "Arc 03",
       "chapters": [
-        76,
-        100
+        40,
+        62
       ],
-      "promise": "He enters with his place intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep his place while patronage and obligation holds?",
-      "pressure_source": "patronage and obligation",
+      "promise": "He enters with a person who has been kind to him intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep a person who has been kind to him while a licence he does not have holds?",
+      "pressure_source": "a licence he does not have",
       "licensed_environments": [
         "city-district",
+        "origin-site",
         "workplace"
       ],
       "licensed_character_roles": [
         "dependent",
         "institution-face",
-        "patron",
-        "peer-ally",
-        "successor",
-        "the-discarded"
+        "peer-ally"
       ],
-      "closes_on": "The confrontation resolves and he carries out a forged discharge.",
+      "closes_on": "The confrontation resolves and he carries out a name on Vaurun.",
       "tension": {
-        "open": 4,
-        "peak": 10,
-        "close": 2
+        "open": 3,
+        "peak": 8,
+        "close": 5
       }
     },
     {
       "id": "A04",
       "name": "Arc 04",
       "chapters": [
-        101,
-        130
+        63,
+        85
       ],
-      "promise": "He enters with his anonymity intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep his anonymity while a market cornered holds?",
-      "pressure_source": "a market cornered",
+      "promise": "He enters with the thin place he is making intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep the thin place he is making while the Ninefold Accord's registry holds?",
+      "pressure_source": "the Ninefold Accord's registry",
       "licensed_environments": [
-        "city-district",
-        "origin-site"
+        "border-region",
+        "city",
+        "wilderness"
       ],
       "licensed_character_roles": [
         "handler",
-        "institution-face",
-        "mentor",
-        "rival-escalated",
-        "successor",
-        "the-discarded",
+        "patron",
         "the-one-who-stays"
       ],
-      "closes_on": "The confrontation resolves and he carries out a name in a ledger.",
+      "closes_on": "The confrontation resolves and he carries out a region's essence.",
       "tension": {
-        "open": 5,
+        "open": 4,
         "peak": 10,
-        "close": 3
+        "close": 4
       }
     },
     {
       "id": "A05",
       "name": "Arc 05",
       "chapters": [
-        131,
-        161
+        86,
+        102
       ],
-      "promise": "He enters with a body he cannot explain intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a body he cannot explain while an alliance that requires a hostage holds?",
-      "pressure_source": "an alliance that requires a hostage",
+      "promise": "He enters with a profession rank intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep a profession rank while a Kiln house monopoly holds?",
+      "pressure_source": "a Kiln house monopoly",
       "licensed_environments": [
-        "academy",
-        "city-district"
+        "border-region",
+        "city",
+        "wilderness"
       ],
       "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "patron",
-        "peer-ally",
-        "rival",
-        "successor",
-        "the-discarded",
+        "foil-from-outside",
+        "handler",
         "the-one-who-stays"
       ],
-      "closes_on": "The confrontation resolves and he carries out a workshop's failures.",
+      "closes_on": "The confrontation resolves and he carries out a bloodline trigger.",
       "tension": {
         "open": 4,
-        "peak": 9,
-        "close": 5
+        "peak": 10,
+        "close": 4
       }
     },
     {
       "id": "A06",
       "name": "Arc 06",
       "chapters": [
-        162,
-        250
+        103,
+        118
       ],
-      "promise": "He enters with a body he cannot explain intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a body he cannot explain while law written for someone else holds?",
-      "pressure_source": "law written for someone else",
+      "promise": "He enters with a community that trusted him intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep a community that trusted him while a sect that wants him owned holds?",
+      "pressure_source": "a sect that wants him owned",
       "licensed_environments": [
-        "academy",
-        "city-district"
+        "city",
+        "country",
+        "wilderness"
       ],
       "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "institution-face",
-        "mentor",
+        "foil-from-outside",
         "rival",
-        "successor"
+        "the-one-who-stays"
       ],
-      "closes_on": "The confrontation resolves and he carries out a route nobody else knows.",
+      "closes_on": "The confrontation resolves and he carries out a technique at Origin.",
       "tension": {
-        "open": 3,
-        "peak": 9,
-        "close": 3
+        "open": 4,
+        "peak": 10,
+        "close": 4
       }
     },
     {
       "id": "A07",
       "name": "Arc 07",
       "chapters": [
-        251,
-        276
+        119,
+        136
       ],
-      "promise": "He enters with a cache of materials intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a cache of materials while a quarantine holds?",
-      "pressure_source": "a quarantine",
+      "promise": "He enters with the last of his restraint intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep the last of his restraint while the Verge Wardens measuring the drain holds?",
+      "pressure_source": "the Verge Wardens measuring the drain",
       "licensed_environments": [
-        "ship",
+        "border-region",
+        "wilderness",
         "workplace"
       ],
       "licensed_character_roles": [
-        "dependent",
-        "handler",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated"
+        "antagonist",
+        "foil-from-outside",
+        "patron"
       ],
-      "closes_on": "The confrontation resolves and he carries out a forged discharge.",
+      "closes_on": "The confrontation resolves and he carries out a realm.",
       "tension": {
-        "open": 5,
+        "open": 4,
         "peak": 10,
         "close": 4
       }
@@ -287,149 +236,133 @@
       "id": "A08",
       "name": "Arc 08",
       "chapters": [
-        277,
-        307
+        137,
+        164
       ],
-      "promise": "He enters with his access to a stage intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep his access to a stage while scarcity of a material everyone needs holds?",
-      "pressure_source": "scarcity of a material everyone needs",
+      "promise": "He enters with a person who gains nothing by him intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep a person who gains nothing by him while someone who stays holds?",
+      "pressure_source": "someone who stays",
       "licensed_environments": [
-        "ship",
+        "city",
+        "wilderness",
         "workplace"
       ],
       "licensed_character_roles": [
         "antagonist",
-        "dependent",
         "foil-from-outside",
-        "institution-face",
-        "mentor",
-        "peer-ally",
-        "the-discarded"
+        "patron"
       ],
-      "closes_on": "The confrontation resolves and he carries out a technique at Fluent.",
+      "closes_on": "The confrontation resolves and he carries out a Kiln house's failures.",
       "tension": {
         "open": 4,
-        "peak": 8,
-        "close": 2
+        "peak": 10,
+        "close": 4
       }
     },
     {
       "id": "A09",
       "name": "Arc 09",
       "chapters": [
-        308,
-        339
+        165,
+        186
       ],
-      "promise": "He enters with a body he cannot explain intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a body he cannot explain while an alliance that requires a hostage holds?",
-      "pressure_source": "an alliance that requires a hostage",
+      "promise": "He enters with nine hundred million people intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep nine hundred million people while the last people who could stop him holds?",
+      "pressure_source": "the last people who could stop him",
       "licensed_environments": [
-        "ship",
-        "workplace"
+        "country",
+        "moon-settlement",
+        "wilderness"
       ],
       "licensed_character_roles": [
         "antagonist",
-        "institution-face",
-        "mentor",
-        "patron",
-        "peer-ally",
-        "rival",
+        "successor",
         "the-discarded"
       ],
-      "closes_on": "The confrontation resolves and he carries out a rival's method.",
+      "closes_on": "The confrontation resolves and he carries out the ladder's top.",
       "tension": {
-        "open": 4,
-        "peak": 8,
-        "close": 4
+        "open": 6,
+        "peak": 10,
+        "close": 3
       }
     },
     {
       "id": "A10",
       "name": "Arc 10",
       "chapters": [
-        340,
-        453
+        187,
+        213
       ],
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep the only copy of a document while a harvest that failed holds?",
-      "pressure_source": "a harvest that failed",
+      "promise": "He enters with the count intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep the count while a place he cannot bring himself to burn holds?",
+      "pressure_source": "a place he cannot bring himself to burn",
       "licensed_environments": [
-        "city",
-        "workplace"
+        "country",
+        "moon-settlement",
+        "wilderness"
       ],
       "licensed_character_roles": [
-        "foil-from-outside",
-        "institution-face",
-        "peer-ally",
-        "rival-escalated",
+        "antagonist",
         "the-discarded",
         "the-one-who-stays"
       ],
-      "closes_on": "The confrontation resolves and he carries out a route nobody else knows.",
+      "closes_on": "The confrontation resolves and he carries out the thin places made deliberately.",
       "tension": {
-        "open": 5,
-        "peak": 8,
-        "close": 2
+        "open": 6,
+        "peak": 10,
+        "close": 3
       }
     },
     {
       "id": "A11",
       "name": "Arc 11",
       "chapters": [
-        454,
-        484
+        214,
+        243
       ],
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep the only copy of a document while an inheritance nobody wants holds?",
-      "pressure_source": "an inheritance nobody wants",
+      "promise": "He enters with the last thing he said he would not do intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep the last thing he said he would not do while a continent organising against him holds?",
+      "pressure_source": "a continent organising against him",
       "licensed_environments": [
-        "ship",
+        "country",
+        "orbital-station",
         "wilderness"
       ],
       "licensed_character_roles": [
         "antagonist",
-        "institution-face",
-        "mentor",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated"
+        "successor",
+        "the-one-who-stays"
       ],
-      "closes_on": "The confrontation resolves and he carries out a map of an unmetered seam.",
+      "closes_on": "The confrontation resolves and he carries out nothing he wanted.",
       "tension": {
-        "open": 5,
-        "peak": 9,
-        "close": 5
+        "open": 6,
+        "peak": 10,
+        "close": 3
       }
     },
     {
       "id": "A12",
       "name": "Arc 12",
       "chapters": [
-        485,
-        585
+        244,
+        268
       ],
-      "promise": "He enters with his access to a stage intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep his access to a stage while scarcity of a material everyone needs holds?",
-      "pressure_source": "scarcity of a material everyone needs",
+      "promise": "He enters with the only person left who knew him before intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep the only person left who knew him before while the arithmetic itself holds?",
+      "pressure_source": "the arithmetic itself",
       "licensed_environments": [
-        "border-region",
-        "country"
+        "country",
+        "moon-settlement",
+        "orbital-station"
       ],
       "licensed_character_roles": [
-        "foil-from-outside",
-        "handler",
-        "institution-face",
-        "mentor",
-        "patron",
-        "peer-ally",
-        "rival",
+        "antagonist",
         "successor",
-        "the-one-who-stays"
+        "the-discarded"
       ],
-      "closes_on": "The confrontation resolves and he carries out a profession rank.",
+      "closes_on": "The confrontation resolves and he carries out a continent.",
       "tension": {
-        "open": 4,
+        "open": 6,
         "peak": 10,
         "close": 3
       }
@@ -438,703 +371,77 @@
       "id": "A13",
       "name": "Arc 13",
       "chapters": [
-        586,
-        614
+        269,
+        283
       ],
-      "promise": "He enters with a debt he was repaying quietly intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a debt he was repaying quietly while an alliance that requires a hostage holds?",
-      "pressure_source": "an alliance that requires a hostage",
+      "promise": "He enters with whether he tells the truth once intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep whether he tells the truth once while silence holds?",
+      "pressure_source": "silence",
       "licensed_environments": [
-        "border-region",
-        "country"
+        "moon-settlement",
+        "orbital-station",
+        "planet-frontier"
       ],
       "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "foil-from-outside",
-        "handler",
-        "institution-face",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated",
-        "successor"
+        "successor",
+        "the-forgiven",
+        "the-one-who-stays"
       ],
-      "closes_on": "The confrontation resolves and he carries out a technique at Fluent.",
+      "closes_on": "The confrontation resolves and he carries out one honest sentence.",
       "tension": {
-        "open": 4,
+        "open": 5,
         "peak": 9,
-        "close": 4
+        "close": 2
       }
     },
     {
       "id": "A14",
       "name": "Arc 14",
       "chapters": [
-        615,
-        645
+        284,
+        299
       ],
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep the only copy of a document while a jurisdiction that does not recognise him holds?",
-      "pressure_source": "a jurisdiction that does not recognise him",
+      "promise": "He enters with the last unearned kindness offered him intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep the last unearned kindness offered him while the distance to the next star holds?",
+      "pressure_source": "the distance to the next star",
       "licensed_environments": [
-        "border-region",
-        "country"
+        "orbital-station",
+        "planet-frontier",
+        "ship"
       ],
       "licensed_character_roles": [
-        "antagonist",
-        "foil-from-outside",
-        "institution-face",
-        "patron",
-        "peer-ally",
         "successor",
-        "the-discarded",
+        "the-forgiven",
         "the-one-who-stays"
       ],
-      "closes_on": "The confrontation resolves and he carries out a witness who owes him.",
+      "closes_on": "The confrontation resolves and he carries out nothing.",
       "tension": {
-        "open": 4,
-        "peak": 10,
-        "close": 4
+        "open": 5,
+        "peak": 9,
+        "close": 2
       }
     },
     {
       "id": "A15",
       "name": "Arc 15",
       "chapters": [
-        646,
-        679
+        300,
+        317
       ],
-      "promise": "He enters with a profession rank intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a profession rank while an alliance that requires a hostage holds?",
-      "pressure_source": "an alliance that requires a hostage",
+      "promise": "He enters with whether he goes on living intact and leaves having spent it, or kept it at a price.",
+      "central_question": "Can he keep whether he goes on living while being asked what he wanted holds?",
+      "pressure_source": "being asked what he wanted",
       "licensed_environments": [
-        "border-region",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "peer-ally",
-        "rival",
-        "the-discarded",
-        "the-one-who-stays"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a profession rank.",
-      "tension": {
-        "open": 3,
-        "peak": 8,
-        "close": 3
-      }
-    },
-    {
-      "id": "A16",
-      "name": "Arc 16",
-      "chapters": [
-        680,
-        704
-      ],
-      "promise": "He enters with the pledge intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep the pledge while scarcity of a material everyone needs holds?",
-      "pressure_source": "scarcity of a material everyone needs",
-      "licensed_environments": [
-        "border-region",
-        "orbital-station"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "patron",
-        "rival",
-        "the-discarded"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a seat at a table.",
-      "tension": {
-        "open": 5,
-        "peak": 9,
-        "close": 4
-      }
-    },
-    {
-      "id": "A17",
-      "name": "Arc 17",
-      "chapters": [
-        705,
-        734
-      ],
-      "promise": "He enters with his place intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep his place while a jurisdiction that does not recognise him holds?",
-      "pressure_source": "a jurisdiction that does not recognise him",
-      "licensed_environments": [
-        "border-region",
-        "country"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "foil-from-outside",
-        "institution-face",
-        "peer-ally",
-        "rival",
-        "the-discarded",
-        "the-one-who-stays"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a forged discharge.",
-      "tension": {
-        "open": 3,
-        "peak": 10,
-        "close": 4
-      }
-    },
-    {
-      "id": "A18",
-      "name": "Arc 18",
-      "chapters": [
-        735,
-        768
-      ],
-      "promise": "He enters with someone else's freedom intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep someone else's freedom while a faction split holds?",
-      "pressure_source": "a faction split",
-      "licensed_environments": [
-        "country",
-        "orbital-station"
-      ],
-      "licensed_character_roles": [
-        "foil-from-outside",
-        "institution-face",
-        "patron",
-        "rival-escalated",
-        "successor",
-        "the-discarded"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a bloodline trigger.",
-      "tension": {
-        "open": 4,
-        "peak": 10,
-        "close": 3
-      }
-    },
-    {
-      "id": "A19",
-      "name": "Arc 19",
-      "chapters": [
-        769,
-        794
-      ],
-      "promise": "He enters with a promise made in public intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a promise made in public while a bounty holds?",
-      "pressure_source": "a bounty",
-      "licensed_environments": [
-        "border-region",
-        "country"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "mentor",
-        "patron",
-        "the-one-who-stays"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a seat at a table.",
-      "tension": {
-        "open": 3,
-        "peak": 8,
-        "close": 4
-      }
-    },
-    {
-      "id": "A20",
-      "name": "Arc 20",
-      "chapters": [
-        795,
-        830
-      ],
-      "promise": "He enters with a person who trusts him intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a person who trusts him while a protector who wants something back holds?",
-      "pressure_source": "a protector who wants something back",
-      "licensed_environments": [
-        "country",
-        "orbital-station"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "peer-ally",
-        "rival"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a map of an unmetered seam.",
-      "tension": {
-        "open": 3,
-        "peak": 8,
-        "close": 3
-      }
-    },
-    {
-      "id": "A21",
-      "name": "Arc 21",
-      "chapters": [
-        831,
-        885
-      ],
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep the only copy of a document while a faction split holds?",
-      "pressure_source": "a faction split",
-      "licensed_environments": [
-        "country",
-        "orbital-station"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "foil-from-outside",
-        "institution-face",
-        "patron",
-        "rival-escalated",
-        "successor"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a seat at a table.",
-      "tension": {
-        "open": 4,
-        "peak": 8,
-        "close": 2
-      }
-    },
-    {
-      "id": "A22",
-      "name": "Arc 22",
-      "chapters": [
-        886,
-        898
-      ],
-      "promise": "He enters with the pledge intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep the pledge while patronage and obligation holds?",
-      "pressure_source": "patronage and obligation",
-      "licensed_environments": [
-        "border-region",
-        "country"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "institution-face",
-        "peer-ally",
-        "rival-escalated",
-        "successor",
-        "the-one-who-stays"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a rival's method.",
-      "tension": {
-        "open": 3,
-        "peak": 9,
-        "close": 5
-      }
-    },
-    {
-      "id": "A23",
-      "name": "Arc 23",
-      "chapters": [
-        899,
-        954
-      ],
-      "promise": "He enters with his access to a stage intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep his access to a stage while law written for someone else holds?",
-      "pressure_source": "law written for someone else",
-      "licensed_environments": [
+        "moon-settlement",
         "orbital-station",
-        "wilderness"
+        "ship"
       ],
       "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "peer-ally",
-        "the-one-who-stays"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a name in a ledger.",
-      "tension": {
-        "open": 5,
-        "peak": 9,
-        "close": 4
-      }
-    },
-    {
-      "id": "A24",
-      "name": "Arc 24",
-      "chapters": [
-        955,
-        980
-      ],
-      "promise": "He enters with a debt he was repaying quietly intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a debt he was repaying quietly while patronage and obligation holds?",
-      "pressure_source": "patronage and obligation",
-      "licensed_environments": [
-        "orbital-station",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "mentor",
-        "patron",
-        "peer-ally",
-        "rival-escalated",
-        "the-one-who-stays"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a workshop's failures.",
-      "tension": {
-        "open": 3,
-        "peak": 9,
-        "close": 5
-      }
-    },
-    {
-      "id": "A25",
-      "name": "Arc 25",
-      "chapters": [
-        981,
-        1009
-      ],
-      "promise": "He enters with a promise made in public intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a promise made in public while a faction split holds?",
-      "pressure_source": "a faction split",
-      "licensed_environments": [
-        "orbital-station",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "foil-from-outside",
-        "institution-face",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated",
         "successor",
+        "the-forgiven",
         "the-one-who-stays"
       ],
-      "closes_on": "The confrontation resolves and he carries out a rival's method.",
-      "tension": {
-        "open": 3,
-        "peak": 10,
-        "close": 4
-      }
-    },
-    {
-      "id": "A26",
-      "name": "Arc 26",
-      "chapters": [
-        1010,
-        1047
-      ],
-      "promise": "He enters with a cache of materials intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a cache of materials while a rival with better standing holds?",
-      "pressure_source": "a rival with better standing",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "institution-face",
-        "mentor",
-        "successor"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a seat at a table.",
-      "tension": {
-        "open": 4,
-        "peak": 8,
-        "close": 4
-      }
-    },
-    {
-      "id": "A27",
-      "name": "Arc 27",
-      "chapters": [
-        1048,
-        1077
-      ],
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep the only copy of a document while a rival with better standing holds?",
-      "pressure_source": "a rival with better standing",
-      "licensed_environments": [
-        "moon-settlement",
-        "orbital-station"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "handler",
-        "institution-face",
-        "patron",
-        "peer-ally",
-        "rival",
-        "rival-escalated",
-        "the-one-who-stays"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a name in a ledger.",
-      "tension": {
-        "open": 5,
-        "peak": 9,
-        "close": 2
-      }
-    },
-    {
-      "id": "A28",
-      "name": "Arc 28",
-      "chapters": [
-        1078,
-        1104
-      ],
-      "promise": "He enters with someone else's freedom intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep someone else's freedom while a market cornered holds?",
-      "pressure_source": "a market cornered",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "foil-from-outside",
-        "patron",
-        "rival",
-        "successor",
-        "the-one-who-stays"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a route nobody else knows.",
-      "tension": {
-        "open": 5,
-        "peak": 8,
-        "close": 4
-      }
-    },
-    {
-      "id": "A29",
-      "name": "Arc 29",
-      "chapters": [
-        1105,
-        1141
-      ],
-      "promise": "He enters with the only copy of a document intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep the only copy of a document while a faction split holds?",
-      "pressure_source": "a faction split",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "institution-face",
-        "mentor",
-        "patron",
-        "peer-ally",
-        "successor",
-        "the-discarded"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a rival's method.",
-      "tension": {
-        "open": 4,
-        "peak": 9,
-        "close": 3
-      }
-    },
-    {
-      "id": "A30",
-      "name": "Arc 30",
-      "chapters": [
-        1142,
-        1170
-      ],
-      "promise": "He enters with someone else's freedom intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep someone else's freedom while a sealed record holds?",
-      "pressure_source": "a sealed record",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "foil-from-outside",
-        "institution-face",
-        "peer-ally",
-        "rival",
-        "successor",
-        "the-discarded"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a map of an unmetered seam.",
-      "tension": {
-        "open": 3,
-        "peak": 10,
-        "close": 5
-      }
-    },
-    {
-      "id": "A31",
-      "name": "Arc 31",
-      "chapters": [
-        1171,
-        1196
-      ],
-      "promise": "He enters with the pledge intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep the pledge while a rival with better standing holds?",
-      "pressure_source": "a rival with better standing",
-      "licensed_environments": [
-        "planet-frontier",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "handler",
-        "mentor",
-        "peer-ally",
-        "rival",
-        "rival-escalated",
-        "successor"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a forged discharge.",
-      "tension": {
-        "open": 4,
-        "peak": 10,
-        "close": 3
-      }
-    },
-    {
-      "id": "A32",
-      "name": "Arc 32",
-      "chapters": [
-        1197,
-        1221
-      ],
-      "promise": "He enters with someone else's freedom intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep someone else's freedom while an inheritance nobody wants holds?",
-      "pressure_source": "an inheritance nobody wants",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "foil-from-outside",
-        "institution-face",
-        "peer-ally",
-        "rival-escalated",
-        "successor"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a bloodline trigger.",
-      "tension": {
-        "open": 4,
-        "peak": 8,
-        "close": 2
-      }
-    },
-    {
-      "id": "A33",
-      "name": "Arc 33",
-      "chapters": [
-        1222,
-        1257
-      ],
-      "promise": "He enters with a body he cannot explain intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a body he cannot explain while scarcity of a material everyone needs holds?",
-      "pressure_source": "scarcity of a material everyone needs",
-      "licensed_environments": [
-        "planet-frontier",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "peer-ally",
-        "rival",
-        "rival-escalated"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a cache.",
-      "tension": {
-        "open": 4,
-        "peak": 8,
-        "close": 5
-      }
-    },
-    {
-      "id": "A34",
-      "name": "Arc 34",
-      "chapters": [
-        1258,
-        1278
-      ],
-      "promise": "He enters with a body he cannot explain intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a body he cannot explain while an inheritance nobody wants holds?",
-      "pressure_source": "an inheritance nobody wants",
-      "licensed_environments": [
-        "planet-frontier",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "dependent",
-        "institution-face",
-        "mentor",
-        "successor",
-        "the-discarded"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a route nobody else knows.",
-      "tension": {
-        "open": 3,
-        "peak": 10,
-        "close": 4
-      }
-    },
-    {
-      "id": "A35",
-      "name": "Arc 35",
-      "chapters": [
-        1279,
-        1316
-      ],
-      "promise": "He enters with a profession rank intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a profession rank while a protector who wants something back holds?",
-      "pressure_source": "a protector who wants something back",
-      "licensed_environments": [
-        "planet-frontier",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "institution-face",
-        "patron",
-        "peer-ally",
-        "successor",
-        "the-discarded",
-        "the-one-who-stays"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a route nobody else knows.",
-      "tension": {
-        "open": 5,
-        "peak": 9,
-        "close": 4
-      }
-    },
-    {
-      "id": "A36",
-      "name": "Arc 36",
-      "chapters": [
-        1317,
-        1337
-      ],
-      "promise": "He enters with a profession rank intact and leaves having traded it, or kept it at a price.",
-      "central_question": "Can he keep a profession rank while an alliance that requires a hostage holds?",
-      "pressure_source": "an alliance that requires a hostage",
-      "licensed_environments": [
-        "moon-settlement",
-        "wilderness"
-      ],
-      "licensed_character_roles": [
-        "antagonist",
-        "dependent",
-        "handler",
-        "institution-face",
-        "peer-ally",
-        "rival",
-        "rival-escalated",
-        "the-one-who-stays"
-      ],
-      "closes_on": "The confrontation resolves and he carries out a rival's method.",
+      "closes_on": "The confrontation resolves and he carries out a course.",
       "tension": {
         "open": 5,
         "peak": 9,

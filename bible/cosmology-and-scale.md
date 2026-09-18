@@ -24,48 +24,34 @@ rung forward at a time, and only when the storyline reaches for it.
 cost track. Reach is the most expensive capability in the book, because every
 increase in scope buys a decrease in anonymity.
 
-## Anselm
+## Vaurun
 
-A temperate world with two habitable belts and an ocean nobody has finished
-charting. Chartered cities cluster on the eastern seaboard; the interior is
-agricultural, indebted, and quietly furious. Anselm exports refined metals and
-imports almost everything else, which is why the orbital chokepoint matters far
-more than its size suggests.
+One supercontinent, an archipelago chain, nine hundred million people, and ten
+thousand years of cultivation that has left the essence thin. See
+[`vaurun.md`](vaurun.md).
 
-## Pale Verge Station
+## The thin places
 
-Built as a transfer dock, grown into a neighbourhood of 40,000 who were never
-meant to live there. Air, water, and spin are metered by the Verge Authority,
-a subsidiary of interests that also sit on the Ledgerhouse board — a fact that
-is public, uninteresting to most people, and the hinge of Arc 3.
+Regions cultivated past recovery. Nothing grows, essence will not gather, and
+the Verge Wardens quarantine them. There are nineteen at the novel's opening.
+By Movement III he is making them deliberately, because a thin place is what a
+region looks like after he has eaten it.
 
-## Cinder Landing
+## Off-world
 
-A moon settlement above an extraction site. Six thousand people, one company
-charter, one assembly with no power and a good newspaper. The dust gets into
-everything, including the records. Arc 4 goes here because it is the one place
-in the novel where the books are visibly wrong and nobody can afford to notice.
+Vaurun's system holds two other bodies with cultivator presence — a mining moon
+and a station chain at the outer transfer point — and beyond that, a long dark
+and other worlds nobody on Vaurun has the reach to visit.
 
-## Harrow Reach
+Movement IV goes there. Not as escape and not as conquest: the stars are where
+he goes because there is nothing behind him, and the novel should make the
+reader feel the difference between those two journeys.
 
-A frontier world settled by people leaving the ledger behind. The water is
-unmetered — the only unmetered water in the story — which is either the future
-or a very brief exception. Arc 5 decides which.
+Distance still takes time below the top of the ladder (`LK-DISTANCE`).
 
 ## What is deliberately absent
 
-No faster-than-light travel below the Void-Walker realm (`LK-DISTANCE`). No
-aliens. No prophecy (`LK-NO-PROPHECY`). No resurrection (`LK-DEATH-STANDS`).
-
-The universe is indifferent. Power is real, abundant, and unevenly held — and
-the cruelty is still administrative, which is the point.
-
-## Essence and the map
-
-Essence is finite and local (`LK-ESSENCE-FINITE`), and that single rule
-explains the political map. The chartered seaboard has been cultivated in for
-four hundred years and is *thin*: its powers are old, defensive, and dependent
-on imported materials. Pale Verge meters essence-dense air alongside breathable
-air. Cinder Landing exists because the extraction site sits on a rich seam. And
-Harrow Reach — unmetered water, untouched ground — is the richest cultivation
-ground in the novel, which is why "leave us alone" was never going to hold.
+No prophecy (`LK-NO-PROPHECY`). No resurrection (`LK-DEATH-STANDS`), which
+matters enormously here — nothing he does can be undone, and the novel never
+offers him a way to put anything back. No second chance at the first life
+(`LK-RENNE-ABSENT`).

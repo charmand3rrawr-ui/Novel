@@ -22,6 +22,7 @@ from datetime import date
 from . import store, system
 
 SKELETON = store.ENGINE / "plot-skeleton.json"
+SPINE = store.ENGINE / "story-spine.json"
 
 PHASES = ["arrival", "friction", "demonstration", "escalation", "resource", "confrontation", "departure"]
 PHASE_WEIGHTS = [0.12, 0.16, 0.14, 0.16, 0.12, 0.2, 0.1]
@@ -162,11 +163,74 @@ def _realm_plan(total: int) -> list[dict]:
     return steps
 
 
+def _build_from_spine(rng: random.Random, spine: dict) -> list[dict]:
+    """Arcs generated inside the story's declared movements, so the macro plot
+    bends toward the intended shape instead of wandering."""
+    arcs, i = [], 0
+    for mv in spine["movements"]:
+        lo, hi = mv["chapters"]
+        span = hi - lo + 1
+        n_arcs = mv["arcs"]
+        base = span // n_arcs
+        bounds, cursor = [], lo
+        for k in range(n_arcs):
+            length = span - (cursor - lo) if k == n_arcs - 1 else base + rng.randint(-4, 4)
+            bounds.append((cursor, cursor + length - 1))
+            cursor += length
+        # draw without replacement inside a movement: an arc that repeats the
+        # previous arc's pressure reads as the plot stalling, not escalating
+        pool_p = mv["pressures"][:]; rng.shuffle(pool_p)
+        pool_s = mv["stakes"][:]; rng.shuffle(pool_s)
+        pool_g = mv["gains"][:]; rng.shuffle(pool_g)
+        for k, (a0, a1) in enumerate(bounds):
+            i += 1
+            pressure = pool_p[k % len(pool_p)] if len(pool_p) >= n_arcs else rng.choice(mv["pressures"])
+            stake = pool_s[k % len(pool_s)]
+            gain = pool_g[k % len(pool_g)]
+            arcs.append({
+                "id": f"A{i:02d}", "movement": mv["id"], "chapters": [a0, a1], "length": a1 - a0 + 1,
+                "scale_tier": mv["scale_tier"],
+                "pressure_source": pressure,
+                "central_question": f"Can he keep {stake} while {pressure} holds?",
+                "promise": f"He enters with {stake} intact and leaves having spent it, or kept it at a price.",
+                "closes_on": f"The confrontation resolves and he carries out {gain}.",
+                # the first arc of the novel must license the stage it opens on
+                "licensed_environments": sorted(set(rng.sample(mv["environments"],
+                                                               k=min(3, len(mv["environments"]))))
+                                                | ({mv["environments"][0]} if i == 1 else set())),
+                "licensed_character_roles": sorted(set(rng.sample(mv["roles"], k=min(3, len(mv["roles"]))))),
+                "phases": _phases_for(rng, a0, a1 - a0 + 1),
+                "tension": dict(mv["tension"]),
+                "gain_on_close": gain, "stake": stake,
+            })
+    return arcs
+
+
 def build(total: int = 1337, seed: int | None = None) -> dict:
     seed = seed if seed is not None else random.randrange(1 << 30)
     rng = random.Random(seed)
-    lengths = _arc_lengths(rng, total)
 
+    spine = store.load(SPINE, None)
+    if spine:
+        total = spine.get("total_chapters", total)
+        arcs = _build_from_spine(rng, spine)
+        volumes = [{"id": mv["id"], "name": mv["name"], "chapters": mv["chapters"],
+                    "question": mv["question"],
+                    "arcs": [a["id"] for a in arcs if a["movement"] == mv["id"]]}
+                   for mv in spine["movements"]]
+        types = _chapter_types(rng, arcs, total)
+        realm_plan = _realm_plan(total)
+        seeds = _plan_seeds(rng, arcs, total)
+        return {
+            "description": "Generated from engine/story-spine.json. Structure from measured serial "
+                           "architecture; movements, pressures and stakes from the story's own spine.",
+            "generated": date.today().isoformat(), "seed": seed, "total_chapters": total,
+            "spine": spine.get("description", ""), "volumes": volumes, "arcs": arcs,
+            "chapter_types": types, "realm_plan": realm_plan, "seeds": seeds,
+            "calibration": {"source": "serial-reference-A via engine/genre-priors.json"},
+        }
+
+    lengths = _arc_lengths(rng, total)
     arcs, cursor = [], 1
     for i, n in enumerate(lengths, 1):
         scale = min(5, int((cursor / total) * 6))
@@ -207,23 +271,7 @@ def build(total: int = 1337, seed: int | None = None) -> dict:
     types = _chapter_types(rng, arcs, total)
     realm_plan = _realm_plan(total)
 
-    # seeds: payoff distances drawn from the measured return-gap distribution
-    seeds = []
-    for arc in arcs:
-        for _ in range(rng.randint(1, 3)):
-            plant = rng.randint(arc["chapters"][0], arc["chapters"][1])
-            roll = rng.random()
-            if roll < 0.65:
-                gap = rng.randint(3, 39)
-            elif roll < 0.92:
-                gap = rng.randint(40, 120)
-            else:
-                gap = rng.randint(121, 475)
-            seeds.append({"planted_chapter": plant, "target_payoff": min(total, plant + gap),
-                          "gap": gap, "arc": arc["id"],
-                          "band": "near" if gap < 40 else ("deep" if gap <= 120 else "very deep")})
-    seeds.sort(key=lambda s: s["planted_chapter"])
-
+    seeds = _plan_seeds(rng, arcs, total)
     return {
         "description": ("Generated macro plot. Structure comes from measured serial architecture; content is "
                         "this novel's own. Rebuild any time with `novel.py plot build`; the protagonist's "
@@ -246,6 +294,30 @@ def build(total: int = 1337, seed: int | None = None) -> dict:
 # --------------------------------------------------------------------------
 # reading
 # --------------------------------------------------------------------------
+
+def _plan_seeds(rng: random.Random, arcs: list[dict], total: int) -> list[dict]:
+    """Payoff distances drawn from the measured return-gap distribution, scaled
+    to this novel's length."""
+    scale = total / 3204
+    near_hi = max(6, int(39 * max(scale, 0.1) * 8))
+    deep_hi = max(near_hi + 10, int(120 * max(scale, 0.1) * 6))
+    seeds = []
+    for arc in arcs:
+        for _ in range(rng.randint(1, 3)):
+            plant = rng.randint(arc["chapters"][0], arc["chapters"][1])
+            roll = rng.random()
+            if roll < 0.65:
+                gap = rng.randint(2, near_hi)
+            elif roll < 0.92:
+                gap = rng.randint(near_hi + 1, deep_hi)
+            else:
+                gap = rng.randint(deep_hi + 1, max(deep_hi + 2, int(total * 0.6)))
+            seeds.append({"planted_chapter": plant, "target_payoff": min(total, plant + gap),
+                          "gap": gap, "arc": arc["id"],
+                          "band": "near" if gap <= near_hi else ("deep" if gap <= deep_hi else "very deep")})
+    seeds.sort(key=lambda s: s["planted_chapter"])
+    return seeds
+
 
 def arc_for(sk: dict, chapter: int) -> dict | None:
     for a in sk["arcs"]:

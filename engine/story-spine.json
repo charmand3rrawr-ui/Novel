@@ -1,0 +1,57 @@
+{
+  "description": "The four movements of this novel. plotgen builds arcs inside these rather than from generic pools, so the macro plot bends toward the intended tragedy instead of wandering.",
+  "total_chapters": 317,
+  "movements": [
+    {
+      "id": "M1", "name": "The Debt of Waking", "chapters": [1, 62], "arcs": 3,
+      "scale_tier": 0,
+      "question": "What does a man do with a second life he did not ask for?",
+      "pressures": ["a body that has never been trained", "not knowing the rules", "being nobody on a world that ranks everyone",
+                    "hunger", "a licence he does not have", "someone who helps him for free"],
+      "stakes": ["the only shelter he has", "his anonymity", "a person who has been kind to him", "the first thing he has owned"],
+      "gains": ["the first attribute taken", "a technique nobody registered", "a name on Vaurun", "an appraiser's reputation"],
+      "environments": ["origin-site", "city-district", "workplace", "wilderness"],
+      "roles": ["peer-ally", "institution-face", "mentor", "dependent"],
+      "tension": {"open": 3, "peak": 8, "close": 5}
+    },
+    {
+      "id": "M2", "name": "Ascension by Consumption", "chapters": [63, 164], "arcs": 5,
+      "scale_tier": 2,
+      "question": "How much can he take before someone can name what he is?",
+      "pressures": ["the Ninefold Accord's registry", "a Kiln house monopoly", "a sect that wants him owned",
+                    "the Verge Wardens measuring the drain", "a rival who consumes differently", "someone who stays"],
+      "stakes": ["a community that trusted him", "the last of his restraint", "a person who gains nothing by him",
+                 "a profession rank", "the thin place he is making"],
+      "gains": ["a realm", "a Kiln house's failures", "a region's essence", "a technique at Origin", "a bloodline trigger"],
+      "environments": ["city", "workplace", "border-region", "wilderness", "country"],
+      "roles": ["rival", "patron", "handler", "the-one-who-stays", "antagonist", "foil-from-outside"],
+      "tension": {"open": 4, "peak": 10, "close": 4}
+    },
+    {
+      "id": "M3", "name": "The Reckoning of Vaurun", "chapters": [165, 268], "arcs": 4,
+      "scale_tier": 4,
+      "question": "Is there a number large enough to settle what he is owed?",
+      "pressures": ["a continent organising against him", "the last people who could stop him",
+                    "a place he cannot bring himself to burn", "the arithmetic itself", "a plea he has to refuse"],
+      "stakes": ["nine hundred million people", "the last thing he said he would not do",
+                 "the only person left who knew him before", "the count"],
+      "gains": ["the thin places made deliberately", "a continent", "the ladder's top", "nothing he wanted"],
+      "environments": ["country", "wilderness", "moon-settlement", "orbital-station"],
+      "roles": ["antagonist", "the-discarded", "the-one-who-stays", "successor"],
+      "tension": {"open": 6, "peak": 10, "close": 3}
+    },
+    {
+      "id": "M4", "name": "What Is Left", "chapters": [269, 317], "arcs": 3,
+      "scale_tier": 5,
+      "question": "What is a man when the thing he was for is finished?",
+      "pressures": ["silence", "a survivor who will not accuse him", "the feeling that does not arrive",
+                    "the distance to the next star", "being asked what he wanted"],
+      "stakes": ["whether he goes on living", "whether he tells the truth once",
+                 "what he does with the count", "the last unearned kindness offered him"],
+      "gains": ["nothing", "a course", "one honest sentence", "the count, carried"],
+      "environments": ["orbital-station", "moon-settlement", "planet-frontier", "ship"],
+      "roles": ["the-one-who-stays", "successor", "the-forgiven"],
+      "tension": {"open": 5, "peak": 9, "close": 2}
+    }
+  ]
+}

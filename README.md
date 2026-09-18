@@ -1,5 +1,12 @@
 # A Web Novel Framework
 
+**Current novel:** *What Is Left* — 317 chapters, ~5,000 words each. A man
+abandoned at nine, robbed at thirty-three and murdered at thirty-eight for an
+insurance policy wakes on a cultivation world with a system that lets him take
+what the dying shed. He destroys the planet. He does not get absolved for it.
+Premise and movements in [`bible/00-world-bible.md`](bible/00-world-bible.md).
+
+
 A working system for writing a long serial progression novel: a world bible that
 binds, an engine that sets the tempo, a protagonist's attribute system with
 anti-inflation rails, a cast and a world that are built deep and revealed late,
@@ -147,15 +154,17 @@ rhythm, arc boundaries, setup/payoff depth) is in
 
 ## The plot engine
 
-A 1,337-chapter macro plot, generated from the measured architecture, that the
-protagonist's state is allowed to overrule.
+A 317-chapter macro plot built from `engine/story-spine.json` — four declared
+movements, arcs generated inside them — that the protagonist's state is allowed
+to overrule. Without a spine file the generator falls back to free-form arcs at
+any length.
 
 ```
-novel.py plot build --chapters 1337 --seed 1337 --sync
+novel.py plot build --seed 317 --sync        # reads engine/story-spine.json
 novel.py plot arcs
-novel.py plot show --chapter 412
+novel.py plot show --chapter 206
 novel.py plot next          # what the plot owes, given his ACTUAL state
-novel.py plot cast A07      # generate the bench that arc's phases call for
+novel.py plot cast A01      # generate the bench that arc's phases call for
 ```
 
 Arc lengths cluster on the measured median of 29 with the measured long tail.
@@ -240,8 +249,8 @@ are defects to break, the scale ladder, the history that presses on the
 present, factions with one want and one pressure point each, three cultures,
 and the prose contract.
 
-The premise: obligation is recorded, the houses that keep the books have become
-the government, and the one thing the system cannot process is a gift.
+The premise, the four movements, the world of Vaurun, and the first life on
+Earth that the whole novel is answering.
 
 ## The novel engine
 

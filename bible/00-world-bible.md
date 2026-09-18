@@ -1,73 +1,67 @@
 # The World Bible
 
-The bible is the layer that does not move. The engine, the registries, and the
+The bible is the layer that does not move. The engine, the registries and the
 chapters all move; the bible is what they are measured against.
 
-**Rule of the bible:** nothing enters it because it is interesting. Something
-enters it when the story has needed it, and once it is in, it binds every
-chapter that follows.
+## The premise
 
-## How the layers fit together
+A man died on his kitchen floor with his wife's knife in him, for a life
+insurance policy she had taken out eleven months earlier. Before that his
+friends had emptied the company he built. Before that his family had left him at
+a service station at nine years old and not come back.
 
-| Layer | Where | Changes | Answers |
-|---|---|---|---|
-| World Bible | `bible/` | rarely, deliberately | what is permanently true |
-| Novel engine | `engine/` | every chapter | what the next chapter owes the reader |
-| Characters | `characters/` | on need | who exists, who is on stage |
-| Environments | `environments/` | on need | where the story can currently happen |
-| Continuity | `continuity/` | every chapter | what the past requires of the present |
-| Inspiration | `inspiration/` | between drafts | where new creative material comes from |
-| The system | `engine/system*.json` | every scene that ends something | what the protagonist can currently do |
+He wakes on a world called **Vaurun**, in a body that is his own and younger,
+with something in his head that no one else has: it shows him what things are
+made of, and it lets him take it. Every living thing that dies near him sheds
+what it was. He alone can see the residue.
+
+Vaurun has magic and it has cultivation, and both are owned. He arrives owning
+nothing, which means he arrives as raw material.
+
+## What the novel is actually about
+
+Not revenge. **Revenge is the plot.** The novel is about a man who was taught
+by three separate betrayals that attachment is a wound, and who is handed a
+power that rewards him precisely for treating everything alive as a resource.
+His system is not a gift. It is his injury, made operational.
+
+He will kill this world. Not metaphorically — the population of Vaurun is the
+cost of what he becomes, and the novel must never pretend otherwise. And he
+will afterwards arrive at something like peace.
+
+**The peace is not earned by the atrocity.** That is the central craft
+constraint of the book (`LK-NO-ABSOLUTION`). He does not kill a planet and
+receive serenity as payment. He kills a planet, discovers that the thing he was
+trying to end was inside him, and has to go on living with what he did. The
+peace is what is left when the revenge runs out of targets and he is still
+there. Anyone who reads the ending as a reward has been written a different
+book than the one this bible describes.
+
+## Structure
+
+317 chapters in four movements:
+
+| Movement | Chapters | What it is |
+|---|---|---|
+| **I — The Debt of Waking** | 1–62 | Earth, the knife, the waking. The system. The first thing he takes. |
+| **II — Ascension by Consumption** | 63–164 | He rises through Vaurun's ladders, and every rung is someone else. |
+| **III — The Reckoning of Vaurun** | 165–268 | Revenge reaches planetary scale. The atrocity. |
+| **IV — What Is Left** | 269–317 | The silence afterwards, and leaving. |
 
 ## Files
 
-- [`canon-locks.json`](canon-locks.json) — the hard rules. Breaking one is a defect, not a choice.
-- [`power-systems.md`](power-systems.md) — cultivation realms, martial arts, sorcery, bloodline traits, talents.
-- [`professions.md`](professions.md) — forging, alchemy, cooking, inscription, taming, appraisal: the second ladder.
-- [`cosmology-and-scale.md`](cosmology-and-scale.md) — the physical stage, from a room to a system.
-- [`history.md`](history.md) — the past that presses on the present.
-- [`the-ledger.md`](the-ledger.md) — the world's central system, and its cost.
-- [`factions.md`](factions.md) — who wants what, and what they will trade.
-- [`cultures.md`](cultures.md) — how people live, speak, and mark belonging.
+- [`canon-locks.json`](canon-locks.json) — the hard rules. Breaking one is a defect.
+- [`power-systems.md`](power-systems.md) — cultivation realms, magic, martial arts, bloodlines, talents.
+- [`professions.md`](professions.md) — forging, alchemy, cooking, inscription: wealth and power.
+- [`vaurun.md`](vaurun.md) — the world, its powers, and what it is losing.
+- [`the-first-life.md`](the-first-life.md) — Earth. The three betrayals. What he brought with him.
+- [`cosmology-and-scale.md`](cosmology-and-scale.md) — the stage, from a room to the stars.
 - [`style-guide.md`](style-guide.md) — the prose contract.
-
-## The premise in one paragraph
-
-Essence is real, finite, and unevenly held. People cultivate it, fold it into
-steel, cook it into food, write it into arrays, and inherit it in the blood —
-and because it is finite, everything about it is owed to someone. In the
-chartered cities of the Strand every transfer of value, labour, protection,
-essence, or harm is written to a ledger with legal force, and the houses that
-keep those books have become the real government. A debt outlives the debtor.
-A cultivation resource is an instrument that can be sold. Children are
-collateral of last resort. The novel follows one such child, grown, who reads
-the books better than anyone alive and who has, in addition, something nobody
-can explain: he can see what things shed when they end, and take it.
-
-## The premise in one more paragraph, because the second one is the engine
-
-Everyone else climbs by spending — materials, instruction, time, other people.
-He climbs by collecting what is already being lost: the shed effort of students
-training before dawn, the essence bleeding out of a Master's ruined forging, the
-residue of things that died in places nobody goes. It is free. It is invisible.
-It is, in the exact accounting this world runs on, *taken*, and the log of every
-point he has ever absorbed is a record of who paid for him. That is the case
-against him, and it is assembled by his own hand across sixty chapters before
-anyone else ever makes it.
-
-## If you want a different world
-
-Everything above is a worked world, not a fixture. The framework is the
-directory structure, the tools, and the rules. The power systems in
-[`power-systems.md`](power-systems.md) and [`professions.md`](professions.md)
-stand on their own; the chartered-house / ledger layer is the *institutional*
-skin over them and can be replaced — sects, empires, guilds, academies — without
-touching the engine, the system, or any tool.
 
 ## The question the novel is asking
 
-Can anything be given rather than owed?
+What is left of a person when everything that could be taken from him has been,
+and he is handed the means to take from everyone else?
 
-Every arc, environment, and character is built to press that question from a
-different direction. If a new element does not press it, it does not belong in
-the bible yet.
+Every arc, environment and character exists to press that question. If a new
+element does not press it, it does not belong in the bible yet.

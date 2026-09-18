@@ -2,29 +2,9 @@
   "description": "Hard rules. Every chapter must be writable without breaking any of these. A load-bearing continuity point may cite a lock id; the validator checks the citation resolves.",
   "locks": [
     {
-      "id": "LK-LEDGER-BINDING",
-      "rule": "A recorded obligation is enforceable by any chartered house, not only the one that holds it. This is why debts travel.",
-      "domain": "system"
-    },
-    {
-      "id": "LK-NO-ERASURE",
-      "rule": "Entries cannot be deleted, only superseded. Every correction leaves a visible trace, and the trace is itself an entry.",
-      "domain": "system"
-    },
-    {
-      "id": "LK-COLLATERAL",
-      "rule": "A person may be pledged as collateral only once, and only before the age of fourteen. The practice is legal, rare, and universally despised in public.",
-      "domain": "law"
-    },
-    {
       "id": "LK-DISTANCE",
       "rule": "Travel between planetary bodies takes weeks, not hours. Distance is a plot constraint and may never be waved away.",
       "domain": "physics"
-    },
-    {
-      "id": "LK-AIR-DEBT",
-      "rule": "On stations and moons, life support is metered and billed. Nobody dies of unpaid air on the page without the novel treating it as a killing.",
-      "domain": "setting"
     },
     {
       "id": "LK-NO-RESCUE",
@@ -80,6 +60,26 @@
       "id": "LK-NO-PROPHECY",
       "rule": "No prophecy, destiny, or foreknowledge. Nothing in this world tells a character what will happen.",
       "domain": "craft"
+    },
+    {
+      "id": "LK-NO-ABSOLUTION",
+      "domain": "story",
+      "rule": "The atrocity never purchases the peace. He does not destroy Vaurun and receive serenity as payment. Whatever he arrives at in Movement IV is what is left when the revenge runs out of targets, and the novel never frames the killing as the mechanism of his healing."
+    },
+    {
+      "id": "LK-VAURUN-INNOCENT",
+      "domain": "story",
+      "rule": "Vaurun is never made to deserve it. No revelation that the world was corrupt at the root, no faction whose destruction is a public good. A normal world with normal cruelties, and nine hundred million people who had nothing to do with what was done to him."
+    },
+    {
+      "id": "LK-COUNT-STANDS",
+      "domain": "story",
+      "rule": "The dead are counted. He was an actuary and he cannot stop assessing; the number appears on the page, in his voice, and is never softened, rounded away, or replaced with a gesture."
+    },
+    {
+      "id": "LK-RENNE-ABSENT",
+      "domain": "story",
+      "rule": "He never sees anyone from the first life again. The people he is avenging himself on are not available, which is why the debt gets charged to strangers."
     }
   ]
 }
