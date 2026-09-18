@@ -1,0 +1,186 @@
+{
+  "description": "Configuration for the protagonist's private system. This file says how the system WORKS. engine/system-status.json says where the protagonist currently IS. Doctrine and pacing rationale live in engine/system-engine.md.",
+  "system": {
+    "name": "the Tally",
+    "in_world_name": "unnamed — the protagonist has never had a word for it",
+    "owner": "mc-kestrel-vane",
+    "acquired": "unexplained, and stays unexplained (LK-SYSTEM-UNEXPLAINED)",
+    "visible_to": "the owner only",
+    "premise": "Everything that ends sheds what it was. The owner alone can see the residue and take it."
+  },
+
+  "attributes": {
+    "physical": {
+      "strength": "force applied, and force absorbed without breaking",
+      "agility": "speed of the whole body through space",
+      "reflex": "speed of the decision before the body moves",
+      "constitution": "what the body tolerates: damage, poison, exhaustion, essence load"
+    },
+    "mental": {
+      "perception": "what is noticed, including essence, intent, and flaw",
+      "comprehension": "how fast an unfamiliar pattern becomes a usable one",
+      "will": "what holds when the body and the nerve have both quit",
+      "spirit": "capacity to hold and drive essence and patterns"
+    },
+    "rare": {
+      "fortune": "the thumb on the scale; rises almost never (LK-ESSENCE-FINITE applies — someone else's luck is worse)",
+      "affinity": "how readily the world's essence answers this specific person"
+    }
+  },
+
+  "raise_cost_rule": {
+    "formula": "cost to go from v to v+1 = 1 + floor(v / 10)",
+    "note": "Cheap early, punishing later. Reaching 50 in one attribute costs 150 points; reaching 100 costs 550.",
+    "rare_multiplier": 5,
+    "rare_note": "fortune and affinity cost five times as much, and the engine refuses to raise fortune without --override."
+  },
+
+  "mote_tiers": [
+    {"tier": 1, "name": "dim",         "points": [1, 2],   "typical_source": "a mortal's day of labour, a snapped tool"},
+    {"tier": 2, "name": "clear",       "points": [3, 5],   "typical_source": "a Tempering cultivator's hard training, a common beast"},
+    {"tier": 3, "name": "bright",      "points": [6, 10],  "typical_source": "a Kindling death, a refined-grade item destroyed"},
+    {"tier": 4, "name": "radiant",     "points": [12, 20], "typical_source": "a Nexus death, a failed profound forging"},
+    {"tier": 5, "name": "resplendent", "points": [25, 50], "typical_source": "an Aperture death, a heavenly-grade ruin"},
+    {"tier": 6, "name": "sovereign",   "points": [0, 0],   "grants": "a trait state, a talent step, or a technique at Origin band — never raw points",
+                                       "typical_source": "a Sovereign's remains, an origin-grade relic, a place where something enormous ended"}
+  ],
+
+  "source_classes": {
+    "ambient_training": {"label": "the shed effort of others training nearby", "tiers": [1, 2], "decay": 0.82, "taint": 0.0,
+                         "note": "The signature source and the moral engine. He profits from labour that was not his. Name who paid (LK-MOTE-COSTS)."},
+    "combat_kill":      {"label": "something he killed", "tiers": [2, 3, 4, 5], "decay": 0.92, "taint": 0.15},
+    "combat_witnessed": {"label": "something that died near him", "tiers": [2, 3, 4], "decay": 0.9, "taint": 0.1},
+    "beast":            {"label": "essence-bearing creatures", "tiers": [1, 2, 3, 4], "decay": 0.88, "taint": 0.05},
+    "broken_object":    {"label": "a vessel, blade, or array at the moment it fails", "tiers": [1, 2, 3, 4], "decay": 0.9, "taint": 0.0},
+    "failed_craft":     {"label": "a forging, batch, or inscription that failed", "tiers": [2, 3, 4], "decay": 0.86, "taint": 0.05,
+                         "note": "Why he haunts workshops. Failure is more generous than success, which is its own theme."},
+    "spent_consumable": {"label": "a pill, talisman, or elixir as it is used up", "tiers": [2, 3], "decay": 0.9, "taint": 0.1},
+    "ruin":             {"label": "places where something ended long ago", "tiers": [3, 4, 5, 6], "decay": 0.95, "taint": 0.25},
+    "insight":          {"label": "watching a master work at the edge of their ability", "tiers": [2, 3, 4], "decay": 0.8, "taint": 0.0,
+                         "note": "Yields proficiency and comprehension, rarely raw points."},
+    "corpse_old":       {"label": "remains that have been dead a long time", "tiers": [1, 2, 3], "decay": 0.93, "taint": 0.4}
+  },
+
+  "absorption_rules": {
+    "familiarity_decay": {
+      "enabled": true,
+      "floor": 0.15,
+      "resets_on_breakthrough": true,
+      "note": "Multiplier = decay ^ (times already absorbed from that class, this realm). Grinding the same source stops paying. A breakthrough opens the frontier again."
+    },
+    "caps": {
+      "points_per_chapter_soft": 25,
+      "points_per_chapter_hard": 60,
+      "points_per_arc_hard": 320,
+      "note": "Soft cap warns. Hard cap refuses without --override and a logged reason. These are the anti-inflation rail."
+    },
+    "witness_rule": "An absorption is only real if it happened in a scene. The engine requires a --scene note and records the chapter.",
+    "residue": {
+      "formula": "residue gained = round(points * taint)",
+      "thresholds": [
+        {"at": 25, "state": "marked",    "effect": "sleep goes wrong; perception of essence starts to smear at the edges"},
+        {"at": 50, "state": "fouled",    "effect": "essence circulation stutters under strain; -1 effective constitution in any long fight"},
+        {"at": 75, "state": "deviating", "effect": "a deviation event is due, on the page, at the worst available time"},
+        {"at": 100, "state": "critical", "effect": "the next absorption of any kind triggers it"}
+      ],
+      "purge": {
+        "alchemy": "a Rank 4+ cleansing pill removes 20-30, and costs a fortune or a favour",
+        "cooking": "a Rank 3+ cook removes 8-12 with no toxicity, slowly, and requires trusting someone",
+        "time": "1 per chapter of genuine rest, which the tempo rarely allows"
+      }
+    }
+  },
+
+  "proficiency": {
+    "scale": [0, 100],
+    "bands": [
+      {"name": "rote",    "range": [0, 24]},
+      {"name": "fluent",  "range": [25, 59]},
+      {"name": "mastery", "range": [60, 89]},
+      {"name": "origin",  "range": [90, 100]}
+    ],
+    "point_cost_per_step": 2,
+    "talent_multiplier_applies": true,
+    "note": "Proficiency may be raised with points, but band changes above 'fluent' must be earned in a scene, not bought."
+  },
+
+  "talents": {
+    "scale": {"dull": 0.5, "common": 1.0, "keen": 1.5, "rare": 2.5, "heaven-sent": 4.0},
+    "disciplines": ["blade", "palm", "spear", "sorcery", "formation", "alchemy", "forging", "cooking", "taming", "appraisal", "comprehension", "concealment"],
+    "note": "Talent is rate, not power. It is publicly assessed on record, which is why the Tally's results are inexplicable to everyone who knows his ratings."
+  },
+
+  "realms": [
+    {"n": 0, "name": "Unmarked",    "stages": ["-"], "requires": {}, "cost": null},
+    {"n": 1, "name": "Tempering",   "stages": ["gate 1","gate 2","gate 3","gate 4","gate 5","gate 6","gate 7","gate 8","gate 9"],
+     "requires": {"physical_total": 24, "constitution": 8},
+     "cost": {"body": 1}, "on_page": "Nine gates, nine separate refusals to stop."},
+    {"n": 2, "name": "Kindling",    "stages": ["early","mid","late","peak"],
+     "requires": {"physical_total": 60, "mental_total": 40, "spirit": 12},
+     "cost": {"body": 1, "anonymity": 1}, "on_page": "Essence ignites. It is survivable and it is not private — someone always feels it."},
+    {"n": 3, "name": "Nexus",       "stages": ["early","mid","late","peak"],
+     "requires": {"physical_total": 120, "mental_total": 90, "spirit": 25, "will": 20},
+     "cost": {"body": 2, "intimacy": 1}, "on_page": "The seat forms or it does not. Failure cripples."},
+    {"n": 4, "name": "Aperture",    "stages": ["early","mid","late","peak"],
+     "requires": {"physical_total": 200, "mental_total": 170, "affinity": 5},
+     "cost": {"body": 2, "anonymity": 2}, "on_page": "The body opens to the world. What is nearby comes in, including what he would rather not hold."},
+    {"n": 5, "name": "Ascendant",   "stages": ["early","mid","late","peak"],
+     "requires": {"physical_total": 320, "mental_total": 300, "will": 55},
+     "cost": {"integrity": 2, "anonymity": 2}},
+    {"n": 6, "name": "Sovereign",   "stages": ["early","mid","late","peak"],
+     "requires": {"physical_total": 480, "mental_total": 460, "affinity": 20},
+     "cost": {"intimacy": 2, "integrity": 2}},
+    {"n": 7, "name": "Void-Walker", "stages": ["early","mid","late"],
+     "requires": {"physical_total": 700, "mental_total": 700},
+     "cost": {"intimacy": 3}},
+    {"n": 8, "name": "Unwritten",   "stages": ["-"], "requires": {"physical_total": 1000, "mental_total": 1000}, "cost": {}}
+  ],
+
+  "traits": [
+    {"id": "iron-marrow",   "name": "Iron-Marrow",   "state": "dormant",
+     "gift": "bone density and shock tolerance rise sharply; +constitution scaling with state",
+     "toll": "the body stops reporting damage accurately",
+     "trigger": "a bone broken and used anyway, under essence load"},
+    {"id": "hollow-ear",    "name": "Hollow-Ear",    "state": "dormant",
+     "gift": "hears essence move, through walls and through lies",
+     "toll": "cannot filter it; crowds and cities are agony",
+     "trigger": "prolonged proximity to a silenced formation"},
+    {"id": "thousand-coin", "name": "Thousand-Coin", "state": "dormant",
+     "gift": "abnormal fortune in small things, compounding",
+     "toll": "the luck is conserved and taken from someone nearby, always someone known",
+     "trigger": "an unearned windfall accepted knowingly"},
+    {"id": "kiln-blood",    "name": "Kiln-Blood",    "state": "dormant",
+     "gift": "tolerates heat and reagent toxicity that would kill a peer; the great alchemist trait",
+     "toll": "cannot be healed by ordinary medicine; everything must be earned twice",
+     "trigger": "surviving a cauldron rupture"},
+    {"id": "null-weave",    "name": "Null-Weave",    "state": "dormant",
+     "gift": "patterns fail near them",
+     "toll": "their own sorcery fails too, and cultivators find them unsettling without knowing why",
+     "trigger": "standing inside a collapsing array and refusing to leave"}
+  ],
+  "trait_states": ["dormant", "stirred", "awakened", "ascended"],
+
+  "professions": {
+    "ranks": [
+      {"rank": 1, "name": "Apprentice",  "proficiency": 10},
+      {"rank": 2, "name": "Journeyman",  "proficiency": 25},
+      {"rank": 3, "name": "Artisan",     "proficiency": 40},
+      {"rank": 4, "name": "Master",      "proficiency": 55},
+      {"rank": 5, "name": "Grandmaster", "proficiency": 70},
+      {"rank": 6, "name": "Patriarch",   "proficiency": 82},
+      {"rank": 7, "name": "Saint",       "proficiency": 90},
+      {"rank": 8, "name": "Origin",      "proficiency": 97},
+      {"rank": 9, "name": "Unwritten",   "proficiency": 100}
+    ],
+    "certification_rule": "Each rank requires a certification piece made under observation. Failure is public and expensive.",
+    "disciplines": {
+      "forging":    {"builds": ["strength", "constitution", "will"],          "talent_axis": "forging"},
+      "alchemy":    {"builds": ["spirit", "comprehension", "perception"],     "talent_axis": "alchemy"},
+      "cooking":    {"builds": ["perception", "constitution", "fortune"],     "talent_axis": "cooking"},
+      "inscription":{"builds": ["comprehension", "will", "spirit"],           "talent_axis": "formation"},
+      "taming":     {"builds": ["will", "perception", "spirit"],              "talent_axis": "taming"},
+      "appraisal":  {"builds": ["perception", "comprehension"],               "talent_axis": "appraisal"}
+    },
+    "build_rule": "Every 10 proficiency in a profession grants 1 point to one of its 'builds' attributes, chosen on the page."
+  }
+}

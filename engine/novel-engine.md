@@ -44,6 +44,15 @@ person at a time until no one is on the page often enough to matter.
 
 ### 4. Progression (`progression.json`)
 
+Two ladders run side by side, and they are welded together at the breakthroughs.
+
+- **`progression.json` is who he becomes** — the story tracks below.
+- **`system-status.json` is what he can do** — attributes, realm, techniques,
+  professions. See [`system-engine.md`](system-engine.md).
+
+Every realm breakthrough debits this file's cost tracks, so power cannot rise
+without the person paying for it.
+
 The protagonist has three groups of tracks:
 
 - **capability** — craft, authority, insight, endurance, reach
@@ -98,6 +107,9 @@ failure to use it without a reason in the log.
 
 | File | What it holds |
 |---|---|
+| `system-engine.md` | the protagonist's system: absorption, realms, traits, professions |
+| `system.json` | how that system works — sources, mote tiers, caps, realms, traits |
+| `system-status.json` | where he is: stats, points, residue, and the full absorption log |
 | `tempo.json` | beats, tension curve, cadence rules, budgets, seed policy |
 | `progression.json` | the protagonist's tracks, exchange rules, gates, development spine |
 | `arcs.json` | acts, arcs, promises, licensed roles and environments |

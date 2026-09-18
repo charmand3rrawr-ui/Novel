@@ -54,6 +54,18 @@ or a very brief exception. Arc 5 decides which.
 
 ## What is deliberately absent
 
-No faster-than-light travel. No aliens. No supernatural force
-(`LK-NO-MAGIC`). The universe is indifferent; the cruelty is entirely
-administrative.
+No faster-than-light travel below the Void-Walker realm (`LK-DISTANCE`). No
+aliens. No prophecy (`LK-NO-PROPHECY`). No resurrection (`LK-DEATH-STANDS`).
+
+The universe is indifferent. Power is real, abundant, and unevenly held — and
+the cruelty is still administrative, which is the point.
+
+## Essence and the map
+
+Essence is finite and local (`LK-ESSENCE-FINITE`), and that single rule
+explains the political map. The chartered seaboard has been cultivated in for
+four hundred years and is *thin*: its powers are old, defensive, and dependent
+on imported materials. Pale Verge meters essence-dense air alongside breathable
+air. Cinder Landing exists because the extraction site sits on a rich seam. And
+Harrow Reach — unmetered water, untouched ground — is the richest cultivation
+ground in the novel, which is why "leave us alone" was never going to hold.

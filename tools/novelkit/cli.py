@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 import sys
 
-from . import characters, continuity, engine, environments, store, validate
+from . import characters, continuity, engine, environments, store, system, validate
 
 BAR = "=" * 68
 
@@ -415,6 +415,210 @@ def cmd_gate_pass(args):
     return 0
 
 
+# ------------------------------------------------------------------- system
+
+def cmd_system_status(args):
+    cfg, s = system.config(), system.status()
+    tot = system.totals(s)
+    _p(BAR)
+    _p(f" {cfg['system']['name'].upper()} — {s['owner']}")
+    _p(BAR)
+    _p(f" Realm   : {s['realm']['name']} · {s['realm']['stage']}  (since ch.{s['realm'].get('since_chapter', '?')})")
+    _p(f" Points  : {s['points']['unspent']} unspent · {s['points']['lifetime_earned']} lifetime")
+    _p(f" Residue : {s['residue']['value']} — {s['residue']['state']}")
+    if s["residue"]["value"]:
+        _p(f"           {system.residue_effect(cfg, s['residue']['value'])}")
+    _h("Attributes")
+    _p(" physical  " + "  ".join(f"{k}:{s['attributes'].get(k, 0)}" for k in system.PHYSICAL)
+       + f"   (total {tot['physical_total']})")
+    _p(" mental    " + "  ".join(f"{k}:{s['attributes'].get(k, 0)}" for k in system.MENTAL)
+       + f"   (total {tot['mental_total']})")
+    _p(" rare      " + "  ".join(f"{k}:{s['attributes'].get(k, 0)}" for k in system.RARE))
+    nxt = s["realm"]["n"] + 1
+    if any(r["n"] == nxt for r in cfg["realms"]):
+        target = system.realm_by_n(cfg, nxt)
+        gap = system.realm_gap(cfg, s, nxt)
+        _h(f"Next realm — {target['name']}")
+        _p(" needs: " + (", ".join(gap) if gap else "requirements MET — it still has to happen in a scene"))
+        if target.get("cost"):
+            _p(f" cost : {target['cost']}")
+    caps = cfg["absorption_rules"]["caps"]
+    _h("Absorption budget")
+    _p(f" chapter {s['per_chapter']['chapter']}: {s['per_chapter']['points']} points "
+       f"(soft {caps['points_per_chapter_soft']}, hard {caps['points_per_chapter_hard']})")
+    _p(f" arc {s['per_arc']['arc']}: {s['per_arc']['points']} points (hard {caps['points_per_arc_hard']})")
+    if s["familiarity"]:
+        _p(" familiarity: " + ", ".join(
+            f"{k}×{v} (→{max(cfg['absorption_rules']['familiarity_decay']['floor'], cfg['source_classes'][k]['decay'] ** v):.2f})"
+            for k, v in sorted(s["familiarity"].items())))
+    _p("")
+    return 0
+
+
+def cmd_system_sheet(args):
+    store.write_text(system.SHEET, system.render_sheet())
+    _p(f"Wrote {store.rel(system.SHEET)}")
+    return 0
+
+
+def cmd_system_absorb(args):
+    try:
+        r = system.absorb(args.source, scene=args.scene, who_paid=args.who_paid, tier=args.tier,
+                          points=args.points, note=args.note or "", override=args.override)
+    except PermissionError as exc:
+        _p(str(exc))
+        return 2
+    e = r["entry"]
+    _p(f"+{e['points']} points  ({e['tier_name']} mote from {e['source_class']}, "
+       f"base {e['base_points']} × decay {e['decay_multiplier']})")
+    if e["residue"]:
+        _p(f"  residue +{e['residue']} → {r['status']['residue']['value']} ({r['status']['residue']['state']})")
+    _p(f"  unspent: {r['status']['points']['unspent']}")
+    _p(f"  who paid: {e['who_paid']}")
+    if r["soft_cap_hit"]:
+        _p(f"  NOTE: chapter {e['chapter']} is over the soft cap ({r['status']['per_chapter']['points']}"
+           f"/{r['soft_cap']}). The reader is starting to feel the escalation.")
+    if r["warnings"]:
+        _p("  OVERRIDE logged: " + "; ".join(r["warnings"]))
+    return 0
+
+
+def cmd_system_spend(args):
+    try:
+        r = system.spend(args.attribute, args.amount, override=args.override)
+    except PermissionError as exc:
+        _p(str(exc))
+        return 2
+    _p(f"{r['attribute']} {r['from']} → {r['to']}  (cost {r['cost']} points, {r['remaining']} unspent)")
+    return 0
+
+
+def cmd_system_technique(args):
+    r = system.technique(args.name, amount=args.amount, grade=args.grade,
+                         spend_points=args.spend, scene=args.scene or "")
+    _p(f"{r['name']}: {r['from']} → {r['to']}" + (f" (cost {r['cost']} points)" if r["cost"] else ""))
+    if r["band_change"]:
+        _p(f"  band: {r['band_change'][0]} → {r['band_change'][1]}")
+        if r["earned_band"] and not r["scene"]:
+            _p("  NOTE: mastery and origin bands must be earned in a scene, not bought. Record the scene.")
+    return 0
+
+
+def cmd_system_profession(args):
+    try:
+        r = system.profession(args.discipline, amount=args.amount, take_build=args.build or "")
+    except PermissionError as exc:
+        _p(str(exc))
+        return 2
+    _p(f"{r['discipline']}: {r['from']} → {r['to']} proficiency "
+       f"(talent {r['talent']} on {r['talent_axis']})")
+    if r["rank_up"]:
+        _p(f"  RANK UP → {r['rank']['rank']} {r['rank']['name']}")
+        _p("  Requires a certification piece made under observation. Failure is public and expensive.")
+    if r["build_applied"]:
+        _p(f"  build credit spent: {r['build_applied']} +1")
+    _p(f"  build credits available: {r['credits_available']}")
+    return 0
+
+
+def cmd_system_realm(args):
+    try:
+        r = system.breakthrough(args.to, stage=args.stage or "", scene=args.scene or "",
+                                override=args.override)
+    except PermissionError as exc:
+        _p(str(exc))
+        return 2
+    if r["kind"] == "stage":
+        _p(f"{r['realm']} → {r['stage']}")
+        return 0
+    _p(f"BREAKTHROUGH — {r['realm']} ({r['stage']})")
+    if r["cost"]:
+        _p(f"  paid on the story's cost tracks: {r['cost']}  → now {r['paid']}")
+    if r["familiarity_reset"]:
+        _p("  familiarity reset: every source class pays full again. The frontier reopened.")
+    if r.get("on_page"):
+        _p(f"  {r['on_page']}")
+    return 0
+
+
+def cmd_system_trait(args):
+    r = system.trait(args.id, state=args.state or "", scene=args.scene or "", notes=args.notes or "")
+    _p(f"{r['trait']['name']}: {r['from']} → {r['to']}")
+    _p(f"  gift: {r['trait']['gift']}")
+    _p(f"  toll: {r['trait']['toll']}   (LK-TRAIT-TOLL — it lands on the page or the trait is a cheat)")
+    return 0
+
+
+def cmd_system_talent(args):
+    r = system.talent(args.discipline, args.rating)
+    _p(f"{r['discipline']}: {r['from']} → {r['to']} ({r['multiplier']}× rate)")
+    return 0
+
+
+def cmd_system_purge(args):
+    r = system.purge(args.amount, args.method, scene=args.scene or "")
+    _p(f"residue {r['from']} → {r['to']} ({r['state']}) via {r['method']}")
+    return 0
+
+
+def cmd_system_log(args):
+    s = system.status()
+    log = s["absorption_log"]
+    if args.chapter is not None:
+        log = [e for e in log if e["chapter"] == args.chapter]
+    if not log:
+        _p("Nothing absorbed" + (f" in chapter {args.chapter}" if args.chapter is not None else "") + ".")
+    else:
+        total = sum(e["points"] for e in log)
+        _p(f"{len(log)} absorption(s), {total} points:")
+        for e in log[-args.limit:]:
+            _p(f" ch.{e['chapter']:>3}  {e['points']:>3}pt  {e['tier_name']:<12} {e['source_class']:<18} "
+               f"paid by: {e['who_paid']}")
+            if e.get("scene"):
+                _p(f"          {e['scene']}")
+    if s["events"]:
+        _h("Events")
+        for e in s["events"][-args.limit:]:
+            _p(f" ch.{e['chapter']:>3}  {e['kind']:<12} {e['text']}")
+    return 0
+
+
+def cmd_system_forecast(args):
+    cfg, s = system.config(), system.status()
+    _h("Cost to raise each attribute")
+    for group, names in (("physical", system.PHYSICAL), ("mental", system.MENTAL), ("rare", system.RARE)):
+        for name in names:
+            v = s["attributes"].get(name, 0)
+            _p(f" {name:14} {v:>4}   +1 costs {system.raise_cost(cfg, name, v, v + 1):>3}   "
+               f"+5 costs {system.raise_cost(cfg, name, v, v + 5):>4}")
+    nxt = s["realm"]["n"] + 1
+    if any(r["n"] == nxt for r in cfg["realms"]):
+        target = system.realm_by_n(cfg, nxt)
+        gap = system.realm_gap(cfg, s, nxt)
+        _h(f"To reach {target['name']}")
+        if not gap:
+            _p(" Requirements met. It needs a scene, pressure, and a cost that does not come back.")
+        else:
+            for g in gap:
+                _p(f" {g}")
+            tot = system.totals(s)
+            need_phys = max(0, target["requires"].get("physical_total", 0) - tot["physical_total"])
+            need_ment = max(0, target["requires"].get("mental_total", 0) - tot["mental_total"])
+            est = 0
+            for names, need in ((system.PHYSICAL, need_phys), (system.MENTAL, need_ment)):
+                per = need // len(names)
+                for n in names:
+                    v = s["attributes"].get(n, 0)
+                    est += system.raise_cost(cfg, n, v, v + per)
+            _p(f"\n Rough cost if spread evenly: ~{est} points "
+               f"({s['points']['unspent']} unspent, {s['points']['lifetime_earned']} earned so far)")
+            caps = cfg["absorption_rules"]["caps"]
+            _p(f" At the {caps['points_per_chapter_soft']}-point soft cap that is "
+               f"~{max(1, round(est / caps['points_per_chapter_soft']))} chapters of absorption.")
+    _p("")
+    return 0
+
+
 # ----------------------------------------------------------------- validate
 
 def cmd_validate(args):
@@ -518,6 +722,68 @@ def build_parser():
 
     gt = sub.add_parser("gate").add_subparsers(dest="sub", required=True)
     gp = gt.add_parser("pass"); gp.add_argument("id"); gp.set_defaults(func=cmd_gate_pass)
+
+    sy = sub.add_parser("system", help="the protagonist's attribute system: absorption, realms, traits, professions")
+    sysub = sy.add_subparsers(dest="sub", required=True)
+    sysub.add_parser("status", help="where the protagonist stands in the system").set_defaults(func=cmd_system_status)
+    sysub.add_parser("sheet", help="regenerate engine/system-status.md").set_defaults(func=cmd_system_sheet)
+
+    ab = sysub.add_parser("absorb", help="absorb motes from a source that ended")
+    ab.add_argument("source", help="source class, e.g. ambient_training, combat_kill, failed_craft, ruin")
+    ab.add_argument("--scene", required=True, help="where on the page this happened (witness rule)")
+    ab.add_argument("--who-paid", required=True, dest="who_paid",
+                    help="who or what lost this essence (LK-MOTE-COSTS)")
+    ab.add_argument("--tier", type=int, help="mote tier 1-5; defaults to the class median")
+    ab.add_argument("--points", type=int, help="explicit point value before decay")
+    ab.add_argument("--note", default="")
+    ab.add_argument("--override", action="store_true")
+    ab.set_defaults(func=cmd_system_absorb)
+
+    sp2 = sysub.add_parser("spend", help="spend points to raise an attribute")
+    sp2.add_argument("attribute"); sp2.add_argument("amount", type=int, nargs="?", default=1)
+    sp2.add_argument("--override", action="store_true")
+    sp2.set_defaults(func=cmd_system_spend)
+
+    tq = sysub.add_parser("technique", help="record or raise a technique's proficiency")
+    tq.add_argument("name"); tq.add_argument("--amount", type=int, default=0)
+    tq.add_argument("--grade", default="common",
+                    choices=["common", "refined", "profound", "heavenly", "origin"])
+    tq.add_argument("--spend", action="store_true", help="pay for it with system points")
+    tq.add_argument("--scene")
+    tq.set_defaults(func=cmd_system_technique)
+
+    pf = sysub.add_parser("profession", help="raise a profession and take its build credits")
+    pf.add_argument("discipline"); pf.add_argument("--amount", type=int, default=0)
+    pf.add_argument("--build", help="attribute to spend a build credit on")
+    pf.set_defaults(func=cmd_system_profession)
+
+    rm = sysub.add_parser("realm", help="advance a stage, or break through to the next realm")
+    rm.add_argument("--to", type=int, help="target realm number; omit to advance one stage")
+    rm.add_argument("--stage"); rm.add_argument("--scene")
+    rm.add_argument("--override", action="store_true")
+    rm.set_defaults(func=cmd_system_realm)
+
+    tr = sysub.add_parser("trait", help="advance a bloodline trait")
+    tr.add_argument("id"); tr.add_argument("--state", choices=["dormant", "stirred", "awakened", "ascended"])
+    tr.add_argument("--scene"); tr.add_argument("--notes")
+    tr.set_defaults(func=cmd_system_trait)
+
+    tl = sysub.add_parser("talent", help="set a talent rating")
+    tl.add_argument("discipline"); tl.add_argument("rating",
+                    choices=["dull", "common", "keen", "rare", "heaven-sent"])
+    tl.set_defaults(func=cmd_system_talent)
+
+    pg = sysub.add_parser("purge", help="clear residue")
+    pg.add_argument("amount", type=int)
+    pg.add_argument("--method", required=True, choices=["alchemy", "cooking", "time"])
+    pg.add_argument("--scene")
+    pg.set_defaults(func=cmd_system_purge)
+
+    lg = sysub.add_parser("log", help="the absorption and event log")
+    lg.add_argument("--chapter", type=int); lg.add_argument("--limit", type=int, default=25)
+    lg.set_defaults(func=cmd_system_log)
+
+    sysub.add_parser("forecast", help="what the next realm costs in points and chapters").set_defaults(func=cmd_system_forecast)
 
     sub.add_parser("validate", help="check the whole project for contradictions").set_defaults(func=cmd_validate)
     return p

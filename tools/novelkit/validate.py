@@ -5,7 +5,7 @@ Errors are contradictions the novel cannot survive. Warnings are debts.
 
 from __future__ import annotations
 
-from . import characters, continuity, engine, environments, store
+from . import characters, continuity, engine, environments, store, system
 
 
 def run() -> tuple[list[str], list[str]]:
@@ -108,5 +108,77 @@ def run() -> tuple[list[str], list[str]]:
     dormant_chars = [c for c in creg["characters"] if c["status"] == "dormant"]
     if len(dormant_chars) > 25:
         warnings.append(f"{len(dormant_chars)} dormant characters: the bench is bigger than the book")
+
+    # --- the protagonist's system ---------------------------------------
+    try:
+        scfg, sst = system.config(), system.status()
+    except FileNotFoundError:
+        scfg = sst = None
+    if sst:
+        if sst["owner"] != prog.get("protagonist"):
+            errors.append(f"system owner '{sst['owner']}' is not progression.json's protagonist "
+                          f"'{prog.get('protagonist')}'")
+        pts = sst["points"]
+        if pts["lifetime_earned"] != pts["spent"] + pts["unspent"]:
+            errors.append(f"point accounting broken: {pts['lifetime_earned']} earned != "
+                          f"{pts['spent']} spent + {pts['unspent']} unspent")
+        expected = system.residue_state(scfg, sst["residue"]["value"])
+        if sst["residue"]["state"] != expected:
+            errors.append(f"residue is {sst['residue']['value']} but state says "
+                          f"'{sst['residue']['state']}' (should be '{expected}')")
+        if sst["residue"]["value"] >= 75:
+            warnings.append(f"residue {sst['residue']['value']}: a deviation event is due on the page")
+
+        gap = system.realm_gap(scfg, sst, sst["realm"]["n"])
+        if gap:
+            warnings.append(f"current realm {sst['realm']['name']} is held without meeting "
+                            + ", ".join(gap) + " (an override, or the numbers drifted)")
+        realm = next((r for r in scfg["realms"] if r["n"] == sst["realm"]["n"]), None)
+        if realm and sst["realm"]["stage"] not in realm["stages"]:
+            errors.append(f"realm stage '{sst['realm']['stage']}' is not a stage of {realm['name']} "
+                          f"({', '.join(realm['stages'])})")
+
+        known_traits = {tr["id"] for tr in scfg["traits"]}
+        for rec in sst["traits"]:
+            if rec["id"] not in known_traits:
+                errors.append(f"status carries unknown trait '{rec['id']}'")
+            if rec["state"] not in scfg["trait_states"]:
+                errors.append(f"trait '{rec['id']}' has invalid state '{rec['state']}'")
+        for disc, rating in sst["talents"].items():
+            if disc not in scfg["talents"]["disciplines"]:
+                errors.append(f"talent recorded for unknown discipline '{disc}'")
+            if rating not in scfg["talents"]["scale"]:
+                errors.append(f"talent '{disc}' has invalid rating '{rating}'")
+        for name, rec in sst["professions"].items():
+            if name not in scfg["professions"]["disciplines"]:
+                errors.append(f"unknown profession '{name}' in status")
+                continue
+            if rec.get("build_credits_taken", 0) > rec["proficiency"] // 10:
+                errors.append(f"profession '{name}' has taken {rec['build_credits_taken']} build credits "
+                              f"but only earned {rec['proficiency'] // 10}")
+            expected_rank = system.rank_for(scfg, rec["proficiency"])["rank"]
+            if rec.get("rank", 0) != expected_rank:
+                errors.append(f"profession '{name}' is rank {rec.get('rank')} at "
+                              f"{rec['proficiency']} proficiency (should be {expected_rank})")
+        for tq in sst["techniques"]:
+            if not 0 <= tq["proficiency"] <= 100:
+                errors.append(f"technique '{tq['name']}' proficiency {tq['proficiency']} is outside 0-100")
+
+        caps = scfg["absorption_rules"]["caps"]
+        if sst["per_chapter"]["points"] > caps["points_per_chapter_hard"]:
+            warnings.append(f"chapter {sst['per_chapter']['chapter']} absorbed "
+                            f"{sst['per_chapter']['points']} points, over the hard cap "
+                            f"{caps['points_per_chapter_hard']} (overridden)")
+        if sst["per_arc"]["points"] > caps["points_per_arc_hard"]:
+            warnings.append(f"arc {sst['per_arc']['arc']} absorbed {sst['per_arc']['points']} points, "
+                            f"over the hard cap {caps['points_per_arc_hard']} (overridden)")
+        for e in sst["absorption_log"]:
+            if not e.get("who_paid"):
+                errors.append(f"absorption in chapter {e['chapter']} names nobody who paid (LK-MOTE-COSTS)")
+            if not e.get("scene"):
+                errors.append(f"absorption in chapter {e['chapter']} has no scene (witness rule)")
+        unwritten = [e for e in sst["absorption_log"] if e["chapter"] > chapter]
+        if unwritten:
+            warnings.append(f"{len(unwritten)} absorption(s) logged for chapters not yet written")
 
     return errors, warnings

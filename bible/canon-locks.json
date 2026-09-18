@@ -1,14 +1,85 @@
 {
   "description": "Hard rules. Every chapter must be writable without breaking any of these. A load-bearing continuity point may cite a lock id; the validator checks the citation resolves.",
   "locks": [
-    {"id": "LK-LEDGER-BINDING", "rule": "A recorded obligation is enforceable by any chartered house, not only the one that holds it. This is why debts travel.", "domain": "system"},
-    {"id": "LK-NO-ERASURE", "rule": "Entries cannot be deleted, only superseded. Every correction leaves a visible trace, and the trace is itself an entry.", "domain": "system"},
-    {"id": "LK-COLLATERAL", "rule": "A person may be pledged as collateral only once, and only before the age of fourteen. The practice is legal, rare, and universally despised in public.", "domain": "law"},
-    {"id": "LK-NO-MAGIC", "rule": "There is no supernatural force. Every advantage in this world is information, money, institution, or nerve.", "domain": "physics"},
-    {"id": "LK-DISTANCE", "rule": "Travel between planetary bodies takes weeks, not hours. Distance is a plot constraint and may never be waved away.", "domain": "physics"},
-    {"id": "LK-AIR-DEBT", "rule": "On stations and moons, life support is metered and billed. Nobody dies of unpaid air on the page without the novel treating it as a killing.", "domain": "setting"},
-    {"id": "LK-NO-RESCUE", "rule": "No institution rescues the protagonist. Help always arrives as a person, with terms.", "domain": "story"},
-    {"id": "LK-COST", "rule": "Every capability the protagonist gains is paid for on a cost track, on the page, in the same arc.", "domain": "story"},
-    {"id": "LK-EARNED-WOUND", "rule": "A character's wound is never introduced; it is discovered, and only after the reader has already formed an opinion of them.", "domain": "craft"}
+    {
+      "id": "LK-LEDGER-BINDING",
+      "rule": "A recorded obligation is enforceable by any chartered house, not only the one that holds it. This is why debts travel.",
+      "domain": "system"
+    },
+    {
+      "id": "LK-NO-ERASURE",
+      "rule": "Entries cannot be deleted, only superseded. Every correction leaves a visible trace, and the trace is itself an entry.",
+      "domain": "system"
+    },
+    {
+      "id": "LK-COLLATERAL",
+      "rule": "A person may be pledged as collateral only once, and only before the age of fourteen. The practice is legal, rare, and universally despised in public.",
+      "domain": "law"
+    },
+    {
+      "id": "LK-DISTANCE",
+      "rule": "Travel between planetary bodies takes weeks, not hours. Distance is a plot constraint and may never be waved away.",
+      "domain": "physics"
+    },
+    {
+      "id": "LK-AIR-DEBT",
+      "rule": "On stations and moons, life support is metered and billed. Nobody dies of unpaid air on the page without the novel treating it as a killing.",
+      "domain": "setting"
+    },
+    {
+      "id": "LK-NO-RESCUE",
+      "rule": "No institution rescues the protagonist. Help always arrives as a person, with terms.",
+      "domain": "story"
+    },
+    {
+      "id": "LK-COST",
+      "rule": "Every capability the protagonist gains is paid for on a cost track, on the page, in the same arc.",
+      "domain": "story"
+    },
+    {
+      "id": "LK-EARNED-WOUND",
+      "rule": "A character's wound is never introduced; it is discovered, and only after the reader has already formed an opinion of them.",
+      "domain": "craft"
+    },
+    {
+      "id": "LK-ESSENCE-FINITE",
+      "rule": "Essence is finite and local. A place long cultivated in is thin; an untouched place is rich. Power always came from somewhere, and that somewhere is poorer for it.",
+      "domain": "physics"
+    },
+    {
+      "id": "LK-DEATH-STANDS",
+      "rule": "No power reverses death. Bodies can be preserved, minds can be recorded, essence can persist — but the dead do not come back.",
+      "domain": "physics"
+    },
+    {
+      "id": "LK-NO-MIND-READING",
+      "rule": "Intent, emotion and essence can be sensed. Sentences cannot. Nobody reads a thought as language.",
+      "domain": "physics"
+    },
+    {
+      "id": "LK-BREAKTHROUGH-COSTS",
+      "rule": "No breakthrough is free. Meeting the numbers makes a breakthrough possible; it happens in a scene, under pressure, and costs something that does not come back.",
+      "domain": "story"
+    },
+    {
+      "id": "LK-TRAIT-TOLL",
+      "rule": "Every bloodline trait carries a toll proportionate to its gift. A trait with no toll is a rumour, a forgery, or a trap.",
+      "domain": "system"
+    },
+    {
+      "id": "LK-MOTE-COSTS",
+      "rule": "Nothing sheds essence without losing it. Every absorption the protagonist makes was paid for by a body, an object, or a person's labour, and the novel names who paid.",
+      "domain": "story"
+    },
+    {
+      "id": "LK-SYSTEM-UNEXPLAINED",
+      "rule": "The protagonist's system is never explained by anyone in the world, because nobody in the world knows what it is. It may be theorised about and it may be hunted, but it is never a granted power with an origin story.",
+      "domain": "story"
+    },
+    {
+      "id": "LK-NO-PROPHECY",
+      "rule": "No prophecy, destiny, or foreknowledge. Nothing in this world tells a character what will happen.",
+      "domain": "craft"
+    }
   ]
 }

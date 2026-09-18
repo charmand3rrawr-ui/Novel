@@ -44,6 +44,9 @@ be able to answer "whose chapter is this?" from the first paragraph.
 ## Forbidden
 
 - Dream sequences used as revelation.
-- Prophecy of any kind (`LK-NO-MAGIC`).
+- Prophecy, destiny, or foreknowledge of any kind (`LK-NO-PROPHECY`).
 - A character explaining their own wound in dialogue (`LK-EARNED-WOUND`).
+- Power levels quoted as numbers in the prose. The status sheet is the
+  author's instrument, not the reader's; on the page, strength is shown by what
+  it does to a room.
 - An institution arriving to save the protagonist (`LK-NO-RESCUE`).

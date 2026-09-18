@@ -1,9 +1,10 @@
 # A Web Novel Framework
 
-A working system for writing a long serial novel: a world bible that binds, an
-engine that sets the tempo, a cast and a world that are built deep and revealed
-late, a memory the present can search, and a miner that turns other people's
-novels into raw creative material without borrowing anything from them.
+A working system for writing a long serial progression novel: a world bible that
+binds, an engine that sets the tempo, a protagonist's attribute system with
+anti-inflation rails, a cast and a world that are built deep and revealed late,
+a memory the present can search, and a miner that turns other people's novels
+into raw creative material without borrowing anything from them.
 
 Pure Python standard library. No install, no build step, no dependencies.
 
@@ -32,11 +33,18 @@ budgets and arc licensing. It will refuse you, and say why.
 established. → `continuity/` records each chapter's **load-bearing** items with
 weights and tags, and `novel.py lookback` searches them with chapter citations.
 
+**Power inflates.** The protagonist outruns the story, and by chapter thirty
+nothing can threaten him. → `engine/system.json` rations it: familiarity decay
+so grinding one source stops paying, hard caps per chapter and per arc, residue
+that turns convenience into plot, and breakthroughs that debit the story's cost
+tracks. `novel.py system` refuses, out loud, with a reason.
+
 ## Layout
 
 ```
-bible/          what is permanently true      — canon locks, cosmology, history, factions, cultures, style
+bible/          what is permanently true      — canon locks, power systems, professions, cosmology, history, factions, cultures, style
 engine/         what the next chapter owes    — tempo, arcs, progression, live state
+                the protagonist's system      — system-engine.md, system.json, system-status.json/.md
 characters/     who exists                    — cast/ on the page, dormant/ on the bench
 environments/   where it can happen           — active/ and dormant/, room to star system
 continuity/     what the past requires        — chapter index, threads, generated reference map
@@ -63,7 +71,8 @@ novel.py validate
 ```
 
 See [`docs/walkthrough.md`](docs/walkthrough.md) for a full session with real
-output.
+output, and [`docs/system-walkthrough.md`](docs/system-walkthrough.md) for the
+protagonist's system in use.
 
 ## Characters: deep first, late second
 
@@ -96,6 +105,69 @@ licenses only some. A place that is never needed cost you one command; a place
 brought forward early costs you a reader.
 
 Full model in [`environments/README.md`](environments/README.md).
+
+## The protagonist's system
+
+He can see what things shed when they end, and take it. Everyone else climbs by
+spending; he climbs by collecting what is already being lost.
+
+```
+novel.py system status
+novel.py system absorb ambient_training \
+    --scene "the third-form hall, an hour before dawn" \
+    --who-paid "forty students who trained until they shook"
+novel.py system spend strength 3
+novel.py system realm --to 2 --scene "the quay stair, bleeding, with the tide coming in"
+novel.py system forecast
+novel.py system sheet
+```
+
+Four rails stop it inflating, and each refuses out loud:
+
+- **Familiarity decay** — `multiplier = decay ^ (times absorbed this realm)`,
+  floored at 0.15. Grinding the same source stops paying; finding a *new kind of
+  ending* is always worth more, which pushes the plot outward. A breakthrough
+  resets every counter.
+- **Caps** — 25 points/chapter soft, 60 hard, 320/arc. Over soft it warns that
+  the reader is feeling the escalation; over hard it refuses.
+- **Residue** — tainted sources leave what the system cannot spend. At 25/50/75/100
+  it does something on the page, and clearing it costs money, a favour, or trust.
+- **The witness rule** — `absorb` requires `--scene` and `--who-paid`. Nothing
+  sheds essence without losing it (`LK-MOTE-COSTS`), so the absorption log is a
+  ledger of everyone he has quietly taken from, and by chapter forty that
+  document is the novel's case against him.
+
+Breakthroughs debit the story's cost tracks in `progression.json` — body,
+anonymity, intimacy, integrity — so the power ladder and the character ladder
+stay welded together.
+
+`engine/system-status.json` is the live state and full log;
+`engine/system-status.md` is the readable character sheet. The numbers never
+appear in the prose: the sheet is the author's instrument, so that what he could
+do in chapter 12 and what he can do in chapter 48 are answerable questions with
+the same answer every time.
+
+Full model in [`engine/system-engine.md`](engine/system-engine.md).
+
+## The world's power systems
+
+Four ladders everyone climbs, in
+[`bible/power-systems.md`](bible/power-systems.md): **cultivation** (nine realms,
+Unmarked to Unwritten, scaling from a fight to crossing between worlds),
+**martial arts** (technique proficiency in four bands), **sorcery** (patterns and
+inscription — notation, not willpower), and **bloodline traits** (dormant →
+stirred → awakened → ascended, every one with a gift and a toll).
+
+**Talent is rate, not power** — dull to heaven-sent, 0.5× to 4×, assessed
+publicly per discipline. Which is exactly why the protagonist's results are
+inexplicable to everyone who has seen his ratings.
+
+[`bible/professions.md`](bible/professions.md) holds the second ladder, open to
+anyone the talent assessors wrote off: forging, alchemy, cooking, inscription,
+taming, appraisal, across nine ranks from Apprentice to Unwritten. Professions
+feed power four ways — the practice builds attributes, the products are usable,
+the wealth buys time, and rank opens doors realm does not. Failed work sheds
+essence, which is why the protagonist haunts workshops.
 
 ## The world bible
 
@@ -172,9 +244,22 @@ about who is on stage, that progression has not outrun the page count, that
 thread has rotted past its payoff window, and that every written chapter has a
 continuity record.
 
+On the system it checks point accounting (`earned == spent + unspent`), residue
+state against residue value, that the current realm's requirements are actually
+met, profession ranks against proficiency, trait states and talent ratings
+against the config, the per-chapter and per-arc caps, and that every absorption
+in the log names both a scene and who paid for it.
+
 ## Making it yours
 
 Everything above is a worked example, not a fixture. The framework is the
 directory structure, the tools, and the rules. To write a different novel:
 rewrite `bible/`, redraw `engine/arcs.json` and `engine/progression.json`,
 empty the registries, and keep the loop.
+
+The power systems and the professions stand on their own; the chartered-house /
+ledger layer is the institutional skin over them and can be swapped for sects,
+empires, guilds or academies without touching the engine, the system, or any
+tool. To retune the system itself, edit `engine/system.json` — sources, tiers,
+decay rates, caps, realms, traits and professions are all data, and nothing in
+the code hardcodes them.

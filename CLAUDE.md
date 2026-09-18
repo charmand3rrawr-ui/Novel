@@ -17,10 +17,30 @@ they are load-bearing.
    the engine's save file; use the CLI so the log stays truthful.
 3. **Never raise a capability track without paying a cost track.** Use
    `novel.py advance`, which enforces it.
-4. **Never break a canon lock** (`bible/canon-locks.json`). Breaking one is a
+4. **Never absorb without a scene and a payer.** `novel.py system absorb`
+   requires `--scene` and `--who-paid`. Nothing sheds essence without losing it
+   (`LK-MOTE-COSTS`), and the absorption log is the novel's case against the
+   protagonist. Do not weaken this.
+5. **Never hand-edit `engine/system-status.json`** except to repair corruption.
+   Use `novel.py system`, so the log and the event history stay truthful.
+6. **Never let a breakthrough be free.** `novel.py system realm` requires a
+   `--scene` and debits the story's cost tracks (`LK-BREAKTHROUGH-COSTS`).
+7. **Never break a canon lock** (`bible/canon-locks.json`). Breaking one is a
    defect, not a creative choice. Changing one is a deliberate act with a
    commit message explaining it.
-5. **Run `novel.py validate` before committing.** It must pass clean.
+8. **Run `novel.py validate` before committing.** It must pass clean.
+
+## The protagonist's system
+
+`engine/system-engine.md` is the doctrine; `engine/system.json` is the rules;
+`engine/system-status.json` is the live state and the absorption log. The four
+anti-inflation rails — familiarity decay, per-chapter and per-arc caps, residue,
+and the witness rule — are the reason the system is safe to write with. Retune
+them in the data, never by removing the refusals.
+
+Power-system facts that apply to everyone (realms, techniques, sorcery,
+bloodlines, talents) belong in `bible/power-systems.md`, not in the system
+files. Professions belong in `bible/professions.md`.
 
 ## When adding a chapter
 
@@ -30,6 +50,15 @@ novel.py chapter record N ...       # after
 novel.py chapter point N ...        # every load-bearing detail
 novel.py chapter close --tension T --kind K
 novel.py continuity sync && novel.py validate
+```
+
+If the chapter moved the system:
+
+```
+novel.py system absorb <source> --scene "..." --who-paid "..."
+novel.py system spend <attribute> <n>
+novel.py system realm --to N --scene "..."      # only if it happened under pressure
+novel.py system sheet
 ```
 
 ## When changing the tools
