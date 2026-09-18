@@ -1,0 +1,10 @@
+{
+  "notice": "Only point this at text you have the right to use: public-domain works, your own drafts, or material you are licensed to analyse. The miner abstracts structure — it never stores source prose, and it adds every source name to an avoid-list so the generator cannot reuse it.",
+  "sources": [
+    {"id": "pg-1342", "title": "Pride and Prejudice", "status": "public domain (US)", "url": "https://www.gutenberg.org/files/1342/1342-0.txt"},
+    {"id": "pg-84", "title": "Frankenstein", "status": "public domain (US)", "url": "https://www.gutenberg.org/files/84/84-0.txt"},
+    {"id": "pg-2701", "title": "Moby-Dick", "status": "public domain (US)", "url": "https://www.gutenberg.org/files/2701/2701-0.txt"},
+    {"id": "pg-1400", "title": "Great Expectations", "status": "public domain (US)", "url": "https://www.gutenberg.org/files/1400/1400-0.txt"},
+    {"id": "pg-345", "title": "Dracula", "status": "public domain (US)", "url": "https://www.gutenberg.org/files/345/345-0.txt"}
+  ]
+}

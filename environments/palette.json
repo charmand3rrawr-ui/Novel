@@ -1,0 +1,59 @@
+{
+  "description": "Raw material for environment generation. Extend freely; the generator only ever recombines what is here.",
+  "scale_tiers": ["room", "building", "campus", "district", "city", "region", "country", "continent", "planet", "moon", "orbital", "system"],
+  "types": {
+    "academy": {"scale": "campus", "function": "sorting and credentialing the young", "power": "faculty council over a donor board", "default_hazards": ["public failure", "rank exposure", "an examiner with a grudge"]},
+    "workplace": {"scale": "building", "function": "converting labour into someone else's leverage", "power": "a manager who answers to an absent owner", "default_hazards": ["quota", "surveillance", "a colleague's debt"]},
+    "city-district": {"scale": "district", "function": "where the novel's classes actually touch", "power": "landlords, a watch captain, an informal arbiter", "default_hazards": ["rent", "a boundary that must not be crossed", "flood or fire season"]},
+    "city": {"scale": "city", "function": "the machine the protagonist is trying to work", "power": "chartered houses and a nominal council", "default_hazards": ["law", "crowd", "rationing"]},
+    "border-region": {"scale": "region", "function": "where two systems fail to agree", "power": "whoever controls the crossing this month", "default_hazards": ["papers", "militia", "weather"]},
+    "country": {"scale": "country", "function": "the scale at which decisions stop having faces", "power": "ministry, treaty, and an army that is expensive", "default_hazards": ["policy", "conscription", "currency"]},
+    "orbital-station": {"scale": "orbital", "function": "a chokepoint dressed as a neighbourhood", "power": "dock authority; the company that owns the air", "default_hazards": ["air debt", "spin failure", "quarantine"]},
+    "moon-settlement": {"scale": "moon", "function": "extraction site with a town attached", "power": "a company charter with a token assembly", "default_hazards": ["dust", "isolation", "a supply ship that does not come"]},
+    "planet-frontier": {"scale": "planet", "function": "the place people go to stop being counted", "power": "whoever owns the water", "default_hazards": ["distance", "unmapped biology", "the previous settlers"]},
+    "ship": {"scale": "building", "function": "a closed world with a schedule", "power": "a captain and a manifest", "default_hazards": ["duration", "cargo", "no exit"]},
+    "wilderness": {"scale": "region", "function": "where institutions cannot follow", "power": "none, which is its own pressure", "default_hazards": ["exposure", "navigation", "what lives there"]},
+    "origin-site": {"scale": "building", "function": "the place a character came from, seen again", "power": "memory against the present tenant", "default_hazards": ["recognition", "change", "who stayed"]}
+  },
+  "sensory_signature": [
+    "wet stone and cold iron; sound arrives a half-second late",
+    "recycled air with a sweet chemical edge that never quite clears",
+    "chalk dust, old varnish, and the smell of other people's nerves",
+    "rust-coloured grit that gets into food, cuffs, and teeth",
+    "hot machine oil over river mud",
+    "too much light, nowhere to be unobserved",
+    "constant low vibration you stop hearing and start feeling in the jaw",
+    "wood smoke and wet wool, and a silence with edges"
+  ],
+  "access_rule": [
+    "entry is by name on a list nobody will show you",
+    "you may enter freely; leaving requires a signature",
+    "access is priced, and the price changes by who is asking",
+    "open to all, but the useful half is behind a second door",
+    "you are admitted as someone's guest, and remain their liability",
+    "entry costs an hour of labour or an hour of information"
+  ],
+  "secret": [
+    "the institution's founding money came from the thing it now polices",
+    "a whole floor, wing, or level is unlisted and staffed",
+    "the records are accurate; that is what makes them dangerous",
+    "someone has been quietly keeping people alive against policy",
+    "the place is being wound down and the staff have not been told",
+    "an earlier disaster was reclassified as an accident"
+  ],
+  "change_over_time": [
+    "tightens: each arc adds a rule and removes an exit",
+    "hollows: the people leave before the buildings do",
+    "inverts: the powerless faction takes the building, keeps the cruelty",
+    "opens: a wall comes down and the pressure moves elsewhere",
+    "floods, literally or financially, on a schedule the locals know"
+  ],
+  "affordances": [
+    "forced proximity between people who would avoid each other",
+    "a public stage where reputation is made and lost in one scene",
+    "a legitimate reason for a character to overhear anything",
+    "a hard deadline the place itself imposes",
+    "an asymmetry of information the POV can exploit once",
+    "somewhere a body, a document, or a person can vanish"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "environments": [
+    {
+      "id": "academy-thorn-ledger",
+      "name": "Thorn Ledger",
+      "type": "academy",
+      "scale": "campus",
+      "parent": "",
+      "status": "active",
+      "seed": 4821,
+      "created": "2026-09-18",
+      "need_that_licenses": "Arc 1 needs an institution with the formal power to exclude Kestrel",
+      "function": "sorting and credentialing the young",
+      "power_structure": "faculty council over a donor board",
+      "sensory_signature": "wood smoke and wet wool, and a silence with edges",
+      "access_rule": "open to all, but the useful half is behind a second door",
+      "hazards": [
+        "public failure",
+        "rank exposure",
+        "an examiner with a grudge"
+      ],
+      "secret": "the records are accurate; that is what makes them dangerous",
+      "change_over_time": "tightens: each arc adds a rule and removes an exit",
+      "affordances": [
+        "somewhere a body, a document, or a person can vanish",
+        "a public stage where reputation is made and lost in one scene",
+        "forced proximity between people who would avoid each other"
+      ],
+      "economy": "undefined — who pays, who is paid, and in what",
+      "factions_present": [],
+      "resident_characters": [],
+      "entry_condition": "the threshold test has to happen somewhere that can fail them publicly",
+      "exit_condition": "undefined — what closes this stage for the story",
+      "continuity_hooks": [],
+      "chapters": [
+        1
+      ],
+      "activated_chapter": 1,
+      "file": "environments/active/academy-thorn-ledger.md",
+      "notes": ""
+    },
+    {
+      "id": "orbital-station-pale-verge",
+      "name": "Pale Verge",
+      "type": "orbital-station",
+      "scale": "orbital",
+      "parent": "",
+      "status": "dormant",
+      "seed": 77,
+      "created": "2026-09-18",
+      "need_that_licenses": "Arc 3 needs the chokepoint where infrastructure and property are the same thing",
+      "function": "a chokepoint dressed as a neighbourhood",
+      "power_structure": "dock authority; the company that owns the air",
+      "sensory_signature": "hot machine oil over river mud",
+      "access_rule": "access is priced, and the price changes by who is asking",
+      "hazards": [
+        "air debt",
+        "spin failure",
+        "quarantine"
+      ],
+      "secret": "a whole floor, wing, or level is unlisted and staffed",
+      "change_over_time": "hollows: the people leave before the buildings do",
+      "affordances": [
+        "a public stage where reputation is made and lost in one scene",
+        "forced proximity between people who would avoid each other",
+        "a legitimate reason for a character to overhear anything"
+      ],
+      "economy": "undefined — who pays, who is paid, and in what",
+      "factions_present": [],
+      "resident_characters": [],
+      "entry_condition": "Arc 3 needs the chokepoint where infrastructure and property are the same thing",
+      "exit_condition": "undefined — what closes this stage for the story",
+      "continuity_hooks": [],
+      "chapters": [],
+      "activated_chapter": null,
+      "file": "environments/dormant/orbital-station-pale-verge.md",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "description": "Live story state. The engine reads and writes this. Treat it as the novel's save file.",
+  "current_chapter": 1,
+  "current_arc": "A1",
+  "current_pov": "mc-kestrel-vane",
+  "last_tension": 0,
+  "beat_index": 0,
+  "chapters_since_rest": 0,
+  "chapters_since_revelation": 0,
+  "consecutive_action_chapters": 0,
+  "consecutive_low_tension_chapters": 0,
+  "active_characters": [
+    "mc-kestrel-vane"
+  ],
+  "active_environments": [
+    "academy-thorn-ledger"
+  ],
+  "introductions_this_arc": {
+    "characters": 0,
+    "environments": 1
+  },
+  "introductions_this_chapter": {
+    "characters": 0,
+    "environments": 1
+  },
+  "cooldown_until_chapter": 0,
+  "gates_passed": [],
+  "log": [
+    {
+      "date": "2026-09-18",
+      "chapter": 1,
+      "event": "activated environment Thorn Ledger (academy) in ch.1 — need: the threshold test has to happen somewhere that can fail them publicly"
+    }
+  ]
+}

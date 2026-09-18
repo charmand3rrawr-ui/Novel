@@ -1,0 +1,649 @@
+{
+  "description": "Trait atoms. The character generator draws contradictory pairs from these pools. scrape_characters.py appends mined, abstracted atoms here with provenance — never source prose, never source names.",
+  "version": 2,
+  "pools": {
+    "wound": [
+      {
+        "id": "w-traded",
+        "text": "was given away to settle someone else's obligation",
+        "axis": "worth"
+      },
+      {
+        "id": "w-witnessed",
+        "text": "watched a protector fail publicly and survived the fallout alone",
+        "axis": "trust"
+      },
+      {
+        "id": "w-spared",
+        "text": "was the one spared when others were not, and never learned why",
+        "axis": "guilt"
+      },
+      {
+        "id": "w-erased",
+        "text": "had a formative achievement credited to someone else",
+        "axis": "recognition"
+      },
+      {
+        "id": "w-fluent",
+        "text": "lost a first language and with it a way of being loved",
+        "axis": "belonging"
+      },
+      {
+        "id": "w-correct",
+        "text": "was right about a danger nobody believed until it arrived",
+        "axis": "authority"
+      },
+      {
+        "id": "w-tended",
+        "text": "spent childhood as the caretaker of an adult",
+        "axis": "role"
+      },
+      {
+        "id": "w-counted",
+        "text": "grew up where affection arrived only after measurable output",
+        "axis": "worth"
+      }
+    ],
+    "lie": [
+      {
+        "id": "l-ledger",
+        "text": "Worth is a balance you must keep positive."
+      },
+      {
+        "id": "l-useful",
+        "text": "If I stop being useful, I stop being tolerated."
+      },
+      {
+        "id": "l-alone",
+        "text": "Anyone who truly sees me will leave, so show them a version that stays."
+      },
+      {
+        "id": "l-control",
+        "text": "Suffering I chose is not suffering."
+      },
+      {
+        "id": "l-owed",
+        "text": "The world owes me a correction, and I am entitled to collect it."
+      },
+      {
+        "id": "l-small",
+        "text": "Wanting more than I was given is a kind of theft."
+      },
+      {
+        "id": "l-pure",
+        "text": "A clean conscience is worth more than a saved life."
+      }
+    ],
+    "mask": [
+      {
+        "id": "m-affable",
+        "text": "relentless warmth used as a perimeter"
+      },
+      {
+        "id": "m-pedant",
+        "text": "precision about small things to avoid precision about large ones"
+      },
+      {
+        "id": "m-servant",
+        "text": "aggressive helpfulness that creates debt"
+      },
+      {
+        "id": "m-clown",
+        "text": "makes themselves the joke first, so no one else can"
+      },
+      {
+        "id": "m-stone",
+        "text": "stillness mistaken for depth, protecting a loud interior"
+      },
+      {
+        "id": "m-zealot",
+        "text": "borrowed certainty worn like armor over a private doubt"
+      },
+      {
+        "id": "m-drifter",
+        "text": "cultivated unseriousness hiding a decade-long plan"
+      },
+      {
+        "id": "mined-mask-1",
+        "text": "principle invoked at exactly the moment it is convenient",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "assertive",
+            "volatile"
+          ],
+          "sources": [
+            "pg-1342",
+            "pg-84"
+          ]
+        }
+      },
+      {
+        "id": "mined-mask-2",
+        "text": "reasonableness used as a battering ram",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "assertive",
+            "controlled"
+          ],
+          "sources": [
+            "pg-1342"
+          ]
+        }
+      },
+      {
+        "id": "mined-mask-3",
+        "text": "asks the one question the room agreed not to ask",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "inquisitive",
+            "volatile"
+          ],
+          "sources": [
+            "pg-1342"
+          ]
+        }
+      },
+      {
+        "id": "mined-mask-4",
+        "text": "intimacy offered fast and withdrawn faster",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "social",
+            "volatile"
+          ],
+          "sources": [
+            "pg-1342",
+            "pg-84"
+          ]
+        }
+      },
+      {
+        "id": "mined-mask-5",
+        "text": "hospitality kept as a ledger of who owes an evening",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "social",
+            "controlled"
+          ],
+          "sources": [
+            "pg-1342"
+          ]
+        }
+      },
+      {
+        "id": "mined-mask-6",
+        "text": "changes the subject with a joke sharp enough to leave a mark",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "evasive",
+            "volatile"
+          ],
+          "sources": [
+            "pg-1342"
+          ]
+        }
+      }
+    ],
+    "competence": [
+      {
+        "id": "c-ledger",
+        "text": "reads financial instruments the way others read faces"
+      },
+      {
+        "id": "c-triage",
+        "text": "can hold a body together with improvised materials"
+      },
+      {
+        "id": "c-rooms",
+        "text": "knows who in any room actually decides"
+      },
+      {
+        "id": "c-tongues",
+        "text": "acquires dialects and registers unnervingly fast"
+      },
+      {
+        "id": "c-metal",
+        "text": "repairs machines by listening to them"
+      },
+      {
+        "id": "c-doors",
+        "text": "gets into places without force or permission"
+      },
+      {
+        "id": "c-weather",
+        "text": "predicts crowd mood and its turn"
+      },
+      {
+        "id": "c-memory",
+        "text": "recalls exact wording of anything ever said to them"
+      },
+      {
+        "id": "c-null",
+        "text": "can be forgotten at will; people lose them in memory"
+      },
+      {
+        "id": "mined-competence-1",
+        "text": "can move a room's decision without appearing to speak first",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "assertive",
+            "social"
+          ],
+          "sources": [
+            "pg-1342"
+          ]
+        }
+      },
+      {
+        "id": "mined-competence-2",
+        "text": "reconstructs a stranger's whole situation from three questions",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "inquisitive",
+            "social"
+          ],
+          "sources": [
+            "pg-1342"
+          ]
+        }
+      },
+      {
+        "id": "mined-competence-3",
+        "text": "finds the load-bearing lie in an argument and pulls it",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "inquisitive",
+            "assertive"
+          ],
+          "sources": [
+            "pg-1342"
+          ]
+        }
+      },
+      {
+        "id": "mined-competence-4",
+        "text": "can value anything, including people, within a minute of seeing it",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "acquisitive",
+            "inquisitive"
+          ],
+          "sources": [
+            "pg-84"
+          ]
+        }
+      },
+      {
+        "id": "mined-competence-5",
+        "text": "notices the injury a person is hiding before they admit it",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "protective",
+            "inquisitive"
+          ],
+          "sources": [
+            "pg-84"
+          ]
+        }
+      },
+      {
+        "id": "mined-competence-6",
+        "text": "can make an entire group forget who raised a subject",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "evasive",
+            "social"
+          ],
+          "sources": [
+            "pg-1342"
+          ]
+        }
+      }
+    ],
+    "incompetence": [
+      {
+        "id": "x-apology",
+        "text": "cannot apologize without making it a transaction"
+      },
+      {
+        "id": "x-rest",
+        "text": "no capacity for unstructured time"
+      },
+      {
+        "id": "x-receive",
+        "text": "cannot accept a gift without immediate repayment"
+      },
+      {
+        "id": "x-lie-direct",
+        "text": "can deceive by omission for years but cannot say a direct falsehood"
+      },
+      {
+        "id": "x-touch",
+        "text": "flinches at kindness faster than at threat"
+      },
+      {
+        "id": "x-small-talk",
+        "text": "brilliant under pressure, useless at a dinner table"
+      },
+      {
+        "id": "x-anger",
+        "text": "has no register between composure and scorched earth"
+      }
+    ],
+    "verbal_tic": [
+      {
+        "id": "v-terms",
+        "text": "phrases everything as terms and conditions"
+      },
+      {
+        "id": "v-third",
+        "text": "slips into third person when frightened"
+      },
+      {
+        "id": "v-count",
+        "text": "counts aloud under stress"
+      },
+      {
+        "id": "v-quote",
+        "text": "quotes regulations verbatim as a weapon"
+      },
+      {
+        "id": "v-question",
+        "text": "answers questions with questions when cornered"
+      },
+      {
+        "id": "v-diminutive",
+        "text": "gives everyone a nickname within a minute of meeting"
+      },
+      {
+        "id": "v-clip",
+        "text": "drops articles and pronouns when the stakes rise"
+      },
+      {
+        "id": "v-hedge",
+        "text": "buries certainties in qualifiers, then acts on them absolutely"
+      },
+      {
+        "id": "mined-verbal_tic-1",
+        "text": "goes silent for exactly as long as it takes to unnerve",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "cold",
+            "volatile"
+          ],
+          "sources": [
+            "pg-1342",
+            "pg-84"
+          ]
+        }
+      },
+      {
+        "id": "mined-verbal_tic-2",
+        "text": "repeats your own words back, unaltered, until you hear them",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "cold",
+            "controlled"
+          ],
+          "sources": [
+            "pg-1342"
+          ]
+        }
+      },
+      {
+        "id": "mined-verbal_tic-3",
+        "text": "keeps perfect grammar while saying something unforgivable",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "formal",
+            "volatile"
+          ],
+          "sources": [
+            "pg-84"
+          ]
+        }
+      }
+    ],
+    "physical_signature": [
+      {
+        "id": "p-hands",
+        "text": "hands always doing a second task"
+      },
+      {
+        "id": "p-stillness",
+        "text": "unnatural stillness that makes others fidget"
+      },
+      {
+        "id": "p-limp",
+        "text": "an old injury that only shows when they are lying"
+      },
+      {
+        "id": "p-ink",
+        "text": "ink or grease permanently under the nails"
+      },
+      {
+        "id": "p-height",
+        "text": "takes up less space than their body requires"
+      },
+      {
+        "id": "p-eyes",
+        "text": "looks at mouths, not eyes"
+      },
+      {
+        "id": "p-scentmem",
+        "text": "carries a smell that belongs to a place they left"
+      }
+    ],
+    "loyalty_shape": [
+      {
+        "id": "y-contract",
+        "text": "loyal to terms, not people; will honor a bad deal to the letter"
+      },
+      {
+        "id": "y-one",
+        "text": "one absolute loyalty, everything else negotiable"
+      },
+      {
+        "id": "y-institution",
+        "text": "loyal to the institution over every individual in it"
+      },
+      {
+        "id": "y-ledger-even",
+        "text": "loyal until the debt is settled, then gone without malice"
+      },
+      {
+        "id": "y-underdog",
+        "text": "always loyal to whoever is currently losing"
+      },
+      {
+        "id": "y-future",
+        "text": "loyal to a version of someone that does not exist yet"
+      }
+    ],
+    "fear": [
+      {
+        "id": "f-redundant",
+        "text": "being replaceable"
+      },
+      {
+        "id": "f-seen",
+        "text": "being fully known"
+      },
+      {
+        "id": "f-repeat",
+        "text": "becoming the person who hurt them"
+      },
+      {
+        "id": "f-still",
+        "text": "stopping, and what arrives in the silence"
+      },
+      {
+        "id": "f-owe",
+        "text": "owing something that cannot be repaid"
+      },
+      {
+        "id": "f-wrong",
+        "text": "having been wrong for a very long time"
+      }
+    ],
+    "moral_axis": [
+      {
+        "id": "a-mercy-order",
+        "text": "mercy vs order"
+      },
+      {
+        "id": "a-truth-kind",
+        "text": "truth vs kindness"
+      },
+      {
+        "id": "a-few-many",
+        "text": "the few known vs the many unknown"
+      },
+      {
+        "id": "a-means-ends",
+        "text": "clean means vs necessary ends"
+      },
+      {
+        "id": "a-loyal-just",
+        "text": "loyalty vs justice"
+      }
+    ],
+    "offstage_life": [
+      {
+        "id": "o-teaching",
+        "text": "quietly teaching someone the thing they were denied"
+      },
+      {
+        "id": "o-debt",
+        "text": "paying down an obligation nobody knows about"
+      },
+      {
+        "id": "o-file",
+        "text": "assembling a file on someone powerful"
+      },
+      {
+        "id": "o-tending",
+        "text": "maintaining a place or person the story has not shown"
+      },
+      {
+        "id": "o-drink",
+        "text": "losing a private battle on a schedule"
+      },
+      {
+        "id": "o-letters",
+        "text": "writing letters they never send"
+      },
+      {
+        "id": "o-second-life",
+        "text": "running a second, incompatible life in another district"
+      }
+    ],
+    "arc_shape": [
+      {
+        "id": "s-corrupt-recover",
+        "text": "corruption then recovery"
+      },
+      {
+        "id": "s-flat-catalyst",
+        "text": "flat arc: changes others, not themselves"
+      },
+      {
+        "id": "s-disillusion",
+        "text": "disillusionment into clear sight"
+      },
+      {
+        "id": "s-hardening",
+        "text": "hardening, unredeemed but comprehensible"
+      },
+      {
+        "id": "s-thaw",
+        "text": "slow thaw, earned by small repeated acts"
+      },
+      {
+        "id": "s-fall",
+        "text": "tragic fall visible to everyone but them"
+      },
+      {
+        "id": "s-return",
+        "text": "leaves, is changed, returns unrecognizable to those who stayed"
+      },
+      {
+        "id": "mined-arc_shape-1",
+        "text": "holds, holds, holds, then breaks in one irreversible scene",
+        "origin": "mined",
+        "provenance": {
+          "method": "cross-source abstraction",
+          "registers": [
+            "controlled",
+            "volatile"
+          ],
+          "sources": [
+            "pg-1342"
+          ]
+        }
+      }
+    ],
+    "entry_pretext": [
+      {
+        "id": "e-obstacle",
+        "text": "stands between the POV and something already wanted"
+      },
+      {
+        "id": "e-messenger",
+        "text": "arrives carrying information the plot has made necessary"
+      },
+      {
+        "id": "e-inherited",
+        "text": "attached to an institution the POV just entered"
+      },
+      {
+        "id": "e-collision",
+        "text": "pursuing an unrelated goal that crosses the POV's path"
+      },
+      {
+        "id": "e-summoned",
+        "text": "called in by an established character under pressure"
+      },
+      {
+        "id": "e-returned",
+        "text": "a name already spoken in the text, arriving in person"
+      }
+    ]
+  },
+  "contradiction_rules": [
+    "Pair a mask with a competence it cannot protect.",
+    "Pair a fear with a loyalty_shape that guarantees the fear is realized.",
+    "Pair a lie with a competence that makes the lie look true for a long time.",
+    "Never give a character a wound and a lie from the same axis without a third element that complicates both."
+  ]
+}

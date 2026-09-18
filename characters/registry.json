@@ -1,0 +1,120 @@
+{
+  "characters": [
+    {
+      "id": "mc-kestrel-vane",
+      "name": "Kestrel Vane",
+      "role": "protagonist",
+      "culture": "ledger",
+      "status": "active",
+      "seed": "authored",
+      "created": "2026-09-18",
+      "need_that_licenses": "they are the novel",
+      "story_function": "the finest reader of the books in their generation, asking whether anything can be given rather than owed",
+      "core": {
+        "wound": "pledged at eleven to settle a family debt, and told it was an honour",
+        "lie": "worth is a balance you must keep positive, and love is the interest paid on it",
+        "want": "to become indispensable enough that no one can discard them again",
+        "need": "to be known by someone who has the power to leave and stays anyway",
+        "fear": "owing something that cannot be repaid",
+        "moral_axis": "loyalty vs justice"
+      },
+      "surface": {
+        "mask": "aggressive usefulness",
+        "verbal_tic": "phrases everything as terms and conditions",
+        "physical_signature": "ink under the nails; hands always doing a second task"
+      },
+      "capability": {
+        "spike": "reads financial instruments the way others read faces",
+        "secondary": "knows who in any room actually decides",
+        "hole": "cannot accept a gift without immediate repayment"
+      },
+      "bonds": {
+        "loyalty_shape": "loyal to terms, not people",
+        "to_protagonist": "self",
+        "leverage_over_them": "the pledge that bought their schooling is still an open entry",
+        "leverage_they_hold": "can read a burying entry"
+      },
+      "offstage_life": "quietly discharging the family's remaining standing, one instalment at a time",
+      "trajectory": {
+        "arc_shape": "corruption then recovery",
+        "break_point": "A4, in public",
+        "exit_condition": "survives; makes one public, unaccounted gift"
+      },
+      "contract": {
+        "entry_pretext": "the novel opens on them",
+        "first_appearance_conditions": [
+          "competence visible before biography"
+        ],
+        "do_not_reveal_before": "the pledge"
+      },
+      "contradictions": [
+        "usefulness buys visibility, and visibility is what the wound cannot survive"
+      ],
+      "notes": "",
+      "chapters": [
+        1
+      ],
+      "introduced_chapter": 1,
+      "file": "characters/cast/mc-kestrel-vane.md"
+    },
+    {
+      "id": "sila-corr",
+      "name": "Sila Corr",
+      "role": "rival",
+      "culture": "ledger",
+      "status": "dormant",
+      "seed": 90210,
+      "created": "2026-09-18",
+      "need_that_licenses": "Kestrel's method needs a mirror that shows what it costs",
+      "story_function": "mirrors the MC's method with a different wound; proves the method is not destiny",
+      "core": {
+        "wound": "was given away to settle someone else's obligation",
+        "lie": "A clean conscience is worth more than a saved life.",
+        "want": "to secure a position where they can never again be being replaceable",
+        "need": "to be met on the axis of clean means vs necessary ends and survive the answer",
+        "fear": "being replaceable",
+        "moral_axis": "clean means vs necessary ends"
+      },
+      "surface": {
+        "mask": "reasonableness used as a battering ram",
+        "verbal_tic": "answers questions with questions when cornered",
+        "physical_signature": "unnatural stillness that makes others fidget"
+      },
+      "capability": {
+        "spike": "acquires dialects and registers unnervingly fast",
+        "secondary": "recalls exact wording of anything ever said to them",
+        "hole": "brilliant under pressure, useless at a dinner table"
+      },
+      "bonds": {
+        "loyalty_shape": "loyal to terms, not people; will honor a bad deal to the letter",
+        "to_protagonist": "undefined — set on first shared scene",
+        "leverage_over_them": "knowledge that they quietly teaching someone the thing they were denied",
+        "leverage_they_hold": "undefined"
+      },
+      "offstage_life": "quietly teaching someone the thing they were denied",
+      "trajectory": {
+        "arc_shape": "slow thaw, earned by small repeated acts",
+        "break_point": "undefined — name the scene that cracks them",
+        "exit_condition": "undefined — how they leave the novel, on or off the page"
+      },
+      "contract": {
+        "entry_pretext": "called in by an established character under pressure",
+        "first_appearance_conditions": [
+          "The scene must need them for a reason the reader already feels.",
+          "They arrive mid-action, doing their own business, not waiting to be met.",
+          "One concrete detail from `surface` lands in the first three lines."
+        ],
+        "do_not_reveal_before": "the wound; it is earned, never introduced"
+      },
+      "contradictions": [
+        "The mask (reasonableness used as a battering ram) cannot protect the spike (acquires dialects and registers unnervingly fast) when it is tested in public.",
+        "Their loyalty (loyal to terms, not people; will honor a bad deal to the letter) guarantees they will meet the thing they fear: being replaceable.",
+        "The lie — A clean conscience is worth more than a saved life. — will look true for most of their time on the page."
+      ],
+      "notes": "",
+      "chapters": [],
+      "introduced_chapter": null,
+      "file": "characters/dormant/sila-corr.md"
+    }
+  ]
+}

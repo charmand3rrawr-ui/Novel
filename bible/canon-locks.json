@@ -1,0 +1,14 @@
+{
+  "description": "Hard rules. Every chapter must be writable without breaking any of these. A load-bearing continuity point may cite a lock id; the validator checks the citation resolves.",
+  "locks": [
+    {"id": "LK-LEDGER-BINDING", "rule": "A recorded obligation is enforceable by any chartered house, not only the one that holds it. This is why debts travel.", "domain": "system"},
+    {"id": "LK-NO-ERASURE", "rule": "Entries cannot be deleted, only superseded. Every correction leaves a visible trace, and the trace is itself an entry.", "domain": "system"},
+    {"id": "LK-COLLATERAL", "rule": "A person may be pledged as collateral only once, and only before the age of fourteen. The practice is legal, rare, and universally despised in public.", "domain": "law"},
+    {"id": "LK-NO-MAGIC", "rule": "There is no supernatural force. Every advantage in this world is information, money, institution, or nerve.", "domain": "physics"},
+    {"id": "LK-DISTANCE", "rule": "Travel between planetary bodies takes weeks, not hours. Distance is a plot constraint and may never be waved away.", "domain": "physics"},
+    {"id": "LK-AIR-DEBT", "rule": "On stations and moons, life support is metered and billed. Nobody dies of unpaid air on the page without the novel treating it as a killing.", "domain": "setting"},
+    {"id": "LK-NO-RESCUE", "rule": "No institution rescues the protagonist. Help always arrives as a person, with terms.", "domain": "story"},
+    {"id": "LK-COST", "rule": "Every capability the protagonist gains is paid for on a cost track, on the page, in the same arc.", "domain": "story"},
+    {"id": "LK-EARNED-WOUND", "rule": "A character's wound is never introduced; it is discovered, and only after the reader has already formed an opinion of them.", "domain": "craft"}
+  ]
+}

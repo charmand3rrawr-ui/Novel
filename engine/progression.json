@@ -1,0 +1,167 @@
+{
+  "description": "Main-character progression model. Capability never rises for free; the engine debits a cost track for every credit on a capability track.",
+  "protagonist": "mc-kestrel-vane",
+  "tracks": {
+    "capability": {
+      "craft": {
+        "value": 1,
+        "ceiling": 10,
+        "label": "Technical mastery of the world's core discipline",
+        "start": 1
+      },
+      "authority": {
+        "value": 0,
+        "ceiling": 10,
+        "label": "Institutional and social power to make others act",
+        "start": 0
+      },
+      "insight": {
+        "value": 2,
+        "ceiling": 10,
+        "label": "Reading people, systems, and hidden structure",
+        "start": 2
+      },
+      "endurance": {
+        "value": 2,
+        "ceiling": 10,
+        "label": "What the body and nerve can absorb",
+        "start": 2
+      },
+      "reach": {
+        "value": 0,
+        "ceiling": 10,
+        "label": "Geographic and political scope of action",
+        "start": 0
+      }
+    },
+    "cost": {
+      "intimacy": {
+        "value": 6,
+        "floor": 0,
+        "label": "Depth of honest connection remaining"
+      },
+      "integrity": {
+        "value": 7,
+        "floor": 0,
+        "label": "Alignment between stated and actual values"
+      },
+      "anonymity": {
+        "value": 9,
+        "floor": 0,
+        "label": "How invisible the MC still is to powers that matter"
+      },
+      "body": {
+        "value": 8,
+        "floor": 0,
+        "label": "Unbroken physical and mental reserve"
+      }
+    },
+    "internal": {
+      "lie_grip": {
+        "value": 9,
+        "floor": 0,
+        "label": "How firmly the MC's controlling lie still holds. Falls as the arc lands."
+      },
+      "self_knowledge": {
+        "value": 1,
+        "ceiling": 10,
+        "label": "Rises as lie_grip falls. Mirror track."
+      }
+    }
+  },
+  "exchange_rules": [
+    "Any +1 on a capability track requires -1 on at least one cost track, chosen on the page, not in summary.",
+    "lie_grip may only fall after an on-page refusal, failure, or confrontation. Never from reflection alone.",
+    "self_knowledge = 10 - lie_grip, enforced by the engine.",
+    "A capability track may not exceed its start value plus (chapter_number / 6), rounded down, before Act III. Growth is rationed, not the baseline.",
+    "No track moves in a rest chapter except intimacy and body, which may recover by 1."
+  ],
+  "gates": [
+    {
+      "id": "G1",
+      "name": "Admitted to the discipline",
+      "requires": {
+        "craft": 2
+      },
+      "arc": "A1",
+      "unlocks": [
+        "environment:academy-thorn-ledger"
+      ],
+      "on_page": "Must be earned in a scene of tested competence, witnessed."
+    },
+    {
+      "id": "G2",
+      "name": "First patronage",
+      "requires": {
+        "authority": 2,
+        "insight": 3
+      },
+      "arc": "A2",
+      "unlocks": [
+        "faction:the-ledgerhouse"
+      ],
+      "cost": {
+        "anonymity": -2
+      }
+    },
+    {
+      "id": "G3",
+      "name": "Named by the opposition",
+      "requires": {
+        "reach": 2
+      },
+      "arc": "A2",
+      "unlocks": [
+        "antagonist_escalation"
+      ],
+      "cost": {
+        "anonymity": -3,
+        "body": -1
+      }
+    },
+    {
+      "id": "G4",
+      "name": "The compromise",
+      "requires": {
+        "authority": 4
+      },
+      "arc": "A3",
+      "cost": {
+        "integrity": -3
+      },
+      "on_page": "MC must choose it knowingly. No accident, no coercion."
+    },
+    {
+      "id": "G5",
+      "name": "The lie breaks",
+      "requires": {
+        "lie_grip_at_most": 3
+      },
+      "arc": "A4",
+      "unlocks": [
+        "true_want"
+      ],
+      "on_page": "Confrontation with the person who benefits from the lie."
+    },
+    {
+      "id": "G6",
+      "name": "Standing on new ground",
+      "requires": {
+        "craft": 7,
+        "authority": 6,
+        "self_knowledge": 7
+      },
+      "arc": "A5"
+    }
+  ],
+  "development_spine": {
+    "want": "To be indispensable enough that no one can discard them again.",
+    "need": "To be known by someone who has the power to leave and stays anyway.",
+    "lie": "Worth is a balance you must keep positive, and love is the interest paid on it.",
+    "truth": "A ledger cannot hold a person. Some things are given, not earned.",
+    "ghost": "Traded away at eleven to settle a family debt, and told it was an honor.",
+    "arc_shape": "corruption-then-recovery",
+    "break_point_arc": "A4",
+    "final_state": "Keeps the competence, drops the accounting. Chooses one unearned loyalty in public."
+  }
+}

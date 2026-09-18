@@ -1,0 +1,67 @@
+{
+  "$schema": "engine/schema/tempo.md",
+  "description": "The metronome of the novel. The engine reads this to decide what a chapter owes the reader.",
+  "chapter_target_words": { "min": 1800, "ideal": 2600, "max": 4200 },
+  "beat_cycle": [
+    "hook",
+    "pressure",
+    "complication",
+    "cost",
+    "revelation",
+    "consolidation"
+  ],
+  "beat_definitions": {
+    "hook": "Open a want or a threat the reader can name in one sentence.",
+    "pressure": "Force the POV character to spend something: time, trust, safety, or self-image.",
+    "complication": "The plan survives contact with the world, but deformed.",
+    "cost": "A loss that cannot be undone this arc. Never symmetrical with the gain.",
+    "revelation": "Recontextualize earlier material. Must cash a seed planted at least 3 chapters back.",
+    "consolidation": "The character metabolizes change. Lower tension, raise intimacy or dread."
+  },
+  "tension_curve": {
+    "mode": "sawtooth",
+    "arc_floor": 2,
+    "arc_ceiling": 9,
+    "rise_per_chapter": 1,
+    "release_every": 6,
+    "release_depth": 3,
+    "note": "Tension is 1-10. The engine computes a target per chapter; the author may deviate by 1 with a logged reason."
+  },
+  "cadence_rules": {
+    "rest_chapter_every": 6,
+    "max_consecutive_action_chapters": 3,
+    "max_consecutive_low_tension_chapters": 2,
+    "revelation_every": 8,
+    "pov_switch_min_gap": 2,
+    "cliffhanger_ratio": 0.4
+  },
+  "introduction_budget": {
+    "note": "Hard ceilings that enforce just-in-time casting. The engine refuses to instantiate beyond these without an explicit --override and a logged justification.",
+    "named_characters_per_arc": 4,
+    "named_characters_per_chapter": 2,
+    "environments_per_arc": 2,
+    "environments_per_chapter": 1,
+    "new_proper_nouns_per_chapter": 5,
+    "cooldown_chapters_after_major_introduction": 2
+  },
+  "seed_policy": {
+    "min_seeds_planted_per_chapter": 1,
+    "max_open_seeds": 12,
+    "payoff_window_chapters": { "min": 3, "soft_max": 15, "hard_max": 30 },
+    "note": "A seed older than hard_max is flagged as rot: pay it, repurpose it, or retire it on the page."
+  },
+  "progression_gates": {
+    "note": "Power/skill growth is rationed against chapter count so the MC never outruns the story.",
+    "max_track_gain_per_chapter": 1,
+    "max_track_gain_per_arc": 3,
+    "requires_cost": true,
+    "cost_note": "Every advance on a capability track must be paid for with a loss on a relational, moral, or physical track."
+  },
+  "scene_mix_target_per_arc": {
+    "conflict": 0.35,
+    "discovery": 0.2,
+    "relationship": 0.2,
+    "consequence": 0.15,
+    "quiet": 0.1
+  }
+}

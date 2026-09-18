@@ -1,0 +1,70 @@
+{
+  "description": "Macro structure. The engine maps any chapter number to an arc, and an arc to its promises, pressures, and licensed expansions.",
+  "acts": [
+    { "id": "ACT1", "name": "The Debt", "arcs": ["A1", "A2"] },
+    { "id": "ACT2", "name": "The Rise and the Price", "arcs": ["A3", "A4"] },
+    { "id": "ACT3", "name": "The Reckoning", "arcs": ["A5"] }
+  ],
+  "arcs": [
+    {
+      "id": "A1",
+      "name": "Entrance by the Side Door",
+      "chapters": [1, 12],
+      "promise": "A person with nothing gets one impossible chance.",
+      "central_question": "Can Kestrel survive a place built to exclude them?",
+      "pressure_source": "institutional gatekeeping",
+      "licensed_environments": ["academy"],
+      "licensed_character_roles": ["rival", "mentor", "institution-face", "peer-ally"],
+      "closes_on": "Kestrel passes the threshold test but only by breaking a rule nobody has caught yet.",
+      "tension": { "open": 3, "peak": 8, "close": 5 }
+    },
+    {
+      "id": "A2",
+      "name": "The Ledgerhouse Notices",
+      "chapters": [13, 26],
+      "promise": "Competence attracts patronage, and patronage has terms.",
+      "central_question": "What is Kestrel willing to sign?",
+      "pressure_source": "patronage and obligation",
+      "licensed_environments": ["workplace", "city-district"],
+      "licensed_character_roles": ["patron", "handler", "rival-escalated", "dependent"],
+      "closes_on": "The first signature. The first person harmed by it.",
+      "tension": { "open": 4, "peak": 9, "close": 4 }
+    },
+    {
+      "id": "A3",
+      "name": "Reach Exceeds Grasp",
+      "chapters": [27, 42],
+      "promise": "The world is larger than the city, and it has already been divided.",
+      "central_question": "Is Kestrel an actor or an instrument?",
+      "pressure_source": "geopolitics and scale",
+      "licensed_environments": ["country", "border-region", "orbital-station"],
+      "licensed_character_roles": ["statesman", "operative", "foil-from-outside", "the-discarded"],
+      "closes_on": "A decision made at scale that kills people Kestrel will never meet.",
+      "tension": { "open": 5, "peak": 9, "close": 6 }
+    },
+    {
+      "id": "A4",
+      "name": "The Break",
+      "chapters": [43, 56],
+      "promise": "The thing that made Kestrel survive is the thing now destroying them.",
+      "central_question": "Who is Kestrel without the ledger?",
+      "pressure_source": "internal collapse, exposure",
+      "licensed_environments": ["moon-settlement", "childhood-origin-site"],
+      "licensed_character_roles": ["ghost-from-origin", "the-one-who-stays"],
+      "closes_on": "The lie breaks in public. Kestrel loses the standing they built.",
+      "tension": { "open": 6, "peak": 10, "close": 3 }
+    },
+    {
+      "id": "A5",
+      "name": "Unearned Ground",
+      "chapters": [57, 70],
+      "promise": "Rebuilding on a different foundation, at a cost that cannot be itemized.",
+      "central_question": "Can something be given rather than owed?",
+      "pressure_source": "consequence and choice",
+      "licensed_environments": ["planet-frontier", "the-ledgerhouse-interior"],
+      "licensed_character_roles": ["successor", "the-forgiven", "final-adversary"],
+      "closes_on": "A public, unaccounted gift.",
+      "tension": { "open": 5, "peak": 10, "close": 2 }
+    }
+  ]
+}

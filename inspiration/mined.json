@@ -1,0 +1,859 @@
+{
+  "avoid_names": [
+    "Agatha",
+    "Bennet",
+    "Bingley",
+    "Catherine",
+    "Clerval",
+    "Darcy",
+    "Elizabeth",
+    "Felix",
+    "Frankenstein",
+    "Geneva",
+    "Henry",
+    "Illustration",
+    "Ingolstadt",
+    "Jane",
+    "Justine",
+    "Lizzy",
+    "Longbourn",
+    "Lucas",
+    "Lydia",
+    "Safie",
+    "Victor",
+    "Wickham",
+    "William"
+  ],
+  "atoms_added": 16,
+  "sources": [
+    {
+      "label": "pg-1342",
+      "mined": "2026-09-18",
+      "figures": 12
+    },
+    {
+      "label": "pg-84",
+      "mined": "2026-09-18",
+      "figures": 12
+    }
+  ],
+  "figures": [
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 645,
+        "speech": {
+          "cold": 133,
+          "formal": 56,
+          "warm": 41,
+          "evasive": 2
+        },
+        "adverb": {
+          "withheld": 1,
+          "performed": 5,
+          "controlled": 7,
+          "volatile": 5
+        },
+        "action": {
+          "social": 15,
+          "evasive": 33,
+          "inquisitive": 43,
+          "assertive": 13,
+          "protective": 6,
+          "acquisitive": 26
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "controlled",
+        "dominant_action": "inquisitive"
+      }
+    },
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 302,
+        "speech": {
+          "cold": 54,
+          "formal": 18,
+          "warm": 11
+        },
+        "adverb": {
+          "controlled": 2,
+          "withheld": 1,
+          "volatile": 1
+        },
+        "action": {
+          "social": 18,
+          "assertive": 3,
+          "inquisitive": 19,
+          "evasive": 10,
+          "acquisitive": 7,
+          "protective": 2
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "controlled",
+        "dominant_action": "inquisitive"
+      }
+    },
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 162,
+        "speech": {
+          "formal": 3,
+          "cold": 8,
+          "warm": 1
+        },
+        "adverb": {},
+        "action": {
+          "social": 6,
+          "inquisitive": 7,
+          "evasive": 5
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": null,
+        "dominant_action": "inquisitive"
+      }
+    },
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 309,
+        "speech": {
+          "cold": 61,
+          "formal": 27,
+          "warm": 18
+        },
+        "adverb": {
+          "volatile": 3,
+          "controlled": 1
+        },
+        "action": {
+          "social": 15,
+          "inquisitive": 7,
+          "protective": 3,
+          "evasive": 15,
+          "assertive": 3,
+          "acquisitive": 7
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "volatile",
+        "dominant_action": "social"
+      }
+    },
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 175,
+        "speech": {
+          "cold": 26,
+          "formal": 9,
+          "warm": 13
+        },
+        "adverb": {
+          "controlled": 3,
+          "volatile": 1,
+          "performed": 1
+        },
+        "action": {
+          "social": 12,
+          "inquisitive": 6,
+          "assertive": 6,
+          "acquisitive": 5,
+          "evasive": 6
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "controlled",
+        "dominant_action": "social"
+      }
+    },
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 429,
+        "speech": {
+          "cold": 75,
+          "warm": 24,
+          "formal": 24
+        },
+        "adverb": {
+          "controlled": 2,
+          "volatile": 5
+        },
+        "action": {
+          "social": 8,
+          "inquisitive": 18,
+          "acquisitive": 13,
+          "evasive": 24,
+          "assertive": 1,
+          "protective": 2
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "volatile",
+        "dominant_action": "evasive"
+      }
+    },
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 132,
+        "speech": {
+          "cold": 26,
+          "formal": 13,
+          "warm": 2,
+          "evasive": 1
+        },
+        "adverb": {
+          "performed": 2,
+          "controlled": 1,
+          "volatile": 2
+        },
+        "action": {
+          "assertive": 3,
+          "inquisitive": 6,
+          "acquisitive": 3,
+          "evasive": 2,
+          "social": 2,
+          "protective": 1
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "performed",
+        "dominant_action": "inquisitive"
+      }
+    },
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 200,
+        "speech": {
+          "cold": 33,
+          "formal": 8,
+          "forceful": 1,
+          "warm": 5
+        },
+        "adverb": {
+          "controlled": 1
+        },
+        "action": {
+          "acquisitive": 4,
+          "social": 12,
+          "evasive": 7,
+          "inquisitive": 11,
+          "protective": 2,
+          "assertive": 1
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "controlled",
+        "dominant_action": "social"
+      }
+    },
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 97,
+        "speech": {
+          "formal": 6,
+          "cold": 27,
+          "warm": 7
+        },
+        "adverb": {
+          "volatile": 1
+        },
+        "action": {
+          "social": 3,
+          "assertive": 4,
+          "protective": 1,
+          "inquisitive": 3
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "volatile",
+        "dominant_action": "assertive"
+      }
+    },
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 88,
+        "speech": {
+          "cold": 15,
+          "formal": 1,
+          "warm": 1
+        },
+        "adverb": {
+          "controlled": 2
+        },
+        "action": {
+          "inquisitive": 3,
+          "social": 7,
+          "acquisitive": 2,
+          "evasive": 2,
+          "assertive": 1
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "controlled",
+        "dominant_action": "social"
+      }
+    },
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 338,
+        "speech": {
+          "cold": 83,
+          "formal": 29,
+          "warm": 16
+        },
+        "adverb": {
+          "controlled": 4,
+          "volatile": 5,
+          "performed": 1
+        },
+        "action": {
+          "acquisitive": 5,
+          "social": 21,
+          "evasive": 12,
+          "inquisitive": 13,
+          "assertive": 5,
+          "protective": 2
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "volatile",
+        "dominant_action": "social"
+      }
+    },
+    {
+      "label": "pg-1342",
+      "profile": {
+        "mentions": 71,
+        "speech": {
+          "cold": 15,
+          "warm": 2,
+          "formal": 3,
+          "forceful": 1
+        },
+        "adverb": {
+          "controlled": 1,
+          "volatile": 1
+        },
+        "action": {
+          "inquisitive": 3,
+          "social": 4,
+          "evasive": 1,
+          "acquisitive": 1,
+          "assertive": 2
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "controlled",
+        "dominant_action": "social"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 92,
+        "speech": {
+          "cold": 15,
+          "warm": 5,
+          "formal": 6,
+          "forceful": 1,
+          "evasive": 1
+        },
+        "adverb": {
+          "volatile": 2
+        },
+        "action": {
+          "social": 2,
+          "protective": 3,
+          "evasive": 8,
+          "inquisitive": 6,
+          "acquisitive": 2
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "volatile",
+        "dominant_action": "evasive"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 59,
+        "speech": {
+          "warm": 6,
+          "formal": 4,
+          "cold": 4,
+          "evasive": 1
+        },
+        "adverb": {},
+        "action": {
+          "evasive": 3,
+          "assertive": 1,
+          "social": 1,
+          "inquisitive": 3
+        },
+        "dominant_speech": "warm",
+        "dominant_adverb": null,
+        "dominant_action": "evasive"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 49,
+        "speech": {
+          "formal": 4,
+          "evasive": 1,
+          "cold": 4,
+          "forceful": 1,
+          "warm": 1
+        },
+        "adverb": {
+          "volatile": 2
+        },
+        "action": {
+          "inquisitive": 6,
+          "protective": 2,
+          "social": 1,
+          "evasive": 2
+        },
+        "dominant_speech": "formal",
+        "dominant_adverb": "volatile",
+        "dominant_action": "inquisitive"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 36,
+        "speech": {
+          "warm": 1,
+          "cold": 4,
+          "formal": 1
+        },
+        "adverb": {},
+        "action": {
+          "inquisitive": 7,
+          "assertive": 1,
+          "acquisitive": 2,
+          "social": 1
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": null,
+        "dominant_action": "inquisitive"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 55,
+        "speech": {
+          "formal": 8,
+          "cold": 9,
+          "warm": 2
+        },
+        "adverb": {
+          "volatile": 3
+        },
+        "action": {
+          "inquisitive": 1,
+          "social": 1,
+          "evasive": 1
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": "volatile",
+        "dominant_action": "inquisitive"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 28,
+        "speech": {
+          "cold": 6,
+          "warm": 2,
+          "formal": 2
+        },
+        "adverb": {},
+        "action": {
+          "inquisitive": 1
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": null,
+        "dominant_action": "inquisitive"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 25,
+        "speech": {
+          "cold": 2
+        },
+        "adverb": {},
+        "action": {
+          "assertive": 2,
+          "acquisitive": 3,
+          "social": 1,
+          "evasive": 2,
+          "protective": 1
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": null,
+        "dominant_action": "acquisitive"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 26,
+        "speech": {
+          "cold": 1,
+          "warm": 3,
+          "formal": 1
+        },
+        "adverb": {},
+        "action": {
+          "protective": 3,
+          "inquisitive": 1
+        },
+        "dominant_speech": "warm",
+        "dominant_adverb": null,
+        "dominant_action": "protective"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 25,
+        "speech": {
+          "cold": 4,
+          "warm": 3,
+          "formal": 2
+        },
+        "adverb": {},
+        "action": {
+          "inquisitive": 2
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": null,
+        "dominant_action": "inquisitive"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 27,
+        "speech": {
+          "warm": 5,
+          "formal": 4,
+          "evasive": 1,
+          "cold": 4
+        },
+        "adverb": {},
+        "action": {
+          "inquisitive": 6,
+          "protective": 2,
+          "assertive": 1
+        },
+        "dominant_speech": "warm",
+        "dominant_adverb": null,
+        "dominant_action": "inquisitive"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 21,
+        "speech": {
+          "formal": 1,
+          "cold": 1
+        },
+        "adverb": {},
+        "action": {
+          "inquisitive": 5,
+          "protective": 1,
+          "evasive": 2
+        },
+        "dominant_speech": "formal",
+        "dominant_adverb": null,
+        "dominant_action": "inquisitive"
+      }
+    },
+    {
+      "label": "pg-84",
+      "profile": {
+        "mentions": 16,
+        "speech": {
+          "cold": 1
+        },
+        "adverb": {},
+        "action": {
+          "assertive": 1,
+          "inquisitive": 1
+        },
+        "dominant_speech": "cold",
+        "dominant_adverb": null,
+        "dominant_action": "assertive"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "mined-verbal_tic-1",
+      "pool": "verbal_tic",
+      "text": "goes silent for exactly as long as it takes to unnerve",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "cold",
+          "volatile"
+        ],
+        "sources": [
+          "pg-1342",
+          "pg-84"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-mask-1",
+      "pool": "mask",
+      "text": "principle invoked at exactly the moment it is convenient",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "assertive",
+          "volatile"
+        ],
+        "sources": [
+          "pg-1342",
+          "pg-84"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-verbal_tic-2",
+      "pool": "verbal_tic",
+      "text": "repeats your own words back, unaltered, until you hear them",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "cold",
+          "controlled"
+        ],
+        "sources": [
+          "pg-1342"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-mask-2",
+      "pool": "mask",
+      "text": "reasonableness used as a battering ram",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "assertive",
+          "controlled"
+        ],
+        "sources": [
+          "pg-1342"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-competence-1",
+      "pool": "competence",
+      "text": "can move a room's decision without appearing to speak first",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "assertive",
+          "social"
+        ],
+        "sources": [
+          "pg-1342"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-mask-3",
+      "pool": "mask",
+      "text": "asks the one question the room agreed not to ask",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "inquisitive",
+          "volatile"
+        ],
+        "sources": [
+          "pg-1342"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-competence-2",
+      "pool": "competence",
+      "text": "reconstructs a stranger's whole situation from three questions",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "inquisitive",
+          "social"
+        ],
+        "sources": [
+          "pg-1342"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-arc_shape-1",
+      "pool": "arc_shape",
+      "text": "holds, holds, holds, then breaks in one irreversible scene",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "controlled",
+          "volatile"
+        ],
+        "sources": [
+          "pg-1342"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-competence-3",
+      "pool": "competence",
+      "text": "finds the load-bearing lie in an argument and pulls it",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "inquisitive",
+          "assertive"
+        ],
+        "sources": [
+          "pg-1342"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-competence-4",
+      "pool": "competence",
+      "text": "can value anything, including people, within a minute of seeing it",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "acquisitive",
+          "inquisitive"
+        ],
+        "sources": [
+          "pg-84"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-competence-5",
+      "pool": "competence",
+      "text": "notices the injury a person is hiding before they admit it",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "protective",
+          "inquisitive"
+        ],
+        "sources": [
+          "pg-84"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-mask-4",
+      "pool": "mask",
+      "text": "intimacy offered fast and withdrawn faster",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "social",
+          "volatile"
+        ],
+        "sources": [
+          "pg-1342",
+          "pg-84"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-mask-5",
+      "pool": "mask",
+      "text": "hospitality kept as a ledger of who owes an evening",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "social",
+          "controlled"
+        ],
+        "sources": [
+          "pg-1342"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-verbal_tic-3",
+      "pool": "verbal_tic",
+      "text": "keeps perfect grammar while saying something unforgivable",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "formal",
+          "volatile"
+        ],
+        "sources": [
+          "pg-84"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-mask-6",
+      "pool": "mask",
+      "text": "changes the subject with a joke sharp enough to leave a mark",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "evasive",
+          "volatile"
+        ],
+        "sources": [
+          "pg-1342"
+        ]
+      },
+      "review": "promoted"
+    },
+    {
+      "id": "mined-competence-6",
+      "pool": "competence",
+      "text": "can make an entire group forget who raised a subject",
+      "provenance": {
+        "method": "cross-source abstraction",
+        "registers": [
+          "evasive",
+          "social"
+        ],
+        "sources": [
+          "pg-1342"
+        ]
+      },
+      "review": "promoted"
+    }
+  ]
+}
