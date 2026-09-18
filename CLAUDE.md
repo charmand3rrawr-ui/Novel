@@ -44,6 +44,20 @@ files. Professions belong in `bible/professions.md`.
 
 ## When adding a chapter
 
+Write the framework first — `chapters/FRAMEWORK-SPEC.md`, minimum 500 words,
+eleven sections, in `chapters/frameworks/ch-NNN.md`:
+
+```
+novel.py framework shapes --beat <beat>
+novel.py framework new N --shape <id> --characters ... --environments ...
+novel.py framework check N
+```
+
+Do not build frameworks by transcribing and recombining chapters of specific
+in-copyright novels. Structural archetypes are generic and live in
+`chapters/shapes.json`; a chapter-by-chapter merge of particular serials is a
+derivative of them, and blending several does not change that.
+
 ```
 novel.py plan && novel.py brief     # before
 novel.py chapter record N ...       # after

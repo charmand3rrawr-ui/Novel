@@ -4,15 +4,33 @@ The prose lives here, one file per chapter: `chapter-001.md`, `chapter-002.md`,
 and so on. Nothing in this directory is generated. The engine has no opinion
 about your sentences.
 
-## Before writing
+## Before writing: the framework
+
+Every chapter gets a **framework** first — a document of at least 500 words in
+`frameworks/ch-NNN.md` that says why the chapter exists, who wants what inside
+it, how the setting has changed since the reader last stood in it, and what the
+chapter must accomplish. The spec is [`FRAMEWORK-SPEC.md`](FRAMEWORK-SPEC.md);
+the archetypes it builds on are in [`shapes.json`](shapes.json).
 
 ```
-tools/novel.py plan        # what this chapter owes the reader
-tools/novel.py brief       # what it must not contradict
+tools/novel.py plan --chapter 7      # what the tempo asks for
+tools/novel.py brief --chapter 7     # what the past requires
+tools/novel.py framework shapes --beat cost     # which shapes serve that beat
+tools/novel.py framework new 7 --shape the-squeeze \
+    --characters mc-kestrel-vane,sila-corr --environments academy-thorn-ledger
+        ... fill in the judgement ...
+tools/novel.py framework check 7
 ```
 
-Copy the plan's obligations into the chapter file's front block and write
-against them.
+`framework new` scaffolds roughly a thousand words from live engine state — the
+arc's promise, the beat, the tension target, each character's wound, lie, fear,
+mask and voice handle, the stage's sensory signature and how it changes, the
+binding continuity facts, the unpaid threads, and the protagonist's system
+position — leaving the judgement calls as `_<prompts>_` for you. `framework
+check` enforces the 500-word minimum and the eleven required sections, and
+counts prompts you have not filled.
+
+Then write against the framework.
 
 ## After writing
 

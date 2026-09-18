@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 import sys
 
-from . import characters, continuity, engine, environments, store, system, validate
+from . import characters, continuity, engine, environments, framework, store, system, validate
 
 BAR = "=" * 68
 
@@ -619,6 +619,64 @@ def cmd_system_forecast(args):
     return 0
 
 
+# ---------------------------------------------------------------- frameworks
+
+def cmd_framework_new(args):
+    n = args.number
+    path = framework.path_for(n)
+    if path.exists() and not args.force:
+        _p(f"{store.rel(path)} already exists. Use --force to regenerate (it will overwrite your fills).")
+        return 1
+    text = framework.generate(n, shape_id=args.shape or "", cast=_csv(args.characters) or None,
+                              stages=_csv(args.environments) or None, pov=args.pov or "")
+    store.write_text(path, text)
+    r = framework.check(n)
+    _p(f"Wrote {r['path']}  ({r['words']} words, minimum {r['min_words']})")
+    _p(f"  {r['unfilled_prompts']} prompts to fill in — search for _<")
+    _p(f"  Check with: novel.py framework check {n}")
+    return 0
+
+
+def cmd_framework_check(args):
+    rows = [framework.check(args.number)] if args.number else framework.listing()
+    if not rows:
+        _p("No frameworks yet. `novel.py framework new 1`")
+        return 0
+    bad = 0
+    for r in rows:
+        flag = "ok " if r["ok"] else "FIX"
+        if not r["ok"]:
+            bad += 1
+        _p(f" {flag} ch.{r['chapter']:<4} {r['words']:>5} words  "
+           f"{r['unfilled_prompts']:>3} unfilled  {r['path']}")
+        if r["missing_sections"]:
+            _p(f"      missing sections: {', '.join(r['missing_sections'])}")
+        if not r["long_enough"]:
+            _p(f"      under the {r['min_words']}-word minimum by {r['min_words'] - r['words']}")
+    if len(rows) > 1:
+        done = sum(1 for r in rows if r["ok"] and r["unfilled_prompts"] == 0)
+        _p("")
+        _p(f" {len(rows)} framework(s): {done} complete, "
+           f"{sum(1 for r in rows if r['unfilled_prompts'])} still carrying prompts, {bad} failing.")
+    return 1 if bad else 0
+
+
+def cmd_framework_shapes(args):
+    data = framework.shapes()
+    rows = framework.suggest_shapes(args.beat) if args.beat else data["shapes"]
+    if args.beat:
+        _p(f"Shapes that serve a '{args.beat}' beat:\n")
+    for s in rows:
+        _p(f" {s['id']:<20} {s['name']}")
+        _p(f"   {s['for']}")
+        _p(f"   open: {s['open']}")
+        _p(f"   turn: {s['turn']}")
+        _p(f"   close: {s['close']}")
+        _p(f"   costs: {s['costs']}  ·  serves: {', '.join(s.get('serves_beats', []))}")
+        _p("")
+    return 0
+
+
 # ----------------------------------------------------------------- validate
 
 def cmd_validate(args):
@@ -784,6 +842,21 @@ def build_parser():
     lg.set_defaults(func=cmd_system_log)
 
     sysub.add_parser("forecast", help="what the next realm costs in points and chapters").set_defaults(func=cmd_system_forecast)
+
+    fw = sub.add_parser("framework", help="per-chapter framework documents (see chapters/FRAMEWORK-SPEC.md)")
+    fwsub = fw.add_subparsers(dest="sub", required=True)
+    fn = fwsub.add_parser("new", help="scaffold a framework from live engine state")
+    fn.add_argument("number", type=int)
+    fn.add_argument("--shape", help="chapter shape id; omit to let the beat choose")
+    fn.add_argument("--characters", default=""); fn.add_argument("--environments", default="")
+    fn.add_argument("--pov", default=""); fn.add_argument("--force", action="store_true")
+    fn.set_defaults(func=cmd_framework_new)
+    fc = fwsub.add_parser("check", help="verify length and required sections")
+    fc.add_argument("number", type=int, nargs="?")
+    fc.set_defaults(func=cmd_framework_check)
+    fs = fwsub.add_parser("shapes", help="list the chapter-shape archetypes")
+    fs.add_argument("--beat", choices=["hook", "pressure", "complication", "cost", "revelation", "consolidation"])
+    fs.set_defaults(func=cmd_framework_shapes)
 
     sub.add_parser("validate", help="check the whole project for contradictions").set_defaults(func=cmd_validate)
     return p

@@ -60,6 +60,9 @@ docs/           walkthrough with real session output
 novel.py status                  where the novel stands
 novel.py plan                    what this chapter owes
 novel.py brief                   what it must not contradict
+novel.py framework new 7 --shape the-offer \
+     --characters mc-kestrel-vane,sila-corr --environments academy-thorn-ledger
+novel.py framework check 7       500-word minimum, eleven required sections
      ... write the chapter ...
 novel.py chapter record 7 --title "..." --summary "..." --tension 6 --kind conflict \
      --characters mc-kestrel-vane,sila-corr --environments academy-thorn-ledger
@@ -105,6 +108,37 @@ licenses only some. A place that is never needed cost you one command; a place
 brought forward early costs you a reader.
 
 Full model in [`environments/README.md`](environments/README.md).
+
+## Chapter frameworks
+
+Before a chapter is written it gets a framework: at least 500 words in
+`chapters/frameworks/ch-NNN.md` covering purpose, plot and reader goals, the
+setting **and how it has changed since the reader last stood in it**, every
+character with their reason for being there, their agenda, their emotional
+state entering and leaving and what they conceal, the external / interpersonal
+/ internal conflicts and what is concretely at stake, what the system does and
+who paid for it, the continuity it must not contradict, its structural shape,
+its exit state, and three specific ways it goes wrong.
+
+```
+novel.py framework shapes --beat cost
+novel.py framework new 7 --shape the-squeeze --characters ... --environments ...
+novel.py framework check
+```
+
+`framework new` assembles ~1,000 words from live engine state and leaves the
+judgement as prompts. `chapters/shapes.json` holds fourteen **chapter-shape
+archetypes** — the stock structures of the genre, not the plot of any
+particular book: the demonstration, the threshold test, the squeeze, the quiet
+acquisition, the workshop, the hunt, the offer, the witness, the breakthrough,
+the reckoning, the rest that isn't, the reveal to one person, the humiliation,
+two rooms. Each names its opening move, its turn, its closing move, what it
+costs, and how it fails.
+
+Five worked frameworks ship in `chapters/frameworks/`, 1,575–1,729 words each,
+covering the opening arc.
+
+Spec: [`chapters/FRAMEWORK-SPEC.md`](chapters/FRAMEWORK-SPEC.md).
 
 ## The protagonist's system
 
