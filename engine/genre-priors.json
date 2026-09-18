@@ -1,0 +1,91 @@
+{
+  "description": "Structural architecture of long-running progression/cultivation web serials, expressed as numbers the engine can be calibrated against.",
+  "provenance": {
+    "status": "PRIORS, NOT MEASUREMENTS",
+    "basis": "General familiarity with the form — translated Chinese progression serials, LitRPG, and English-language web serials. These are conventions of the genre, which are not anyone's property.",
+    "honesty_note": "Nobody measured these. They are estimates with ranges, and the ranges are wide on purpose. Replace any of them with real numbers using tools/analyze_structure.py on text you have the right to analyse, and `novel.py calibrate` will then compare your tempo against measurements instead of guesses.",
+    "what_this_is_not": "Not a chapter map of any particular novel. Architecture at this altitude — how long chapters run, how often gains land, how fast the map opens — is method, not expression."
+  },
+
+  "chapter_shape": {
+    "words": {"typical_range": [1800, 3000], "note": "Web-serial chapters run short. Readers arrive daily and leave on a phone."},
+    "scenes_per_chapter": {"typical_range": [1, 3], "most_common": 2},
+    "opening_move_distribution": {
+      "in_motion_or_dialogue": 0.6,
+      "situation_statement": 0.25,
+      "reflection_or_description": 0.15,
+      "note": "Openings on description are the single most common cause of a reader not returning tomorrow."
+    },
+    "closing_move_distribution": {
+      "hook_or_cliffhanger": 0.55,
+      "state_change": 0.3,
+      "quiet_landing": 0.15,
+      "note": "Serial economics push this far above literary-novel norms. A 0.4 cliffhanger ratio is a novel's number; 0.55-0.65 is a serial's."
+    },
+    "dialogue_ratio": {"typical_range": [0.35, 0.55], "note": "Proportion of lines carrying quoted speech. Progression serials are talkier than they feel."}
+  },
+
+  "progression_cadence": {
+    "tangible_gain_every_n_chapters": {"typical_range": [2, 4],
+      "note": "A gain is anything the reader can name: a resource, a technique, a rank, an ally, a piece of decisive information. NOT necessarily a power-up."},
+    "power_gain_every_n_chapters": {"typical_range": [6, 12]},
+    "realm_or_tier_advance_every_n_chapters": {"typical_range": [40, 80]},
+    "gain_to_spend_window": {"typical_range": [1, 5],
+      "note": "The strongest single architectural rule in the genre: a gain must be USED, under pressure, within a few chapters of being acquired. Gains that sit unspent read as inventory and kill momentum."},
+    "setback_ratio": {"typical_range": [0.2, 0.35],
+      "note": "Proportion of chapters where the protagonist ends materially worse off. Below ~0.2 the novel stops being readable as a story; the most common failure of the form."}
+  },
+
+  "arc_architecture": {
+    "micro_arc_chapters": {"typical_range": [8, 20], "note": "One location, one antagonist, one question. The unit readers actually experience."},
+    "major_arc_chapters": {"typical_range": [40, 120]},
+    "volume_or_book_chapters": {"typical_range": [150, 400]},
+    "three_beat_serial_unit": ["setup and friction", "confrontation", "resolution that opens the next question"],
+    "macro_cycle": [
+      "arrival somewhere new",
+      "friction with the local order",
+      "demonstration that forces the locals to re-rank him",
+      "escalation from someone the demonstration offended",
+      "resource or technique acquired under pressure",
+      "confrontation that spends it",
+      "departure, carrying a debt or an enemy forward"
+    ],
+    "cycle_note": "This loop is the genre's engine. It repeats at every scale, and each repetition must raise the stakes tier or change what the protagonist wants, or the reader feels the loop."
+  },
+
+  "cast_and_world_expansion": {
+    "named_character_introductions_per_micro_arc": {"typical_range": [2, 5]},
+    "recurring_cast_size_at_chapter_100": {"typical_range": [8, 15],
+      "note": "Larger than a literary novel, smaller than the page count suggests. Most introductions are local to one arc and are allowed to leave."},
+    "new_major_location_every_n_chapters": {"typical_range": [30, 60]},
+    "scale_tier_expansion_every_n_chapters": {"typical_range": [80, 150],
+      "note": "City to region, region to world, world to system. Each expansion resets the power ceiling and is the genre's main tool against stagnation."},
+    "antagonist_tier_replacement_every_n_chapters": {"typical_range": [30, 60],
+      "note": "The antagonist who mattered 50 chapters ago should now be beneath notice — and the novel should say so explicitly at least once. It is the cheapest and most effective proof of progress."}
+  },
+
+  "pov_and_voice": {
+    "dominant_pov_share": {"typical_range": [0.85, 0.97]},
+    "cutaway_length_chapters": {"typical_range": [1, 1],
+      "note": "Cutaways to another POV are almost always exactly one chapter, and almost always show the protagonist from outside."},
+    "cutaway_purpose": "To show what the protagonist looks like to people who do not like him, or to let the reader know something he does not."
+  },
+
+  "reader_retention_structure": {
+    "first_chapter_must": ["establish the want in the first 300 words", "show the method, not the backstory", "end on a change of state"],
+    "first_arc_must": ["deliver one complete micro-arc inside 15 chapters", "pay one setup planted in chapter 1"],
+    "chapter_10_test": "By chapter 10 the reader should be able to say what the protagonist wants, what stands in the way, and what he can do that others cannot — in one sentence each.",
+    "chapter_50_test": "By chapter 50 at least one thing the reader assumed in chapter 1 should have been proven wrong."
+  },
+
+  "calibration_targets": {
+    "note": "Which tempo.json fields these priors speak to.",
+    "chapter_target_words": "chapter_shape.words",
+    "cliffhanger_ratio": "chapter_shape.closing_move_distribution.hook_or_cliffhanger",
+    "arc_length": "arc_architecture.micro_arc_chapters and major_arc_chapters",
+    "named_characters_per_arc": "cast_and_world_expansion.named_character_introductions_per_micro_arc",
+    "environments_per_arc": "cast_and_world_expansion.new_major_location_every_n_chapters",
+    "revelation_every": "progression_cadence.tangible_gain_every_n_chapters",
+    "payoff_window": "progression_cadence.gain_to_spend_window"
+  }
+}

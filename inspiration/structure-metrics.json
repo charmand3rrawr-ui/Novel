@@ -1,0 +1,554 @@
+{
+  "description": "Aggregate structural measurements. Numbers only — no prose is ever stored here.",
+  "sets": {
+    "public-domain-1813": {
+      "measured": "2026-09-18",
+      "summary": {
+        "chapters_measured": 58,
+        "words": {
+          "median": 1937,
+          "mean": 2197,
+          "p10": 1252,
+          "p90": 3564
+        },
+        "avg_paragraph_words": 60.6,
+        "dialogue_ratio_median": 0.614,
+        "scene_breaks_median": 0.0,
+        "opening_move_distribution": {
+          "situation": 0.638,
+          "in_motion": 0.241,
+          "dialogue": 0.069,
+          "description": 0.052
+        },
+        "closing_move_distribution": {
+          "quiet": 0.828,
+          "hook": 0.172
+        }
+      },
+      "per_chapter": [
+        {
+          "words": 5837,
+          "paragraphs": 157,
+          "avg_paragraph_words": 37.2,
+          "dialogue_ratio": 0.643,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "hook"
+        },
+        {
+          "words": 809,
+          "paragraphs": 27,
+          "avg_paragraph_words": 30.0,
+          "dialogue_ratio": 0.815,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1720,
+          "paragraphs": 23,
+          "avg_paragraph_words": 74.8,
+          "dialogue_ratio": 0.565,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "hook"
+        },
+        {
+          "words": 1069,
+          "paragraphs": 15,
+          "avg_paragraph_words": 71.3,
+          "dialogue_ratio": 0.533,
+          "scene_breaks": 0,
+          "opening": "description",
+          "closing": "quiet"
+        },
+        {
+          "words": 968,
+          "paragraphs": 23,
+          "avg_paragraph_words": 42.1,
+          "dialogue_ratio": 0.826,
+          "scene_breaks": 0,
+          "opening": "description",
+          "closing": "hook"
+        },
+        {
+          "words": 2372,
+          "paragraphs": 54,
+          "avg_paragraph_words": 43.9,
+          "dialogue_ratio": 0.759,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 2004,
+          "paragraphs": 49,
+          "avg_paragraph_words": 40.9,
+          "dialogue_ratio": 0.714,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 1945,
+          "paragraphs": 59,
+          "avg_paragraph_words": 33.0,
+          "dialogue_ratio": 0.797,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1730,
+          "paragraphs": 39,
+          "avg_paragraph_words": 44.4,
+          "dialogue_ratio": 0.795,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 2234,
+          "paragraphs": 68,
+          "avg_paragraph_words": 32.9,
+          "dialogue_ratio": 0.75,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1601,
+          "paragraphs": 34,
+          "avg_paragraph_words": 47.1,
+          "dialogue_ratio": 0.765,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 3507,
+          "paragraphs": 54,
+          "avg_paragraph_words": 64.9,
+          "dialogue_ratio": 0.667,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "hook"
+        },
+        {
+          "words": 1695,
+          "paragraphs": 13,
+          "avg_paragraph_words": 130.4,
+          "dialogue_ratio": 0.154,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 3386,
+          "paragraphs": 61,
+          "avg_paragraph_words": 55.5,
+          "dialogue_ratio": 0.721,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 1280,
+          "paragraphs": 15,
+          "avg_paragraph_words": 85.3,
+          "dialogue_ratio": 0.533,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 5202,
+          "paragraphs": 79,
+          "avg_paragraph_words": 65.8,
+          "dialogue_ratio": 0.722,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 1922,
+          "paragraphs": 22,
+          "avg_paragraph_words": 87.4,
+          "dialogue_ratio": 0.727,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 1654,
+          "paragraphs": 36,
+          "avg_paragraph_words": 45.9,
+          "dialogue_ratio": 0.667,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 2017,
+          "paragraphs": 27,
+          "avg_paragraph_words": 74.7,
+          "dialogue_ratio": 0.704,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "hook"
+        },
+        {
+          "words": 1758,
+          "paragraphs": 22,
+          "avg_paragraph_words": 79.9,
+          "dialogue_ratio": 0.545,
+          "scene_breaks": 0,
+          "opening": "dialogue",
+          "closing": "quiet"
+        },
+        {
+          "words": 1621,
+          "paragraphs": 26,
+          "avg_paragraph_words": 62.3,
+          "dialogue_ratio": 0.385,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "hook"
+        },
+        {
+          "words": 1929,
+          "paragraphs": 31,
+          "avg_paragraph_words": 62.2,
+          "dialogue_ratio": 0.677,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "hook"
+        },
+        {
+          "words": 1534,
+          "paragraphs": 22,
+          "avg_paragraph_words": 69.7,
+          "dialogue_ratio": 0.545,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 2339,
+          "paragraphs": 30,
+          "avg_paragraph_words": 78.0,
+          "dialogue_ratio": 0.667,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1259,
+          "paragraphs": 24,
+          "avg_paragraph_words": 52.5,
+          "dialogue_ratio": 0.667,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1479,
+          "paragraphs": 22,
+          "avg_paragraph_words": 67.2,
+          "dialogue_ratio": 0.455,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 2387,
+          "paragraphs": 40,
+          "avg_paragraph_words": 59.7,
+          "dialogue_ratio": 0.6,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1252,
+          "paragraphs": 15,
+          "avg_paragraph_words": 83.5,
+          "dialogue_ratio": 0.267,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1557,
+          "paragraphs": 30,
+          "avg_paragraph_words": 51.9,
+          "dialogue_ratio": 0.7,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1514,
+          "paragraphs": 31,
+          "avg_paragraph_words": 48.8,
+          "dialogue_ratio": 0.613,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1861,
+          "paragraphs": 41,
+          "avg_paragraph_words": 45.4,
+          "dialogue_ratio": 0.805,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 2112,
+          "paragraphs": 32,
+          "avg_paragraph_words": 66.0,
+          "dialogue_ratio": 0.562,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 3000,
+          "paragraphs": 5,
+          "avg_paragraph_words": 600.0,
+          "dialogue_ratio": 0.6,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "hook"
+        },
+        {
+          "words": 2017,
+          "paragraphs": 16,
+          "avg_paragraph_words": 126.1,
+          "dialogue_ratio": 0.25,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1383,
+          "paragraphs": 21,
+          "avg_paragraph_words": 65.9,
+          "dialogue_ratio": 0.571,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 1054,
+          "paragraphs": 19,
+          "avg_paragraph_words": 55.5,
+          "dialogue_ratio": 0.526,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1635,
+          "paragraphs": 26,
+          "avg_paragraph_words": 62.9,
+          "dialogue_ratio": 0.615,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 1699,
+          "paragraphs": 37,
+          "avg_paragraph_words": 45.9,
+          "dialogue_ratio": 0.838,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 2286,
+          "paragraphs": 41,
+          "avg_paragraph_words": 55.8,
+          "dialogue_ratio": 0.561,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1831,
+          "paragraphs": 19,
+          "avg_paragraph_words": 96.4,
+          "dialogue_ratio": 0.263,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 4855,
+          "paragraphs": 79,
+          "avg_paragraph_words": 61.5,
+          "dialogue_ratio": 0.532,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 2351,
+          "paragraphs": 20,
+          "avg_paragraph_words": 117.5,
+          "dialogue_ratio": 0.15,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 4767,
+          "paragraphs": 54,
+          "avg_paragraph_words": 88.3,
+          "dialogue_ratio": 0.463,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 4085,
+          "paragraphs": 73,
+          "avg_paragraph_words": 56.0,
+          "dialogue_ratio": 0.795,
+          "scene_breaks": 0,
+          "opening": "dialogue",
+          "closing": "quiet"
+        },
+        {
+          "words": 2269,
+          "paragraphs": 36,
+          "avg_paragraph_words": 63.0,
+          "dialogue_ratio": 0.528,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 2268,
+          "paragraphs": 56,
+          "avg_paragraph_words": 40.5,
+          "dialogue_ratio": 0.786,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 2210,
+          "paragraphs": 23,
+          "avg_paragraph_words": 96.1,
+          "dialogue_ratio": 0.217,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 2081,
+          "paragraphs": 41,
+          "avg_paragraph_words": 50.8,
+          "dialogue_ratio": 0.585,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 3034,
+          "paragraphs": 38,
+          "avg_paragraph_words": 79.8,
+          "dialogue_ratio": 0.842,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "hook"
+        },
+        {
+          "words": 2945,
+          "paragraphs": 61,
+          "avg_paragraph_words": 48.3,
+          "dialogue_ratio": 0.508,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 1613,
+          "paragraphs": 36,
+          "avg_paragraph_words": 44.8,
+          "dialogue_ratio": 0.583,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 2330,
+          "paragraphs": 56,
+          "avg_paragraph_words": 41.6,
+          "dialogue_ratio": 0.482,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 2750,
+          "paragraphs": 78,
+          "avg_paragraph_words": 35.3,
+          "dialogue_ratio": 0.756,
+          "scene_breaks": 0,
+          "opening": "description",
+          "closing": "quiet"
+        },
+        {
+          "words": 1673,
+          "paragraphs": 22,
+          "avg_paragraph_words": 76.0,
+          "dialogue_ratio": 0.545,
+          "scene_breaks": 0,
+          "opening": "in_motion",
+          "closing": "quiet"
+        },
+        {
+          "words": 2447,
+          "paragraphs": 47,
+          "avg_paragraph_words": 52.1,
+          "dialogue_ratio": 0.787,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "quiet"
+        },
+        {
+          "words": 2479,
+          "paragraphs": 49,
+          "avg_paragraph_words": 50.6,
+          "dialogue_ratio": 0.673,
+          "scene_breaks": 0,
+          "opening": "dialogue",
+          "closing": "quiet"
+        },
+        {
+          "words": 1587,
+          "paragraphs": 28,
+          "avg_paragraph_words": 56.7,
+          "dialogue_ratio": 0.786,
+          "scene_breaks": 0,
+          "opening": "dialogue",
+          "closing": "quiet"
+        },
+        {
+          "words": 1252,
+          "paragraphs": 14,
+          "avg_paragraph_words": 89.4,
+          "dialogue_ratio": 0.143,
+          "scene_breaks": 0,
+          "opening": "situation",
+          "closing": "hook"
+        }
+      ]
+    }
+  }
+}

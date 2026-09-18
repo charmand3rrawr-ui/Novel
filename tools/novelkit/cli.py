@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 import sys
 
-from . import characters, continuity, engine, environments, framework, store, system, validate
+from . import calibrate, characters, continuity, engine, environments, framework, store, system, validate
 
 BAR = "=" * 68
 
@@ -677,6 +677,12 @@ def cmd_framework_shapes(args):
     return 0
 
 
+def cmd_calibrate(args):
+    for line in calibrate.report():
+        _p(line)
+    return 0
+
+
 # ----------------------------------------------------------------- validate
 
 def cmd_validate(args):
@@ -858,6 +864,7 @@ def build_parser():
     fs.add_argument("--beat", choices=["hook", "pressure", "complication", "cost", "revelation", "consolidation"])
     fs.set_defaults(func=cmd_framework_shapes)
 
+    sub.add_parser("calibrate", help="compare the tempo against genre architecture").set_defaults(func=cmd_calibrate)
     sub.add_parser("validate", help="check the whole project for contradictions").set_defaults(func=cmd_validate)
     return p
 

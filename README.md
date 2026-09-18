@@ -266,6 +266,42 @@ public-domain works, your own drafts, or licensed material.
 
 Full model in [`inspiration/README.md`](inspiration/README.md).
 
+## Calibrating against the genre
+
+```
+novel.py calibrate
+tools/analyze_structure.py --dir drafts/my-novel --label my-draft
+tools/analyze_structure.py --file book.txt --split "^CHAPTER [IVXLC]+\." --label reference
+```
+
+`engine/genre-priors.json` holds the structural architecture of long-running
+progression serials as numbers: chapter length, opening and closing move
+distributions, how often a tangible gain lands, the gain-to-spend window,
+micro-arc and major-arc lengths, cast growth, how fast the map opens, POV
+conventions, and retention tests at chapters 1, 10 and 50. **These are priors,
+not measurements** — estimates with wide ranges, labelled as such in the file's
+provenance block.
+
+`tools/analyze_structure.py` replaces guesses with data. Point it at text you
+have the right to analyse — your own drafts, public-domain works, licensed
+material — and it records chapter length, paragraph length, dialogue ratio,
+scene breaks, and a classification of how each chapter opens and closes.
+**It stores numbers only.** The sole strings written to
+`inspiration/structure-metrics.json` are the six classification labels; no
+prose, no names, no plot, nothing that could reconstruct a line of source.
+
+`novel.py calibrate` then compares your `tempo.json` against both, with
+measurements beating priors, and reports findings:
+
+```
+ OFF cliffhanger ratio     yours 0.4    prior ~0.55
+     arc lengths           yours [12, 14, 16, 14, 14]  (total 70 chapters)
+
+ • every arc is micro-arc sized (12-16 chapters) and the book ends at 70. That is a
+   literary-novel architecture. A web serial usually nests micro-arcs of 8-20 inside
+   major arcs of 40-120. Decide deliberately which you are writing.
+```
+
 ## Validation
 
 ```

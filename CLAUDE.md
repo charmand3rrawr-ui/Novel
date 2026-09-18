@@ -82,6 +82,17 @@ novel.py system sheet
 - Every refusal the engine issues must say *why* and how to override it.
 - Smoke-test with `python3 tools/novel.py status` and `validate` before committing.
 
+## Structure analysis
+
+`tools/analyze_structure.py` may only be pointed at public-domain works, the
+user's own drafts, or licensed material — the same rule as the mining tool. It
+stores aggregate numbers only; the one-way abstraction is what makes it safe.
+Do not extend it to retain prose, names, or plot summaries.
+
+`engine/genre-priors.json` is explicitly labelled as estimates. If you replace
+a prior with a measurement, move it into `inspiration/structure-metrics.json`
+via the analyser rather than editing the priors to look like data.
+
 ## The mining tool
 
 `tools/scrape_characters.py` may only be pointed at public-domain works, the
