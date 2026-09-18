@@ -73,7 +73,7 @@
     "Any +1 on a capability track requires -1 on at least one cost track, chosen on the page, not in summary.",
     "lie_grip may only fall after an on-page refusal, failure, or confrontation. Never from reflection alone.",
     "self_knowledge = 10 - lie_grip, enforced by the engine.",
-    "A capability track may not exceed its start value plus (chapter_number / 6), rounded down, before Act III. Growth is rationed, not the baseline.",
+    "A capability track may not exceed its start value plus (chapter_number / 40) before the final volume. Recalibrated for a 1337-chapter run: the old chapter/6 curve would have capped out by chapter 60.",
     "No track moves in a rest chapter except intimacy and body, which may recover by 1."
   ],
   "gates": [
@@ -83,11 +83,13 @@
       "requires": {
         "craft": 2
       },
-      "arc": "A1",
-      "unlocks": [
-        "environment:academy-thorn-ledger"
-      ],
-      "on_page": "Must be earned in a scene of tested competence, witnessed."
+      "arc": "A02",
+      "target_chapter": 39,
+      "aligns_with_realm": "Tempering gate 1",
+      "cost": {
+        "body": 1
+      },
+      "on_page": "Earned in a scene of tested competence, witnessed."
     },
     {
       "id": "G2",
@@ -96,13 +98,13 @@
         "authority": 2,
         "insight": 3
       },
-      "arc": "A2",
-      "unlocks": [
-        "faction:the-ledgerhouse"
-      ],
+      "arc": "A10",
+      "target_chapter": 393,
+      "aligns_with_realm": "Kindling early",
       "cost": {
-        "anonymity": -2
-      }
+        "anonymity": 2
+      },
+      "on_page": "Someone buys him, and he signs."
     },
     {
       "id": "G3",
@@ -110,48 +112,99 @@
       "requires": {
         "reach": 2
       },
-      "arc": "A2",
-      "unlocks": [
-        "antagonist_escalation"
-      ],
+      "arc": "A12",
+      "target_chapter": 551,
+      "aligns_with_realm": "Nexus early",
       "cost": {
-        "anonymity": -3,
-        "body": -1
-      }
+        "anonymity": 3,
+        "body": 1
+      },
+      "on_page": "He stops being anonymous to people who matter."
     },
     {
       "id": "G4",
-      "name": "The compromise",
+      "name": "The first compromise",
       "requires": {
         "authority": 4
       },
-      "arc": "A3",
+      "arc": "A17",
+      "target_chapter": 708,
+      "aligns_with_realm": "Aperture early",
       "cost": {
-        "integrity": -3
+        "integrity": 3
       },
-      "on_page": "MC must choose it knowingly. No accident, no coercion."
+      "on_page": "Chosen knowingly. No accident, no coercion."
     },
     {
       "id": "G5",
+      "name": "Answerable at scale",
+      "requires": {
+        "reach": 4,
+        "insight": 6
+      },
+      "arc": "A21",
+      "target_chapter": 865,
+      "aligns_with_realm": "Ascendant early",
+      "cost": {
+        "intimacy": 2
+      },
+      "on_page": "A decision that kills people he will never meet."
+    },
+    {
+      "id": "G6",
+      "name": "The lie cracks",
+      "requires": {
+        "lie_grip_at_most": 6
+      },
+      "arc": "A26",
+      "target_chapter": 1022,
+      "aligns_with_realm": "Sovereign early",
+      "cost": {
+        "intimacy": 2
+      },
+      "on_page": "An on-page refusal he cannot take back."
+    },
+    {
+      "id": "G7",
+      "name": "Stripped in public",
+      "requires": {
+        "authority": 6
+      },
+      "arc": "A31",
+      "target_chapter": 1180,
+      "aligns_with_realm": "Void-Walker early",
+      "cost": {
+        "integrity": 2,
+        "anonymity": 2
+      },
+      "on_page": "He loses the standing he built."
+    },
+    {
+      "id": "G8",
       "name": "The lie breaks",
       "requires": {
         "lie_grip_at_most": 3
       },
-      "arc": "A4",
-      "unlocks": [
-        "true_want"
-      ],
+      "arc": "A35",
+      "target_chapter": 1298,
+      "aligns_with_realm": "Unwritten -",
+      "cost": {
+        "intimacy": 3
+      },
       "on_page": "Confrontation with the person who benefits from the lie."
     },
     {
-      "id": "G6",
-      "name": "Standing on new ground",
+      "id": "G9",
+      "name": "Unearned ground",
       "requires": {
-        "craft": 7,
-        "authority": 6,
+        "craft": 8,
         "self_knowledge": 7
       },
-      "arc": "A5"
+      "arc": "A35",
+      "target_chapter": 1298,
+      "aligns_with_realm": "Unwritten -",
+      "cost": {},
+      "on_page": "A public, unaccounted gift."
     }
   ],
   "development_spine": {

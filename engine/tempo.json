@@ -1,7 +1,12 @@
 {
   "$schema": "engine/schema/tempo.md",
-  "description": "The metronome of the novel. The engine reads this to decide what a chapter owes the reader.",
-  "chapter_target_words": { "min": 1800, "ideal": 2600, "max": 4200 },
+  "description": "The metronome. Calibrated to measured serial architecture (serial-reference-A, 3,204 chapters) for a 1,337-chapter run. See engine/genre-priors.json and chapters/PLOT-ARCHITECTURE.md for what each number is answering.",
+  "chapter_target_words": {
+    "min": 900,
+    "ideal": 1200,
+    "max": 1900,
+    "note": "Measured median 1032, p10 875, p90 1584."
+  },
   "beat_cycle": [
     "hook",
     "pressure",
@@ -28,27 +33,35 @@
     "note": "Tension is 1-10. The engine computes a target per chapter; the author may deviate by 1 with a logged reason."
   },
   "cadence_rules": {
-    "rest_chapter_every": 6,
-    "max_consecutive_action_chapters": 3,
-    "max_consecutive_low_tension_chapters": 2,
-    "revelation_every": 8,
-    "pov_switch_min_gap": 2,
-    "cliffhanger_ratio": 0.4
+    "rest_chapter_every": 9,
+    "max_consecutive_action_chapters": 8,
+    "max_consecutive_low_tension_chapters": 3,
+    "revelation_every": 5,
+    "pov_switch_min_gap": 6,
+    "cliffhanger_ratio": 0.35,
+    "declared_setpiece_exempt": true,
+    "note": "Combat self-transitions at 50.2% and runs up to 23 chapters, so the action cap is a guard against drift, not a hard ceiling — a declared set-piece is exempt. Revelation is the connective tissue of the form (19.9% of chapters, most likely successor from nearly every mode), so its cadence is short."
   },
   "introduction_budget": {
-    "note": "Hard ceilings that enforce just-in-time casting. The engine refuses to instantiate beyond these without an explicit --override and a logged justification.",
-    "named_characters_per_arc": 4,
+    "note": "Two-tier cast. The persistent core keeps full dossier discipline; walk-ons are named, used and dropped, which is 33.6% of measured named entities.",
+    "named_characters_per_arc": 5,
     "named_characters_per_chapter": 2,
-    "environments_per_arc": 2,
+    "walk_ons_per_chapter": 3,
+    "walk_on_requires_dossier": false,
+    "environments_per_arc": 3,
     "environments_per_chapter": 1,
-    "new_proper_nouns_per_chapter": 5,
+    "new_proper_nouns_per_chapter": 4,
     "cooldown_chapters_after_major_introduction": 2
   },
   "seed_policy": {
     "min_seeds_planted_per_chapter": 1,
-    "max_open_seeds": 12,
-    "payoff_window_chapters": { "min": 3, "soft_max": 15, "hard_max": 30 },
-    "note": "A seed older than hard_max is flagged as rot: pay it, repurpose it, or retire it on the page."
+    "max_open_seeds": 60,
+    "payoff_window_chapters": {
+      "min": 3,
+      "soft_max": 40,
+      "hard_max": 120
+    },
+    "note": "Measured: a third of entity absences run 20+ chapters and still return, median long return 65, p90 475. The old 30-chapter rot threshold would have force-retired the form's deep plants."
   },
   "progression_gates": {
     "note": "Power/skill growth is rationed against chapter count so the MC never outruns the story.",
@@ -58,10 +71,18 @@
     "cost_note": "Every advance on a capability track must be paid for with a loss on a relational, moral, or physical track."
   },
   "scene_mix_target_per_arc": {
-    "conflict": 0.35,
-    "discovery": 0.2,
-    "relationship": 0.2,
-    "consequence": 0.15,
-    "quiet": 0.1
+    "combat": 0.18,
+    "revelation": 0.2,
+    "negotiation": 0.16,
+    "travel": 0.17,
+    "training": 0.12,
+    "mixed": 0.17,
+    "note": "Measured chapter-type distribution."
+  },
+  "setback_policy": {
+    "target_ratio": 0.25,
+    "floor": 0.2,
+    "window_chapters": 20,
+    "note": "Share of chapters where the protagonist ends materially worse off. The genre's most common failure is a protagonist who never loses; measured stakes vocabulary falls 3.05 -> 2.32 across a run while progression language doubles. The engine warns when this drops below the floor."
   }
 }

@@ -145,6 +145,31 @@ organisation of plot (chapter-type transition matrix, run lengths, conflict
 rhythm, arc boundaries, setup/payoff depth) is in
 [`chapters/PLOT-ARCHITECTURE.md`](chapters/PLOT-ARCHITECTURE.md).
 
+## The plot engine
+
+A 1,337-chapter macro plot, generated from the measured architecture, that the
+protagonist's state is allowed to overrule.
+
+```
+novel.py plot build --chapters 1337 --seed 1337 --sync
+novel.py plot arcs
+novel.py plot show --chapter 412
+novel.py plot next          # what the plot owes, given his ACTUAL state
+novel.py plot cast A07      # generate the bench that arc's phases call for
+```
+
+Arc lengths cluster on the measured median of 29 with the measured long tail.
+Chapter types are a Markov walk over the measured transition matrix. Seeds are
+planted with payoff distances drawn from the measured return-gap distribution.
+The realm ladder is spaced so he cannot outrun 1,337 chapters.
+
+`plot next` is the half that matters: residue, cost tracks at their floor,
+stirred traits, met realm requirements and unspent points all emit directives
+that **outrank the arc plan**, and divergence from the planned ladder is
+reported so you can escalate or rebuild. The plan proposes; his state disposes.
+
+Full model in [`engine/plot-engine.md`](engine/plot-engine.md).
+
 ## The protagonist's system
 
 He can see what things shed when they end, and take it. Everyone else climbs by

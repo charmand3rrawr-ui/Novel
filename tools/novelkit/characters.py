@@ -84,11 +84,23 @@ def _banned_names() -> set[str]:
 def make_name(rng: random.Random, culture: str, reg: dict) -> str:
     pool = SYLLABLES.get(culture, SYLLABLES["ledger"])
     blocked = _taken_names(reg) | _banned_names()
+    def too_close(word: str) -> bool:
+        """Exact matches are not enough: 'Kes' beside 'Kestrel' reads as a typo,
+        not a second character. Reject anything that prefixes, or is prefixed
+        by, a name already in play."""
+        w = word.lower()
+        for taken in blocked:
+            if len(w) >= 3 and len(taken) >= 3 and (w.startswith(taken[:3]) and (w in taken or taken in w)):
+                return True
+            if w == taken:
+                return True
+        return False
+
     for _ in range(300):
         given = rng.choice(pool["given"]) + rng.choice(pool["mid"])
         family = rng.choice(pool["family"])
         name = f"{given.capitalize()} {family}"
-        if given.lower() not in blocked and family.lower() not in blocked:
+        if not too_close(given) and not too_close(family):
             return name
     return f"{rng.choice(pool['given'])}{rng.randrange(100)} {rng.choice(pool['family'])}"
 

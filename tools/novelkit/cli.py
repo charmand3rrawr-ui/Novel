@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 import sys
 
-from . import calibrate, characters, continuity, engine, environments, framework, store, system, validate
+from . import calibrate, characters, continuity, engine, environments, framework, plotgen, store, system, validate
 
 BAR = "=" * 68
 
@@ -683,6 +683,168 @@ def cmd_calibrate(args):
     return 0
 
 
+# --------------------------------------------------------------------- plot
+
+def cmd_plot_build(args):
+    sk = plotgen.build(total=args.chapters, seed=args.seed)
+    store.save(plotgen.SKELETON, sk)
+    _p(f"Built a {sk['total_chapters']}-chapter skeleton (seed {sk['seed']}).")
+    _p(f"  {len(sk['volumes'])} volumes, {len(sk['arcs'])} arcs, {len(sk['seeds'])} planned seeds")
+    lens = [a["length"] for a in sk["arcs"]]
+    lens.sort()
+    _p(f"  arc lengths: median {lens[len(lens) // 2]}, min {lens[0]}, max {lens[-1]}")
+    from collections import Counter
+    c = Counter(sk["chapter_types"])
+    _p("  chapter types: " + ", ".join(f"{k} {v * 100 // len(sk['chapter_types'])}%"
+                                       for k, v in c.most_common()))
+    _p(f"  written to {store.rel(plotgen.SKELETON)}")
+    if args.sync:
+        n = _sync_arcs(sk)
+        _p(f"  synced {n} arcs into engine/arcs.json")
+    return 0
+
+
+def _sync_arcs(sk):
+    """Project the skeleton into engine/arcs.json so the tempo engine, the
+    framework generator and validate all see the same structure."""
+    acts = []
+    for v in sk["volumes"]:
+        acts.append({"id": v["id"], "name": f"Volume {v['id'][1:]}", "arcs": v["arcs"]})
+    arcs = []
+    for a in sk["arcs"]:
+        arcs.append({
+            "id": a["id"], "name": f"Arc {a['id'][1:]}", "chapters": a["chapters"],
+            "promise": a["promise"], "central_question": a["central_question"],
+            "pressure_source": a["pressure_source"],
+            "licensed_environments": a["licensed_environments"],
+            "licensed_character_roles": a["licensed_character_roles"],
+            "closes_on": a["closes_on"], "tension": a["tension"],
+        })
+    store.save(store.ARCS, {"description": "Projected from engine/plot-skeleton.json by `novel.py plot build "
+                                           "--sync`. Edit the skeleton, not this file.",
+                            "acts": acts, "arcs": arcs})
+    return len(arcs)
+
+
+def cmd_plot_show(args):
+    sk = plotgen.skeleton()
+    n = args.chapter or store.load(store.STATE)["current_chapter"]
+    arc = plotgen.arc_for(sk, n)
+    vol = plotgen.volume_for(sk, n)
+    if not arc:
+        _p(f"chapter {n} is outside the skeleton (1-{sk['total_chapters']})")
+        return 1
+    _p(BAR)
+    _p(f" Chapter {n}  ·  {vol['id'] if vol else '?'} / {arc['id']}  ·  "
+       f"phase {plotgen.phase_for(arc, n)}  ·  type {plotgen.chapter_type(sk, n)}")
+    _p(BAR)
+    _p(f" Arc {arc['id']}: chapters {arc['chapters'][0]}-{arc['chapters'][1]} ({arc['length']})")
+    _p(f" Question : {arc['central_question']}")
+    _p(f" Pressure : {arc['pressure_source']}")
+    _p(f" Stake    : {arc['stake']}")
+    _p(f" Closes on: {arc['closes_on']}")
+    _p(f" Licensed : {', '.join(arc['licensed_environments'])} | {', '.join(arc['licensed_character_roles'])}")
+    _h("Phases")
+    for seg in arc["phases"]:
+        mark = " <-- here" if seg["from"] <= n <= seg["to"] else ""
+        _p(f"  {seg['phase']:<14} ch.{seg['from']}-{seg['to']}{mark}")
+    _h("Chapter types in this arc")
+    row = [plotgen.chapter_type(sk, c) for c in range(arc["chapters"][0], arc["chapters"][1] + 1)]
+    _p("  " + " ".join(t[:3] for t in row))
+    nearby = [s for s in sk["realm_plan"] if abs(s["target_chapter"] - n) <= 60]
+    if nearby:
+        _h("Ladder nearby")
+        for s in nearby:
+            _p(f"  ch.{s['target_chapter']:<6} {s['realm']} {s['stage']}"
+               + ("  [BREAKTHROUGH]" if s["is_breakthrough"] else ""))
+    return 0
+
+
+def cmd_plot_arcs(args):
+    sk = plotgen.skeleton()
+    for v in sk["volumes"]:
+        _p(f"\n{v['id']}  chapters {v['chapters'][0]}-{v['chapters'][1]}")
+        for aid in v["arcs"]:
+            a = next(x for x in sk["arcs"] if x["id"] == aid)
+            _p(f"  {a['id']}  ch.{a['chapters'][0]:>5}-{a['chapters'][1]:<5} ({a['length']:>3})  "
+               f"{a['pressure_source']}")
+            if args.verbose:
+                _p(f"        {a['central_question']}")
+    return 0
+
+
+def cmd_plot_next(args):
+    d = plotgen.derive(args.chapter)
+    _p(BAR)
+    _p(f" WHAT THE PLOT OWES — chapter {d['chapter']}  ·  arc {d['arc']}  ·  "
+       f"phase {d['phase']}  ·  type {d['chapter_type']}")
+    _p(BAR)
+    _p(f" Arc question: {d['arc_question']}")
+    _p(f" Arc pressure: {d['arc_pressure']}")
+    if d["divergence"]:
+        _h("Divergence from the plan")
+        for x in d["divergence"]:
+            _p(f" ! {x}")
+    if d["directives"]:
+        _h("Driven by his current state")
+        for kind, text in d["directives"]:
+            _p(f" [{kind}] {text}")
+    else:
+        _p("")
+        _p(" No state-driven directives. The arc plan stands.")
+    if d["seeds_planting"]:
+        _h("Seeds the plan plants here")
+        for s in d["seeds_planting"]:
+            _p(f"  plant now, pay at ch.{s['target_payoff']} ({s['band']}, {s['gap']} chapters)")
+    if d["seeds_due"]:
+        _h("Seeds due for payoff here")
+        for s in d["seeds_due"]:
+            _p(f"  planted ch.{s['planted_chapter']} ({s['gap']} chapters carried, {s['band']})")
+    _p("")
+    return 0
+
+
+def cmd_plot_cast(args):
+    """Generate the bench an arc's phases call for. Personalities are random —
+    contradictory atoms drawn from the lexicon — and every one carries the arc's
+    own need, so `character introduce` has a sentence to check against."""
+    sk = plotgen.skeleton()
+    arc = next((a for a in sk["arcs"] if a["id"] == args.arc), None)
+    if not arc:
+        _p(f"unknown arc '{args.arc}'. Try `novel.py plot arcs`.")
+        return 1
+    wanted = []
+    for seg in arc["phases"]:
+        for role in plotgen.ROLES_BY_PHASE[seg["phase"]]:
+            if role in arc["licensed_character_roles"] and role not in [w[0] for w in wanted]:
+                wanted.append((role, seg["phase"]))
+    if args.limit:
+        wanted = wanted[:args.limit]
+    if not wanted:
+        _p(f"{arc['id']} licenses {arc['licensed_character_roles']}, none of which its phases call for.")
+        return 0
+    rng = __import__("random").Random(args.seed if args.seed is not None else arc["chapters"][0])
+    made = []
+    for role, phase in wanted:
+        need = (f"{arc['id']} ({phase} phase): {arc['pressure_source']} needs a {role} for the arc to "
+                f"put {arc['stake']} at risk")
+        c = characters.generate(role, need=need, culture=args.culture,
+                                seed=rng.randrange(1 << 30))
+        try:
+            characters.persist(c)
+        except ValueError:
+            continue
+        made.append(c)
+        _p(f" {c['name']:<24} {role:<18} seed {c['seed']}")
+        _p(f"   lie:  {c['core']['lie']}")
+        _p(f"   mask: {c['surface']['mask']}")
+        _p(f"   hole: {c['capability']['hole']}")
+    _p("")
+    _p(f"{len(made)} benched for {arc['id']}. None are on the page until "
+       "`novel.py character introduce <id> --need \"...\"`.")
+    return 0
+
+
 # ----------------------------------------------------------------- validate
 
 def cmd_validate(args):
@@ -863,6 +1025,25 @@ def build_parser():
     fs = fwsub.add_parser("shapes", help="list the chapter-shape archetypes")
     fs.add_argument("--beat", choices=["hook", "pressure", "complication", "cost", "revelation", "consolidation"])
     fs.set_defaults(func=cmd_framework_shapes)
+
+    pl2 = sub.add_parser("plot", help="the macro plot skeleton, and what the protagonist's state does to it")
+    plsub = pl2.add_subparsers(dest="sub", required=True)
+    pb = plsub.add_parser("build", help="generate the skeleton")
+    pb.add_argument("--chapters", type=int, default=1337)
+    pb.add_argument("--seed", type=int)
+    pb.add_argument("--sync", action="store_true", help="project it into engine/arcs.json")
+    pb.set_defaults(func=cmd_plot_build)
+    ps = plsub.add_parser("show", help="where a chapter sits in the plan")
+    ps.add_argument("--chapter", type=int); ps.set_defaults(func=cmd_plot_show)
+    pa = plsub.add_parser("arcs", help="the whole arc map")
+    pa.add_argument("--verbose", action="store_true"); pa.set_defaults(func=cmd_plot_arcs)
+    pn = plsub.add_parser("next", help="what the plot owes, driven by his current state")
+    pn.add_argument("--chapter", type=int); pn.set_defaults(func=cmd_plot_next)
+    pc = plsub.add_parser("cast", help="generate the bench an arc's phases call for")
+    pc.add_argument("arc"); pc.add_argument("--limit", type=int, default=4)
+    pc.add_argument("--culture", default="ledger", choices=sorted(characters.SYLLABLES))
+    pc.add_argument("--seed", type=int)
+    pc.set_defaults(func=cmd_plot_cast)
 
     sub.add_parser("calibrate", help="compare the tempo against genre architecture").set_defaults(func=cmd_calibrate)
     sub.add_parser("validate", help="check the whole project for contradictions").set_defaults(func=cmd_validate)

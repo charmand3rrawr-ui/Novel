@@ -1,7 +1,7 @@
 {
   "description": "Live story state. The engine reads and writes this. Treat it as the novel's save file.",
   "current_chapter": 1,
-  "current_arc": "A1",
+  "current_arc": "A01",
   "current_pov": "mc-kestrel-vane",
   "last_tension": 0,
   "beat_index": 0,
@@ -30,6 +30,11 @@
       "date": "2026-09-18",
       "chapter": 1,
       "event": "activated environment Thorn Ledger (academy) in ch.1 — need: the threshold test has to happen somewhere that can fail them publicly"
+    },
+    {
+      "date": "2026-09-18",
+      "chapter": 1,
+      "event": "plot skeleton rebuilt for 1337 chapters; arc id migrated A1 -> A01"
     }
   ]
 }

@@ -115,6 +115,242 @@
       "chapters": [],
       "introduced_chapter": null,
       "file": "characters/dormant/sila-corr.md"
+    },
+    {
+      "id": "onador-orne",
+      "name": "Onador Orne",
+      "role": "peer-ally",
+      "culture": "ledger",
+      "status": "dormant",
+      "seed": 135520872,
+      "created": "2026-09-18",
+      "need_that_licenses": "A01 (arrival phase): a sealed record needs a peer-ally for the arc to put his access to a stage at risk",
+      "story_function": "keeps the MC legible as a person; the cost track made visible",
+      "core": {
+        "wound": "was given away to settle someone else's obligation",
+        "lie": "A clean conscience is worth more than a saved life.",
+        "want": "to secure a position where they can never again be having been wrong for a very long time",
+        "need": "to be met on the axis of mercy vs order and survive the answer",
+        "fear": "having been wrong for a very long time",
+        "moral_axis": "mercy vs order"
+      },
+      "surface": {
+        "mask": "makes themselves the joke first, so no one else can",
+        "verbal_tic": "phrases everything as terms and conditions",
+        "physical_signature": "an old injury that only shows when they are lying"
+      },
+      "capability": {
+        "spike": "repairs machines by listening to them",
+        "secondary": "acquires dialects and registers unnervingly fast",
+        "hole": "brilliant under pressure, useless at a dinner table"
+      },
+      "bonds": {
+        "loyalty_shape": "loyal to terms, not people; will honor a bad deal to the letter",
+        "to_protagonist": "undefined — set on first shared scene",
+        "leverage_over_them": "knowledge that they paying down an obligation nobody knows about",
+        "leverage_they_hold": "undefined"
+      },
+      "offstage_life": "paying down an obligation nobody knows about",
+      "trajectory": {
+        "arc_shape": "slow thaw, earned by small repeated acts",
+        "break_point": "undefined — name the scene that cracks them",
+        "exit_condition": "undefined — how they leave the novel, on or off the page"
+      },
+      "contract": {
+        "entry_pretext": "called in by an established character under pressure",
+        "first_appearance_conditions": [
+          "The scene must need them for a reason the reader already feels.",
+          "They arrive mid-action, doing their own business, not waiting to be met.",
+          "One concrete detail from `surface` lands in the first three lines."
+        ],
+        "do_not_reveal_before": "the wound; it is earned, never introduced"
+      },
+      "contradictions": [
+        "The mask (makes themselves the joke first, so no one else can) cannot protect the spike (repairs machines by listening to them) when it is tested in public.",
+        "Their loyalty (loyal to terms, not people; will honor a bad deal to the letter) guarantees they will meet the thing they fear: having been wrong for a very long time.",
+        "The lie — A clean conscience is worth more than a saved life. — will look true for most of their time on the page."
+      ],
+      "notes": "",
+      "chapters": [],
+      "introduced_chapter": null,
+      "file": "characters/dormant/onador-orne.md"
+    },
+    {
+      "id": "rhenli-halloway",
+      "name": "Rhenli Halloway",
+      "role": "rival",
+      "culture": "ledger",
+      "status": "dormant",
+      "seed": 547756574,
+      "created": "2026-09-18",
+      "need_that_licenses": "A01 (friction phase): a sealed record needs a rival for the arc to put his access to a stage at risk",
+      "story_function": "mirrors the MC's method with a different wound; proves the method is not destiny",
+      "core": {
+        "wound": "lost a first language and with it a way of being loved",
+        "lie": "Wanting more than I was given is a kind of theft.",
+        "want": "to secure a position where they can never again be stopping, and what arrives in the silence",
+        "need": "to be met on the axis of the few known vs the many unknown and survive the answer",
+        "fear": "stopping, and what arrives in the silence",
+        "moral_axis": "the few known vs the many unknown"
+      },
+      "surface": {
+        "mask": "stillness mistaken for depth, protecting a loud interior",
+        "verbal_tic": "gives everyone a nickname within a minute of meeting",
+        "physical_signature": "carries a smell that belongs to a place they left"
+      },
+      "capability": {
+        "spike": "notices the injury a person is hiding before they admit it",
+        "secondary": "reads financial instruments the way others read faces",
+        "hole": "no capacity for unstructured time"
+      },
+      "bonds": {
+        "loyalty_shape": "always loyal to whoever is currently losing",
+        "to_protagonist": "undefined — set on first shared scene",
+        "leverage_over_them": "knowledge that they maintaining a place or person the story has not shown",
+        "leverage_they_hold": "undefined"
+      },
+      "offstage_life": "maintaining a place or person the story has not shown",
+      "trajectory": {
+        "arc_shape": "corruption then recovery",
+        "break_point": "undefined — name the scene that cracks them",
+        "exit_condition": "undefined — how they leave the novel, on or off the page"
+      },
+      "contract": {
+        "entry_pretext": "a name already spoken in the text, arriving in person",
+        "first_appearance_conditions": [
+          "The scene must need them for a reason the reader already feels.",
+          "They arrive mid-action, doing their own business, not waiting to be met.",
+          "One concrete detail from `surface` lands in the first three lines."
+        ],
+        "do_not_reveal_before": "the wound; it is earned, never introduced"
+      },
+      "contradictions": [
+        "The mask (stillness mistaken for depth, protecting a loud interior) cannot protect the spike (notices the injury a person is hiding before they admit it) when it is tested in public.",
+        "Their loyalty (always loyal to whoever is currently losing) guarantees they will meet the thing they fear: stopping, and what arrives in the silence.",
+        "The lie — Wanting more than I was given is a kind of theft. — will look true for most of their time on the page."
+      ],
+      "notes": "",
+      "chapters": [],
+      "introduced_chapter": null,
+      "file": "characters/dormant/rhenli-halloway.md"
+    },
+    {
+      "id": "sil-ashet",
+      "name": "Sil Ashet",
+      "role": "dependent",
+      "culture": "ledger",
+      "status": "dormant",
+      "seed": 253228484,
+      "created": "2026-09-18",
+      "need_that_licenses": "A01 (resource phase): a sealed record needs a dependent for the arc to put his access to a stage at risk",
+      "story_function": "makes the stakes concrete and unignorable",
+      "core": {
+        "wound": "was right about a danger nobody believed until it arrived",
+        "lie": "If I stop being useful, I stop being tolerated.",
+        "want": "to secure a position where they can never again be owing something that cannot be repaid",
+        "need": "to be met on the axis of mercy vs order and survive the answer",
+        "fear": "owing something that cannot be repaid",
+        "moral_axis": "mercy vs order"
+      },
+      "surface": {
+        "mask": "intimacy offered fast and withdrawn faster",
+        "verbal_tic": "phrases everything as terms and conditions",
+        "physical_signature": "hands always doing a second task"
+      },
+      "capability": {
+        "spike": "can be forgotten at will; people lose them in memory",
+        "secondary": "finds the load-bearing lie in an argument and pulls it",
+        "hole": "cannot accept a gift without immediate repayment"
+      },
+      "bonds": {
+        "loyalty_shape": "always loyal to whoever is currently losing",
+        "to_protagonist": "undefined — set on first shared scene",
+        "leverage_over_them": "knowledge that they losing a private battle on a schedule",
+        "leverage_they_hold": "undefined"
+      },
+      "offstage_life": "losing a private battle on a schedule",
+      "trajectory": {
+        "arc_shape": "corruption then recovery",
+        "break_point": "undefined — name the scene that cracks them",
+        "exit_condition": "undefined — how they leave the novel, on or off the page"
+      },
+      "contract": {
+        "entry_pretext": "attached to an institution the POV just entered",
+        "first_appearance_conditions": [
+          "The scene must need them for a reason the reader already feels.",
+          "They arrive mid-action, doing their own business, not waiting to be met.",
+          "One concrete detail from `surface` lands in the first three lines."
+        ],
+        "do_not_reveal_before": "the wound; it is earned, never introduced"
+      },
+      "contradictions": [
+        "The mask (intimacy offered fast and withdrawn faster) cannot protect the spike (can be forgotten at will; people lose them in memory) when it is tested in public.",
+        "Their loyalty (always loyal to whoever is currently losing) guarantees they will meet the thing they fear: owing something that cannot be repaid.",
+        "The lie — If I stop being useful, I stop being tolerated. — will look true for most of their time on the page."
+      ],
+      "notes": "",
+      "chapters": [],
+      "introduced_chapter": null,
+      "file": "characters/dormant/sil-ashet.md"
+    },
+    {
+      "id": "halmi-follet",
+      "name": "Halmi Follet",
+      "role": "institution-face",
+      "culture": "ledger",
+      "status": "dormant",
+      "seed": 8801,
+      "created": "2026-09-18",
+      "need_that_licenses": "A01 (friction phase): a sealed record needs a face that can refuse him politely",
+      "story_function": "the system with a pulse; makes policy personal",
+      "core": {
+        "wound": "had a formative achievement credited to someone else",
+        "lie": "If I stop being useful, I stop being tolerated.",
+        "want": "to secure a position where they can never again be having been wrong for a very long time",
+        "need": "to be met on the axis of clean means vs necessary ends and survive the answer",
+        "fear": "having been wrong for a very long time",
+        "moral_axis": "clean means vs necessary ends"
+      },
+      "surface": {
+        "mask": "stillness mistaken for depth, protecting a loud interior",
+        "verbal_tic": "keeps perfect grammar while saying something unforgivable",
+        "physical_signature": "carries a smell that belongs to a place they left"
+      },
+      "capability": {
+        "spike": "finds the load-bearing lie in an argument and pulls it",
+        "secondary": "reconstructs a stranger's whole situation from three questions",
+        "hole": "no capacity for unstructured time"
+      },
+      "bonds": {
+        "loyalty_shape": "loyal to a version of someone that does not exist yet",
+        "to_protagonist": "undefined — set on first shared scene",
+        "leverage_over_them": "knowledge that they quietly teaching someone the thing they were denied",
+        "leverage_they_hold": "undefined"
+      },
+      "offstage_life": "quietly teaching someone the thing they were denied",
+      "trajectory": {
+        "arc_shape": "holds, holds, holds, then breaks in one irreversible scene",
+        "break_point": "undefined — name the scene that cracks them",
+        "exit_condition": "undefined — how they leave the novel, on or off the page"
+      },
+      "contract": {
+        "entry_pretext": "pursuing an unrelated goal that crosses the POV's path",
+        "first_appearance_conditions": [
+          "The scene must need them for a reason the reader already feels.",
+          "They arrive mid-action, doing their own business, not waiting to be met.",
+          "One concrete detail from `surface` lands in the first three lines."
+        ],
+        "do_not_reveal_before": "the wound; it is earned, never introduced"
+      },
+      "contradictions": [
+        "The mask (stillness mistaken for depth, protecting a loud interior) cannot protect the spike (finds the load-bearing lie in an argument and pulls it) when it is tested in public.",
+        "Their loyalty (loyal to a version of someone that does not exist yet) guarantees they will meet the thing they fear: having been wrong for a very long time.",
+        "The lie — If I stop being useful, I stop being tolerated. — will look true for most of their time on the page."
+      ],
+      "notes": "",
+      "chapters": [],
+      "introduced_chapter": null,
+      "file": "characters/dormant/halmi-follet.md"
     }
   ]
 }
