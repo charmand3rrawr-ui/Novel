@@ -88,6 +88,14 @@ novel.py framework check 7         # length and sections
 novel.py chapter record 7 ...
 ```
 
+## Craft texture
+
+[`CRAFT-PATTERNS.md`](CRAFT-PATTERNS.md) holds the measured emotional and
+intentional texture of the form — how feeling is delivered (interiority, not
+emotion words), how often goals are restated, how progression language behaves
+across a long run, and where the power-creep signature shows up. Read it when
+filling section 5 (characters and emotion) and section 3 (goal).
+
 ## On sourcing structure from other novels
 
 Read widely in the genre and steal *shapes* — the stock structures in

@@ -179,6 +179,16 @@
         60
       ],
       "note": "The antagonist who mattered 50 chapters ago should now be beneath notice — and the novel should say so explicitly at least once. It is the cheapest and most effective proof of progress."
+    },
+    "measured_entity_dynamics": {
+      "set": "serial-reference-A",
+      "distinct_named_entities": 5408,
+      "new_per_chapter_median": 1,
+      "new_per_chapter_p90": 4,
+      "single_chapter_share": 0.336,
+      "median_span_chapters": 125,
+      "p90_span_chapters": 2706,
+      "note": "A third of all named things appear in exactly one chapter and never again. The serial introduces freely and lets almost everything go; a small core persists for thousands of chapters. That is a different philosophy from a strict per-arc cast budget — closer to 'name it, use it, drop it'."
     }
   },
   "pov_and_voice": {
@@ -228,5 +238,64 @@
     "dialogue_first_decile": 0.332,
     "dialogue_last_decile": 0.208,
     "note": "Chapters get shorter and less talky as a long serial runs. Whether that is craft or fatigue is a judgement call — but if you are planning a long run, expect the drift and decide in advance whether to resist it."
+  },
+  "chapter_internals": {
+    "measured": "serial-reference-A (3,204 chapters)",
+    "sentences": {
+      "median_words": 9.0,
+      "p90_words": 17,
+      "short_sentence_share": 0.259,
+      "length_stdev": 5.5,
+      "note": "Short sentences with low variance. A median of 9 words is the single most transferable number here."
+    },
+    "paragraphs": {
+      "mean_words": 18.3,
+      "share_under_10_words": 0.264
+    },
+    "dialogue": {
+      "segments_per_chapter": 17,
+      "median_segment_words": 7.5,
+      "share_of_all_words": 0.161,
+      "share_of_paragraphs": 0.273,
+      "note": "Dialogue comes in many short volleys, not long speeches. 17 exchanges of ~7 words."
+    },
+    "opening_continuity": {
+      "scene_setting": 0.44,
+      "named_subject": 0.41,
+      "cold_dialogue": 0.124,
+      "continuation": 0.027,
+      "note": "THE FINDING: only 2.7% of chapters continue the previous scene with a pronoun. Almost every chapter is a fresh entry point — a reader can arrive at any chapter and be oriented within a paragraph. This is serial architecture doing its real job."
+    },
+    "closing_kind": {
+      "on_statement": 0.616,
+      "on_dialogue": 0.264,
+      "on_intent": 0.051,
+      "on_question": 0.036,
+      "mid_action": 0.033,
+      "note": "Chapters almost never end mid-action (3.3%). Combined with 65% quiet endings, the cliffhanger-every-chapter belief about this form is simply false."
+    },
+    "internal_shape": {
+      "dialogue_by_fifth": [
+        0.245,
+        0.287,
+        0.289,
+        0.296,
+        0.3
+      ],
+      "paragraph_words_by_fifth": [
+        18.1,
+        18.6,
+        18.6,
+        18.7,
+        18.9
+      ],
+      "note": "Remarkably flat. Chapters do not build texture toward a climax; they hold one consistent density from first line to last."
+    }
+  },
+  "structural_volatility": {
+    "set": "serial-reference-A",
+    "changepoints": 4,
+    "detail": "Four shifts of >=15% in median chapter length, clustered between chapters 1200 and 1650 (-35%, +50%, -25%, +19%).",
+    "interpretation": "These read as volatility in the middle third rather than clean arc boundaries — the oscillation reverses too fast to be structure. Do not over-read them."
   }
 }

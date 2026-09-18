@@ -66,6 +66,21 @@ def report() -> list[str]:
     ylo = tempo["seed_policy"]["payoff_window_chapters"]["min"]
     out.append(f"     gain-to-spend window  yours min {ylo:<2}   prior {glo}-{ghi}")
 
+    ed = priors["cast_and_world_expansion"].get("measured_entity_dynamics")
+    if ed:
+        yn2 = tempo["introduction_budget"]["new_proper_nouns_per_chapter"]
+        ok = ed["new_per_chapter_p90"] <= yn2 <= ed["new_per_chapter_p90"] + 3
+        out.append(f" {'ok ' if ok else '   '} new proper nouns/ch   yours {yn2:<6} "
+                   f"measured median {ed['new_per_chapter_median']}, p90 {ed['new_per_chapter_p90']}")
+        out.append(f"     entity churn          measured {int(ed['single_chapter_share'] * 100)}% of named things "
+                   f"appear in exactly one chapter")
+        findings.append(
+            f"measured cast philosophy differs from yours: {int(ed['single_chapter_share'] * 100)}% of named "
+            f"entities appear once and never again, median span {ed['median_span_chapters']} chapters. Your "
+            f"budget of {tempo['introduction_budget']['named_characters_per_arc']} named characters per arc "
+            "enforces a small persistent cast; the reference serial names freely and drops most. Both work — "
+            "but they are different books.")
+
     slo, shi = priors["progression_cadence"]["setback_ratio"]["typical_range"]
     out.append(f"     setback ratio         not tracked   prior {slo}-{shi}")
     findings.append(

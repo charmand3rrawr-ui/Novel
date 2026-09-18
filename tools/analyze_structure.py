@@ -120,7 +120,8 @@ def scene_breaks(text: str) -> int:
     return len(re.findall(r"^\s*([*#\-–—]\s*){3,}\s*$", text, re.M))
 
 
-def measure_chapter(text: str, boiler: dict | None = None) -> dict:
+def measure_chapter(text: str, boiler: dict | None = None, deep: bool = False,
+                    matchers: dict | None = None) -> dict:
     ps = paragraphs(text)
     if boiler:
         ps = strip_boilerplate(ps, boiler)
@@ -133,6 +134,13 @@ def measure_chapter(text: str, boiler: dict | None = None) -> dict:
         "scene_breaks": scene_breaks(text),
         "opening": classify_opening(ps[0]),
         "closing": classify_closing(ps[-1]),
+        "open_continuity": classify_open_continuity(ps[0]),
+        "close_kind": classify_close_kind(ps[-1]),
+        "short_paragraph_share": round(sum(1 for p in ps if words(p) <= 10) / max(1, len(ps)), 3),
+        **sentence_stats(ps),
+        **dialogue_stats(" ".join(ps), ps),
+        **({"profile": paragraph_profile(ps)} if deep else {}),
+        **({"craft": craft_measure(" ".join(ps), matchers, w)} if matchers else {}),
     }
 
 
@@ -182,6 +190,28 @@ def summarise(chapters: list[dict]) -> dict:
         "scene_breaks_median": statistics.median([c["scene_breaks"] for c in chapters]),
         "opening_move_distribution": dist("opening"),
         "closing_move_distribution": dist("closing"),
+        "open_continuity_distribution": dist("open_continuity"),
+        "close_kind_distribution": dist("close_kind"),
+        "short_paragraph_share_median": round(statistics.median(
+            [c.get("short_paragraph_share", 0) for c in chapters]), 3),
+        "sentences": {
+            "median_words": round(statistics.median(
+                [c["median_sentence_words"] for c in chapters if "median_sentence_words" in c]), 1),
+            "p90_words": int(statistics.median(
+                [c["p90_sentence_words"] for c in chapters if "p90_sentence_words" in c])),
+            "short_sentence_share": round(statistics.median(
+                [c["short_sentence_share"] for c in chapters if "short_sentence_share" in c]), 3),
+            "length_stdev": round(statistics.median(
+                [c["sentence_length_stdev"] for c in chapters if "sentence_length_stdev" in c]), 1),
+        },
+        "dialogue": {
+            "segments_per_chapter_median": round(statistics.median(
+                [c["dialogue_segments"] for c in chapters]), 1),
+            "median_segment_words": round(statistics.median(
+                [c["median_dialogue_words"] for c in chapters]), 1),
+            "share_of_words": round(statistics.median(
+                [c["dialogue_word_share"] for c in chapters]), 3),
+        },
         "trend_by_decile": trend(chapters),
     }
 
@@ -282,6 +312,177 @@ def strip_boilerplate(ps: list[str], boiler: dict) -> list[str]:
     return out or ps
 
 
+# ---------------------------------------------------------------------------
+# Deep per-chapter analysis. Everything here is counts, ratios and positions.
+# Proper nouns are tracked in memory to measure introduction rate and how long
+# an entity stays relevant; the strings themselves are never written out.
+# ---------------------------------------------------------------------------
+
+SENT = re.compile(r"(?<=[.!?…])[\s\"”']+")
+DIALOGUE_SEG = re.compile(r"[\"“]([^\"“”]{2,400})[\"”]")
+PRONOUN_OPEN = re.compile(r"^\s*(he|she|they|it|his|her|their)\b", re.I)
+CAP_TOKEN = re.compile(r"(?<![.!?\"“]\s)(?<!^)\b([A-Z][a-z]{2,})\b", re.M)
+COMMON_CAPS = set("""
+The A An And But Or So Yet For Nor If When While Then Than That This These Those There Here
+He She They It We You I His Her Their Its Our Your My Him Them Us Me Chapter Mr Mrs Miss Ms Dr Sir
+No Yes Oh Ah Well Now Never Nothing Something Everything Anything Perhaps Indeed However Although
+Even After Before Once Because Since Until Unless Though What Who Why How Where Which
+""".split())
+
+
+def sentence_stats(ps: list[str]) -> dict:
+    lens = []
+    for p in ps:
+        for s in SENT.split(p):
+            w = words(s)
+            if w:
+                lens.append(w)
+    if not lens:
+        return {}
+    return {
+        "sentences": len(lens),
+        "median_sentence_words": round(statistics.median(lens), 1),
+        "p90_sentence_words": int(statistics.quantiles(lens, n=10)[-1]) if len(lens) >= 10 else max(lens),
+        "short_sentence_share": round(sum(1 for x in lens if x <= 5) / len(lens), 3),
+        "sentence_length_stdev": round(statistics.pstdev(lens), 1),
+    }
+
+
+def dialogue_stats(text: str, ps: list[str]) -> dict:
+    segs = [words(m.group(1)) for m in DIALOGUE_SEG.finditer(text)]
+    return {
+        "dialogue_segments": len(segs),
+        "median_dialogue_words": round(statistics.median(segs), 1) if segs else 0,
+        "dialogue_word_share": round(sum(segs) / max(1, sum(words(p) for p in ps)), 3),
+    }
+
+
+def paragraph_profile(ps: list[str], buckets: int = 5) -> dict:
+    """Where dialogue and short paragraphs sit INSIDE a chapter. This is the
+    chapter's internal shape, which chapter-level averages hide completely."""
+    if len(ps) < buckets:
+        return {}
+    size = len(ps) / buckets
+    prof_dialogue, prof_words = [], []
+    for i in range(buckets):
+        chunk = ps[int(i * size):int((i + 1) * size)] or [ps[-1]]
+        prof_dialogue.append(round(sum(1 for p in chunk if has_dialogue(p)) / len(chunk), 3))
+        prof_words.append(round(statistics.mean([words(p) for p in chunk]), 1))
+    return {"dialogue_by_fifth": prof_dialogue, "paragraph_words_by_fifth": prof_words}
+
+
+def classify_open_continuity(p: str) -> str:
+    """Cold open, or continuing the previous scene? 'named_subject' requires a
+    real proper noun — a capitalised first word alone would also match "The
+    morning was cold", which is scene-setting, not a named subject."""
+    s = p.strip()
+    if has_dialogue(s[:80]):
+        return "cold_dialogue"
+    if PRONOUN_OPEN.match(s):
+        return "continuation"
+    m = re.match(r"^\s*([A-Z][a-z]{2,})\b", s)
+    if m and m.group(1) not in COMMON_CAPS:
+        return "named_subject"
+    return "scene_setting"
+
+
+def classify_close_kind(p: str) -> str:
+    s = p.strip()
+    if has_dialogue(s[-120:]):
+        return "on_dialogue"
+    if s.endswith("?"):
+        return "on_question"
+    if re.search(r"\b(would|will|was going to|about to)\b", s.lower()[-160:]):
+        return "on_intent"
+    if re.search(r"\b(suddenly|at that moment|just then|before)\b", s.lower()[-160:]):
+        return "mid_action"
+    return "on_statement"
+
+
+def proper_nouns(text: str) -> set:
+    return {m.group(1) for m in CAP_TOKEN.finditer(text)} - COMMON_CAPS
+
+
+def entity_dynamics(docs_tokens: list[set]) -> dict:
+    """Introduction rate and persistence, from proper-noun first/last appearance.
+    Names live in memory only; nothing but counts is returned."""
+    first, last = {}, {}
+    new_per_chapter = []
+    for i, toks in enumerate(docs_tokens):
+        new = 0
+        for tok in toks:
+            if tok not in first:
+                first[tok] = i
+                new += 1
+            last[tok] = i
+        new_per_chapter.append(new)
+    spans = [last[k] - first[k] for k in first]
+    one_shot = sum(1 for s in spans if s == 0)
+    return {
+        "distinct_entities": len(first),
+        "new_entities_per_chapter_median": round(statistics.median(new_per_chapter), 1),
+        "new_entities_per_chapter_p90": int(statistics.quantiles(new_per_chapter, n=10)[-1])
+            if len(new_per_chapter) >= 10 else max(new_per_chapter),
+        "single_chapter_entity_share": round(one_shot / max(1, len(spans)), 3),
+        "median_entity_span_chapters": int(statistics.median(spans)),
+        "p90_entity_span_chapters": int(statistics.quantiles(spans, n=10)[-1]) if len(spans) >= 10 else max(spans),
+        "note": "Span = chapters between an entity's first and last appearance. A high single-chapter share "
+                "means most named things are local colour and are allowed to leave."
+    }
+
+
+def changepoints(series: list[int], block: int = 50, threshold: float = 0.15) -> list[dict]:
+    """Structural shifts in chapter length — a proxy for volume or arc borders,
+    found without reading a word of plot."""
+    if len(series) < block * 3:
+        return []
+    blocks = []
+    for i in range(0, len(series) - block + 1, block):
+        blocks.append((i + 1, statistics.median(series[i:i + block])))
+    shifts = []
+    for (s0, m0), (s1, m1) in zip(blocks, blocks[1:]):
+        if m0 and abs(m1 - m0) / m0 >= threshold:
+            shifts.append({"at_chapter": s1, "median_before": int(m0), "median_after": int(m1),
+                           "change": f"{(m1 - m0) / m0 * 100:+.0f}%"})
+    return shifts
+
+
+# ---------------------------------------------------------------------------
+# Craft texture: the emotional and intentional weather of the prose, measured
+# with generic English word lists. Counts and rates only.
+# ---------------------------------------------------------------------------
+
+CRAFT_LEXICON = Path(__file__).resolve().parent / "novelkit" / "craft_lexicon.json"
+
+
+def craft_lexicon() -> dict:
+    return store.load(CRAFT_LEXICON)
+
+
+def _build_matchers(lex: dict) -> dict:
+    out = {}
+    for group in ("categories", "registers"):
+        for name, terms in lex[group].items():
+            singles = sorted({w for w in terms if " " not in w})
+            phrases = sorted({w for w in terms if " " in w})
+            pat = r"\b(" + "|".join(re.escape(w) for w in singles) + r")\b"
+            if phrases:
+                pat += r"|(" + "|".join(re.escape(w) for w in phrases) + r")"
+            out[name] = (group, re.compile(pat, re.I))
+    return out
+
+
+def craft_measure(text: str, matchers: dict, total_words: int) -> dict:
+    """Raw hit counts, not per-chapter rates. These counts are sparse at ~1,000
+    words a chapter, so the median of per-chapter rates collapses to zero and
+    says nothing. Rates are computed at corpus level instead."""
+    low = text.lower()
+    out = {"_words": total_words}
+    for name, (group, rx) in matchers.items():
+        out[name] = len(rx.findall(low))
+    return out
+
+
 def load_metrics() -> dict:
     return store.load(METRICS, {"description": "Aggregate structural measurements. Numbers only — no prose is ever stored here.",
                                 "sets": {}})
@@ -332,6 +533,11 @@ def main(argv=None):
     ap.add_argument("--file", help="a single file")
     ap.add_argument("--split", help="regex that starts each chapter, for a single-file book")
     ap.add_argument("--label", help="name for this measurement set")
+    ap.add_argument("--craft", action="store_true",
+                    help="emotional and intentional texture: emotion categories, interiority, goal statements, "
+                         "progression and stakes vocabulary, per 1000 words")
+    ap.add_argument("--deep", action="store_true",
+                    help="per-chapter internal profile, entity dynamics, and structural changepoints")
     ap.add_argument("--report", action="store_true", help="print stored measurements")
     ap.add_argument("--compare", action="store_true", help="compare tempo.json against priors and measurements")
     args = ap.parse_args(argv)
@@ -360,8 +566,27 @@ def main(argv=None):
         print(f"  boilerplate detected across {boiler['documents']} documents: "
               f"{len(boiler['leading'])} repeated leading line(s), "
               f"{len(boiler['trailing'])} repeated trailing line(s) — stripped before measuring")
-    chapters = [measure_chapter(text, boiler) for _, text in inputs]
+    matchers = _build_matchers(craft_lexicon()) if args.craft else None
+    if matchers:
+        print("  measuring emotional and intentional texture ...")
+    chapters = [measure_chapter(text, boiler, deep=args.deep, matchers=matchers) for _, text in inputs]
     summary = summarise(chapters)
+    if args.deep:
+        profs = [c["profile"] for c in chapters if c.get("profile")]
+        if profs:
+            fifths = len(profs[0]["dialogue_by_fifth"])
+            summary["average_chapter_profile"] = {
+                "dialogue_by_fifth": [round(statistics.mean([p["dialogue_by_fifth"][i] for p in profs]), 3)
+                                      for i in range(fifths)],
+                "paragraph_words_by_fifth": [round(statistics.mean([p["paragraph_words_by_fifth"][i] for p in profs]), 1)
+                                             for i in range(fifths)],
+                "note": "The internal shape of the average chapter, in fifths. Chapter-level averages hide this.",
+            }
+        print("  computing entity dynamics ...")
+        summary["entity_dynamics"] = entity_dynamics([proper_nouns(x) for _, x in inputs])
+        summary["structural_changepoints"] = changepoints([c["words"] for c in chapters])
+        for c in chapters:
+            c.pop("profile", None)
     summary["boilerplate_stripped"] = {"leading_patterns": len(boiler["leading"]),
                                        "trailing_patterns": len(boiler["trailing"])}
     entry = {"measured": date.today().isoformat(), "summary": summary}
@@ -383,6 +608,49 @@ def main(argv=None):
         if top >= 0.95:
             print(f"\n  WARNING: {key} is {int(top * 100)}% a single value. That is almost always a "
                   "parsing artifact, not a property of the text. Inspect before trusting it.")
+    if args.craft:
+        names = sorted(k for k in chapters[0]["craft"] if k != "_words")
+
+        def rate(chs, name):
+            w = sum(c["craft"]["_words"] for c in chs)
+            h = sum(c["craft"][name] for c in chs)
+            return round(h * 1000 / max(1, w), 2)
+
+        def presence(chs, name):
+            return round(sum(1 for c in chs if c["craft"][name] > 0) / max(1, len(chs)), 3)
+
+        tenth = max(1, len(chapters) // 10)
+        summary["craft_rates_per_1000_words"] = {n: rate(chapters, n) for n in names}
+        summary["craft_chapter_presence"] = {n: presence(chapters, n) for n in names}
+        summary["craft_drift_first_vs_last_decile"] = {
+            n: {"first": rate(chapters[:tenth], n), "last": rate(chapters[-tenth:], n)} for n in names}
+        print("\n  craft texture — corpus rate per 1000 words, share of chapters containing it,")
+        print("  and drift from the first decile to the last:")
+        for n in names:
+            d0 = summary["craft_drift_first_vs_last_decile"][n]
+            delta = d0["last"] - d0["first"]
+            arrow = "  " if abs(delta) < 0.05 else ("UP" if delta > 0 else "dn")
+            print(f"    {n:<16} {summary['craft_rates_per_1000_words'][n]:>6}/1k   "
+                  f"in {summary['craft_chapter_presence'][n] * 100:>5.1f}% of chapters   "
+                  f"{d0['first']:>6} -> {d0['last']:>6}  {arrow}")
+        for c in chapters:
+            c.pop("craft", None)
+    if summary.get("average_chapter_profile"):
+        ap_ = summary["average_chapter_profile"]
+        print("\n  average chapter internal shape (fifths, start -> end):")
+        print(f"    dialogue density   {ap_['dialogue_by_fifth']}")
+        print(f"    paragraph words    {ap_['paragraph_words_by_fifth']}")
+    if summary.get("entity_dynamics"):
+        e = summary["entity_dynamics"]
+        print("\n  entity dynamics:")
+        for k in ("distinct_entities", "new_entities_per_chapter_median", "new_entities_per_chapter_p90",
+                  "single_chapter_entity_share", "median_entity_span_chapters", "p90_entity_span_chapters"):
+            print(f"    {k}: {e[k]}")
+    if summary.get("structural_changepoints"):
+        print(f"\n  structural changepoints ({len(summary['structural_changepoints'])} shifts of >=15% "
+              "in median chapter length):")
+        for s in summary["structural_changepoints"][:12]:
+            print(f"    ch.{s['at_chapter']:<6} {s['median_before']} -> {s['median_after']} words  {s['change']}")
     if summary.get("trend_by_decile"):
         print("\n  trend by decile (chapters, median words, dialogue ratio, hook share):")
         for r in summary["trend_by_decile"]:
