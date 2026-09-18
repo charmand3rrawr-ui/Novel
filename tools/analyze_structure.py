@@ -28,9 +28,11 @@ Usage
 from __future__ import annotations
 
 import argparse
+import html
 import re
 import statistics
 import sys
+import zipfile
 from datetime import date
 from pathlib import Path
 
@@ -118,9 +120,11 @@ def scene_breaks(text: str) -> int:
     return len(re.findall(r"^\s*([*#\-–—]\s*){3,}\s*$", text, re.M))
 
 
-def measure_chapter(text: str) -> dict:
+def measure_chapter(text: str, boiler: dict | None = None) -> dict:
     ps = paragraphs(text)
-    w = words(text)
+    if boiler:
+        ps = strip_boilerplate(ps, boiler)
+    w = sum(words(p) for p in ps)
     return {
         "words": w,
         "paragraphs": len(ps),
@@ -130,6 +134,30 @@ def measure_chapter(text: str) -> dict:
         "opening": classify_opening(ps[0]),
         "closing": classify_closing(ps[-1]),
     }
+
+
+def trend(chapters: list[dict], buckets: int = 10) -> list[dict]:
+    """How the architecture drifts across a long run. The interesting question
+    for a 3,000-chapter serial is not its average but its slope."""
+    if len(chapters) < buckets * 2:
+        return []
+    size = len(chapters) // buckets
+    rows = []
+    for i in range(buckets):
+        chunk = chapters[i * size:(i + 1) * size] if i < buckets - 1 else chapters[i * size:]
+        if not chunk:
+            continue
+        closings = {}
+        for c in chunk:
+            closings[c["closing"]] = closings.get(c["closing"], 0) + 1
+        rows.append({
+            "decile": i + 1,
+            "chapters": f"{i * size + 1}-{i * size + len(chunk)}",
+            "median_words": int(statistics.median([c["words"] for c in chunk])),
+            "dialogue_ratio": round(statistics.median([c["dialogue_ratio"] for c in chunk]), 3),
+            "hook_share": round(closings.get("hook", 0) / len(chunk), 3),
+        })
+    return rows
 
 
 def summarise(chapters: list[dict]) -> dict:
@@ -154,7 +182,104 @@ def summarise(chapters: list[dict]) -> dict:
         "scene_breaks_median": statistics.median([c["scene_breaks"] for c in chapters]),
         "opening_move_distribution": dist("opening"),
         "closing_move_distribution": dist("closing"),
+        "trend_by_decile": trend(chapters),
     }
+
+
+# ---------------------------------------------------------------------------
+# EPUB reading. Text is extracted in memory, measured, and discarded — nothing
+# is written to disk except the numbers.
+# ---------------------------------------------------------------------------
+
+BLOCK_END = re.compile(r"</(p|div|h[1-6]|li|br)\s*>", re.I)
+TAG = re.compile(r"<[^>]+>")
+DROP = re.compile(r"<(script|style)\b.*?</\1>", re.I | re.S)
+
+
+def xhtml_to_text(raw: str) -> str:
+    raw = DROP.sub(" ", raw)
+    raw = BLOCK_END.sub("\n\n", raw)
+    raw = TAG.sub("", raw)
+    text = html.unescape(raw)
+    text = re.sub(r"[ \t\xa0]+", " ", text)
+    return re.sub(r"\n{3,}", "\n\n", text).strip()
+
+
+def epub_documents(path: Path) -> list[tuple[str, str]]:
+    """Spine-ordered (name, text) pairs. Falls back to sorted filenames when the
+    OPF cannot be parsed."""
+    out = []
+    with zipfile.ZipFile(path) as z:
+        names = z.namelist()
+        opf = next((n for n in names if n.lower().endswith(".opf")), None)
+        order = []
+        if opf:
+            try:
+                meta = z.read(opf).decode("utf-8", "replace")
+                ids = dict(re.findall(r'<item\b[^>]*id="([^"]+)"[^>]*href="([^"]+)"', meta))
+                ids.update({i: h for h, i in re.findall(r'<item\b[^>]*href="([^"]+)"[^>]*id="([^"]+)"', meta)})
+                base = opf.rsplit("/", 1)[0] + "/" if "/" in opf else ""
+                for idref in re.findall(r'<itemref\b[^>]*idref="([^"]+)"', meta):
+                    href = ids.get(idref)
+                    if not href:
+                        continue
+                    full = base + href.split("#")[0]
+                    if full in names:
+                        order.append(full)
+            except Exception:
+                order = []
+        if not order:
+            order = sorted(n for n in names if n.lower().endswith((".xhtml", ".html", ".htm")))
+        for n in order:
+            try:
+                text = xhtml_to_text(z.read(n).decode("utf-8", "replace"))
+            except KeyError:
+                continue
+            out.append((n.rsplit("/", 1)[-1], text))
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Boilerplate. Aggregated ebooks repeat a heading at the top of every chapter
+# and a credit or navigation line at the bottom. Classifying those as prose
+# silently produces impossible statistics — 100% of anything is a bug report,
+# not a finding — so they are detected across the corpus and stripped.
+# ---------------------------------------------------------------------------
+
+HEADING = re.compile(r"^\s*(chapter|ch\.?|episode|part)\s*[\divxlc]+\b", re.I)
+
+
+def _norm(p: str) -> str:
+    return re.sub(r"\d+", "#", re.sub(r"\s+", " ", p.strip().lower()))[:120]
+
+
+def detect_boilerplate(docs: list[tuple[str, str]], threshold: float = 0.1) -> dict:
+    """Normalised first/last paragraphs that repeat across the corpus."""
+    from collections import Counter
+    firsts, lasts = Counter(), Counter()
+    n = 0
+    for _, text in docs:
+        ps = paragraphs(text)
+        if not ps:
+            continue
+        n += 1
+        firsts[_norm(ps[0])] += 1
+        lasts[_norm(ps[-1])] += 1
+    cut = max(2, int(n * threshold))
+    return {
+        "documents": n,
+        "leading": {k: v for k, v in firsts.items() if v >= cut},
+        "trailing": {k: v for k, v in lasts.items() if v >= cut},
+    }
+
+
+def strip_boilerplate(ps: list[str], boiler: dict) -> list[str]:
+    out = list(ps)
+    while out and (HEADING.match(out[0]) or _norm(out[0]) in boiler.get("leading", {})):
+        out.pop(0)
+    while out and _norm(out[-1]) in boiler.get("trailing", {}):
+        out.pop()
+    return out or ps
 
 
 def load_metrics() -> dict:
@@ -164,6 +289,13 @@ def load_metrics() -> dict:
 
 def collect(args) -> list[tuple[str, str]]:
     out = []
+    if args.epub:
+        docs = epub_documents(Path(args.epub))
+        kept = [(n, x) for n, x in docs if words(x) >= args.min_words]
+        skipped = len(docs) - len(kept)
+        print(f"  {len(docs)} documents in spine; {len(kept)} measured, "
+              f"{skipped} skipped under {args.min_words} words (front matter, covers, notices)")
+        out.extend(kept)
     if args.dir:
         d = Path(args.dir)
         files = sorted(p for p in d.rglob("*") if p.suffix.lower() in (".txt", ".md") and p.is_file())
@@ -193,6 +325,9 @@ def cmd_compare():
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--epub", help="an .epub — each spine document is treated as a chapter")
+    ap.add_argument("--min-words", type=int, default=300, dest="min_words",
+                    help="skip documents shorter than this (front matter, covers)")
     ap.add_argument("--dir", help="directory of chapter files (.txt/.md)")
     ap.add_argument("--file", help="a single file")
     ap.add_argument("--split", help="regex that starts each chapter, for a single-file book")
@@ -220,14 +355,39 @@ def main(argv=None):
         ap.print_help()
         return 1
     label = args.label or "unlabelled"
-    chapters = [measure_chapter(text) for _, text in inputs]
+    boiler = detect_boilerplate(inputs)
+    if boiler["leading"] or boiler["trailing"]:
+        print(f"  boilerplate detected across {boiler['documents']} documents: "
+              f"{len(boiler['leading'])} repeated leading line(s), "
+              f"{len(boiler['trailing'])} repeated trailing line(s) — stripped before measuring")
+    chapters = [measure_chapter(text, boiler) for _, text in inputs]
     summary = summarise(chapters)
-    metrics["sets"][label] = {"measured": date.today().isoformat(), "summary": summary,
-                              "per_chapter": chapters}
+    summary["boilerplate_stripped"] = {"leading_patterns": len(boiler["leading"]),
+                                       "trailing_patterns": len(boiler["trailing"])}
+    entry = {"measured": date.today().isoformat(), "summary": summary}
+    if len(chapters) <= 400:
+        entry["per_chapter"] = chapters
+    else:
+        entry["per_chapter_note"] = (f"{len(chapters)} chapters measured; per-chapter detail omitted to keep "
+                                     "this file small. Word series retained for trend analysis.")
+        entry["word_series"] = [c["words"] for c in chapters]
+    metrics["sets"][label] = entry
     store.save(METRICS, metrics)
     print(f"Measured {len(chapters)} chapter(s) as '{label}'. Numbers only — no prose stored.\n")
     for k, v in summary.items():
+        if k == "trend_by_decile":
+            continue
         print(f"  {k}: {v}")
+    for key in ("opening_move_distribution", "closing_move_distribution"):
+        top = max(summary[key].values()) if summary[key] else 0
+        if top >= 0.95:
+            print(f"\n  WARNING: {key} is {int(top * 100)}% a single value. That is almost always a "
+                  "parsing artifact, not a property of the text. Inspect before trusting it.")
+    if summary.get("trend_by_decile"):
+        print("\n  trend by decile (chapters, median words, dialogue ratio, hook share):")
+        for r in summary["trend_by_decile"]:
+            print(f"    {r['decile']:>2}  {r['chapters']:<14} {r['median_words']:>6}  "
+                  f"{r['dialogue_ratio']:>6}  {r['hook_share']:>6}")
     print(f"\nWritten to {store.rel(METRICS)}")
     print("Compare against the engine: tools/analyze_structure.py --compare")
     return 0
