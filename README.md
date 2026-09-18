@@ -139,9 +139,11 @@ Five worked frameworks ship in `chapters/frameworks/`, 1,575–1,729 words each,
 covering the opening arc.
 
 Spec: [`chapters/FRAMEWORK-SPEC.md`](chapters/FRAMEWORK-SPEC.md). Craft texture
-— how feeling, goal and progression actually behave in the form, measured and
-interpreted — is in
-[`chapters/CRAFT-PATTERNS.md`](chapters/CRAFT-PATTERNS.md).
+— how feeling, goal and progression actually behave in the form — is in
+[`chapters/CRAFT-PATTERNS.md`](chapters/CRAFT-PATTERNS.md), and the measured
+organisation of plot (chapter-type transition matrix, run lengths, conflict
+rhythm, arc boundaries, setup/payoff depth) is in
+[`chapters/PLOT-ARCHITECTURE.md`](chapters/PLOT-ARCHITECTURE.md).
 
 ## The protagonist's system
 

@@ -96,6 +96,14 @@ emotion words), how often goals are restated, how progression language behaves
 across a long run, and where the power-creep signature shows up. Read it when
 filling section 5 (characters and emotion) and section 3 (goal).
 
+## Plot architecture
+
+[`PLOT-ARCHITECTURE.md`](PLOT-ARCHITECTURE.md) holds the measured organisation
+of plot: which chapter type follows which, how long a mode sustains, whether
+confrontation runs on a schedule, measured arc length, and how far setups
+travel before they pay. Read it when choosing a shape and when deciding what
+the next chapter should be.
+
 ## On sourcing structure from other novels
 
 Read widely in the genre and steal *shapes* — the stock structures in

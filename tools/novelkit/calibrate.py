@@ -81,6 +81,35 @@ def report() -> list[str]:
             "enforces a small persistent cast; the reference serial names freely and drops most. Both work — "
             "but they are different books.")
 
+    mp = priors["progression_cadence"].get("measured_payoff_window")
+    if mp:
+        hard = tempo["seed_policy"]["payoff_window_chapters"]["hard_max"]
+        out.append(f"     seed rot threshold    yours {hard:<6} measured median long return "
+                   f"{mp['median_long_return_chapters']}, p90 {mp['p90_long_return_chapters']}")
+        if hard < mp["median_long_return_chapters"]:
+            findings.append(
+                f"seed rot fires at {hard} chapters, but the measured median long return is "
+                f"{mp['median_long_return_chapters']} chapters and the p90 is {mp['p90_long_return_chapters']}. "
+                "Your engine would force-retire exactly the deep plants the form is built on. Consider "
+                "soft_max 40 / hard_max 120 if you are writing a serial.")
+
+    ma = priors["arc_architecture"].get("measured_arc_length")
+    if ma:
+        out.append(f"     arc length            yours {lengths}  measured median "
+                   f"{ma['median_chapters_between_boundaries']} (p10 {ma['p10']}, p90 {ma['p90']})")
+
+    pa = priors.get("plot_architecture")
+    if pa:
+        yc = tempo["cadence_rules"]["max_consecutive_action_chapters"]
+        out.append(f"     consecutive action    yours {yc:<6} measured max run "
+                   f"{pa['run_length_max']['combat']}, combat self-transition "
+                   f"{int(pa['self_transition']['combat'] * 100)}%")
+        if yc < 5:
+            findings.append(
+                f"max_consecutive_action_chapters is {yc}; measured combat runs reach "
+                f"{pa['run_length_max']['combat']} chapters with a {int(pa['self_transition']['combat'] * 100)}% "
+                "self-transition rate. Three is a literary novel's limit — raise it or exempt declared set-pieces.")
+
     slo, shi = priors["progression_cadence"]["setback_ratio"]["typical_range"]
     out.append(f"     setback ratio         not tracked   prior {slo}-{shi}")
     findings.append(

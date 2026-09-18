@@ -461,7 +461,7 @@ def craft_lexicon() -> dict:
 
 def _build_matchers(lex: dict) -> dict:
     out = {}
-    for group in ("categories", "registers"):
+    for group in ("categories", "registers", "plot_registers"):
         for name, terms in lex[group].items():
             singles = sorted({w for w in terms if " " not in w})
             phrases = sorted({w for w in terms if " " in w})
@@ -533,6 +533,9 @@ def main(argv=None):
     ap.add_argument("--file", help="a single file")
     ap.add_argument("--split", help="regex that starts each chapter, for a single-file book")
     ap.add_argument("--label", help="name for this measurement set")
+    ap.add_argument("--plot", action="store_true",
+                    help="plot architecture: chapter types, transition matrix, run lengths, conflict rhythm, "
+                         "arc boundaries by cast turnover, and setup/payoff return gaps")
     ap.add_argument("--craft", action="store_true",
                     help="emotional and intentional texture: emotion categories, interiority, goal statements, "
                          "progression and stakes vocabulary, per 1000 words")
@@ -566,7 +569,7 @@ def main(argv=None):
         print(f"  boilerplate detected across {boiler['documents']} documents: "
               f"{len(boiler['leading'])} repeated leading line(s), "
               f"{len(boiler['trailing'])} repeated trailing line(s) — stripped before measuring")
-    matchers = _build_matchers(craft_lexicon()) if args.craft else None
+    matchers = _build_matchers(craft_lexicon()) if (args.craft or args.plot) else None
     if matchers:
         print("  measuring emotional and intentional texture ...")
     chapters = [measure_chapter(text, boiler, deep=args.deep, matchers=matchers) for _, text in inputs]
@@ -633,8 +636,53 @@ def main(argv=None):
             print(f"    {n:<16} {summary['craft_rates_per_1000_words'][n]:>6}/1k   "
                   f"in {summary['craft_chapter_presence'][n] * 100:>5.1f}% of chapters   "
                   f"{d0['first']:>6} -> {d0['last']:>6}  {arrow}")
+    if args.plot:
+        from novelkit import plotarch
+        print("  analysing plot architecture ...")
+        rates = []
         for c in chapters:
-            c.pop("craft", None)
+            cw = c["craft"]["_words"] if "craft" in c else c["words"]
+            rates.append({k: c["craft"].get(k, 0) * 1000 / max(1, cw) for k in plotarch.TYPES}
+                         if "craft" in c else {})
+        ent_sets = [proper_nouns(x) for _, x in inputs]
+        pa = plotarch.analyse(rates, ent_sets, [c["words"] for c in chapters])
+        summary["plot_architecture"] = pa
+
+        print("\n  chapter types:")
+        for k, v in pa["chapter_type_distribution"].items():
+            print(f"    {k:<12} {v * 100:>5.1f}%")
+        print("\n  what follows what (row -> next chapter type):")
+        order = [k for k in pa["transition_matrix"]]
+        head = [t_ for t_ in plotarch.TYPES + ["mixed"] if t_ in
+                {c for r in pa["transition_matrix"].values() for c in r if c != "_n"}]
+        print("    " + " " * 13 + "".join(f"{h[:6]:>8}" for h in head))
+        for a in order:
+            row = pa["transition_matrix"][a]
+            cells = "".join(f"{row.get(h, 0) * 100:>7.1f}%" for h in head)
+            print(f"    {a:<13}{cells}   (n={row['_n']})")
+        print("\n  run lengths (consecutive chapters of one type):")
+        for k, v in pa["run_lengths"].items():
+            print(f"    {k:<12} median {v['median']}, max {v['max']}, "
+                  f"{v['share_length_1'] * 100:.0f}% are single chapters")
+        print("\n  conflict rhythm — top autocorrelation lags:")
+        for pk in pa["conflict_rhythm"]["autocorrelation_peaks"]:
+            print(f"    lag {pk['lag']:>3}  r={pk['r']}")
+        ct = pa["cast_turnover"]
+        if ct:
+            print("\n  cast turnover (arc boundaries by entity replacement):")
+            print(f"    median overlap between adjacent {ct['window']}-chapter windows: {ct['median_overlap']}")
+            print(f"    boundaries detected: {ct['boundaries_detected']}, "
+                  f"median gap {ct['median_gap_between_boundaries']} chapters "
+                  f"(p10 {ct['p10_gap']}, p90 {ct['p90_gap']})")
+        sp = pa["setup_payoff"]
+        if sp:
+            print("\n  setup and payoff (entity absence and return):")
+            print(f"    absences: {sp['total_absences']}, median {sp['median_absence_chapters']} chapters")
+            print(f"    long returns (20+ chapters away): {sp['long_returns']} "
+                  f"({sp['long_return_share'] * 100:.1f}% of absences), "
+                  f"median {sp['median_long_return']}, p90 {sp['p90_long_return']}, max {sp['max_return_gap']}")
+    for c in chapters:
+        c.pop("craft", None)
     if summary.get("average_chapter_profile"):
         ap_ = summary["average_chapter_profile"]
         print("\n  average chapter internal shape (fifths, start -> end):")

@@ -108,6 +108,17 @@
         0.35
       ],
       "note": "Proportion of chapters where the protagonist ends materially worse off. Below ~0.2 the novel stops being readable as a story; the most common failure of the form."
+    },
+    "measured_payoff_window": {
+      "set": "serial-reference-A",
+      "method": "gaps between an entity's disappearance and its return",
+      "total_absences": 64219,
+      "median_absence_chapters": 9,
+      "long_return_share": 0.351,
+      "median_long_return_chapters": 65,
+      "p90_long_return_chapters": 475,
+      "max_return_gap": 3061,
+      "note": "A third of disappearances are 20+ chapters and still return; the typical one is gone 65 chapters. The form plants far deeper than its reputation suggests. A 30-chapter rot threshold would force-retire exactly these plants."
     }
   },
   "arc_architecture": {
@@ -144,7 +155,17 @@
       "confrontation that spends it",
       "departure, carrying a debt or an enemy forward"
     ],
-    "cycle_note": "This loop is the genre's engine. It repeats at every scale, and each repetition must raise the stakes tier or change what the protagonist wants, or the reader feels the loop."
+    "cycle_note": "This loop is the genre's engine. It repeats at every scale, and each repetition must raise the stakes tier or change what the protagonist wants, or the reader feels the loop.",
+    "measured_arc_length": {
+      "set": "serial-reference-A",
+      "method": "cast turnover — entity-set overlap between adjacent 10-chapter windows",
+      "median_overlap": 0.279,
+      "boundaries_detected": 58,
+      "median_chapters_between_boundaries": 29,
+      "p10": 10,
+      "p90": 141,
+      "note": "~29 chapters per arc, with wide variance. Only about a quarter of the named things in play survive ten chapters."
+    }
   },
   "cast_and_world_expansion": {
     "named_character_introductions_per_micro_arc": {
@@ -297,5 +318,35 @@
     "changepoints": 4,
     "detail": "Four shifts of >=15% in median chapter length, clustered between chapters 1200 and 1650 (-35%, +50%, -25%, +19%).",
     "interpretation": "These read as volatility in the middle third rather than clean arc boundaries — the oscillation reverses too fast to be structure. Do not over-read them."
+  },
+  "plot_architecture": {
+    "measured": "serial-reference-A (3,204 chapters)",
+    "chapter_type_share": {
+      "revelation": 0.199,
+      "combat": 0.178,
+      "mixed": 0.173,
+      "travel": 0.169,
+      "negotiation": 0.158,
+      "training": 0.123
+    },
+    "self_transition": {
+      "combat": 0.502,
+      "travel": 0.362,
+      "revelation": 0.283,
+      "training": 0.274,
+      "negotiation": 0.264,
+      "mixed": 0.268,
+      "note": "Combat is the only strongly self-sustaining mode. Everything else rotates."
+    },
+    "run_length_max": {
+      "combat": 23,
+      "travel": 12,
+      "negotiation": 7,
+      "training": 6,
+      "revelation": 6
+    },
+    "median_run_length": 1,
+    "conflict_periodicity": "none — autocorrelation decays smoothly from 0.62 with no peak out to lag 30. Confrontation is clustered, never scheduled.",
+    "note": "Revelation is both the most common chapter type and the most likely successor from nearly every other type. It is the connective tissue of the form, not a rationed event."
   }
 }
