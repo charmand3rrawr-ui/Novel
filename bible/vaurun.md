@@ -74,3 +74,35 @@ temptation is to make the world guilty so the atrocity reads as justice. Refuse
 it (`LK-VAURUN-INNOCENT`). Vaurun is a normal world with normal cruelties and
 nine hundred million people who had nothing to do with a knife on a kitchen
 floor in another universe.
+
+## The technological layer
+
+Vaurun is not medieval. Ten thousand years of cultivation produced ten thousand
+years of *engineering* alongside it — essence-driven machines, printed alloys,
+lit cities, surgical theatres, data lattices that function as a rough internet.
+Cultivation did not replace technology here; the two grew into each other, and
+the result is a world that would look almost familiar to a man from Earth, lit
+slightly wrong.
+
+This matters for three reasons:
+
+1. **He is not baffled by it.** A man from a modern world wakes into a modern
+   world. His disadvantage is not ignorance of plumbing; it is that everything
+   here has an essence dimension he cannot perceive yet and everyone else has
+   known since childhood.
+2. **Medicine is the first ladder.** Vaurun's surgeons work where essence and
+   anatomy meet, and they are chronically short of anyone competent. It is the
+   one profession that will take an unregistered nobody on results alone —
+   and it is a profession that puts him beside the dying, every day, for wages.
+3. **The Tally is worst here.** A man who can take what the dying shed, placed
+   in the one building where people die on a schedule. The novel should not be
+   coy about how good a hiding place that is.
+
+## The Mercy Houses
+
+Charity infirmaries, endowed centuries ago and running on fumes. They take
+anyone. They are where the unlicensed, the poor and the essence-crippled go to
+die, and they are where he wakes.
+
+A Mercy House is the novel's opening stage and its moral thesis in one image: a
+place built by decent people to reduce suffering, which he will use as a farm.

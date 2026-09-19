@@ -1,29 +1,32 @@
 {
   "description": "Live story state. The engine reads and writes this. Treat it as the novel's save file.",
-  "current_chapter": 1,
+  "current_chapter": 6,
   "current_arc": "A01",
   "current_pov": "mc-adam-rooke",
-  "last_tension": 0,
+  "last_tension": 5,
   "beat_index": 0,
-  "chapters_since_rest": 0,
-  "chapters_since_revelation": 0,
+  "chapters_since_rest": 5,
+  "chapters_since_revelation": 5,
   "consecutive_action_chapters": 0,
   "consecutive_low_tension_chapters": 0,
   "active_characters": [
-    "mc-adam-rooke"
+    "ilse-varn",
+    "mc-adam-rooke",
+    "wren-halloway"
   ],
   "active_environments": [
-    "origin-site-the-waking-field"
+    "origin-site-the-waking-field",
+    "workplace-mercy-house-ninth"
   ],
   "introductions_this_arc": {
-    "characters": 1,
-    "environments": 1
+    "characters": 3,
+    "environments": 2
   },
   "introductions_this_chapter": {
     "characters": 0,
-    "environments": 1
+    "environments": 0
   },
-  "cooldown_until_chapter": 0,
+  "cooldown_until_chapter": 5,
   "gates_passed": [],
   "log": [
     {
@@ -35,6 +38,46 @@
       "date": "2026-09-18",
       "chapter": 1,
       "event": "activated environment The Waking Field (origin-site) in ch.1 — need: chapter 1 has to happen where he wakes"
+    },
+    {
+      "date": "2026-09-19",
+      "chapter": 2,
+      "event": "closed chapter 1 (tension 3, kind relationship, revelation=False)"
+    },
+    {
+      "date": "2026-09-19",
+      "chapter": 3,
+      "event": "closed chapter 2 (tension 4, kind discovery, revelation=False)"
+    },
+    {
+      "date": "2026-09-19",
+      "chapter": 3,
+      "event": "introduced Wren Halloway (institution-face) in ch.3 — need: intake on the first night; she is the one who decides whether he gets a mattress"
+    },
+    {
+      "date": "2026-09-19",
+      "chapter": 3,
+      "event": "introduced Ilse Varn (mentor) in ch.3 — need: chapter 3 needs the second ladder made visible: a hand on a sternum reading the inside of a body"
+    },
+    {
+      "date": "2026-09-19",
+      "chapter": 3,
+      "event": "activated environment Mercy House Ninth (workplace) in ch.3 [OVERRIDE: cooldown active until chapter 5 after a major introduction] — need: the stage precedes both introductions: he walks in at the end of ch2 and ch3-5 all happen inside it. Cooldown applies to cast, not to the building they are standing in"
+    },
+    {
+      "date": "2026-09-19",
+      "chapter": 4,
+      "event": "closed chapter 3 (tension 4, kind relationship, revelation=False)"
+    },
+    {
+      "date": "2026-09-19",
+      "chapter": 5,
+      "event": "closed chapter 4 (tension 5, kind consequence, revelation=False)"
+    },
+    {
+      "date": "2026-09-19",
+      "chapter": 6,
+      "event": "closed chapter 5 (tension 5, kind discovery, revelation=False)"
     }
   ]
 }

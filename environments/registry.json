@@ -38,6 +38,45 @@
       "activated_chapter": 1,
       "file": "environments/active/origin-site-the-waking-field.md",
       "notes": ""
+    },
+    {
+      "id": "workplace-mercy-house-ninth",
+      "name": "Mercy House Ninth",
+      "type": "workplace",
+      "scale": "building",
+      "parent": "",
+      "status": "active",
+      "seed": 901,
+      "created": "2026-09-18",
+      "need_that_licenses": "M1 opens where he wakes: a charity infirmary, the one place that will take an unregistered nobody, and the one place people die on a schedule",
+      "function": "converting labour into someone else's leverage",
+      "power_structure": "a manager who answers to an absent owner",
+      "sensory_signature": "constant low vibration you stop hearing and start feeling in the jaw",
+      "access_rule": "entry costs an hour of labour or an hour of information",
+      "hazards": [
+        "quota",
+        "surveillance",
+        "a colleague's debt"
+      ],
+      "secret": "the records are accurate; that is what makes them dangerous",
+      "change_over_time": "tightens: each arc adds a rule and removes an exit",
+      "affordances": [
+        "an asymmetry of information the POV can exploit once",
+        "a public stage where reputation is made and lost in one scene",
+        "a hard deadline the place itself imposes"
+      ],
+      "economy": "undefined — who pays, who is paid, and in what",
+      "factions_present": [],
+      "resident_characters": [],
+      "entry_condition": "the stage precedes both introductions: he walks in at the end of ch2 and ch3-5 all happen inside it. Cooldown applies to cast, not to the building they are standing in",
+      "exit_condition": "undefined — what closes this stage for the story",
+      "continuity_hooks": [],
+      "chapters": [
+        3
+      ],
+      "activated_chapter": 3,
+      "file": "environments/active/workplace-mercy-house-ninth.md",
+      "notes": ""
     }
   ]
 }

@@ -233,6 +233,128 @@
       "chapters": [],
       "introduced_chapter": null,
       "file": "characters/dormant/rhenli-halloway.md"
+    },
+    {
+      "id": "wren-halloway",
+      "name": "Wren Halloway",
+      "role": "institution-face",
+      "culture": "frontier",
+      "status": "active",
+      "seed": 4401,
+      "created": "2026-09-19",
+      "need_that_licenses": "intake on the first night; she is the one who decides whether he gets a mattress",
+      "story_function": "the system with a pulse; makes policy personal",
+      "core": {
+        "wound": "grew up where affection arrived only after measurable output",
+        "lie": "A clean conscience is worth more than a saved life.",
+        "want": "to secure a position where they can never again be having been wrong for a very long time",
+        "need": "to be met on the axis of loyalty vs justice and survive the answer",
+        "fear": "having been wrong for a very long time",
+        "moral_axis": "loyalty vs justice"
+      },
+      "surface": {
+        "mask": "aggressive helpfulness that creates debt",
+        "verbal_tic": "repeats your own words back, unaltered, until you hear them",
+        "physical_signature": "carries a smell that belongs to a place they left"
+      },
+      "capability": {
+        "spike": "can hold a body together with improvised materials",
+        "secondary": "finds the load-bearing lie in an argument and pulls it",
+        "hole": "cannot accept a gift without immediate repayment"
+      },
+      "bonds": {
+        "loyalty_shape": "loyal to a version of someone that does not exist yet",
+        "to_protagonist": "undefined — set on first shared scene",
+        "leverage_over_them": "knowledge that they maintaining a place or person the story has not shown",
+        "leverage_they_hold": "undefined"
+      },
+      "offstage_life": "maintaining a place or person the story has not shown",
+      "trajectory": {
+        "arc_shape": "hardening, unredeemed but comprehensible",
+        "break_point": "undefined — name the scene that cracks them",
+        "exit_condition": "undefined — how they leave the novel, on or off the page"
+      },
+      "contract": {
+        "entry_pretext": "attached to an institution the POV just entered",
+        "first_appearance_conditions": [
+          "The scene must need them for a reason the reader already feels.",
+          "They arrive mid-action, doing their own business, not waiting to be met.",
+          "One concrete detail from `surface` lands in the first three lines."
+        ],
+        "do_not_reveal_before": "the wound; it is earned, never introduced"
+      },
+      "contradictions": [
+        "The mask (aggressive helpfulness that creates debt) cannot protect the spike (can hold a body together with improvised materials) when it is tested in public.",
+        "Their loyalty (loyal to a version of someone that does not exist yet) guarantees they will meet the thing they fear: having been wrong for a very long time.",
+        "The lie — A clean conscience is worth more than a saved life. — will look true for most of their time on the page."
+      ],
+      "notes": "",
+      "chapters": [
+        3
+      ],
+      "introduced_chapter": 3,
+      "file": "characters/cast/wren-halloway.md"
+    },
+    {
+      "id": "ilse-varn",
+      "name": "Ilse Varn",
+      "role": "mentor",
+      "culture": "ledger",
+      "status": "active",
+      "seed": 4402,
+      "created": "2026-09-19",
+      "need_that_licenses": "chapter 3 needs the second ladder made visible: a hand on a sternum reading the inside of a body",
+      "story_function": "hands over a tool and a blind spot in the same gesture",
+      "core": {
+        "wound": "was the one spared when others were not, and never learned why",
+        "lie": "If I stop being useful, I stop being tolerated.",
+        "want": "to secure a position where they can never again be stopping, and what arrives in the silence",
+        "need": "to be met on the axis of loyalty vs justice and survive the answer",
+        "fear": "stopping, and what arrives in the silence",
+        "moral_axis": "loyalty vs justice"
+      },
+      "surface": {
+        "mask": "intimacy offered fast and withdrawn faster",
+        "verbal_tic": "repeats your own words back, unaltered, until you hear them",
+        "physical_signature": "carries a smell that belongs to a place they left"
+      },
+      "capability": {
+        "spike": "repairs machines by listening to them",
+        "secondary": "can be forgotten at will; people lose them in memory",
+        "hole": "can deceive by omission for years but cannot say a direct falsehood"
+      },
+      "bonds": {
+        "loyalty_shape": "loyal to terms, not people; will honor a bad deal to the letter",
+        "to_protagonist": "undefined — set on first shared scene",
+        "leverage_over_them": "knowledge that they running a second, incompatible life in another district",
+        "leverage_they_hold": "undefined"
+      },
+      "offstage_life": "running a second, incompatible life in another district",
+      "trajectory": {
+        "arc_shape": "slow thaw, earned by small repeated acts",
+        "break_point": "undefined — name the scene that cracks them",
+        "exit_condition": "undefined — how they leave the novel, on or off the page"
+      },
+      "contract": {
+        "entry_pretext": "pursuing an unrelated goal that crosses the POV's path",
+        "first_appearance_conditions": [
+          "The scene must need them for a reason the reader already feels.",
+          "They arrive mid-action, doing their own business, not waiting to be met.",
+          "One concrete detail from `surface` lands in the first three lines."
+        ],
+        "do_not_reveal_before": "the wound; it is earned, never introduced"
+      },
+      "contradictions": [
+        "The mask (intimacy offered fast and withdrawn faster) cannot protect the spike (repairs machines by listening to them) when it is tested in public.",
+        "Their loyalty (loyal to terms, not people; will honor a bad deal to the letter) guarantees they will meet the thing they fear: stopping, and what arrives in the silence.",
+        "The lie — If I stop being useful, I stop being tolerated. — will look true for most of their time on the page."
+      ],
+      "notes": "",
+      "chapters": [
+        3
+      ],
+      "introduced_chapter": 3,
+      "file": "characters/cast/ilse-varn.md"
     }
   ]
 }

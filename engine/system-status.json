@@ -8,10 +8,10 @@
     "since_chapter": 1
   },
   "attributes": {
-    "strength": 3,
+    "strength": 5,
     "agility": 3,
     "reflex": 4,
-    "constitution": 3,
+    "constitution": 4,
     "perception": 7,
     "comprehension": 9,
     "will": 8,
@@ -21,8 +21,8 @@
   },
   "points": {
     "unspent": 0,
-    "lifetime_earned": 38,
-    "spent": 38
+    "lifetime_earned": 41,
+    "spent": 41
   },
   "residue": {
     "value": 0,
@@ -42,19 +42,44 @@
     "comprehension": "rare",
     "concealment": "keen"
   },
-  "techniques": [],
+  "techniques": [
+    {
+      "name": "Actuarial reading",
+      "grade": "profound",
+      "proficiency": 0,
+      "band": "rote"
+    }
+  ],
   "professions": {},
   "traits": [],
-  "familiarity": {},
+  "familiarity": {
+    "beast": 1
+  },
   "per_chapter": {
-    "chapter": 1,
-    "points": 0
+    "chapter": 3,
+    "points": 3
   },
   "per_arc": {
     "arc": "A01",
-    "points": 0
+    "points": 3
   },
-  "absorption_log": [],
+  "absorption_log": [
+    {
+      "chapter": 3,
+      "date": "2026-09-19",
+      "source_class": "beast",
+      "tier": 2,
+      "tier_name": "clear",
+      "base_points": 3,
+      "decay_multiplier": 1.0,
+      "points": 3,
+      "residue": 0,
+      "scene": "the second field, four miles east, a draft-beast dying of a crossbow bolt",
+      "who_paid": "the beast, and whoever owned it and was out in the dark with a lantern looking",
+      "note": "",
+      "override": false
+    }
+  ],
   "events": [
     {
       "chapter": 0,

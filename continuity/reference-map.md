@@ -6,7 +6,59 @@ This is the file the present looks back through. Each chapter lists only what is
 
 ## Chapters
 
-_No chapters recorded yet._
+### Chapter 1 — Eleven Months
+`A01` · `hook` · `tension 3` · `POV mc-adam-rooke`
+
+Earth. Adam Rooke covers a junior's error, buys six bad tulips, and is stabbed by his wife Renne for a GBP 1.4m policy taken out eleven months earlier. He works out the interval while bleeding. Wakes in a field under two moons.
+
+- On stage: mc-adam-rooke @ —
+- `lb-1-1` **debt** (w5!) Renne took out the joint life policy eleven months before using it; Adam signed it himself with a borrowed biro  _tags: earth, policy, renne_
+- `lb-1-2` **fact** (w5!) Age nine, left at a service station; he kept the bags neat for eleven hours believing their state was a variable  _tags: earth, wound_
+- `lb-1-3` **object** (w4!) Six tulips, two already dead, in a green jug on the kitchen table; nobody ever took the dead ones out  _tags: jug, tulips_
+- `lb-1-4` **rule** (w4!) He never sees anyone from the first life again; the policy never paid out  _lock: LK-RENNE-ABSENT_  _tags: earth_
+
+### Chapter 2 — Expiring
+`A01` · `pressure` · `tension 4` · `POV mc-adam-rooke`
+
+Vaurun. He inventories a body that is not his, follows a thread to a dying draft-beast, stays with it, and takes 3 units. Learns yield decays with the dying. A haulage flatbed and a woman moving at forty miles an hour reprice his assumptions. Walks to Mercy House Ninth.
+
+- On stage: mc-adam-rooke @ origin-site-the-waking-field
+- `lb-2-1` **rule** (w5!) Residue rises off the dead as a colourless sheet and thins out; only he can see it; yield decays from the moment of death  _lock: LK-MOTE-COSTS_  _tags: absorption, system_
+- `lb-2-2` **fact** (w5!) First absorption: draft-beast, 3 units, auto-allocated strength +2 constitution +1. He waited, and the yield landed at the bottom of the projected range  _tags: system, tally_
+- `lb-2-3` **fact** (w5!) Vaurun has haulage, electric light and data panels alongside cultivation; it is degraded, not primitive  _tags: technology, vaurun_
+- `lb-2-4` **name** (w4!) The system calls him SUBJECT: UNREGISTERED and uses the register's own vocabulary  _tags: system_
+
+### Chapter 3 — None Turned Away
+`A01` · `complication` · `tension 4` · `POV mc-adam-rooke`
+
+Mercy House Ninth. Wren Halloway takes him in. Sabet Orne teaches him eleven letters. He observes Ilse Varn read a body with the back of her hand, and reads the theatre as degraded rather than primitive. He experiments on the system and finds it cannot be aimed. Sabet dies; he lets nine units thin out while fetching cloths.
+
+- On stage: mc-adam-rooke, wren-halloway, ilse-varn @ workplace-mercy-house-ninth
+- `lb-3-1` **rule** (w5!) The system cannot be summoned, aimed or used to scan; it speaks only when something within about an hour of death is near him  _tags: system, tally_
+- `lb-3-2` **relationship** (w5!) Sabet Orne taught him eleven letters on a Tuesday and made him say his own name aloud twice before she died  _tags: letters, sabet_
+- `lb-3-3` **fact** (w5!) Mercy House Ninth has electric light on a stapled cable, a dead data panel, and no working pump: endowed once, funded never  _tags: mercy-house, money_
+- `lb-3-4` **fact** (w4!) Ilse Varn reads the interior of a body with the back of her left hand; the hand has a tremor at rest that is absent when she works  _tags: cultivation, varn_
+
+### Chapter 4 — The Coarse Ones, Bottom Shelf
+`A01` · `cost` · `tension 5` · `POV mc-adam-rooke`
+
+He washes a body, and admits to himself he did not refuse — he walked. Wren names the four minutes she counted. Varn pulls him into theatre on a crushed hand; he sees the finger pad on the tray. He takes apart the Accord's mortality table by ear. Nine days later he reads a word and turns to tell a dead woman.
+
+- On stage: mc-adam-rooke, wren-halloway, ilse-varn @ workplace-mercy-house-ninth
+- `lb-4-1` **fact** (w5!) The system also rewards non-lethal growth: COMPREHENSION +1 for argument, ENDURANCE +1 for labour. It has a view about him, not about what he does  _tags: system, tally_
+- `lb-4-2` **relationship** (w5!) Wren counted the four minutes he took fetching cloths eleven steps away, and told him so; he answered with a true second reason and withheld the first  _tags: suspicion, wren_
+- `lb-4-3` **fact** (w4!) Teor, a millwright, kept three fingers instead of two because Adam saw the pad on the tray  _tags: teor, varn_
+
+### Chapter 5 — The Assumption Underneath
+`A01` · `revelation` · `tension 5` · `POV mc-adam-rooke`
+
+He measures nine years of ledgers by position rather than reading them, finds the transfer feedback loop killing the house, and argues deaths-per-held-day to Coadjutor Pell in nineteen minutes. The system pays him insight and authority, and flags him. Wren tells him she will go on being suspicious and that she was glad, and does not like being glad.
+
+- On stage: mc-adam-rooke, wren-halloway, ilse-varn @ workplace-mercy-house-ninth
+- `lb-5-1` **rule** (w5!) The Accord measures deaths per admission; Seventh takes Ninth's recoveries on day four, so the ratio measures geography and calls it standards  _tags: accord, ratio_
+- `lb-5-2` **promise** (w5!) Coadjutor Pell wrote deaths-per-held-day into the nine observation lines on the back of the inspection form  _tags: form, pell_
+- `lb-5-3` **secret** (w5!) After the argument with Pell the system changed his status to UNREGISTERED — FLAGGED, and did not explain by whom  _tags: flagged, system_
+- `lb-5-4` **relationship** (w4!) Wren told him she would go on being suspicious of him on purpose, and that she was frightened of being glad  _tags: wren_
 
 ## Threads
 
