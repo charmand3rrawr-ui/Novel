@@ -224,6 +224,29 @@ def spend(attribute: str, amount: int, *, override: bool = False) -> dict:
             "remaining": s["points"]["unspent"]}
 
 
+def train(attribute: str, amount: int, *, scene: str, note: str = "") -> dict:
+    """Attributes earned by work rather than absorption.
+
+    The system grants these directly — ENDURANCE for carrying, COMPREHENSION for
+    argument, a Tempering gate for thirty-one hours at load. They cost no points
+    because nothing died for them, which is the whole thematic point: everything
+    he earns honestly is slow, and everything he takes is fast.
+    """
+    cfg, s = config(), status()
+    if attribute not in s["attributes"]:
+        raise ValueError(f"unknown attribute '{attribute}'. Known: {', '.join(s['attributes'])}")
+    if not scene.strip():
+        raise ValueError("the witness rule applies to earned gains too: give --scene, or it did not happen")
+    st = store.load(store.STATE)
+    before = s["attributes"][attribute]
+    s["attributes"][attribute] = before + amount
+    s["events"].append({"chapter": st["current_chapter"], "kind": "earned",
+                        "text": f"{attribute} {before} -> {before + amount} by work", "scene": scene,
+                        "note": note})
+    save_status(s)
+    return {"attribute": attribute, "from": before, "to": before + amount, "scene": scene}
+
+
 def technique(name: str, *, amount: int = 0, grade: str = "common", spend_points: bool = False,
               scene: str = "") -> dict:
     cfg, s = config(), status()

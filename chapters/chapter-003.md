@@ -129,7 +129,7 @@ Somewhere in the middle of it he noticed the words.
 
 They had come back — not summoned, not on request. They came up at the edge of his vision while he was setting a bucket down, and they were brief, and they were entirely unlike the ones in the field.
 
-**ENDURANCE +1**
+**CONSTITUTION +1**
 
 He stood in the yard with his hands on his knees and read it twice and then it was gone.
 
@@ -289,7 +289,7 @@ He rolled onto his back and looked at the ceiling and revised.
 
 *Not effort. A threshold. Something crossed a line in the yard on day one and the line is further away now.*
 
-That was worth more than the press-ups had cost. He wrote it in his head under *endurance*, and then, because he had no paper, wrote it again, and then a third time, which was a technique Sabet had taught him for letters four hours ago and which he had immediately generalised without telling her.
+That was worth more than the press-ups had cost. He wrote it in his head under *constitution*, and then, because he had no paper, wrote it again, and then a third time, which was a technique Sabet had taught him for letters four hours ago and which he had immediately generalised without telling her.
 
 *Experiment three. Range.*
 

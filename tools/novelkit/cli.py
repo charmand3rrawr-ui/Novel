@@ -493,6 +493,12 @@ def cmd_system_spend(args):
     return 0
 
 
+def cmd_system_train(args):
+    r = system.train(args.attribute, args.amount, scene=args.scene, note=args.note or "")
+    _p(f"{r['attribute']} {r['from']} → {r['to']}  (earned by work — no points, nothing died)")
+    return 0
+
+
 def cmd_system_technique(args):
     r = system.technique(args.name, amount=args.amount, grade=args.grade,
                          spend_points=args.spend, scene=args.scene or "")
@@ -969,6 +975,11 @@ def build_parser():
     sp2.add_argument("attribute"); sp2.add_argument("amount", type=int, nargs="?", default=1)
     sp2.add_argument("--override", action="store_true")
     sp2.set_defaults(func=cmd_system_spend)
+
+    tn = sysub.add_parser("train", help="attributes earned by work rather than absorption")
+    tn.add_argument("attribute"); tn.add_argument("amount", type=int)
+    tn.add_argument("--scene", required=True); tn.add_argument("--note")
+    tn.set_defaults(func=cmd_system_train)
 
     tq = sysub.add_parser("technique", help="record or raise a technique's proficiency")
     tq.add_argument("name"); tq.add_argument("--amount", type=int, default=0)

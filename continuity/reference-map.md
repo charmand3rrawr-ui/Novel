@@ -84,6 +84,30 @@ Sub-Coadjutor Merrit Oss arrives nineteen days after the form, lays out four pos
 - `lb-7-4` **fact** (w5!) Oss named four explanations for Adam and said the fourth — genuinely no history and an extraordinary mind — is the one he cannot investigate, only decide about  _tags: accord, oss_
 - `lb-7-5` **promise** (w5!) Deaths per held-day goes to an Accord review board in the spring; eleven houses gain, four lose, and someone will ask who started it  _tags: accord, held-day_
 
+### Chapter 8 — Assessment
+`A01` · `pressure` · `tension 5` · `POV mc-adam-rooke`
+
+Oss explains the Accord's aptitude register: papers exist, but only through an assessment that makes him permanently findable. Adam works out the register was built to detect people who DRAW essence, and he does not draw — he scavenges, and may be invisible to it. Then the west face of the quarry collapses. He clears the long room, moves eleven day-four patients onto the floor, and takes the yard line.
+
+- On stage: mc-adam-rooke, merrit-oss, wren-halloway @ workplace-mercy-house-ninth
+- `lb-8-1` **rule** (w5!) The Accord's aptitude register is a search index: consultable by any institution with standing, cross-referenced by location and aptitude, built 600 years ago to find people who draw essence too hard in one place  _tags: accord, register_
+- `lb-8-2` **secret** (w5!) Adam does not draw essence from the world — he takes it off things that have finished with it. The Accord's detection is calibrated to drains, so he may be invisible to it. He suspects there are two registers  _tags: system, tally_
+- `lb-8-3` **fact** (w5!) The west face of the quarry collapsed; 115 came through Ninth's gate in 31 hours. The west face is unlicensed labour, a third of them under sixteen, chargeable to no one  _tags: quarry_
+- `lb-8-4` **relationship** (w4!) Adam moved eleven day-four patients onto the floor without asking; Wren called it horrible and correct and told him never to stop being able to do it  _tags: wren_
+
+### Chapter 9 — Tempering
+`A01` · `complication` · `tension 6` · `POV mc-adam-rooke`
+
+Thirty-one hours in the theatre as Varn's second. The system offers him eleven dying men and he refuses all eleven — and discovers refusal now causes physical pain. At hour twenty-six he breaks Tempering Gate One from sustained labour alone, mid-shift, and his hand goes out to a trolley on castors. The instruments hit the floor. Ollum waits forty minutes for a boiled set and dies. Varn cannot say whether the forty minutes killed him.
+
+- On stage: mc-adam-rooke, wren-halloway, ilse-varn @ workplace-mercy-house-ninth
+- `lb-9-1` **rule** (w5!) Refusing an absorption now hurts: sternum and inner forearms, worsening with each refusal in a sequence. Eleven refusals in one night, the eleventh bad enough to breathe through  _tags: pain, system, tally_
+- `lb-9-2` **injury** (w5!) Ollum died after waiting 40 minutes for instruments Adam knocked to the floor during his breakthrough. Varn cannot say whether the delay killed him; the 40 minutes were indisputably Adam's  _tags: breakthrough, ollum_
+- `lb-9-3` **fact** (w5!) Tempering Gate One reached at chapter 9 from 31 hours of sustained labour, not absorption: strength +3, constitution +4, endurance +2. Nine points for 31 hours against 109 units refused in the same night  _tags: realm, system_
+- `lb-9-4` **secret** (w5!) A Tempering gate is detectable: Varn felt the changed marrow through his forearms. Any sensitive at four feet, any assessor at nine. His six weeks of invisibility are over  _tags: varn, visibility_
+- `lb-9-5` **relationship** (w5!) During the eleven seconds of the breakthrough, with a man on the table four feet away, he felt uncomplicatedly glad. That, not the taking, is the thing to watch  _tags: adam, gladness_
+- `lb-9-6` **relationship** (w4!) Wren told him to write up the nineteen dead so the review board reads them properly: 'I'm not absolving you. I'm allocating you.'  _tags: wren_
+
 ## Threads
 
 _No threads recorded yet._

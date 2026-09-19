@@ -419,7 +419,7 @@ He had absorbed nothing. Nobody had died within a hundred yards of him for three
 
 He lay very still.
 
-*It reads what I do. It rewards what I do. It gave me endurance for carrying and it gave me this for* — 
+*It reads what I do. It rewards what I do. It gave me constitution for carrying and it gave me this for* — 
 
 He stopped, because the honest end of the sentence was *for being what I already was*, and because the implication of that was not a comfort.
 

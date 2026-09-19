@@ -2,16 +2,16 @@
   "description": "Live status of the protagonist's system. Where he IS. engine/system.json says how the system WORKS. Regenerate the readable sheet with `novel.py system sheet`.",
   "owner": "mc-adam-rooke",
   "realm": {
-    "n": 0,
-    "name": "Unmarked",
-    "stage": "-",
-    "since_chapter": 1
+    "n": 1,
+    "name": "Tempering",
+    "stage": "gate 1",
+    "since_chapter": 9
   },
   "attributes": {
-    "strength": 5,
+    "strength": 8,
     "agility": 3,
-    "reflex": 4,
-    "constitution": 4,
+    "reflex": 6,
+    "constitution": 8,
     "perception": 7,
     "comprehension": 9,
     "will": 8,
@@ -52,9 +52,7 @@
   ],
   "professions": {},
   "traits": [],
-  "familiarity": {
-    "beast": 1
-  },
+  "familiarity": {},
   "per_chapter": {
     "chapter": 3,
     "points": 3
@@ -85,6 +83,37 @@
       "chapter": 0,
       "kind": "baseline",
       "text": "Thirty-eight years on Earth: an actuary's mind, a body that was never trained, and nothing else. Heaven-sent appraisal is the first life's habit wearing a new name."
+    },
+    {
+      "chapter": 9,
+      "kind": "earned",
+      "text": "constitution 4 -> 8 by work",
+      "scene": "thirty-one hours at load in the tack room, hours six to twenty-six",
+      "note": "ch9"
+    },
+    {
+      "chapter": 9,
+      "kind": "earned",
+      "text": "strength 5 -> 8 by work",
+      "scene": "thirty-one hours at load in the tack room",
+      "note": "ch9"
+    },
+    {
+      "chapter": 9,
+      "kind": "earned",
+      "text": "reflex 4 -> 6 by work",
+      "scene": "thirty-one hours of anticipating the next instrument before it was asked for",
+      "note": "ch9"
+    },
+    {
+      "chapter": 9,
+      "kind": "breakthrough",
+      "text": "Tempering (gate 1)",
+      "scene": "hour twenty-six of a thirty-one-hour shift, from sustained labour alone; his hand went out to a trolley on castors and Ollum waited forty minutes for a boiled set",
+      "cost": {
+        "body": 1
+      },
+      "override": false
     }
   ]
 }

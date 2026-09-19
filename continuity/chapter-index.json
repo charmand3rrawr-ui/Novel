@@ -504,6 +504,172 @@
       "seeds_paid": [],
       "callbacks_to": [],
       "recorded": "2026-09-19"
+    },
+    {
+      "chapter": 8,
+      "title": "Assessment",
+      "arc": "A01",
+      "pov": "mc-adam-rooke",
+      "beat": "pressure",
+      "tension": 5,
+      "kind": "discovery",
+      "summary": "Oss explains the Accord's aptitude register: papers exist, but only through an assessment that makes him permanently findable. Adam works out the register was built to detect people who DRAW essence, and he does not draw — he scavenges, and may be invisible to it. Then the west face of the quarry collapses. He clears the long room, moves eleven day-four patients onto the floor, and takes the yard line.",
+      "characters": [
+        "mc-adam-rooke",
+        "merrit-oss",
+        "wren-halloway"
+      ],
+      "environments": [
+        "workplace-mercy-house-ninth"
+      ],
+      "load_bearing": [
+        {
+          "id": "lb-8-1",
+          "kind": "rule",
+          "text": "The Accord's aptitude register is a search index: consultable by any institution with standing, cross-referenced by location and aptitude, built 600 years ago to find people who draw essence too hard in one place",
+          "weight": 5,
+          "tags": [
+            "accord",
+            "register"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-8-2",
+          "kind": "secret",
+          "text": "Adam does not draw essence from the world — he takes it off things that have finished with it. The Accord's detection is calibrated to drains, so he may be invisible to it. He suspects there are two registers",
+          "weight": 5,
+          "tags": [
+            "system",
+            "tally"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-8-3",
+          "kind": "fact",
+          "text": "The west face of the quarry collapsed; 115 came through Ninth's gate in 31 hours. The west face is unlicensed labour, a third of them under sixteen, chargeable to no one",
+          "weight": 5,
+          "tags": [
+            "quarry"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-8-4",
+          "kind": "relationship",
+          "text": "Adam moved eleven day-four patients onto the floor without asking; Wren called it horrible and correct and told him never to stop being able to do it",
+          "weight": 4,
+          "tags": [
+            "wren"
+          ],
+          "must_respect": true,
+          "lock": ""
+        }
+      ],
+      "seeds_planted": [],
+      "seeds_paid": [],
+      "callbacks_to": [],
+      "recorded": "2026-09-19"
+    },
+    {
+      "chapter": 9,
+      "title": "Tempering",
+      "arc": "A01",
+      "pov": "mc-adam-rooke",
+      "beat": "complication",
+      "tension": 6,
+      "kind": "cost",
+      "summary": "Thirty-one hours in the theatre as Varn's second. The system offers him eleven dying men and he refuses all eleven — and discovers refusal now causes physical pain. At hour twenty-six he breaks Tempering Gate One from sustained labour alone, mid-shift, and his hand goes out to a trolley on castors. The instruments hit the floor. Ollum waits forty minutes for a boiled set and dies. Varn cannot say whether the forty minutes killed him.",
+      "characters": [
+        "mc-adam-rooke",
+        "wren-halloway",
+        "ilse-varn"
+      ],
+      "environments": [
+        "workplace-mercy-house-ninth"
+      ],
+      "load_bearing": [
+        {
+          "id": "lb-9-1",
+          "kind": "rule",
+          "text": "Refusing an absorption now hurts: sternum and inner forearms, worsening with each refusal in a sequence. Eleven refusals in one night, the eleventh bad enough to breathe through",
+          "weight": 5,
+          "tags": [
+            "pain",
+            "system",
+            "tally"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-9-2",
+          "kind": "injury",
+          "text": "Ollum died after waiting 40 minutes for instruments Adam knocked to the floor during his breakthrough. Varn cannot say whether the delay killed him; the 40 minutes were indisputably Adam's",
+          "weight": 5,
+          "tags": [
+            "breakthrough",
+            "ollum"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-9-3",
+          "kind": "fact",
+          "text": "Tempering Gate One reached at chapter 9 from 31 hours of sustained labour, not absorption: strength +3, constitution +4, endurance +2. Nine points for 31 hours against 109 units refused in the same night",
+          "weight": 5,
+          "tags": [
+            "realm",
+            "system"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-9-4",
+          "kind": "secret",
+          "text": "A Tempering gate is detectable: Varn felt the changed marrow through his forearms. Any sensitive at four feet, any assessor at nine. His six weeks of invisibility are over",
+          "weight": 5,
+          "tags": [
+            "varn",
+            "visibility"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-9-5",
+          "kind": "relationship",
+          "text": "During the eleven seconds of the breakthrough, with a man on the table four feet away, he felt uncomplicatedly glad. That, not the taking, is the thing to watch",
+          "weight": 5,
+          "tags": [
+            "adam",
+            "gladness"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-9-6",
+          "kind": "relationship",
+          "text": "Wren told him to write up the nineteen dead so the review board reads them properly: 'I'm not absolving you. I'm allocating you.'",
+          "weight": 4,
+          "tags": [
+            "wren"
+          ],
+          "must_respect": true,
+          "lock": ""
+        }
+      ],
+      "seeds_planted": [],
+      "seeds_paid": [],
+      "callbacks_to": [],
+      "recorded": "2026-09-19"
     }
   ]
 }
