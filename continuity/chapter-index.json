@@ -339,6 +339,171 @@
       "seeds_paid": [],
       "callbacks_to": [],
       "recorded": "2026-09-19"
+    },
+    {
+      "chapter": 6,
+      "title": "Forty Crowns",
+      "arc": "A01",
+      "pov": "mc-adam-rooke",
+      "beat": "consolidation",
+      "tension": 3,
+      "kind": "consequence",
+      "summary": "He reads the house accounts, finds Wren's seven years of deferred wages in a margin, and the 210-year-old endowment fixed in nominal terms. He catches Kassick's measure change by column width and sells him a quiet way of having been caught, buying a pump. He learns to read. A man observes the house from the gate.",
+      "characters": [
+        "mc-adam-rooke",
+        "wren-halloway",
+        "ilse-varn"
+      ],
+      "environments": [
+        "workplace-mercy-house-ninth"
+      ],
+      "load_bearing": [
+        {
+          "id": "lb-6-1",
+          "kind": "debt",
+          "text": "Wren Halloway has deferred her own wages for seven of eleven years and recorded it in the margin: forty-one crowns eight. Adam memorised the figure and she does not know he knows",
+          "weight": 5,
+          "tags": [
+            "wages",
+            "wren"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-6-2",
+          "kind": "fact",
+          "text": "The endowment pays six crowns two a month and specifies forty-one beds; it was the cost of running forty-one beds 210 years ago. Restatement needs a 200-crown bond the house cannot raise",
+          "weight": 5,
+          "tags": [
+            "endowment"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-6-3",
+          "kind": "promise",
+          "text": "Six-year supply agreement with Bern Kassick at the short measure, fairly priced, written by Adam; bought with a pump instead of a debt",
+          "weight": 4,
+          "tags": [
+            "kassick"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-6-4",
+          "kind": "fact",
+          "text": "The system claimed COMPREHENSION +1 for literacy Adam earned himself over three weeks; it can claim as well as take",
+          "weight": 5,
+          "tags": [
+            "system",
+            "tally"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-6-5",
+          "kind": "relationship",
+          "text": "Petren, nine, has a hole in his heart and is paid one sweet per page; Adam promised to stay until the boy can read the board alone",
+          "weight": 4,
+          "tags": [
+            "petren"
+          ],
+          "must_respect": true,
+          "lock": ""
+        }
+      ],
+      "seeds_planted": [],
+      "seeds_paid": [],
+      "callbacks_to": [],
+      "recorded": "2026-09-19"
+    },
+    {
+      "chapter": 7,
+      "title": "Per Head",
+      "arc": "A01",
+      "pov": "mc-adam-rooke",
+      "beat": "hook",
+      "tension": 5,
+      "kind": "discovery",
+      "summary": "Sub-Coadjutor Merrit Oss arrives nineteen days after the form, lays out four possible explanations for Adam and says the fourth frightens him most. Adam finds the capitation through Petren's sweets and Dala's laundry talk: Seventh is paid per head, Ninth per outcome, and nobody can see both halves. He tells Wren badly and she gives him Aden Farrow's name.",
+      "characters": [
+        "mc-adam-rooke",
+        "wren-halloway",
+        "ilse-varn",
+        "merrit-oss"
+      ],
+      "environments": [
+        "workplace-mercy-house-ninth"
+      ],
+      "load_bearing": [
+        {
+          "id": "lb-7-1",
+          "kind": "secret",
+          "text": "Seventh is paid a capitation per admission; Ninth is paid on outcomes. No villain, no theft — two schemes designed separately that meet at a transfer form signed on day four",
+          "weight": 5,
+          "tags": [
+            "capitation",
+            "seventh"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-7-2",
+          "kind": "relationship",
+          "text": "Aden Farrow died at Ninth four years ago after Wren refused to sign his day-four transfer; she has blamed herself since, and the paper was never about him",
+          "weight": 5,
+          "tags": [
+            "farrow",
+            "wren"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-7-3",
+          "kind": "rule",
+          "text": "Wren's instruction: bring her the name before the mechanism. It makes the mechanism slower to explain and far faster to understand",
+          "weight": 5,
+          "tags": [
+            "wren"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-7-4",
+          "kind": "fact",
+          "text": "Oss named four explanations for Adam and said the fourth — genuinely no history and an extraordinary mind — is the one he cannot investigate, only decide about",
+          "weight": 5,
+          "tags": [
+            "accord",
+            "oss"
+          ],
+          "must_respect": true,
+          "lock": ""
+        },
+        {
+          "id": "lb-7-5",
+          "kind": "promise",
+          "text": "Deaths per held-day goes to an Accord review board in the spring; eleven houses gain, four lose, and someone will ask who started it",
+          "weight": 5,
+          "tags": [
+            "accord",
+            "held-day"
+          ],
+          "must_respect": true,
+          "lock": ""
+        }
+      ],
+      "seeds_planted": [],
+      "seeds_paid": [],
+      "callbacks_to": [],
+      "recorded": "2026-09-19"
     }
   ]
 }

@@ -355,6 +355,67 @@
       ],
       "introduced_chapter": 3,
       "file": "characters/cast/ilse-varn.md"
+    },
+    {
+      "id": "merrit-oss",
+      "name": "Merrit Oss",
+      "role": "institution-face",
+      "culture": "ledger",
+      "status": "active",
+      "seed": 7701,
+      "created": "2026-09-19",
+      "need_that_licenses": "chapter 7: the form produced a man, and the man has already decided there is no innocent explanation for Adam",
+      "story_function": "the system with a pulse; makes policy personal",
+      "core": {
+        "wound": "watched a protector fail publicly and survived the fallout alone",
+        "lie": "Anyone who truly sees me will leave, so show them a version that stays.",
+        "want": "to secure a position where they can never again be becoming the person who hurt them",
+        "need": "to be met on the axis of clean means vs necessary ends and survive the answer",
+        "fear": "becoming the person who hurt them",
+        "moral_axis": "clean means vs necessary ends"
+      },
+      "surface": {
+        "mask": "changes the subject with a joke sharp enough to leave a mark",
+        "verbal_tic": "phrases everything as terms and conditions",
+        "physical_signature": "looks at mouths, not eyes"
+      },
+      "capability": {
+        "spike": "can hold a body together with improvised materials",
+        "secondary": "notices the injury a person is hiding before they admit it",
+        "hole": "cannot accept a gift without immediate repayment"
+      },
+      "bonds": {
+        "loyalty_shape": "loyal to terms, not people; will honor a bad deal to the letter",
+        "to_protagonist": "undefined — set on first shared scene",
+        "leverage_over_them": "knowledge that they losing a private battle on a schedule",
+        "leverage_they_hold": "undefined"
+      },
+      "offstage_life": "losing a private battle on a schedule",
+      "trajectory": {
+        "arc_shape": "corruption then recovery",
+        "break_point": "undefined — name the scene that cracks them",
+        "exit_condition": "undefined — how they leave the novel, on or off the page"
+      },
+      "contract": {
+        "entry_pretext": "stands between the POV and something already wanted",
+        "first_appearance_conditions": [
+          "The scene must need them for a reason the reader already feels.",
+          "They arrive mid-action, doing their own business, not waiting to be met.",
+          "One concrete detail from `surface` lands in the first three lines."
+        ],
+        "do_not_reveal_before": "the wound; it is earned, never introduced"
+      },
+      "contradictions": [
+        "The mask (changes the subject with a joke sharp enough to leave a mark) cannot protect the spike (can hold a body together with improvised materials) when it is tested in public.",
+        "Their loyalty (loyal to terms, not people; will honor a bad deal to the letter) guarantees they will meet the thing they fear: becoming the person who hurt them.",
+        "The lie — Anyone who truly sees me will leave, so show them a version that stays. — will look true for most of their time on the page."
+      ],
+      "notes": "",
+      "chapters": [
+        7
+      ],
+      "introduced_chapter": 7,
+      "file": "characters/cast/merrit-oss.md"
     }
   ]
 }

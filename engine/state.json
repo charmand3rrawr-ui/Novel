@@ -1,17 +1,18 @@
 {
   "description": "Live story state. The engine reads and writes this. Treat it as the novel's save file.",
-  "current_chapter": 6,
+  "current_chapter": 8,
   "current_arc": "A01",
   "current_pov": "mc-adam-rooke",
   "last_tension": 5,
   "beat_index": 0,
-  "chapters_since_rest": 5,
-  "chapters_since_revelation": 5,
+  "chapters_since_rest": 7,
+  "chapters_since_revelation": 7,
   "consecutive_action_chapters": 0,
   "consecutive_low_tension_chapters": 0,
   "active_characters": [
     "ilse-varn",
     "mc-adam-rooke",
+    "merrit-oss",
     "wren-halloway"
   ],
   "active_environments": [
@@ -19,11 +20,11 @@
     "workplace-mercy-house-ninth"
   ],
   "introductions_this_arc": {
-    "characters": 3,
+    "characters": 4,
     "environments": 2
   },
   "introductions_this_chapter": {
-    "characters": 0,
+    "characters": 1,
     "environments": 0
   },
   "cooldown_until_chapter": 5,
@@ -78,6 +79,21 @@
       "date": "2026-09-19",
       "chapter": 6,
       "event": "closed chapter 5 (tension 5, kind discovery, revelation=False)"
+    },
+    {
+      "date": "2026-09-19",
+      "chapter": 7,
+      "event": "closed chapter 6 (tension 3, kind consequence, revelation=False)"
+    },
+    {
+      "date": "2026-09-19",
+      "chapter": 8,
+      "event": "closed chapter 7 (tension 5, kind discovery, revelation=False)"
+    },
+    {
+      "date": "2026-09-19",
+      "chapter": 8,
+      "event": "introduced Merrit Oss (institution-face) in ch.7 — need: chapter 7: the form produced a man, and the man has already decided there is no innocent explanation for Adam"
     }
   ]
 }

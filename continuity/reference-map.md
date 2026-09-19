@@ -60,6 +60,30 @@ He measures nine years of ledgers by position rather than reading them, finds th
 - `lb-5-3` **secret** (w5!) After the argument with Pell the system changed his status to UNREGISTERED — FLAGGED, and did not explain by whom  _tags: flagged, system_
 - `lb-5-4` **relationship** (w4!) Wren told him she would go on being suspicious of him on purpose, and that she was frightened of being glad  _tags: wren_
 
+### Chapter 6 — Forty Crowns
+`A01` · `consolidation` · `tension 3` · `POV mc-adam-rooke`
+
+He reads the house accounts, finds Wren's seven years of deferred wages in a margin, and the 210-year-old endowment fixed in nominal terms. He catches Kassick's measure change by column width and sells him a quiet way of having been caught, buying a pump. He learns to read. A man observes the house from the gate.
+
+- On stage: mc-adam-rooke, wren-halloway, ilse-varn @ workplace-mercy-house-ninth
+- `lb-6-1` **debt** (w5!) Wren Halloway has deferred her own wages for seven of eleven years and recorded it in the margin: forty-one crowns eight. Adam memorised the figure and she does not know he knows  _tags: wages, wren_
+- `lb-6-2` **fact** (w5!) The endowment pays six crowns two a month and specifies forty-one beds; it was the cost of running forty-one beds 210 years ago. Restatement needs a 200-crown bond the house cannot raise  _tags: endowment_
+- `lb-6-3` **promise** (w4!) Six-year supply agreement with Bern Kassick at the short measure, fairly priced, written by Adam; bought with a pump instead of a debt  _tags: kassick_
+- `lb-6-4` **fact** (w5!) The system claimed COMPREHENSION +1 for literacy Adam earned himself over three weeks; it can claim as well as take  _tags: system, tally_
+- `lb-6-5` **relationship** (w4!) Petren, nine, has a hole in his heart and is paid one sweet per page; Adam promised to stay until the boy can read the board alone  _tags: petren_
+
+### Chapter 7 — Per Head
+`A01` · `hook` · `tension 5` · `POV mc-adam-rooke`
+
+Sub-Coadjutor Merrit Oss arrives nineteen days after the form, lays out four possible explanations for Adam and says the fourth frightens him most. Adam finds the capitation through Petren's sweets and Dala's laundry talk: Seventh is paid per head, Ninth per outcome, and nobody can see both halves. He tells Wren badly and she gives him Aden Farrow's name.
+
+- On stage: mc-adam-rooke, wren-halloway, ilse-varn, merrit-oss @ workplace-mercy-house-ninth
+- `lb-7-1` **secret** (w5!) Seventh is paid a capitation per admission; Ninth is paid on outcomes. No villain, no theft — two schemes designed separately that meet at a transfer form signed on day four  _tags: capitation, seventh_
+- `lb-7-2` **relationship** (w5!) Aden Farrow died at Ninth four years ago after Wren refused to sign his day-four transfer; she has blamed herself since, and the paper was never about him  _tags: farrow, wren_
+- `lb-7-3` **rule** (w5!) Wren's instruction: bring her the name before the mechanism. It makes the mechanism slower to explain and far faster to understand  _tags: wren_
+- `lb-7-4` **fact** (w5!) Oss named four explanations for Adam and said the fourth — genuinely no history and an extraordinary mind — is the one he cannot investigate, only decide about  _tags: accord, oss_
+- `lb-7-5` **promise** (w5!) Deaths per held-day goes to an Accord review board in the spring; eleven houses gain, four lose, and someone will ask who started it  _tags: accord, held-day_
+
 ## Threads
 
 _No threads recorded yet._
